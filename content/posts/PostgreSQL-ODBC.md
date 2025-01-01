@@ -2,8 +2,8 @@
 title: PostgreSQL ODBC
 date: 2016-10-12 21:32:48
 tags:
-	- postgresql
-	- odbc
+  - postgresql
+  - odbc
 categories: DataBase
 ---
 <!-- MarkdownTOC -->

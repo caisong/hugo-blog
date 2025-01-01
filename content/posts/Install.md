@@ -2,7 +2,7 @@
 title: PostgreSQL 安装
 date: 2016-10-12 21:13:50
 tags:
-	- POstgreSQL
+  - PostgreSQL
 categories: DataBase
 ---
 <!-- MarkdownTOC -->
