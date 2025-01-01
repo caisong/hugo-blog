@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Shell on Caisong's Blog</title><link>https://caisong.github.io/categories/shell/</link><description>Recent content in Shell on Caisong's Blog</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Sun, 28 Apr 2019 20:17:50 +0000</lastBuildDate><atom:link href="https://caisong.github.io/categories/shell/index.xml" rel="self" type="application/rss+xml"/><item><title>Bash shell 字符串</title><link>https://caisong.github.io/posts/%E5%AD%97%E7%AC%A6%E4%B8%B2/</link><pubDate>Sun, 28 Apr 2019 20:17:50 +0000</pubDate><guid>https://caisong.github.io/posts/%E5%AD%97%E7%AC%A6%E4%B8%B2/</guid><description>&lt;h2 id="字符串常用操">字符串常用操&lt;/h2>
+&lt;ul>
+&lt;li>拼接
+直接拼接
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>echo &lt;span style="color:#e6db74">&amp;#34;&lt;/span>$str1$str2&lt;span style="color:#e6db74">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>查找
+&lt;ol>
+&lt;li>运算符&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">[[&lt;/span> $str3 &lt;span style="color:#f92672">=&lt;/span>~ $str1 &lt;span style="color:#f92672">]]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="2">
+&lt;li>通配符&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">[[&lt;/span> $str3 &lt;span style="color:#f92672">==&lt;/span> *$str2 &lt;span style="color:#f92672">]]&lt;/span> &lt;span style="color:#75715e">#以str2结尾&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">[[&lt;/span> $str3 &lt;span style="color:#f92672">==&lt;/span> $str1* &lt;span style="color:#f92672">]]&lt;/span> &lt;span style="color:#75715e">#以str1开头&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="3">
+&lt;li>&lt;code>case&lt;/code>&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">case&lt;/span> $str3 in 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> HELLO&lt;span style="color:#f92672">)&lt;/span> echo &lt;span style="color:#e6db74">&amp;#34;cai&amp;#34;&lt;/span> ;;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> H*O&lt;span style="color:#f92672">)&lt;/span> echo &lt;span style="color:#e6db74">&amp;#34;song&amp;#34;&lt;/span> ;;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> *&lt;span style="color:#f92672">)&lt;/span> echo &lt;span style="color:#e6db74">&amp;#34;caisong&amp;#34;&lt;/span> ;;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">esac&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>替换
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#语法：${变量/查找/替换值}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 若查找字符前以&amp;#39;//&amp;#39;开头则全部替换&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">${&lt;/span>str1/$str2/$str3&lt;span style="color:#e6db74">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>长度
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>echo &lt;span style="color:#e6db74">${#&lt;/span>str&lt;span style="color:#e6db74">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>切割
+&lt;ol>
+&lt;li>&lt;code>cut&lt;/code>&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span> echo $str|cut -d&lt;span style="color:#e6db74">&amp;#39;-&amp;#39;&lt;/span> -f2
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="2">
+&lt;li>&lt;code>IFS&lt;/code>&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#IFS指定分隔符&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>OIFS&lt;span style="color:#f92672">=&lt;/span>$IFS;IFS&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;-&amp;#39;&lt;/span>;set -- $str; str1&lt;span style="color:#f92672">=&lt;/span>$1;str2&lt;span style="color:#f92672">=&lt;/span>$2;IFS&lt;span style="color:#f92672">=&lt;/span>$OIFS;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>截取
+&lt;ol>
+&lt;li>从头部截取指定字符&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 语法：&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">${&lt;/span>varibale#*string&lt;span style="color:#e6db74">}&lt;/span> &lt;span style="color:#75715e">#截取第一个string后的字符&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">${&lt;/span>varible##*string&lt;span style="color:#e6db74">}&lt;/span> &lt;span style="color:#75715e">#截取最后一个string后的字符&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="2">
+&lt;li>从尾部截取指定字符&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 语法：&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">${&lt;/span>varibale%string*&lt;span style="color:#e6db74">}&lt;/span> &lt;span style="color:#75715e">#截取第一个string后的字符&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">${&lt;/span>varible%%string*&lt;span style="color:#e6db74">}&lt;/span> &lt;span style="color:#75715e">#截取最后一个string后的字符&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ul>
+&lt;h2 id="示例">示例&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#!/bin/bash
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>lyric1&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;Soft kitty, warm kitty, little ball of fur&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>lyric2&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;Happy kitty, sleepy kitty, purr, purr, purr&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo -e $lyric1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo -e $lyric2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo -e &lt;span style="color:#e6db74">&amp;#34;示例：拼接&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo -e &lt;span style="color:#ae81ff">\\&lt;/span>t &lt;span style="color:#e6db74">&amp;#34;&lt;/span>$lyric1&lt;span style="color:#e6db74"> &lt;/span>$lyric2&lt;span style="color:#e6db74">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo -e &lt;span style="color:#e6db74">&amp;#34;示例：查找&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo -e &lt;span style="color:#e6db74">&amp;#34;\t 1. 包含&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">[[&lt;/span> $lyric1 &lt;span style="color:#f92672">=&lt;/span>~ &lt;span style="color:#e6db74">&amp;#34;kitty&amp;#34;&lt;/span> &lt;span style="color:#f92672">]]&lt;/span> &lt;span style="color:#f92672">&amp;amp;&amp;amp;&lt;/span> echo -e &lt;span style="color:#e6db74">&amp;#34;\t The lyric include kitty&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo -e &lt;span style="color:#e6db74">&amp;#34;2. 以字符串开头&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">[[&lt;/span> $lyric1 &lt;span style="color:#f92672">==&lt;/span> Soft* &lt;span style="color:#f92672">]]&lt;/span> &lt;span style="color:#f92672">&amp;amp;&amp;amp;&lt;/span> echo -e &lt;span style="color:#e6db74">&amp;#34;\t The lyric starts with &amp;#39;Soft&amp;#39;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo -e &lt;span style="color:#e6db74">&amp;#34;3. 以字符串结尾&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">[[&lt;/span> $lyric2 &lt;span style="color:#f92672">==&lt;/span> *purr &lt;span style="color:#f92672">]]&lt;/span> &lt;span style="color:#f92672">&amp;amp;&amp;amp;&lt;/span> echo -e &lt;span style="color:#ae81ff">\\&lt;/span>t &lt;span style="color:#e6db74">&amp;#34;The lyric ends with &amp;#39;purr&amp;#39;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo -e &lt;span style="color:#e6db74">&amp;#34;4. 使用case查找&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">case&lt;/span> $lyric1 in
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> *ball&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> echo -e &lt;span style="color:#e6db74">&amp;#34;\tThe lyric include ball&amp;#34;&lt;/span> ;;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sleepy*&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> echo -e &lt;span style="color:#e6db74">&amp;#34;\tThe lyric include sleepy&amp;#34;&lt;/span> ;;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> *kitty*&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> echo -e &lt;span style="color:#e6db74">&amp;#34;\tThe lyric include kitty&amp;#34;&lt;/span> ;;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">esac&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo -e &lt;span style="color:#e6db74">&amp;#34;示例：替换&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo -e &lt;span style="color:#ae81ff">\\&lt;/span>t &lt;span style="color:#e6db74">${&lt;/span>lyric1/kitty/doraemon&lt;span style="color:#e6db74">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo -e &lt;span style="color:#ae81ff">\\&lt;/span>t &lt;span style="color:#e6db74">${&lt;/span>lyric1//kitty/doraemon&lt;span style="color:#e6db74">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo -e &lt;span style="color:#e6db74">&amp;#34;示例：长度&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo -e &lt;span style="color:#e6db74">&amp;#34;\tThe length of lryic is &lt;/span>&lt;span style="color:#66d9ef">$((&lt;/span>&lt;span style="color:#e6db74">${#&lt;/span>lyric1&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#e6db74">${#&lt;/span>lyric2&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#66d9ef">))&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo -e &lt;span style="color:#e6db74">&amp;#34;示例：切割&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo -e &lt;span style="color:#e6db74">&amp;#34;\tcut命令切割&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo -e $lyric1 | cut -d&lt;span style="color:#e6db74">&amp;#39;,&amp;#39;&lt;/span> -f1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo -e &lt;span style="color:#e6db74">&amp;#34;\tIFS切割&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>OIFS&lt;span style="color:#f92672">=&lt;/span>$IFS;IFS&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;,&amp;#39;&lt;/span>;set -- $lyric2;cat1&lt;span style="color:#f92672">=&lt;/span>$1;cat2&lt;span style="color:#f92672">=&lt;/span>$2;IFS&lt;span style="color:#f92672">=&lt;/span>$OIFS
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo -e &lt;span style="color:#e6db74">&amp;#34;\tThe two cats:&amp;#34;&lt;/span> $cat1 $cat2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo -e &lt;span style="color:#e6db74">&amp;#34;示例：截取&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo -e &lt;span style="color:#e6db74">&amp;#34;1. 从开头截取最少匹配&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo -e &lt;span style="color:#ae81ff">\\&lt;/span>t &lt;span style="color:#e6db74">${&lt;/span>lyric1#*kitty&lt;span style="color:#e6db74">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo -e &lt;span style="color:#e6db74">&amp;#34;2. 从开头截取最多匹配&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo -e &lt;span style="color:#ae81ff">\\&lt;/span>t &lt;span style="color:#e6db74">${&lt;/span>lyric1##*kitty&lt;span style="color:#e6db74">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo -e &lt;span style="color:#e6db74">&amp;#34;1. 从结尾截取最少匹配&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo -e &lt;span style="color:#ae81ff">\\&lt;/span>t &lt;span style="color:#e6db74">${&lt;/span>lyric2%kitty*&lt;span style="color:#e6db74">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo -e &lt;span style="color:#e6db74">&amp;#34;2. 从结尾截取最多匹配&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo -e &lt;span style="color:#ae81ff">\\&lt;/span>t &lt;span style="color:#e6db74">${&lt;/span>lyric2%%kitty*&lt;span style="color:#e6db74">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>输出&lt;/p></description></item></channel></rss>

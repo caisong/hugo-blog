@@ -1,0 +1,107 @@
+<!doctype html><html lang=en-us x-data :class=$store.darkMode.class() :data-theme=$store.darkMode.theme()><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Vim | Caisong's Blog</title>
+<link rel=canonical href=https://caisong.github.io/tags/vim/><meta name=author content="Cai Song"><meta name=description content><meta name=generator content="Hugo 0.140.2"><meta property="og:url" content="https://caisong.github.io/tags/vim/"><meta property="og:site_name" content="Caisong's Blog"><meta property="og:title" content="Vim"><meta property="og:locale" content="en_us"><meta property="og:type" content="website"><meta name=twitter:card content="summary"><meta name=twitter:title content="Vim"><link rel=stylesheet href=/css/output.min.css><script defer src=https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js></script></head><body x-data="{
+    flip: false,
+  }"><div id=dream-global-bg></div><nav x-data="{ isSticky: false }" x-init="window.addEventListener('scroll', () => { isSticky = window.scrollY > 30 })" class="sticky top-0 z-30 mt-4 lg:mt-8 py-4" :class="{ 'bg-base-100 shadow-lg dark:border-b dark:border-base-content/30': isSticky }"><div class="container flex justify-between px-4"><section class="flex items-center gap-4"><div class="avatar cursor-pointer hover:online" @click="flip = !flip" title="Flip it!"><div class="h-10 rounded-full"><img src=/ alt="A blog about all things technical."></div></div><div><a href=https://caisong.github.io/ class="text-lg font-semibold cursor-pointer">A blog about all things technical.</a></div></section><div class="dropdown dropdown-end sm:hidden"><div tabindex=0 role=button class="btn btn-ghost btn-square" aria-label="Select an option"><ion-icon name=menu class=text-2xl></ion-icon></div><ul tabindex=0 class="dropdown-content menu w-36 bg-base-100 rounded-box z-[1] shadow-md"><li><a class="inline-flex items-center p-2 cursor-pointer" href=/index.xml title=RSS><ion-icon name=logo-rss></ion-icon>RSS</a></li><li><a class="inline-flex items-center p-2 cursor-pointer" href=/posts title=Archives><ion-icon name=archive></ion-icon>Archives</a></li><li><a class="inline-flex items-center p-2 cursor-pointer" href=/categories title="All Categories"><ion-icon name=grid></ion-icon>All Categories</a></li><li><a class="inline-flex items-center p-2 cursor-pointer" href=/tags title="All Tags"><ion-icon name=pricetags></ion-icon>All Tags</a></li></ul></div><section class="hidden sm:flex sm:items-center sm:gap-2 md:gap-4"><a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href=/index.xml title=RSS><ion-icon class=group-hover:text-primary-content name=logo-rss></ion-icon></a><div class="dropdown dropdown-end dropdown-hover"><div tabindex=0 role=button class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" aria-label="Select an option"><ion-icon class="group-hover:text-primary-content text-xl" name=menu></ion-icon></div><ul tabindex=0 class="dropdown-content menu w-36 bg-base-100 rounded-box z-[1] shadow-xl"><li><a class="inline-flex items-center p-2 cursor-pointer" href=/posts title=Archives><ion-icon name=archive></ion-icon>Archives</a></li><li><a class="inline-flex items-center p-2 cursor-pointer" href=/categories title="All Categories"><ion-icon name=grid></ion-icon>All Categories</a></li><li><a class="inline-flex items-center p-2 cursor-pointer" href=/tags title="All Tags"><ion-icon name=pricetags></ion-icon>All Tags</a></li></ul></div></section></div></nav><div class=flip-container :class="{ 'flip-it': flip }"><div class=flipper><div class=front><div class=container><div class="flex flex-col md:flex-row mt-4"><div class="md:basis-[200px] lg:basis-[300px] p-4 prose dark:prose-invert"><h1 class=text-2xl>Vim</h1><p class=text-sm>1 article</p><div class="flex flex-wrap gap-4 mt-6"><a href=/tags/accumulation/ class="badge h-6 no-underline hover:badge-primary">Accumulation
+</a><a href=/tags/arm/ class="badge h-6 no-underline hover:badge-primary">Arm
+</a><a href=/tags/atom/ class="badge h-6 no-underline hover:badge-primary">Atom
+</a><a href=/tags/c++-vptr/ class="badge h-6 no-underline hover:badge-primary">C++, Vptr
+</a><a href=/tags/checkpatch.pl/ class="badge h-6 no-underline hover:badge-primary">Checkpatch.pl
+</a><a href=/tags/cmder/ class="badge h-6 no-underline hover:badge-primary">Cmder
+</a><a href=/tags/command/ class="badge h-6 no-underline hover:badge-primary">Command
+</a><a href=/tags/config/ class="badge h-6 no-underline hover:badge-primary">Config
+</a><a href=/tags/crontab/ class="badge h-6 no-underline hover:badge-primary">Crontab
+</a><a href=/tags/django/ class="badge h-6 no-underline hover:badge-primary">Django
+</a><a href=/tags/docker/ class="badge h-6 no-underline hover:badge-primary">Docker
+</a><a href=/tags/email/ class="badge h-6 no-underline hover:badge-primary">Email
+</a><a href=/tags/excel/ class="badge h-6 no-underline hover:badge-primary">Excel
+</a><a href=/tags/firefox/ class="badge h-6 no-underline hover:badge-primary">Firefox
+</a><a href=/tags/gdb/ class="badge h-6 no-underline hover:badge-primary">Gdb
+</a><a href=/tags/git/ class="badge h-6 no-underline hover:badge-primary">Git
+</a><a href=/tags/ini/ class="badge h-6 no-underline hover:badge-primary">Ini
+</a><a href=/tags/libconfig/ class="badge h-6 no-underline hover:badge-primary">Libconfig
+</a><a href=/tags/linux/ class="badge h-6 no-underline hover:badge-primary">Linux
+</a><a href=/tags/mail/ class="badge h-6 no-underline hover:badge-primary">Mail
+</a><a href=/tags/module/ class="badge h-6 no-underline hover:badge-primary">Module
+</a><a href=/tags/mssql-sql-server/ class="badge h-6 no-underline hover:badge-primary">MSSQL, SQL Server
+</a><a href=/tags/odbc/ class="badge h-6 no-underline hover:badge-primary">Odbc
+</a><a href=/tags/openssl-evp-aes/ class="badge h-6 no-underline hover:badge-primary">Openssl, Evp, Aes
+</a><a href=/tags/pac-reg/ class="badge h-6 no-underline hover:badge-primary">Pac, Reg
+</a><a href=/tags/phone/ class="badge h-6 no-underline hover:badge-primary">Phone
+</a><a href=/tags/postgresql/ class="badge h-6 no-underline hover:badge-primary">Postgresql
+</a><a href=/tags/proxy/ class="badge h-6 no-underline hover:badge-primary">Proxy
+</a><a href=/tags/putty/ class="badge h-6 no-underline hover:badge-primary">Putty
+</a><a href=/tags/python/ class="badge h-6 no-underline hover:badge-primary">Python
+</a><a href=/tags/python2/ class="badge h-6 no-underline hover:badge-primary">Python2
+</a><a href=/tags/record/ class="badge h-6 no-underline hover:badge-primary">Record
+</a><a href=/tags/rtpc++/ class="badge h-6 no-underline hover:badge-primary">Rtp,c++
+</a><a href=/tags/script/ class="badge h-6 no-underline hover:badge-primary">Script
+</a><a href=/tags/shell/ class="badge h-6 no-underline hover:badge-primary">Shell
+</a><a href=/tags/shell-update-rc.d-systemctl/ class="badge h-6 no-underline hover:badge-primary">Shell, Update-Rc.d, Systemctl
+</a><a href=/tags/shortcut/ class="badge h-6 no-underline hover:badge-primary">Shortcut
+</a><a href=/tags/sony-xp/ class="badge h-6 no-underline hover:badge-primary">Sony Xp
+</a><a href=/tags/ssh/ class="badge h-6 no-underline hover:badge-primary">Ssh
+</a><a href=/tags/tag1/ class="badge h-6 no-underline hover:badge-primary">Tag1
+</a><a href=/tags/tag2/ class="badge h-6 no-underline hover:badge-primary">Tag2
+</a><a href=/tags/time/ class="badge h-6 no-underline hover:badge-primary">Time
+</a><a href=/tags/tpm/ class="badge h-6 no-underline hover:badge-primary">Tpm
+</a><a href=/tags/tts-windows/ class="badge h-6 no-underline hover:badge-primary">Tts, Windows
+</a><span class="badge h-6 badge-primary">Vim
+</span><a href=/tags/vmware/ class="badge h-6 no-underline hover:badge-primary">Vmware
+</a><a href=/tags/vs217/ class="badge h-6 no-underline hover:badge-primary">Vs217
+</a><a href=/tags/windows/ class="badge h-6 no-underline hover:badge-primary">Windows
+</a><a href=/tags/xinetd/ class="badge h-6 no-underline hover:badge-primary">Xinetd
+</a><a href=/tags/yocto/ class="badge h-6 no-underline hover:badge-primary">Yocto
+</a><a href=/tags/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91/ class="badge h-6 no-underline hover:badge-primary">交叉编译
+</a><a href=/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/ class="badge h-6 no-underline hover:badge-primary">多线程
+</a><a href=/tags/%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8/ class="badge h-6 no-underline hover:badge-primary">开机启动
+</a><a href=/tags/%E7%A3%81%E7%9B%98/ class="badge h-6 no-underline hover:badge-primary">磁盘
+</a><a href=/tags/%E7%BA%A2%E9%BB%91%E6%A0%91/ class="badge h-6 no-underline hover:badge-primary">红黑树
+</a><a href=/tags/%E7%BC%96%E7%A8%8B/ class="badge h-6 no-underline hover:badge-primary">编程
+</a><a href=/tags/%E9%85%8D%E7%BD%AE/ class="badge h-6 no-underline hover:badge-primary">配置</a></div></div><div class="divider divider-vertical md:divider-horizontal px-4 md:px-0"></div><div class=flex-1><div class=dream-grid><div class="w-full md:w-1/2 lg:w-1/3 p-4 dream-column"><a class="card card-compact bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30" href=/posts/vim-ide/><div class=card-body><h2 class=card-title>自定义语言IDE构建</h2><p class="date text-base-content/60">Friday, Dec 21, 2018</p><p>工作需要，使用自定义的开发语言, Linux环境。</p><ul><li>notepad++ vs vim<ul><li>vim自带，缺少语法高亮、自动补全。</li><li>notepad++方便，适合vim不熟悉的人，但上传到linux可能存在编码问题<br>其实只要设置好，都可以，哪款编辑器方便就行。
+以下内容只涉及<strong>语法高亮</strong>和<strong>自动补全</strong>,<strong>snippets</strong>后期补上</li></ul></li></ul><h2 id=语法高亮>语法高亮</h2><h3 id=notepad>notepad++</h3><p><img src=/images/notepad_highlight.png alt=notepad_highlight.png title=语法高亮></p><h3 id=vim>vim</h3><p>如果自定义语言完全不同于现有任何格式（如xml json yaml ini等），那比较麻烦，可能需要自己写。我们讨论格式类似的情况：</p><ol><li><p>语法文件<br><code>/usr/share/vim/{vim版本}/syntax</code>目录下存在以支持的语法文件，如果你所使用的文件格式与其中某种雷同的话，可以复制一份，自己添加你的关键词。
+如 <code>cat /usr/share/vim/vim80/syntax/conf.vim</code></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-plain data-lang=plain><span style=display:flex><span>&#34; Vim syntax file
+</span></span><span style=display:flex><span>&#34; Language:     generic configure file
+</span></span><span style=display:flex><span>&#34; Maintainer:   Bram Moolenaar &lt;Bram@vim.org&gt;
+</span></span><span style=display:flex><span>&#34; Last Change:  2005 Jun 20
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>&#34; Quit when a (custom) syntax file was already loaded
+</span></span><span style=display:flex><span>if exists(&#34;b:current_syntax&#34;)
+</span></span><span style=display:flex><span>finish
+</span></span><span style=display:flex><span>endif
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>syn keyword     confTodo        contained TODO FIXME XXX
+</span></span><span style=display:flex><span>&#34; Avoid matching &#34;text#text&#34;, used in /etc/disktab and /etc/gettytab
+</span></span><span style=display:flex><span>syn match       confComment     &#34;^#.*&#34; contains=confTodo
+</span></span><span style=display:flex><span>syn match       confComment     &#34;\s#.*&#34;ms=s+1 contains=confTodo
+</span></span><span style=display:flex><span>syn region      confString      start=+&#34;+ skip=+\\\\\|\\&#34;+ end=+&#34;+ oneline
+</span></span><span style=display:flex><span>syn region      confString      start=+&#39;+ skip=+\\\\\|\\&#39;+ end=+&#39;+ oneline
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>&#34; Define the default highlighting.
+</span></span><span style=display:flex><span>&#34; Only used when an item doesn&#39;t have highlighting yet
+</span></span><span style=display:flex><span>hi def link confComment Comment
+</span></span><span style=display:flex><span>hi def link confTodo    Todo
+</span></span><span style=display:flex><span>hi def link confString  String
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>let b:current_syntax = &#34;conf&#34;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>&#34; vim: ts=8 sw=2
+</span></span></code></pre></div></li></ol><ul><li><code>syn match</code> 匹配关键词</li><li><code>hi def link</code> 高亮</li></ul><ol start=2><li>高亮设置<br>用户<code>vimrc</code>文件中添加如下设置<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-plain data-lang=plain><span style=display:flex><span>&#34;开启语法高亮
+</span></span><span style=display:flex><span>syntax on 
+</span></span><span style=display:flex><span>&#34; Your Languare
+</span></span><span style=display:flex><span>&#34; file_ext 替换为你的文件后缀
+</span></span><span style=display:flex><span>&#34; file_type 替换为你刚设置的语法类型
+</span></span><span style=display:flex><span>au BufNewFile,BufRead *.{file_ext}  setf {filetype}
+</span></span></code></pre></div></li></ol><h2 id=自动补全>自动补全</h2><h3 id=notepad-1>notepad++</h3><p>该<code>{notepad++安装目录}\plugins\APIs</code>目录下保存的自动补全的关键字，使用<code>xml</code>格式。</p><div class="card-actions justify-between items-center mt-4"><div class="flex items-center"><span>@</span>
+<span itemprop=author itemscope itemtype=https://schema.org/Person><span itemprop=name>Cai Song</span></span></div><div class="flex items-center"><ion-icon name=time class=mr-1></ion-icon><span>2 minute read</span></div></div></div></a></div></div></div></div><footer class="flex justify-between items-center gap-2 px-4 py-12"><div><p>© 2016 - 2025 Caisong's Blog</p><p class=text-sm>🌱
+<span class=text-base-content/60>Powered by <a class=hover:underline href=https://gohugo.io/ target=_blank>Hugo</a> with theme
+<a class=hover:underline href=https://github.com/g1eny0ung/hugo-theme-dream target=_blank>Dream</a>.</span></p></div><div x-data="{ icons: [
+    { name: 'moon', status: 'y' },
+    { name: 'sunny', status: 'n' },
+    { name: 'desktop', status: 'auto' }
+  ] }" class="flex items-center h-[32px] px-2 gap-2 border border-base-content/30 rounded-full"><template x-for="icon in icons"><div role=button tabindex=0 :aria-label="'Select ' + icon.name + ' mode'" class="group inline-flex justify-center items-center p-1 rounded-full cursor-pointer hover:bg-primary" :class="$store.darkMode.icon() === icon.name && 'bg-primary'" @click=$store.darkMode.toggle(icon.status)><ion-icon :name="`${icon.name}-outline`" class=group-hover:text-primary-content :class="$store.darkMode.icon() === icon.name && 'text-primary-content'"></ion-icon></div></template></div></footer></div></div><div class=back><div class=container><div class="dream-grid dream-grid-about"></div><footer class="flex justify-between items-center gap-2 px-4 py-12"><div><p>© 2016 - 2025 Caisong's Blog</p><p class=text-sm>🌱
+<span class=text-base-content/60>Powered by <a class=hover:underline href=https://gohugo.io/ target=_blank>Hugo</a> with theme
+<a class=hover:underline href=https://github.com/g1eny0ung/hugo-theme-dream target=_blank>Dream</a>.</span></p></div><div x-data="{ icons: [
+    { name: 'moon', status: 'y' },
+    { name: 'sunny', status: 'n' },
+    { name: 'desktop', status: 'auto' }
+  ] }" class="flex items-center h-[32px] px-2 gap-2 border border-base-content/30 rounded-full"><template x-for="icon in icons"><div role=button tabindex=0 :aria-label="'Select ' + icon.name + ' mode'" class="group inline-flex justify-center items-center p-1 rounded-full cursor-pointer hover:bg-primary" :class="$store.darkMode.icon() === icon.name && 'bg-primary'" @click=$store.darkMode.toggle(icon.status)><ion-icon :name="`${icon.name}-outline`" class=group-hover:text-primary-content :class="$store.darkMode.icon() === icon.name && 'text-primary-content'"></ion-icon></div></template></div></footer></div></div></div></div><script>window.lightTheme="emerald",window.darkTheme="forest"</script><script src=https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin=anonymous></script><script src=/js/grid.min.js></script><script src=/js/main.min.js></script><script type=module src=https://unpkg.com/ionicons@7.4.0/dist/ionicons/ionicons.esm.js></script><script nomodule src=https://unpkg.com/ionicons@7.4.0/dist/ionicons/ionicons.js></script></body></html>

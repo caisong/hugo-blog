@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ssh on Caisong's Blog</title><link>https://caisong.github.io/tags/ssh/</link><description>Recent content in Ssh on Caisong's Blog</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Thu, 30 Jun 2016 22:56:04 +0000</lastBuildDate><atom:link href="https://caisong.github.io/tags/ssh/index.xml" rel="self" type="application/rss+xml"/><item><title>ssh问题-Connection closed by foreign host</title><link>https://caisong.github.io/posts/ssh%E9%97%AE%E9%A2%98/</link><pubDate>Thu, 30 Jun 2016 22:56:04 +0000</pubDate><guid>https://caisong.github.io/posts/ssh%E9%97%AE%E9%A2%98/</guid><description>&lt;h2 id="问题描述">问题描述&lt;/h2>
+&lt;p>使用XShell 登陆linux总是回复：&lt;code>Connection closed by foreign host.&lt;/code> 或者
+&lt;code>Disconnected from remote host&lt;/code>，
+造成该现象的原因一般是由于ssh连接长期没有操作导致的（这也是误导我的主要原因）&lt;/p>
+&lt;h2 id="原因及解决方案">原因及解决方案&lt;/h2>
+&lt;h3 id="账号被限制只允许一个人登陆暂时没遇到">账号被限制只允许一个人登陆（暂时没遇到）&lt;/h3>
+&lt;h3 id="无法保持长期连接">无法保持长期连接&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo vim /etc/ssh/sshd_config
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>结尾添加两行&lt;/p>
+&lt;pre tabindex="0">&lt;code>ClientAliveInterval 60
+ClientAliveCountMax 3
+&lt;/code>&lt;/pre>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 重启服务&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo systemctl restart sshd
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="防火墙原因">防火墙原因&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 关闭防火墙&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo systemctl stop sshd
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 或者打开22端口&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo iptables -A INPUT -p tcp --dport &lt;span style="color:#ae81ff">22&lt;/span> -j ACCEPT
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="hostsdeny文件被篡改">hosts.deny文件被篡改&lt;/h3>
+&lt;p>查看&lt;code>/etc/hosts.deny&lt;/code>文件，看是否被禁用&lt;/p>
+&lt;pre tabindex="0">&lt;code># 禁止所有ip访问linux 的ssh功能
+sshd:all:deny
+&lt;/code>&lt;/pre>
+
+
+ &lt;blockquote>
+ &lt;p>&lt;code>/etc/hosts.allow&lt;/code>（允许）和&lt;code>/etc/hosts.deny&lt;/code>（禁止）这两个文件是tcpd服务器的配置文件，tcpd服务器可以控制外部IP对本机服务的访问。
+系统会先检查&lt;code>/etc/hosts.deny&lt;/code>规则，再检查&lt;code>/etc/hosts.allow&lt;/code>规则，如果有冲突 按&lt;code>/etc/hosts.allow&lt;/code>规则处理&lt;/p>
+
+ &lt;/blockquote>
+
+&lt;h3 id="客户端连接数过多">客户端连接数过多&lt;/h3>
+&lt;p>将&lt;code>/etc/ssh/sshd_config&lt;/code>中 MaxStartUps 10 改为MaxStartups 10/100，重启sshd&lt;/p>
+&lt;h3 id="针对vmware-nat模式">针对VMware nat模式&lt;/h3>
+&lt;p>描述：连接方式使用NAT；虚拟能在ping通主机，主机无法ping通虚拟机。
+原因：虚拟机自动获取的IP与vmnet8设置的IP不在同一网段。
+解决：设置vmnet8自动获取ip即可。&lt;/p></description></item></channel></rss>

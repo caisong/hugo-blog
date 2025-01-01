@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Xinetd on Caisong's Blog</title><link>https://caisong.github.io/tags/xinetd/</link><description>Recent content in Xinetd on Caisong's Blog</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Wed, 07 Jun 2017 21:39:31 +0000</lastBuildDate><atom:link href="https://caisong.github.io/tags/xinetd/index.xml" rel="self" type="application/rss+xml"/><item><title>xinetd 配置</title><link>https://caisong.github.io/posts/xinetd/</link><pubDate>Wed, 07 Jun 2017 21:39:31 +0000</pubDate><guid>https://caisong.github.io/posts/xinetd/</guid><description>&lt;ol start="0">
+&lt;li>介绍&lt;/li>
+&lt;/ol>
+
+
+
+ &lt;blockquote>
+ &lt;p>xinetd - the extended Internet services daemon
+xinetd performs the same function as inetd: it starts programs that
+provide Internet services. Instead of having such servers started at
+system initialization time, and be dormant until a connection request
+arrives, xinetd is the only daemon process started and it listens on
+all service ports for the services listed in its configuration file.
+When a request comes in, xinetd starts the appropriate server. Because
+of the way it operates, xinetd (as well as inetd) is also referred to
+as a super-server.&lt;/p></description></item></channel></rss>

@@ -1,0 +1,483 @@
+<!doctype html><html lang=en-us x-data :class=$store.darkMode.class() :data-theme=$store.darkMode.theme()><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><title>xinetd 配置 | Caisong's Blog</title>
+<link rel=canonical href=https://caisong.github.io/posts/xinetd/><meta name=author content="Cai Song"><meta name=description content=" 介绍 xinetd - the extended Internet services daemon xinetd performs the same function as inetd: it starts programs that provide Internet services. Instead of having such servers started at system initialization time, and be dormant until a connection request arrives, xinetd is the only daemon process started and it listens on all service ports for the services listed in its configuration file. When a request comes in, xinetd starts the appropriate server. Because of the way it operates, xinetd (as well as inetd) is also referred to as a super-server.
+"><meta name=keywords content="Xinetd"><meta name=generator content="Hugo 0.140.2"><meta property="og:url" content="https://caisong.github.io/posts/xinetd/"><meta property="og:site_name" content="Caisong's Blog"><meta property="og:title" content="xinetd 配置"><meta property="og:description" content="介绍 xinetd - the extended Internet services daemon xinetd performs the same function as inetd: it starts programs that provide Internet services. Instead of having such servers started at system initialization time, and be dormant until a connection request arrives, xinetd is the only daemon process started and it listens on all service ports for the services listed in its configuration file. When a request comes in, xinetd starts the appropriate server. Because of the way it operates, xinetd (as well as inetd) is also referred to as a super-server."><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2017-06-07T21:39:31+00:00"><meta property="article:modified_time" content="2017-06-07T21:39:31+00:00"><meta property="article:tag" content="Xinetd"><meta name=twitter:card content="summary"><meta name=twitter:title content="xinetd 配置"><meta name=twitter:description content="介绍 xinetd - the extended Internet services daemon xinetd performs the same function as inetd: it starts programs that provide Internet services. Instead of having such servers started at system initialization time, and be dormant until a connection request arrives, xinetd is the only daemon process started and it listens on all service ports for the services listed in its configuration file. When a request comes in, xinetd starts the appropriate server. Because of the way it operates, xinetd (as well as inetd) is also referred to as a super-server."><link rel=stylesheet href=/css/output.min.css><style>pre{padding:1em;overflow:auto}</style><script defer src=https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js></script></head><body x-data="{
+    flip: false,
+  }"><div id=dream-global-bg></div><nav x-data="{ isSticky: false }" x-init="window.addEventListener('scroll', () => { isSticky = window.scrollY > 30 })" class="sticky top-0 z-30 mt-4 lg:mt-8 py-4" :class="{ 'bg-base-100 shadow-lg dark:border-b dark:border-base-content/30': isSticky }"><div class="container flex justify-between px-4"><section class="flex items-center gap-4"><div class="avatar cursor-pointer hover:online" @click="flip = !flip" title="Flip it!"><div class="h-10 rounded-full"><img src=/ alt="A blog about all things technical."></div></div><div><a href=https://caisong.github.io/ class="text-lg font-semibold cursor-pointer">A blog about all things technical.</a></div></section><div class="dropdown dropdown-end sm:hidden"><div tabindex=0 role=button class="btn btn-ghost btn-square" aria-label="Select an option"><ion-icon name=menu class=text-2xl></ion-icon></div><ul tabindex=0 class="dropdown-content menu w-36 bg-base-100 rounded-box z-[1] shadow-md"><li><a class="inline-flex items-center p-2 cursor-pointer" href=/index.xml title=RSS><ion-icon name=logo-rss></ion-icon>RSS</a></li><li><a class="inline-flex items-center p-2 cursor-pointer" href=/posts title=Archives><ion-icon name=archive></ion-icon>Archives</a></li><li><a class="inline-flex items-center p-2 cursor-pointer" href=/categories title="All Categories"><ion-icon name=grid></ion-icon>All Categories</a></li><li><a class="inline-flex items-center p-2 cursor-pointer" href=/tags title="All Tags"><ion-icon name=pricetags></ion-icon>All Tags</a></li></ul></div><section class="hidden sm:flex sm:items-center sm:gap-2 md:gap-4"><a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href=/index.xml title=RSS><ion-icon class=group-hover:text-primary-content name=logo-rss></ion-icon></a><div class="dropdown dropdown-end dropdown-hover"><div tabindex=0 role=button class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" aria-label="Select an option"><ion-icon class="group-hover:text-primary-content text-xl" name=menu></ion-icon></div><ul tabindex=0 class="dropdown-content menu w-36 bg-base-100 rounded-box z-[1] shadow-xl"><li><a class="inline-flex items-center p-2 cursor-pointer" href=/posts title=Archives><ion-icon name=archive></ion-icon>Archives</a></li><li><a class="inline-flex items-center p-2 cursor-pointer" href=/categories title="All Categories"><ion-icon name=grid></ion-icon>All Categories</a></li><li><a class="inline-flex items-center p-2 cursor-pointer" href=/tags title="All Tags"><ion-icon name=pricetags></ion-icon>All Tags</a></li></ul></div></section></div></nav><div class=flip-container :class="{ 'flip-it': flip }"><div class=flipper><div class=front><div class=container><div class="lg:grid lg:grid-cols-4 gap-4 mt-4 px-4"><div class="hidden lg:block"></div><div class=lg:col-span-2><article class="mx-auto prose prose-quoteless dark:prose-invert" id=dream-single-post-main itemscope itemtype=http://schema.org/Article><meta itemprop=name content="xinetd 配置"><meta itemprop=description content="介绍 xinetd - the extended Internet services daemon xinetd performs the same function as inetd: it starts programs that provide Internet services. Instead of having such servers started at system initialization time, and be dormant until a connection request arrives, xinetd is the only daemon process started and it listens on all service ports for the services listed in its configuration file. When a request comes in, xinetd starts the appropriate server. Because of the way it operates, xinetd (as well as inetd) is also referred to as a super-server."><meta itemprop=datePublished content="2017-06-07T21:39:31+00:00"><meta itemprop=dateModified content="2017-06-07T21:39:31+00:00"><meta itemprop=wordCount content="1329"><meta itemprop=keywords content="Xinetd"><header><h1 itemprop=headline>xinetd 配置</h1><p class=text-sm>Wednesday, Jun 7, 2017
+| <span>7 minute read</span>
+| <span>Updated at
+Wednesday, Jun 7, 2017</span></p><div class="flex justify-between"><div class="flex items-center"><span>@</span>
+<span itemprop=author itemscope itemtype=https://schema.org/Person><span itemprop=name>Cai Song</span></span></div><div class="flex items-center gap-2"><a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="https://x.com/intent/post?text=xinetd%20%e9%85%8d%e7%bd%ae&amp;url=https://caisong.github.io/posts/xinetd/" target=_blank rel="noopener noreferrer" title="Share on X"><ion-icon class=group-hover:text-primary-content name=logo-x></ion-icon></a><a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="https://facebook.com/sharer/sharer.php?u=https://caisong.github.io/posts/xinetd/" target=_blank rel="noopener noreferrer" title="Share on Facebook"><ion-icon class=group-hover:text-primary-content name=logo-facebook></ion-icon></a><a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="https://wa.me/?text=xinetd%20%e9%85%8d%e7%bd%ae%20https://caisong.github.io/posts/xinetd/" target=_blank rel="noopener noreferrer" title="Share on WhatsApp"><ion-icon class=group-hover:text-primary-content name=logo-whatsapp></ion-icon></a></div></div></header><section id=dream-single-post-content itemprop=articleBody><ol start=0><li>介绍</li></ol><blockquote><p>xinetd - the extended Internet services daemon
+xinetd performs the same function as inetd: it starts programs that
+provide Internet services. Instead of having such servers started at
+system initialization time, and be dormant until a connection request
+arrives, xinetd is the only daemon process started and it listens on
+all service ports for the services listed in its configuration file.
+When a request comes in, xinetd starts the appropriate server. Because
+of the way it operates, xinetd (as well as inetd) is also referred to
+as a super-server.</p><p>The services listed in xinetd’s configuration file can be separated
+into two groups. Services in the first group are called multi-threaded
+and they require the forking of a new server process for each new con-
+nection request. The new server then handles that connection. For
+such services, xinetd keeps listening for new requests so that it can
+spawn new servers. On the other hand, the second group includes ser-
+vices for which the service daemon is responsible for handling all new
+connection requests. Such services are called single-threaded and
+xinetd will stop handling new requests for them until the server dies.
+Services in this group are usually datagram-based.</p><p>So far, the only reason for the existence of a super-server was to con-
+serve system resources by avoiding to fork a lot of processes which
+might be dormant for most of their lifetime. While fulfilling this
+function, xinetd takes advantage of the idea of a super-server to pro-
+vide features such as access control and logging. Furthermore, xinetd
+is not limited to services listed in /etc/services. Therefore, anybody</p></blockquote><p>以下内容转载自 <a href=http://www.linuxfromscratch.org/blfs/view/6.3/server/xinetd.html title=xinetd>linuxfromscratch</a></p><ol start=0><li>xinetd.conf文件</li></ol><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>cat &gt; /etc/xinetd.conf &lt;&lt; <span style=color:#e6db74>&#34;EOF&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Begin /etc/xinetd</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Configuration file for xinetd</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>defaults
+</span></span><span style=display:flex><span><span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>      instances       <span style=color:#f92672>=</span> <span style=color:#ae81ff>60</span>
+</span></span><span style=display:flex><span>      log_type        <span style=color:#f92672>=</span> SYSLOG daemon
+</span></span><span style=display:flex><span>      log_on_success  <span style=color:#f92672>=</span> HOST PID USERID
+</span></span><span style=display:flex><span>      log_on_failure  <span style=color:#f92672>=</span> HOST USERID
+</span></span><span style=display:flex><span>      cps             <span style=color:#f92672>=</span> <span style=color:#ae81ff>25</span> <span style=color:#ae81ff>30</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>}</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># All service files are stored in the /etc/xinetd.d directory</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#</span>
+</span></span><span style=display:flex><span>includedir /etc/xinetd.d
+</span></span><span style=display:flex><span><span style=color:#75715e># End /etc/xinetd</span>
+</span></span><span style=display:flex><span>EOF
+</span></span></code></pre></div><ol start=0><li>常见服务项配置</li></ol><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>install -v -d -m755 /etc/xinetd.d <span style=color:#f92672>&amp;&amp;</span>
+</span></span><span style=display:flex><span>cat &gt; /etc/xinetd.d/login &lt;&lt; <span style=color:#e6db74>&#34;EOF&#34;</span> <span style=color:#f92672>&amp;&amp;</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Begin /etc/xinetd.d/login</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>service login
+</span></span><span style=display:flex><span><span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>   disable        <span style=color:#f92672>=</span> yes
+</span></span><span style=display:flex><span>   socket_type    <span style=color:#f92672>=</span> stream
+</span></span><span style=display:flex><span>   protocol       <span style=color:#f92672>=</span> tcp
+</span></span><span style=display:flex><span>   wait           <span style=color:#f92672>=</span> no
+</span></span><span style=display:flex><span>   user           <span style=color:#f92672>=</span> root
+</span></span><span style=display:flex><span>   server         <span style=color:#f92672>=</span> /usr/sbin/in.rlogind
+</span></span><span style=display:flex><span>   log_type       <span style=color:#f92672>=</span> SYSLOG local4 info
+</span></span><span style=display:flex><span><span style=color:#f92672>}</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># End /etc/xinetd.d/login</span>
+</span></span><span style=display:flex><span>EOF
+</span></span><span style=display:flex><span>cat &gt; /etc/xinetd.d/shell &lt;&lt; <span style=color:#e6db74>&#34;EOF&#34;</span> <span style=color:#f92672>&amp;&amp;</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Begin /etc/xinetd.d/shell</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>service shell
+</span></span><span style=display:flex><span><span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>   disable        <span style=color:#f92672>=</span> yes
+</span></span><span style=display:flex><span>   socket_type    <span style=color:#f92672>=</span> stream
+</span></span><span style=display:flex><span>   wait           <span style=color:#f92672>=</span> no
+</span></span><span style=display:flex><span>   user           <span style=color:#f92672>=</span> root
+</span></span><span style=display:flex><span>   instances      <span style=color:#f92672>=</span> UNLIMITED
+</span></span><span style=display:flex><span>   flags          <span style=color:#f92672>=</span> IDONLY
+</span></span><span style=display:flex><span>   log_on_success <span style=color:#f92672>+=</span> USERID
+</span></span><span style=display:flex><span>   server         <span style=color:#f92672>=</span> /usr/sbin/in.rshd
+</span></span><span style=display:flex><span><span style=color:#f92672>}</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># End /etc/xinetd.d/shell</span>
+</span></span><span style=display:flex><span>EOF
+</span></span><span style=display:flex><span>cat &gt; /etc/xinetd.d/exec &lt;&lt; <span style=color:#e6db74>&#34;EOF&#34;</span> <span style=color:#f92672>&amp;&amp;</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Begin /etc/xinetd.d/exec</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>service exec
+</span></span><span style=display:flex><span><span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>   disable        <span style=color:#f92672>=</span> yes
+</span></span><span style=display:flex><span>   socket_type    <span style=color:#f92672>=</span> stream
+</span></span><span style=display:flex><span>   wait           <span style=color:#f92672>=</span> no
+</span></span><span style=display:flex><span>   user           <span style=color:#f92672>=</span> root
+</span></span><span style=display:flex><span>   server         <span style=color:#f92672>=</span> /usr/sbin/in.rexecd
+</span></span><span style=display:flex><span><span style=color:#f92672>}</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># End /etc/xinetd.d/exec</span>
+</span></span><span style=display:flex><span>EOF
+</span></span><span style=display:flex><span>cat &gt; /etc/xinetd.d/comsat &lt;&lt; <span style=color:#e6db74>&#34;EOF&#34;</span> <span style=color:#f92672>&amp;&amp;</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Begin /etc/xinetd.d/comsat</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>service comsat
+</span></span><span style=display:flex><span><span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>   disable        <span style=color:#f92672>=</span> yes
+</span></span><span style=display:flex><span>   socket_type    <span style=color:#f92672>=</span> dgram
+</span></span><span style=display:flex><span>   wait           <span style=color:#f92672>=</span> yes
+</span></span><span style=display:flex><span>   user           <span style=color:#f92672>=</span> nobody
+</span></span><span style=display:flex><span>   group          <span style=color:#f92672>=</span> tty
+</span></span><span style=display:flex><span>   server         <span style=color:#f92672>=</span> /usr/sbin/in.comsat
+</span></span><span style=display:flex><span><span style=color:#f92672>}</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># End /etc/xinetd.d/comsat</span>
+</span></span><span style=display:flex><span>EOF
+</span></span><span style=display:flex><span>cat &gt; /etc/xinetd.d/talk &lt;&lt; <span style=color:#e6db74>&#34;EOF&#34;</span> <span style=color:#f92672>&amp;&amp;</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Begin /etc/xinetd.d/talk</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>service talk
+</span></span><span style=display:flex><span><span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>   disable        <span style=color:#f92672>=</span> yes
+</span></span><span style=display:flex><span>   socket_type    <span style=color:#f92672>=</span> dgram
+</span></span><span style=display:flex><span>   wait           <span style=color:#f92672>=</span> yes
+</span></span><span style=display:flex><span>   user           <span style=color:#f92672>=</span> root
+</span></span><span style=display:flex><span>   server         <span style=color:#f92672>=</span> /usr/sbin/in.talkd
+</span></span><span style=display:flex><span><span style=color:#f92672>}</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># End /etc/xinetd.d/talk</span>
+</span></span><span style=display:flex><span>EOF
+</span></span><span style=display:flex><span>cat &gt; /etc/xinetd.d/ntalk &lt;&lt; <span style=color:#e6db74>&#34;EOF&#34;</span> <span style=color:#f92672>&amp;&amp;</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Begin /etc/xinetd.d/ntalk</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>service ntalk
+</span></span><span style=display:flex><span><span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>   disable        <span style=color:#f92672>=</span> yes
+</span></span><span style=display:flex><span>   socket_type    <span style=color:#f92672>=</span> dgram
+</span></span><span style=display:flex><span>   wait           <span style=color:#f92672>=</span> yes
+</span></span><span style=display:flex><span>   user           <span style=color:#f92672>=</span> root
+</span></span><span style=display:flex><span>   server         <span style=color:#f92672>=</span> /usr/sbin/in.ntalkd
+</span></span><span style=display:flex><span><span style=color:#f92672>}</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># End /etc/xinetd.d/ntalk</span>
+</span></span><span style=display:flex><span>EOF
+</span></span><span style=display:flex><span>cat &gt; /etc/xinetd.d/telnet &lt;&lt; <span style=color:#e6db74>&#34;EOF&#34;</span> <span style=color:#f92672>&amp;&amp;</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Begin /etc/xinetd.d/telnet</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>service telnet
+</span></span><span style=display:flex><span><span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>   disable        <span style=color:#f92672>=</span> yes
+</span></span><span style=display:flex><span>   socket_type    <span style=color:#f92672>=</span> stream
+</span></span><span style=display:flex><span>   wait           <span style=color:#f92672>=</span> no
+</span></span><span style=display:flex><span>   user           <span style=color:#f92672>=</span> root
+</span></span><span style=display:flex><span>   server         <span style=color:#f92672>=</span> /usr/sbin/in.telnetd
+</span></span><span style=display:flex><span>   bind           <span style=color:#f92672>=</span> 127.0.0.1
+</span></span><span style=display:flex><span>   log_on_failure <span style=color:#f92672>+=</span> USERID
+</span></span><span style=display:flex><span><span style=color:#f92672>}</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>service telnet
+</span></span><span style=display:flex><span><span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>   disable        <span style=color:#f92672>=</span> yes
+</span></span><span style=display:flex><span>   socket_type    <span style=color:#f92672>=</span> stream
+</span></span><span style=display:flex><span>   wait           <span style=color:#f92672>=</span> no
+</span></span><span style=display:flex><span>   user           <span style=color:#f92672>=</span> root
+</span></span><span style=display:flex><span><span style=color:#75715e>#  server         = /usr/sbin/in.telnetd</span>
+</span></span><span style=display:flex><span>   bind           <span style=color:#f92672>=</span> 192.231.139.175
+</span></span><span style=display:flex><span>   redirect       <span style=color:#f92672>=</span> 128.138.202.20 <span style=color:#ae81ff>23</span>
+</span></span><span style=display:flex><span>   log_on_failure <span style=color:#f92672>+=</span> USERID
+</span></span><span style=display:flex><span><span style=color:#f92672>}</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># End /etc/xinetd.d/telnet</span>
+</span></span><span style=display:flex><span>EOF
+</span></span><span style=display:flex><span>cat &gt; /etc/xinetd.d/ftp &lt;&lt; <span style=color:#e6db74>&#34;EOF&#34;</span> <span style=color:#f92672>&amp;&amp;</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Begin /etc/xinetd.d/ftp</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>service ftp
+</span></span><span style=display:flex><span><span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>   disable        <span style=color:#f92672>=</span> yes
+</span></span><span style=display:flex><span>   socket_type    <span style=color:#f92672>=</span> stream
+</span></span><span style=display:flex><span>   wait           <span style=color:#f92672>=</span> no
+</span></span><span style=display:flex><span>   user           <span style=color:#f92672>=</span> root
+</span></span><span style=display:flex><span>   server         <span style=color:#f92672>=</span> /usr/sbin/in.ftpd
+</span></span><span style=display:flex><span>   server_args    <span style=color:#f92672>=</span> -l
+</span></span><span style=display:flex><span>   instances      <span style=color:#f92672>=</span> <span style=color:#ae81ff>4</span>
+</span></span><span style=display:flex><span>   log_on_success <span style=color:#f92672>+=</span> DURATION USERID
+</span></span><span style=display:flex><span>   log_on_failure <span style=color:#f92672>+=</span> USERID
+</span></span><span style=display:flex><span>   access_times   <span style=color:#f92672>=</span> 2:00-8:59 12:00-23:59
+</span></span><span style=display:flex><span>   nice           <span style=color:#f92672>=</span> <span style=color:#ae81ff>10</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>}</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># End /etc/xinetd.d/ftp</span>
+</span></span><span style=display:flex><span>EOF
+</span></span><span style=display:flex><span>cat &gt; /etc/xinetd.d/tftp &lt;&lt; <span style=color:#e6db74>&#34;EOF&#34;</span> <span style=color:#f92672>&amp;&amp;</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Begin /etc/xinetd.d/tftp</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>service tftp
+</span></span><span style=display:flex><span><span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>   disable        <span style=color:#f92672>=</span> yes
+</span></span><span style=display:flex><span>   socket_type    <span style=color:#f92672>=</span> dgram
+</span></span><span style=display:flex><span>   wait           <span style=color:#f92672>=</span> yes
+</span></span><span style=display:flex><span>   user           <span style=color:#f92672>=</span> root
+</span></span><span style=display:flex><span>   server         <span style=color:#f92672>=</span> /usr/sbin/in.tftpd
+</span></span><span style=display:flex><span>   server_args    <span style=color:#f92672>=</span> -s /tftpboot
+</span></span><span style=display:flex><span><span style=color:#f92672>}</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># End /etc/xinetd.d/tftp</span>
+</span></span><span style=display:flex><span>EOF
+</span></span><span style=display:flex><span>cat &gt; /etc/xinetd.d/finger &lt;&lt; <span style=color:#e6db74>&#34;EOF&#34;</span> <span style=color:#f92672>&amp;&amp;</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Begin /etc/xinetd.d/finger</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>service finger
+</span></span><span style=display:flex><span><span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>   disable        <span style=color:#f92672>=</span> yes
+</span></span><span style=display:flex><span>   socket_type    <span style=color:#f92672>=</span> stream
+</span></span><span style=display:flex><span>   wait           <span style=color:#f92672>=</span> no
+</span></span><span style=display:flex><span>   user           <span style=color:#f92672>=</span> nobody
+</span></span><span style=display:flex><span>   server         <span style=color:#f92672>=</span> /usr/sbin/in.fingerd
+</span></span><span style=display:flex><span><span style=color:#f92672>}</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># End /etc/xinetd.d/finger</span>
+</span></span><span style=display:flex><span>EOF
+</span></span><span style=display:flex><span>cat &gt; /etc/xinetd.d/systat &lt;&lt; <span style=color:#e6db74>&#34;EOF&#34;</span> <span style=color:#f92672>&amp;&amp;</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Begin /etc/xinetd.d/systat</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>service systat
+</span></span><span style=display:flex><span><span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>   disable           <span style=color:#f92672>=</span> yes
+</span></span><span style=display:flex><span>   socket_type       <span style=color:#f92672>=</span> stream
+</span></span><span style=display:flex><span>   wait              <span style=color:#f92672>=</span> no
+</span></span><span style=display:flex><span>   user              <span style=color:#f92672>=</span> nobody
+</span></span><span style=display:flex><span>   server            <span style=color:#f92672>=</span> /usr/bin/ps
+</span></span><span style=display:flex><span>   server_args       <span style=color:#f92672>=</span> -auwwx
+</span></span><span style=display:flex><span>   only_from         <span style=color:#f92672>=</span> 128.138.209.0
+</span></span><span style=display:flex><span>   log_on_success    <span style=color:#f92672>=</span> HOST
+</span></span><span style=display:flex><span><span style=color:#f92672>}</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># End /etc/xinetd.d/systat</span>
+</span></span><span style=display:flex><span>EOF
+</span></span><span style=display:flex><span>cat &gt; /etc/xinetd.d/netstat &lt;&lt; <span style=color:#e6db74>&#34;EOF&#34;</span> <span style=color:#f92672>&amp;&amp;</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Begin /etc/xinetd.d/netstat</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>service netstat
+</span></span><span style=display:flex><span><span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>   disable           <span style=color:#f92672>=</span> yes
+</span></span><span style=display:flex><span>   socket_type       <span style=color:#f92672>=</span> stream
+</span></span><span style=display:flex><span>   wait              <span style=color:#f92672>=</span> no
+</span></span><span style=display:flex><span>   user              <span style=color:#f92672>=</span> nobody
+</span></span><span style=display:flex><span>   server            <span style=color:#f92672>=</span> /usr/ucb/netstat
+</span></span><span style=display:flex><span>   server_args       <span style=color:#f92672>=</span> -f inet
+</span></span><span style=display:flex><span>   only_from         <span style=color:#f92672>=</span> 128.138.209.0
+</span></span><span style=display:flex><span>   log_on_success    <span style=color:#f92672>=</span> HOST
+</span></span><span style=display:flex><span><span style=color:#f92672>}</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># End /etc/xinetd.d/netstat</span>
+</span></span><span style=display:flex><span>EOF
+</span></span><span style=display:flex><span>cat &gt; /etc/xinetd.d/echo &lt;&lt; <span style=color:#e6db74>&#34;EOF&#34;</span> <span style=color:#f92672>&amp;&amp;</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Begin /etc/xinetd.d/echo</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>service echo
+</span></span><span style=display:flex><span><span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>   disable     <span style=color:#f92672>=</span> yes
+</span></span><span style=display:flex><span>   type        <span style=color:#f92672>=</span> INTERNAL
+</span></span><span style=display:flex><span>   id          <span style=color:#f92672>=</span> echo-stream
+</span></span><span style=display:flex><span>   socket_type <span style=color:#f92672>=</span> stream
+</span></span><span style=display:flex><span>   protocol    <span style=color:#f92672>=</span> tcp
+</span></span><span style=display:flex><span>   user        <span style=color:#f92672>=</span> root
+</span></span><span style=display:flex><span>   wait        <span style=color:#f92672>=</span> no
+</span></span><span style=display:flex><span><span style=color:#f92672>}</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>service echo
+</span></span><span style=display:flex><span><span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>   disable     <span style=color:#f92672>=</span> yes
+</span></span><span style=display:flex><span>   type        <span style=color:#f92672>=</span> INTERNAL
+</span></span><span style=display:flex><span>   id          <span style=color:#f92672>=</span> echo-dgram
+</span></span><span style=display:flex><span>   socket_type <span style=color:#f92672>=</span> dgram
+</span></span><span style=display:flex><span>   protocol    <span style=color:#f92672>=</span> udp
+</span></span><span style=display:flex><span>   user        <span style=color:#f92672>=</span> root
+</span></span><span style=display:flex><span>   wait        <span style=color:#f92672>=</span> yes
+</span></span><span style=display:flex><span><span style=color:#f92672>}</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># End /etc/xinetd.d/echo</span>
+</span></span><span style=display:flex><span>EOF
+</span></span><span style=display:flex><span>cat &gt; /etc/xinetd.d/chargen &lt;&lt; <span style=color:#e6db74>&#34;EOF&#34;</span> <span style=color:#f92672>&amp;&amp;</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Begin /etc/xinetd.d/chargen</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>service chargen
+</span></span><span style=display:flex><span><span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>   disable        <span style=color:#f92672>=</span> yes
+</span></span><span style=display:flex><span>   type           <span style=color:#f92672>=</span> INTERNAL
+</span></span><span style=display:flex><span>   id             <span style=color:#f92672>=</span> chargen-stream
+</span></span><span style=display:flex><span>   socket_type    <span style=color:#f92672>=</span> stream
+</span></span><span style=display:flex><span>   protocol       <span style=color:#f92672>=</span> tcp
+</span></span><span style=display:flex><span>   user           <span style=color:#f92672>=</span> root
+</span></span><span style=display:flex><span>   wait           <span style=color:#f92672>=</span> no
+</span></span><span style=display:flex><span><span style=color:#f92672>}</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>service chargen
+</span></span><span style=display:flex><span><span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>   disable        <span style=color:#f92672>=</span> yes
+</span></span><span style=display:flex><span>   type           <span style=color:#f92672>=</span> INTERNAL
+</span></span><span style=display:flex><span>   id             <span style=color:#f92672>=</span> chargen-dgram
+</span></span><span style=display:flex><span>   socket_type    <span style=color:#f92672>=</span> dgram
+</span></span><span style=display:flex><span>   protocol       <span style=color:#f92672>=</span> udp
+</span></span><span style=display:flex><span>   user           <span style=color:#f92672>=</span> root
+</span></span><span style=display:flex><span>   wait           <span style=color:#f92672>=</span> yes
+</span></span><span style=display:flex><span><span style=color:#f92672>}</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># End /etc/xinetd.d/chargen</span>
+</span></span><span style=display:flex><span>EOF
+</span></span><span style=display:flex><span>cat &gt; /etc/xinetd.d/daytime &lt;&lt; <span style=color:#e6db74>&#34;EOF&#34;</span> <span style=color:#f92672>&amp;&amp;</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Begin /etc/xinetd.d/daytime</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>service daytime
+</span></span><span style=display:flex><span><span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>   disable        <span style=color:#f92672>=</span> yes
+</span></span><span style=display:flex><span>   type           <span style=color:#f92672>=</span> INTERNAL
+</span></span><span style=display:flex><span>   id             <span style=color:#f92672>=</span> daytime-stream
+</span></span><span style=display:flex><span>   socket_type    <span style=color:#f92672>=</span> stream
+</span></span><span style=display:flex><span>   protocol       <span style=color:#f92672>=</span> tcp
+</span></span><span style=display:flex><span>   user           <span style=color:#f92672>=</span> root
+</span></span><span style=display:flex><span>   wait           <span style=color:#f92672>=</span> no
+</span></span><span style=display:flex><span><span style=color:#f92672>}</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>service daytime
+</span></span><span style=display:flex><span><span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>   disable        <span style=color:#f92672>=</span> yes
+</span></span><span style=display:flex><span>   type           <span style=color:#f92672>=</span> INTERNAL
+</span></span><span style=display:flex><span>   id             <span style=color:#f92672>=</span> daytime-dgram
+</span></span><span style=display:flex><span>   socket_type    <span style=color:#f92672>=</span> dgram
+</span></span><span style=display:flex><span>   protocol       <span style=color:#f92672>=</span> udp
+</span></span><span style=display:flex><span>   user           <span style=color:#f92672>=</span> root
+</span></span><span style=display:flex><span>   wait           <span style=color:#f92672>=</span> yes
+</span></span><span style=display:flex><span><span style=color:#f92672>}</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># End /etc/xinetd.d/daytime</span>
+</span></span><span style=display:flex><span>EOF
+</span></span><span style=display:flex><span>cat &gt; /etc/xinetd.d/time &lt;&lt; <span style=color:#e6db74>&#34;EOF&#34;</span> <span style=color:#f92672>&amp;&amp;</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Begin /etc/xinetd.d/time</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>service time
+</span></span><span style=display:flex><span><span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>   disable        <span style=color:#f92672>=</span> yes
+</span></span><span style=display:flex><span>   type           <span style=color:#f92672>=</span> INTERNAL
+</span></span><span style=display:flex><span>   id             <span style=color:#f92672>=</span> time-stream
+</span></span><span style=display:flex><span>   socket_type    <span style=color:#f92672>=</span> stream
+</span></span><span style=display:flex><span>   protocol       <span style=color:#f92672>=</span> tcp
+</span></span><span style=display:flex><span>   user           <span style=color:#f92672>=</span> root
+</span></span><span style=display:flex><span>   wait           <span style=color:#f92672>=</span> no
+</span></span><span style=display:flex><span><span style=color:#f92672>}</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>service time
+</span></span><span style=display:flex><span><span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>   disable        <span style=color:#f92672>=</span> yes
+</span></span><span style=display:flex><span>   type           <span style=color:#f92672>=</span> INTERNAL
+</span></span><span style=display:flex><span>   id             <span style=color:#f92672>=</span> time-dgram
+</span></span><span style=display:flex><span>   socket_type    <span style=color:#f92672>=</span> dgram
+</span></span><span style=display:flex><span>   protocol       <span style=color:#f92672>=</span> udp
+</span></span><span style=display:flex><span>   user           <span style=color:#f92672>=</span> root
+</span></span><span style=display:flex><span>   wait           <span style=color:#f92672>=</span> yes
+</span></span><span style=display:flex><span><span style=color:#f92672>}</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># End /etc/xinetd.d/time</span>
+</span></span><span style=display:flex><span>EOF
+</span></span><span style=display:flex><span>cat &gt; /etc/xinetd.d/rstatd &lt;&lt; <span style=color:#e6db74>&#34;EOF&#34;</span> <span style=color:#f92672>&amp;&amp;</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Begin /etc/xinetd.d/rstatd</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>service rstatd
+</span></span><span style=display:flex><span><span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>   disable     <span style=color:#f92672>=</span> yes
+</span></span><span style=display:flex><span>   type        <span style=color:#f92672>=</span> RPC
+</span></span><span style=display:flex><span>   flags       <span style=color:#f92672>=</span> INTERCEPT
+</span></span><span style=display:flex><span>   rpc_version <span style=color:#f92672>=</span> 2-4
+</span></span><span style=display:flex><span>   socket_type <span style=color:#f92672>=</span> dgram
+</span></span><span style=display:flex><span>   protocol    <span style=color:#f92672>=</span> udp
+</span></span><span style=display:flex><span>   server      <span style=color:#f92672>=</span> /usr/sbin/rpc.rstatd
+</span></span><span style=display:flex><span>   wait        <span style=color:#f92672>=</span> yes
+</span></span><span style=display:flex><span>   user        <span style=color:#f92672>=</span> root
+</span></span><span style=display:flex><span><span style=color:#f92672>}</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># End /etc/xinetd.d/rstatd</span>
+</span></span><span style=display:flex><span>EOF
+</span></span><span style=display:flex><span>cat &gt; /etc/xinetd.d/rquotad &lt;&lt; <span style=color:#e6db74>&#34;EOF&#34;</span> <span style=color:#f92672>&amp;&amp;</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Begin /etc/xinetd.d/rquotad</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>service rquotad
+</span></span><span style=display:flex><span><span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>   disable     <span style=color:#f92672>=</span> yes
+</span></span><span style=display:flex><span>   type        <span style=color:#f92672>=</span> RPC
+</span></span><span style=display:flex><span>   rpc_version <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>   socket_type <span style=color:#f92672>=</span> dgram
+</span></span><span style=display:flex><span>   protocol    <span style=color:#f92672>=</span> udp
+</span></span><span style=display:flex><span>   wait        <span style=color:#f92672>=</span> yes
+</span></span><span style=display:flex><span>   user        <span style=color:#f92672>=</span> root
+</span></span><span style=display:flex><span>   server      <span style=color:#f92672>=</span> /usr/sbin/rpc.rstatd
+</span></span><span style=display:flex><span><span style=color:#f92672>}</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># End /etc/xinetd.d/rquotad</span>
+</span></span><span style=display:flex><span>EOF
+</span></span><span style=display:flex><span>cat &gt; /etc/xinetd.d/rusersd &lt;&lt; <span style=color:#e6db74>&#34;EOF&#34;</span> <span style=color:#f92672>&amp;&amp;</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Begin /etc/xinetd.d/rusersd</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>service rusersd
+</span></span><span style=display:flex><span><span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>   disable     <span style=color:#f92672>=</span> yes
+</span></span><span style=display:flex><span>   type        <span style=color:#f92672>=</span> RPC
+</span></span><span style=display:flex><span>   rpc_version <span style=color:#f92672>=</span> 1-2
+</span></span><span style=display:flex><span>   socket_type <span style=color:#f92672>=</span> dgram
+</span></span><span style=display:flex><span>   protocol    <span style=color:#f92672>=</span> udp
+</span></span><span style=display:flex><span>   wait        <span style=color:#f92672>=</span> yes
+</span></span><span style=display:flex><span>   user        <span style=color:#f92672>=</span> root
+</span></span><span style=display:flex><span>   server      <span style=color:#f92672>=</span> /usr/sbin/rpc.rusersd
+</span></span><span style=display:flex><span><span style=color:#f92672>}</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># End /etc/xinetd.d/rusersd</span>
+</span></span><span style=display:flex><span>EOF
+</span></span><span style=display:flex><span>cat &gt; /etc/xinetd.d/sprayd &lt;&lt; <span style=color:#e6db74>&#34;EOF&#34;</span> <span style=color:#f92672>&amp;&amp;</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Begin /etc/xinetd.d/sprayd</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>service sprayd
+</span></span><span style=display:flex><span><span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>   disable      <span style=color:#f92672>=</span> yes
+</span></span><span style=display:flex><span>   type         <span style=color:#f92672>=</span> RPC
+</span></span><span style=display:flex><span>   rpc_version  <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>   socket_type  <span style=color:#f92672>=</span> dgram
+</span></span><span style=display:flex><span>   protocol     <span style=color:#f92672>=</span> udp
+</span></span><span style=display:flex><span>   wait         <span style=color:#f92672>=</span> yes
+</span></span><span style=display:flex><span>   user         <span style=color:#f92672>=</span> root
+</span></span><span style=display:flex><span>   server       <span style=color:#f92672>=</span> /usr/sbin/rpc.sprayd
+</span></span><span style=display:flex><span><span style=color:#f92672>}</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># End /etc/xinetd.d/sprayd</span>
+</span></span><span style=display:flex><span>EOF
+</span></span><span style=display:flex><span>cat &gt; /etc/xinetd.d/walld &lt;&lt; <span style=color:#e6db74>&#34;EOF&#34;</span> <span style=color:#f92672>&amp;&amp;</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Begin /etc/xinetd.d/walld</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>service walld
+</span></span><span style=display:flex><span><span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>   disable      <span style=color:#f92672>=</span> yes
+</span></span><span style=display:flex><span>   type         <span style=color:#f92672>=</span> RPC
+</span></span><span style=display:flex><span>   rpc_version  <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>   socket_type  <span style=color:#f92672>=</span> dgram
+</span></span><span style=display:flex><span>   protocol     <span style=color:#f92672>=</span> udp
+</span></span><span style=display:flex><span>   wait         <span style=color:#f92672>=</span> yes
+</span></span><span style=display:flex><span>   user         <span style=color:#f92672>=</span> nobody
+</span></span><span style=display:flex><span>   group        <span style=color:#f92672>=</span> tty
+</span></span><span style=display:flex><span>   server       <span style=color:#f92672>=</span> /usr/sbin/rpc.rwalld
+</span></span><span style=display:flex><span><span style=color:#f92672>}</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># End /etc/xinetd.d/walld</span>
+</span></span><span style=display:flex><span>EOF
+</span></span><span style=display:flex><span>cat &gt; /etc/xinetd.d/irc &lt;&lt; <span style=color:#e6db74>&#34;EOF&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Begin /etc/xinetd.d/irc</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>service irc
+</span></span><span style=display:flex><span><span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>   disable      <span style=color:#f92672>=</span> yes
+</span></span><span style=display:flex><span>   socket_type  <span style=color:#f92672>=</span> stream
+</span></span><span style=display:flex><span>   wait         <span style=color:#f92672>=</span> no
+</span></span><span style=display:flex><span>   user         <span style=color:#f92672>=</span> root
+</span></span><span style=display:flex><span>   flags        <span style=color:#f92672>=</span> SENSOR
+</span></span><span style=display:flex><span>   type         <span style=color:#f92672>=</span> INTERNAL
+</span></span><span style=display:flex><span>   bind         <span style=color:#f92672>=</span> 192.168.1.30
+</span></span><span style=display:flex><span>   deny_time    <span style=color:#f92672>=</span> <span style=color:#ae81ff>60</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>}</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># End /etc/xinetd.d/irc</span>
+</span></span><span style=display:flex><span>EOF
+</span></span></code></pre></div><ol start=3><li><p>使用方式<br>若要激活服务，将配置文件中的<code>disable = yes</code>替换为<code>disable = no</code>
+重新启动<code>xinetd.service</code></p></li><li><p>权限问题</p></li><li><p><code>echo rsh >>/etc/securetty</code></p></li><li><p>注释/etc/pam.d/目录下服务授权配置（待展开）</p></li></ol></section><div class=divider></div><div class="flex flex-col md:flex-row justify-between gap-4 py-4"><a class="group btn btn-outline" href=/posts/arm-ports-differences/ title="arm ports differences"><ion-icon name=chevron-back></ion-icon><div class="inline-flex flex-col items-start"><span class="text-base-content/60 group-hover:text-neutral-content/60 text-xs font-normal">Previous page</span>
+<span class="max-w-48 truncate">arm ports differences</span></div></a><a class="group btn btn-outline" href=/posts/tpm-env/ title="Tpm Env"><div class="inline-flex flex-col items-end"><span class="text-base-content/60 group-hover:text-neutral-content/60 text-xs font-normal">Next page</span>
+<span class="max-w-48 truncate">Tpm Env</span></div><ion-icon name=chevron-forward></ion-icon></a></div></article></div><div class="hidden lg:flex lg:flex-col lg:items-end"><nav id=TableOfContents></nav></div></div><footer class="flex justify-between items-center gap-2 px-4 py-12"><div><p>© 2016 - 2025 Caisong's Blog</p><p class=text-sm>🌱
+<span class=text-base-content/60>Powered by <a class=hover:underline href=https://gohugo.io/ target=_blank>Hugo</a> with theme
+<a class=hover:underline href=https://github.com/g1eny0ung/hugo-theme-dream target=_blank>Dream</a>.</span></p></div><div x-data="{ icons: [
+    { name: 'moon', status: 'y' },
+    { name: 'sunny', status: 'n' },
+    { name: 'desktop', status: 'auto' }
+  ] }" class="flex items-center h-[32px] px-2 gap-2 border border-base-content/30 rounded-full"><template x-for="icon in icons"><div role=button tabindex=0 :aria-label="'Select ' + icon.name + ' mode'" class="group inline-flex justify-center items-center p-1 rounded-full cursor-pointer hover:bg-primary" :class="$store.darkMode.icon() === icon.name && 'bg-primary'" @click=$store.darkMode.toggle(icon.status)><ion-icon :name="`${icon.name}-outline`" class=group-hover:text-primary-content :class="$store.darkMode.icon() === icon.name && 'text-primary-content'"></ion-icon></div></template></div></footer></div></div><div class=back><div class=container><div class="dream-grid dream-grid-about"></div><footer class="flex justify-between items-center gap-2 px-4 py-12"><div><p>© 2016 - 2025 Caisong's Blog</p><p class=text-sm>🌱
+<span class=text-base-content/60>Powered by <a class=hover:underline href=https://gohugo.io/ target=_blank>Hugo</a> with theme
+<a class=hover:underline href=https://github.com/g1eny0ung/hugo-theme-dream target=_blank>Dream</a>.</span></p></div><div x-data="{ icons: [
+    { name: 'moon', status: 'y' },
+    { name: 'sunny', status: 'n' },
+    { name: 'desktop', status: 'auto' }
+  ] }" class="flex items-center h-[32px] px-2 gap-2 border border-base-content/30 rounded-full"><template x-for="icon in icons"><div role=button tabindex=0 :aria-label="'Select ' + icon.name + ' mode'" class="group inline-flex justify-center items-center p-1 rounded-full cursor-pointer hover:bg-primary" :class="$store.darkMode.icon() === icon.name && 'bg-primary'" @click=$store.darkMode.toggle(icon.status)><ion-icon :name="`${icon.name}-outline`" class=group-hover:text-primary-content :class="$store.darkMode.icon() === icon.name && 'text-primary-content'"></ion-icon></div></template></div></footer></div></div></div></div><script>window.lightTheme="emerald",window.darkTheme="forest"</script><script src=https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin=anonymous></script><script src=/js/grid.min.js></script><script src=/js/main.min.js></script><script type=module>
+      import mediumZoom from 'https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/+esm';
+      mediumZoom('#dream-single-post-content img')
+    </script><script type=module src=https://unpkg.com/ionicons@7.4.0/dist/ionicons/ionicons.esm.js></script><script nomodule src=https://unpkg.com/ionicons@7.4.0/dist/ionicons/ionicons.js></script></body></html>

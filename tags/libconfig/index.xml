@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Libconfig on Caisong's Blog</title><link>https://caisong.github.io/tags/libconfig/</link><description>Recent content in Libconfig on Caisong's Blog</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Mon, 25 Dec 2017 22:59:18 +0000</lastBuildDate><atom:link href="https://caisong.github.io/tags/libconfig/index.xml" rel="self" type="application/rss+xml"/><item><title>libconfig 入门</title><link>https://caisong.github.io/posts/libconfig/</link><pubDate>Mon, 25 Dec 2017 22:59:18 +0000</pubDate><guid>https://caisong.github.io/posts/libconfig/</guid><description>&lt;p>以下内容翻译自&lt;a href="http://www.hyperrealm.com/libconfig/libconfig_manual.html" title="libconfig manual">libconfig manual&lt;/a>
+版本1.4.9，最新版本请参阅&lt;a href="https://hyperrealm.github.io/libconfig/" title="libconfig">libconfig&lt;/a>&lt;/p>
+&lt;h1 id="应用示例">应用示例&lt;/h1>
+&lt;ol>
+&lt;li>配置文件&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plain" data-lang="plain">&lt;span style="display:flex;">&lt;span># Example application configuration file
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>version = &amp;#34;1.0&amp;#34;; //①
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>application:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> window:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> title = &amp;#34;My Application&amp;#34;;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> size = { w = 640; h = 480; };
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pos = { x = 350; y = 250; }; //②
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> };
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> list = ( ( &amp;#34;abc&amp;#34;, 123, true ), 1.234, ( /* an empty list */) );
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> books = ( { title = &amp;#34;Treasure Island&amp;#34;;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> author = &amp;#34;Robert Louis Stevenson&amp;#34;;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> price = 29.95;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> qty = 5; },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> { title = &amp;#34;Snow Crash&amp;#34;; //③
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> author = &amp;#34;Neal Stephenson&amp;#34;;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> price = 9.99;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> qty = 8; } );
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> misc:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pi = 3.141592654;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> bigint = 9223372036854775807L;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> columns = [ &amp;#34;Last Name&amp;#34;, &amp;#34;First Name&amp;#34;, &amp;#34;MI&amp;#34; ];
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> bitmask = 0x1FC3;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> };
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>};
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="2">
+&lt;li>读取方式
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: left">目标&lt;/th>
+ &lt;th style="text-align: left">路径&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: left">version ①&lt;/td>
+ &lt;td style="text-align: left">version&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">x ②&lt;/td>
+ &lt;td style="text-align: left">application.window.pos.x&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">title ③&lt;/td>
+ &lt;td style="text-align: left">application.books.[1].tittle&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;/li>
+&lt;/ol>
+&lt;p>路径按照元素名层层遍历，用&amp;rsquo;.&amp;lsquo;连接。类似数组和链表的情况，使用下标（从0开始）。&lt;strong>此处与C/C++不同，请注意 title ③的路径&lt;/strong>&lt;/p></description></item></channel></rss>

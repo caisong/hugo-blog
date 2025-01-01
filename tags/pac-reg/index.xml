@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Pac, Reg on Caisong's Blog</title><link>https://caisong.github.io/tags/pac-reg/</link><description>Recent content in Pac, Reg on Caisong's Blog</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Thu, 23 May 2019 22:22:11 +0000</lastBuildDate><atom:link href="https://caisong.github.io/tags/pac-reg/index.xml" rel="self" type="application/rss+xml"/><item><title>取消自动脚本代理</title><link>https://caisong.github.io/posts/%E5%8F%96%E6%B6%88%E8%87%AA%E5%8A%A8%E8%84%9A%E6%9C%AC%E4%BB%A3%E7%90%86/</link><pubDate>Thu, 23 May 2019 22:22:11 +0000</pubDate><guid>https://caisong.github.io/posts/%E5%8F%96%E6%B6%88%E8%87%AA%E5%8A%A8%E8%84%9A%E6%9C%AC%E4%BB%A3%E7%90%86/</guid><description>&lt;p>使用“飞机”设置PAC模式的时候，系统代理脚本坑人就会开启，但实际过程中，但我一般直接配置Firefox的PAC URL，且PAC开关开启后，许多软件没法直接打开（可能与我使用的代理有关）。&lt;/p>
+&lt;p>之前一直是&lt;code>Win+x&lt;/code>，设置 &amp;ndash;&amp;gt; 网络和Interne &amp;ndash;&amp;gt; 代理 ，取消开关。
+实在觉得不方便，就想找个一键脚本实现。经过尝试发现，其实打开PAC代理，就是在注册表中添加了PAC的URL，直接删除就可以关闭。注册表文件内容如下：&lt;/p>
+&lt;pre tabindex="0">&lt;code class="language-powsershell" data-lang="powsershell">Windows Registry Editor Version 5.00
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings]
+&amp;#34;AutoConfigURL&amp;#34;=-
+&lt;/code>&lt;/pre>&lt;p>[下载链接](/attach/Internet Settings.reg)&lt;/p></description></item></channel></rss>

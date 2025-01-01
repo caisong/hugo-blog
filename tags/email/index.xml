@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Email on Caisong's Blog</title><link>https://caisong.github.io/tags/email/</link><description>Recent content in Email on Caisong's Blog</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Thu, 02 Jun 2016 20:46:58 +0000</lastBuildDate><atom:link href="https://caisong.github.io/tags/email/index.xml" rel="self" type="application/rss+xml"/><item><title>python 发送邮件</title><link>https://caisong.github.io/posts/post/</link><pubDate>Thu, 02 Jun 2016 20:46:58 +0000</pubDate><guid>https://caisong.github.io/posts/post/</guid><description>&lt;h2 id="需求">需求&lt;/h2>
+&lt;p>每天发送工作日报，需要send一堆人，cc一堆人（公司规定，呵呵），还要添加附件。考虑到python能够方便的发送邮箱，就打算写个脚本。&lt;/p>
+&lt;!-- raw HTML omitted -->
+&lt;h2 id="代码">代码&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># -*- coding: utf-8 -*-&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#!/usr/bin/env python3&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">&amp;#39;&amp;#39;&amp;#39;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">发送带附件邮件
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">&amp;#39;&amp;#39;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> email.mime.text &lt;span style="color:#f92672">import&lt;/span> MIMEText
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> email.mime.multipart &lt;span style="color:#f92672">import&lt;/span> MIMEMultipart
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> smtplib
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> datetime &lt;span style="color:#f92672">import&lt;/span> date
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 创建一个带附件的实例&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>msg &lt;span style="color:#f92672">=&lt;/span> MIMEMultipart()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 接收列表&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>receiverList &lt;span style="color:#f92672">=&lt;/span> [&lt;span style="color:#e6db74">&amp;#39;abc@yeah.net&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;abc@qq.com&amp;#39;&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 抄送列表&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ccList &lt;span style="color:#f92672">=&lt;/span> [&lt;span style="color:#e6db74">&amp;#39;abc@yeah.net&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;abc@qq.com&amp;#39;&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 邮件头&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>msg[&lt;span style="color:#e6db74">&amp;#39;from&amp;#39;&lt;/span>] &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;song_cai@yeah.net&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>msg[&lt;span style="color:#e6db74">&amp;#39;to&amp;#39;&lt;/span>] &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;, &amp;#39;&lt;/span>&lt;span style="color:#f92672">.&lt;/span>join(receiverList)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>msg[&lt;span style="color:#e6db74">&amp;#39;subject&amp;#39;&lt;/span>] &lt;span style="color:#f92672">=&lt;/span> date&lt;span style="color:#f92672">.&lt;/span>today()&lt;span style="color:#f92672">.&lt;/span>strftime(&lt;span style="color:#e6db74">&amp;#34;%Y-%m-&lt;/span>&lt;span style="color:#e6db74">%d&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>) &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#e6db74">&amp;#39;&amp;#39;&amp;#39;XX工作日报&amp;#39;&amp;#39;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>msg[&lt;span style="color:#e6db74">&amp;#39;cc&amp;#39;&lt;/span>] &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;, &amp;#39;&lt;/span>&lt;span style="color:#f92672">.&lt;/span>join(ccList)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 正文&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>msg&lt;span style="color:#f92672">.&lt;/span>attach(MIMEText(open(&lt;span style="color:#e6db74">&amp;#39;d:&lt;/span>&lt;span style="color:#ae81ff">\\&lt;/span>&lt;span style="color:#e6db74">mailContext.txt&amp;#39;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#39;rb&amp;#39;&lt;/span>)&lt;span style="color:#f92672">.&lt;/span>read(), &lt;span style="color:#e6db74">&amp;#39;plain&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;utf-8&amp;#39;&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 附件&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>att &lt;span style="color:#f92672">=&lt;/span> MIMEText(open(&lt;span style="color:#e6db74">&amp;#39;d:&lt;/span>&lt;span style="color:#ae81ff">\\&lt;/span>&lt;span style="color:#e6db74">mailContext.txt&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;rb&amp;#39;&lt;/span>)&lt;span style="color:#f92672">.&lt;/span>read(), &lt;span style="color:#e6db74">&amp;#39;base64&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;utf-8&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>att[&lt;span style="color:#e6db74">&amp;#34;Content-Type&amp;#34;&lt;/span>] &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;application/octet-stream&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>att[&lt;span style="color:#e6db74">&amp;#34;Content-Disposition&amp;#34;&lt;/span>] &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;attachment; filename=&amp;#34;mailContext.txt&amp;#34;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>msg&lt;span style="color:#f92672">.&lt;/span>attach(att)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 发送邮件&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">try&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> server &lt;span style="color:#f92672">=&lt;/span> smtplib&lt;span style="color:#f92672">.&lt;/span>SMTP_SSL(&lt;span style="color:#e6db74">&amp;#39;&amp;#39;&amp;#39;smtp.qq.com&amp;#39;&amp;#39;&amp;#39;&lt;/span>, &lt;span style="color:#ae81ff">465&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> server&lt;span style="color:#f92672">.&lt;/span>login(&lt;span style="color:#e6db74">&amp;#39;song_cai@yeah.net&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;&amp;#39;&amp;#39;xxxxx&amp;#39;&amp;#39;&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> server&lt;span style="color:#f92672">.&lt;/span>sendmail(msg[&lt;span style="color:#e6db74">&amp;#39;from&amp;#39;&lt;/span>], receiverList &lt;span style="color:#f92672">+&lt;/span> ccList, msg&lt;span style="color:#f92672">.&lt;/span>as_string())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> server&lt;span style="color:#f92672">.&lt;/span>quit()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">&amp;#39;&amp;#39;&amp;#39;success&amp;#39;&amp;#39;&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">except&lt;/span> &lt;span style="color:#a6e22e">Exception&lt;/span> &lt;span style="color:#66d9ef">as&lt;/span> e:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> input(e)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="注意事项">注意事项&lt;/h2>
+&lt;ul>
+&lt;li>现在大部分邮箱使用SSL方式，所以对应地必须使用&lt;code>SMTP_SSL&lt;/code>,直接指定地址和端口，使用&lt;code>connect&lt;/code>的方式指定存在问题&lt;/li>
+&lt;li>正文要写在附件之前，否则会出现两个附件（即正文部分也成为附件了）&lt;/li>
+&lt;/ul>
+&lt;p>** 懒惰使人进步 **&lt;/p></description></item></channel></rss>

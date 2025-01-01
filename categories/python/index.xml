@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Python on Caisong's Blog</title><link>https://caisong.github.io/categories/python/</link><description>Recent content in Python on Caisong's Blog</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Fri, 03 Jun 2016 20:45:12 +0000</lastBuildDate><atom:link href="https://caisong.github.io/categories/python/index.xml" rel="self" type="application/rss+xml"/><item><title>python发送邮件（续）—— configparser</title><link>https://caisong.github.io/posts/configparser/</link><pubDate>Fri, 03 Jun 2016 20:45:12 +0000</pubDate><guid>https://caisong.github.io/posts/configparser/</guid><description>&lt;h2 id="简介">简介&lt;/h2>
+&lt;p>昨天代码一些基本配置全部在代码中，灵活性较差，考虑到通过配置文件的方式来实现。结构比较简单，不想用xml或json，类似配置数据库连接的&lt;code>property&lt;/code>文件就可以了，&lt;code>configparser&lt;/code>比较满足要求。
+python &lt;code>configparser&lt;/code>能够读取&lt;code>*.conf&lt;/code>与&lt;code>*.ini&lt;/code>的配置文件&lt;/p>
+&lt;!-- raw HTML omitted -->
+&lt;p>以下内容parser摘录自：&lt;a href="https://wiki.python.org/moin/ConfigParserExamples" title="configparserExamples">configparserExamples 示例&lt;/a>&lt;/p>
+&lt;h2 id="configparser-使用">configparser 使用&lt;/h2>
+&lt;h3 id="读配置文件">读配置文件&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-ini" data-lang="ini">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">[SectionOne]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">Status: Single&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">Name: Derek&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">Value: Yes&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">Age: 30&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">Single: True&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">[SectionTwo]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">FavoriteColor&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">Green, Red, Blue&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">[SectionThree]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">FamilyName: Johnson&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">[Others]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">Route: 66&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> ConfigParser
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>config &lt;span style="color:#f92672">=&lt;/span> ConfigParser&lt;span style="color:#f92672">.&lt;/span>ConfigParser()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>config&lt;span style="color:#f92672">.&lt;/span>read(&lt;span style="color:#e6db74">&amp;#39;config file path&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># read node&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>config&lt;span style="color:#f92672">.&lt;/span>get(&lt;span style="color:#e6db74">&amp;#39;SectionOne&amp;#39;&lt;/span>,&lt;span style="color:#e6db74">&amp;#39;Status)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># read node as list&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>config&lt;span style="color:#f92672">.&lt;/span>get(&lt;span style="color:#e6db74">&amp;#39;SectionTwo&amp;#39;&lt;/span>,&lt;span style="color:#e6db74">&amp;#39;FavoriteColor&amp;#39;&lt;/span>)&lt;span style="color:#f92672">.&lt;/span>replace(&lt;span style="color:#e6db74">&amp;#39; &amp;#39;&lt;/span>,&lt;span style="color:#e6db74">&amp;#39;&amp;#39;&lt;/span>)&lt;span style="color:#f92672">.&lt;/span>split(&lt;span style="color:#e6db74">&amp;#39;,&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="写配置文件">写配置文件&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># lets create that config file for next time...&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cfgfile &lt;span style="color:#f92672">=&lt;/span> open(&lt;span style="color:#e6db74">&amp;#34;c:&lt;/span>&lt;span style="color:#ae81ff">\\&lt;/span>&lt;span style="color:#e6db74">next.ini&amp;#34;&lt;/span>,&lt;span style="color:#e6db74">&amp;#39;w&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># add the settings to the structure of the file, and lets write it out...&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Config&lt;span style="color:#f92672">.&lt;/span>add_section(&lt;span style="color:#e6db74">&amp;#39;Person&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Config&lt;span style="color:#f92672">.&lt;/span>set(&lt;span style="color:#e6db74">&amp;#39;Person&amp;#39;&lt;/span>,&lt;span style="color:#e6db74">&amp;#39;HasEyes&amp;#39;&lt;/span>,&lt;span style="color:#66d9ef">True&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Config&lt;span style="color:#f92672">.&lt;/span>set(&lt;span style="color:#e6db74">&amp;#39;Person&amp;#39;&lt;/span>,&lt;span style="color:#e6db74">&amp;#39;Age&amp;#39;&lt;/span>, &lt;span style="color:#ae81ff">50&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Config&lt;span style="color:#f92672">.&lt;/span>write(cfgfile)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cfgfile&lt;span style="color:#f92672">.&lt;/span>close()
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="读取含有宏的配置文件">读取含有宏的配置文件&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-ini" data-lang="ini">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">[SectionOne]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">Param1: Hello&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">Param2: World&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">[SectionTwo]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">Param1: ${SectionOne:Param1} ${SectionOne:Param2}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">[SectionThree]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">Alpha: One&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">Bravo: Two&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">Charlie: ${Alpha} Mississippi&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;gt;&amp;gt;&amp;gt;&lt;/span> &lt;span style="color:#f92672">import&lt;/span> configparser
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;gt;&amp;gt;&amp;gt;&lt;/span> settings &lt;span style="color:#f92672">=&lt;/span> configparser&lt;span style="color:#f92672">.&lt;/span>ConfigParser()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;gt;&amp;gt;&amp;gt;&lt;/span> settings&lt;span style="color:#f92672">.&lt;/span>_interpolation &lt;span style="color:#f92672">=&lt;/span> configparser&lt;span style="color:#f92672">.&lt;/span>ExtendedInterpolation()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;gt;&amp;gt;&amp;gt;&lt;/span> settings&lt;span style="color:#f92672">.&lt;/span>read(&lt;span style="color:#e6db74">&amp;#39;settings.ini&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[&lt;span style="color:#e6db74">&amp;#39;settings.ini&amp;#39;&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;gt;&amp;gt;&amp;gt;&lt;/span> settings&lt;span style="color:#f92672">.&lt;/span>sections()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[&lt;span style="color:#e6db74">&amp;#39;SectionOne&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;SectionTwo&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;SectionThree&amp;#39;&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;gt;&amp;gt;&amp;gt;&lt;/span> settings&lt;span style="color:#f92672">.&lt;/span>get(&lt;span style="color:#e6db74">&amp;#39;SectionTwo&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;Param1&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">&amp;#39;Hello World&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;gt;&amp;gt;&amp;gt;&lt;/span> settings&lt;span style="color:#f92672">.&lt;/span>get(&lt;span style="color:#e6db74">&amp;#39;SectionThree&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;Charlie&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">&amp;#39;One Mississippi&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="发送邮件代码">发送邮件代码&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-ini" data-lang="ini">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">[mail]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">address: abc@qq.com&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">password: XXXXXXXXXX&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">smtp: smtp.qq.com&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">port: 465&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">subject: XXX 工作日志&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">reAddr: abc@qq.com, bcd@qq.com&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">ccAddr: abc@qq.com, bcd@qq.com&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">contextPath: a.txt&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">attachPath: b.txt &lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># -*- coding: utf-8 -*-&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">&amp;#39;&amp;#39;&amp;#39;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">发送带附件邮件
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">&amp;#39;&amp;#39;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> email.mime.text &lt;span style="color:#f92672">import&lt;/span> MIMEText
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> email.mime.multipart &lt;span style="color:#f92672">import&lt;/span> MIMEMultipart
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> smtplib
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> datetime &lt;span style="color:#f92672">import&lt;/span> date
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> configparser
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 读取配置&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>config &lt;span style="color:#f92672">=&lt;/span> configparser&lt;span style="color:#f92672">.&lt;/span>ConfigParser()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>config&lt;span style="color:#f92672">.&lt;/span>read(&lt;span style="color:#e6db74">&amp;#39;mail.ini&amp;#39;&lt;/span>, encoding&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;utf-8&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>address &lt;span style="color:#f92672">=&lt;/span> config&lt;span style="color:#f92672">.&lt;/span>get(&lt;span style="color:#e6db74">&amp;#39;mail&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;address&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 可以考虑加密&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>password &lt;span style="color:#f92672">=&lt;/span> config&lt;span style="color:#f92672">.&lt;/span>get(&lt;span style="color:#e6db74">&amp;#39;mail&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;password&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>smtp &lt;span style="color:#f92672">=&lt;/span> config&lt;span style="color:#f92672">.&lt;/span>get(&lt;span style="color:#e6db74">&amp;#39;mail&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;smtp&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>port &lt;span style="color:#f92672">=&lt;/span> config&lt;span style="color:#f92672">.&lt;/span>get(&lt;span style="color:#e6db74">&amp;#39;mail&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;port&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>subject &lt;span style="color:#f92672">=&lt;/span> config&lt;span style="color:#f92672">.&lt;/span>get(&lt;span style="color:#e6db74">&amp;#39;mail&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;subject&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 收件人&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>receiver &lt;span style="color:#f92672">=&lt;/span> config&lt;span style="color:#f92672">.&lt;/span>get(&lt;span style="color:#e6db74">&amp;#39;mail&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;reAddr&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 抄送人&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>carbonCopy &lt;span style="color:#f92672">=&lt;/span> config&lt;span style="color:#f92672">.&lt;/span>get(&lt;span style="color:#e6db74">&amp;#39;mail&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;ccAddr&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 正文&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>context &lt;span style="color:#f92672">=&lt;/span> config&lt;span style="color:#f92672">.&lt;/span>get(&lt;span style="color:#e6db74">&amp;#39;mail&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;contextPath&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 附件(暂时考虑的一个)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>attachment &lt;span style="color:#f92672">=&lt;/span> config&lt;span style="color:#f92672">.&lt;/span>get(&lt;span style="color:#e6db74">&amp;#39;mail&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;attachPath&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 创建一个带附件的实例&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>msg &lt;span style="color:#f92672">=&lt;/span> MIMEMultipart()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 加邮件头&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>msg[&lt;span style="color:#e6db74">&amp;#39;from&amp;#39;&lt;/span>] &lt;span style="color:#f92672">=&lt;/span> address
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>msg[&lt;span style="color:#e6db74">&amp;#39;to&amp;#39;&lt;/span>] &lt;span style="color:#f92672">=&lt;/span> receiver
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>msg[&lt;span style="color:#e6db74">&amp;#39;subject&amp;#39;&lt;/span>] &lt;span style="color:#f92672">=&lt;/span> date&lt;span style="color:#f92672">.&lt;/span>today()&lt;span style="color:#f92672">.&lt;/span>strftime(&lt;span style="color:#e6db74">&amp;#34;%Y-%m-&lt;/span>&lt;span style="color:#e6db74">%d&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>) &lt;span style="color:#f92672">+&lt;/span> subject
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>msg[&lt;span style="color:#e6db74">&amp;#39;cc&amp;#39;&lt;/span>] &lt;span style="color:#f92672">=&lt;/span> carbonCopy
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>msg&lt;span style="color:#f92672">.&lt;/span>attach(MIMEText(open(context, &lt;span style="color:#e6db74">&amp;#39;rb&amp;#39;&lt;/span>)&lt;span style="color:#f92672">.&lt;/span>read(), &lt;span style="color:#e6db74">&amp;#39;plain&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;utf-8&amp;#39;&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 构造附件&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">with&lt;/span> open(attachment, &lt;span style="color:#e6db74">&amp;#39;rb&amp;#39;&lt;/span>) &lt;span style="color:#66d9ef">as&lt;/span> myfile:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> att &lt;span style="color:#f92672">=&lt;/span> MIMEText(myfile&lt;span style="color:#f92672">.&lt;/span>read(), &lt;span style="color:#e6db74">&amp;#39;base64&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;utf-8&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> att[&lt;span style="color:#e6db74">&amp;#34;Content-Type&amp;#34;&lt;/span>] &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;application/octet-stream&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># 附件名&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> filename &lt;span style="color:#f92672">=&lt;/span> attachment&lt;span style="color:#f92672">.&lt;/span>split(&lt;span style="color:#e6db74">&amp;#39;&lt;/span>&lt;span style="color:#ae81ff">\\&lt;/span>&lt;span style="color:#e6db74">&amp;#39;&lt;/span>)[&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> att[&lt;span style="color:#e6db74">&amp;#34;Content-Disposition&amp;#34;&lt;/span>] &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;attachment; filename=&amp;#39;&lt;/span> &lt;span style="color:#f92672">+&lt;/span> filename
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> msg&lt;span style="color:#f92672">.&lt;/span>attach(att)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 发送邮件&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">try&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> server &lt;span style="color:#f92672">=&lt;/span> smtplib&lt;span style="color:#f92672">.&lt;/span>SMTP_SSL(smtp, int(port))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> server&lt;span style="color:#f92672">.&lt;/span>login(address, password)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># 所有收件人（包括抄送）&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> receiverList &lt;span style="color:#f92672">=&lt;/span> (receiver &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#e6db74">&amp;#39;,&amp;#39;&lt;/span> &lt;span style="color:#f92672">+&lt;/span> carbonCopy)&lt;span style="color:#f92672">.&lt;/span>replace(&lt;span style="color:#e6db74">&amp;#39; &amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;&amp;#39;&lt;/span>)&lt;span style="color:#f92672">.&lt;/span>split(&lt;span style="color:#e6db74">&amp;#39;,&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> server&lt;span style="color:#f92672">.&lt;/span>sendmail(msg[&lt;span style="color:#e6db74">&amp;#39;from&amp;#39;&lt;/span>], receiverList, msg&lt;span style="color:#f92672">.&lt;/span>as_string())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> server&lt;span style="color:#f92672">.&lt;/span>quit()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">&amp;#39;&amp;#39;&amp;#39;success&amp;#39;&amp;#39;&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">except&lt;/span> &lt;span style="color:#a6e22e">Exception&lt;/span> &lt;span style="color:#66d9ef">as&lt;/span> e:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(e)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="注意事项">注意事项&lt;/h2>
+&lt;ol>
+&lt;li>若密码中包含特殊字符，需要转义&lt;/li>
+&lt;/ol></description></item><item><title>python 发送邮件</title><link>https://caisong.github.io/posts/post/</link><pubDate>Thu, 02 Jun 2016 20:46:58 +0000</pubDate><guid>https://caisong.github.io/posts/post/</guid><description>&lt;h2 id="需求">需求&lt;/h2>
+&lt;p>每天发送工作日报，需要send一堆人，cc一堆人（公司规定，呵呵），还要添加附件。考虑到python能够方便的发送邮箱，就打算写个脚本。&lt;/p>
+&lt;!-- raw HTML omitted -->
+&lt;h2 id="代码">代码&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># -*- coding: utf-8 -*-&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#!/usr/bin/env python3&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">&amp;#39;&amp;#39;&amp;#39;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">发送带附件邮件
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">&amp;#39;&amp;#39;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> email.mime.text &lt;span style="color:#f92672">import&lt;/span> MIMEText
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> email.mime.multipart &lt;span style="color:#f92672">import&lt;/span> MIMEMultipart
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> smtplib
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> datetime &lt;span style="color:#f92672">import&lt;/span> date
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 创建一个带附件的实例&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>msg &lt;span style="color:#f92672">=&lt;/span> MIMEMultipart()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 接收列表&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>receiverList &lt;span style="color:#f92672">=&lt;/span> [&lt;span style="color:#e6db74">&amp;#39;abc@yeah.net&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;abc@qq.com&amp;#39;&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 抄送列表&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ccList &lt;span style="color:#f92672">=&lt;/span> [&lt;span style="color:#e6db74">&amp;#39;abc@yeah.net&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;abc@qq.com&amp;#39;&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 邮件头&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>msg[&lt;span style="color:#e6db74">&amp;#39;from&amp;#39;&lt;/span>] &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;song_cai@yeah.net&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>msg[&lt;span style="color:#e6db74">&amp;#39;to&amp;#39;&lt;/span>] &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;, &amp;#39;&lt;/span>&lt;span style="color:#f92672">.&lt;/span>join(receiverList)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>msg[&lt;span style="color:#e6db74">&amp;#39;subject&amp;#39;&lt;/span>] &lt;span style="color:#f92672">=&lt;/span> date&lt;span style="color:#f92672">.&lt;/span>today()&lt;span style="color:#f92672">.&lt;/span>strftime(&lt;span style="color:#e6db74">&amp;#34;%Y-%m-&lt;/span>&lt;span style="color:#e6db74">%d&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>) &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#e6db74">&amp;#39;&amp;#39;&amp;#39;XX工作日报&amp;#39;&amp;#39;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>msg[&lt;span style="color:#e6db74">&amp;#39;cc&amp;#39;&lt;/span>] &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;, &amp;#39;&lt;/span>&lt;span style="color:#f92672">.&lt;/span>join(ccList)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 正文&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>msg&lt;span style="color:#f92672">.&lt;/span>attach(MIMEText(open(&lt;span style="color:#e6db74">&amp;#39;d:&lt;/span>&lt;span style="color:#ae81ff">\\&lt;/span>&lt;span style="color:#e6db74">mailContext.txt&amp;#39;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#39;rb&amp;#39;&lt;/span>)&lt;span style="color:#f92672">.&lt;/span>read(), &lt;span style="color:#e6db74">&amp;#39;plain&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;utf-8&amp;#39;&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 附件&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>att &lt;span style="color:#f92672">=&lt;/span> MIMEText(open(&lt;span style="color:#e6db74">&amp;#39;d:&lt;/span>&lt;span style="color:#ae81ff">\\&lt;/span>&lt;span style="color:#e6db74">mailContext.txt&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;rb&amp;#39;&lt;/span>)&lt;span style="color:#f92672">.&lt;/span>read(), &lt;span style="color:#e6db74">&amp;#39;base64&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;utf-8&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>att[&lt;span style="color:#e6db74">&amp;#34;Content-Type&amp;#34;&lt;/span>] &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;application/octet-stream&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>att[&lt;span style="color:#e6db74">&amp;#34;Content-Disposition&amp;#34;&lt;/span>] &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;attachment; filename=&amp;#34;mailContext.txt&amp;#34;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>msg&lt;span style="color:#f92672">.&lt;/span>attach(att)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 发送邮件&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">try&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> server &lt;span style="color:#f92672">=&lt;/span> smtplib&lt;span style="color:#f92672">.&lt;/span>SMTP_SSL(&lt;span style="color:#e6db74">&amp;#39;&amp;#39;&amp;#39;smtp.qq.com&amp;#39;&amp;#39;&amp;#39;&lt;/span>, &lt;span style="color:#ae81ff">465&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> server&lt;span style="color:#f92672">.&lt;/span>login(&lt;span style="color:#e6db74">&amp;#39;song_cai@yeah.net&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;&amp;#39;&amp;#39;xxxxx&amp;#39;&amp;#39;&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> server&lt;span style="color:#f92672">.&lt;/span>sendmail(msg[&lt;span style="color:#e6db74">&amp;#39;from&amp;#39;&lt;/span>], receiverList &lt;span style="color:#f92672">+&lt;/span> ccList, msg&lt;span style="color:#f92672">.&lt;/span>as_string())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> server&lt;span style="color:#f92672">.&lt;/span>quit()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">&amp;#39;&amp;#39;&amp;#39;success&amp;#39;&amp;#39;&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">except&lt;/span> &lt;span style="color:#a6e22e">Exception&lt;/span> &lt;span style="color:#66d9ef">as&lt;/span> e:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> input(e)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="注意事项">注意事项&lt;/h2>
+&lt;ul>
+&lt;li>现在大部分邮箱使用SSL方式，所以对应地必须使用&lt;code>SMTP_SSL&lt;/code>,直接指定地址和端口，使用&lt;code>connect&lt;/code>的方式指定存在问题&lt;/li>
+&lt;li>正文要写在附件之前，否则会出现两个附件（即正文部分也成为附件了）&lt;/li>
+&lt;/ul>
+&lt;p>** 懒惰使人进步 **&lt;/p></description></item></channel></rss>

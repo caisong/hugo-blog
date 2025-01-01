@@ -5,4 +5,15 @@
 &lt;li>&lt;code>thread apply ID1 ID2 command&lt;/code> 让一个或者多个线程执行GDB命令command。&lt;/li>
 &lt;li>&lt;code>thread apply all command&lt;/code> 让所有被调试线程执行GDB命令command。&lt;/li>
 &lt;li>&lt;code>set scheduler-locking off|on|step&lt;/code> 估计是实际使用过多线程调试的人都可以发现，在使用step或者continue命令调试当前被调试线程的时候，其他线程也是同时执行的，怎么只让被调试程序执行呢？通过这个命令就可以实现这个需求。off 不锁定任何线程，也就是所有线程都执行，这是默认值。 on 只有当前被调试程序会执行。 step 在单步的时候，除了next过一个函数的情况(熟悉情况的人可能知道，这其实是一个设置断点然后continue的行为)以外，只有当前线程会执行。&lt;/li>
+&lt;/ul></description></item><item><title>gdb problem inside docker container</title><link>https://caisong.github.io/posts/docker-gdb/</link><pubDate>Sun, 17 Dec 2017 20:53:59 +0000</pubDate><guid>https://caisong.github.io/posts/docker-gdb/</guid><description>&lt;blockquote>
+ &lt;p>warning: Error disabling address space randomization: Operation not permitted&lt;/p>
+
+ &lt;/blockquote>
+
+&lt;ul>
+&lt;li>
+&lt;p>solutions:&lt;a href="https://stackoverflow.com/questions/35860527/warning-error-disabling-address-space-randomization-operation-not-permitted">stackoverflow&lt;/a>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>docker run --cap-add&lt;span style="color:#f92672">=&lt;/span>SYS_PTRACE --security-opt seccomp&lt;span style="color:#f92672">=&lt;/span>unconfined
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>** There is no such options for &lt;code>docker exec&lt;/code> command, so I recreate a container. Maybe there are others ways, please let me know. Thanks **&lt;/p>
+&lt;/li>
 &lt;/ul></description></item></channel></rss>

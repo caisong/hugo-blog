@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>DataBase on Caisong's Blog</title><link>https://caisong.github.io/categories/database/</link><description>Recent content in DataBase on Caisong's Blog</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Wed, 12 Oct 2016 21:32:48 +0000</lastBuildDate><atom:link href="https://caisong.github.io/categories/database/index.xml" rel="self" type="application/rss+xml"/><item><title>PostgreSQL ODBC</title><link>https://caisong.github.io/posts/postgresql-odbc/</link><pubDate>Wed, 12 Oct 2016 21:32:48 +0000</pubDate><guid>https://caisong.github.io/posts/postgresql-odbc/</guid><description>&lt;!-- raw HTML omitted -->
+&lt;ul>
+&lt;li>安装unixODBC&lt;/li>
+&lt;li>安装PostgreSQL ODBC驱动&lt;/li>
+&lt;li>检查驱动配置&lt;/li>
+&lt;li>添加数据源&lt;/li>
+&lt;li>修改PostgrsSQL认证方式&lt;/li>
+&lt;li>验证&lt;/li>
+&lt;li>ODBC 连接数据库&lt;/li>
+&lt;/ul>
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;h2 id="安装unixodbc">安装unixODBC&lt;/h2>
+&lt;p>直接下载官网的源码编译安装就可以了，比较简单&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>curl -O http://www.unixodbc.org/unixODBC-2.3.4.tar.gz
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tar xvf unixODBC-2.3.4.tar.gz
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cd unixODBC-2.3.4
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>./configure --sysconfdir&lt;span style="color:#f92672">=&lt;/span>/etc
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>make
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>make install
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>或者直接&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>yum install unixODBC
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="安装postgresql-odbc驱动">安装PostgreSQL ODBC驱动&lt;/h2>
+&lt;p>按照之前添加源的方式安装PostgreSQL，现在可以直接安装ODBC驱动.&lt;!-- raw HTML omitted -->
+添加源方法&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>yum install http://yum.postgresql.org/9.5/redhat/rhel-7-x86_64/pgdg-redhat95-9.5-2.noarch.rpm
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>PostgreSQL 安装</title><link>https://caisong.github.io/posts/install/</link><pubDate>Wed, 12 Oct 2016 21:13:50 +0000</pubDate><guid>https://caisong.github.io/posts/install/</guid><description>&lt;!-- raw HTML omitted -->
+&lt;ul>
+&lt;li>安装&lt;/li>
+&lt;li>添加用户和数据库&lt;/li>
+&lt;li>登陆数据库&lt;/li>
+&lt;li>常用控制台命令&lt;/li>
+&lt;li>基本SQL操作&lt;/li>
+&lt;li>备份与恢复&lt;/li>
+&lt;/ul>
+&lt;!-- raw HTML omitted --></description></item></channel></rss>

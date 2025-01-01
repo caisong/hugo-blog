@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Arm on Caisong's Blog</title><link>https://caisong.github.io/tags/arm/</link><description>Recent content in Arm on Caisong's Blog</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Wed, 13 Sep 2017 22:25:00 +0000</lastBuildDate><atom:link href="https://caisong.github.io/tags/arm/index.xml" rel="self" type="application/rss+xml"/><item><title>arm ports differences</title><link>https://caisong.github.io/posts/arm-ports-differences/</link><pubDate>Wed, 13 Sep 2017 22:25:00 +0000</pubDate><guid>https://caisong.github.io/posts/arm-ports-differences/</guid><description>&lt;h2 id="three-ports-to-different-flavours-of-little-endian-arm-hardware">Three ports to different flavours of little-endian ARM hardware&lt;/h2>
+&lt;p>&lt;strong>The following content reproudced from Debian Wiki&lt;/strong> &lt;a href="https://wiki.debian.org/ArmPorts" title="Debian wiki">ArmPorts&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>ArmPort - the first port, using the &amp;ldquo;old&amp;rdquo; (now obsolete) ABI (OABI). First released with 2.2 (Potato), last released with 5.0 (lenny). GNU Triplet: arm-linux-gnu&lt;/li>
+&lt;li>ArmEabiPort - newer port using the &amp;ldquo;new&amp;rdquo; ABI (EABI), supported on Arm v4t and higher. First released with 5.0 (lenny). GNU Triplet: arm-linux-gnueabi&lt;/li>
+&lt;li>ArmHardFloatPort - the latest 32-bit port, using the hard-float version of the &amp;ldquo;new&amp;rdquo; ABI (EABI), targeting Arm v7 and up. First released with 7 (wheezy). GNU Triplet: arm-linux-gnueabihf&lt;/li>
+&lt;li>Arm64Port - the latest port, for the 64-bit Armv8 architecture. First released with 8 (jessie). GNU Triplet: aarch64-linux-gnu&lt;/li>
+&lt;/ul>
+&lt;h2 id="prebuilt-toolchains">Prebuilt toolchains&lt;/h2>
+&lt;ul>
+&lt;li>Debian cross-tools packages
+&lt;strong>The following content reproudced from elinux&lt;/strong> &lt;a href="http://www.elinux.org/Toolchains" title="toolchains">toolchains&lt;/a>&lt;br>
+For Debian users, the toolchains problem is fairly reliably solved.
+For a debian-based box just install pre-built cross toolchains from Debian experimental.
+Targets include nearly all debian-supported architectures As of this writing supported compiler is gcc 4.9. You can get older unsupported compilers from emdebian.
+You will need to add the target architecture to your list of installable architectures. eg.&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span> dpkg --add-architecture armhf
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> apt-get update
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> apt-get install gcc-arm-linux-gnueabihf
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># arm64 gcc-r-aarch-linux-gnu&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="toolchain-building-systems">Toolchain building systems&lt;/h2>
+&lt;ul>
+&lt;li>Bitbake
+Bitbake is the tool used by &lt;a href="http://wiki.openembedded.net/index.php/Main_Page" title="OpenEmbedded">OpenEmbedded&lt;/a>. The best way to get started is probably by just building an existing distribution that uses openembedded.&lt;/li>
+&lt;/ul></description></item></channel></rss>

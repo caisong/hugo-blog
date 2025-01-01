@@ -1,0 +1,209 @@
+<!doctype html><html lang=en-us x-data :class=$store.darkMode.class() :data-theme=$store.darkMode.theme()><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><title>PostgreSQL ODBC | Caisong's Blog</title>
+<link rel=canonical href=https://caisong.github.io/posts/postgresql-odbc/><meta name=author content="Cai Song"><meta name=description content=" 安装unixODBC 安装PostgreSQL ODBC驱动 检查驱动配置 添加数据源 修改PostgrsSQL认证方式 验证 ODBC 连接数据库 安装unixODBC 直接下载官网的源码编译安装就可以了，比较简单
+curl -O http://www.unixodbc.org/unixODBC-2.3.4.tar.gz tar xvf unixODBC-2.3.4.tar.gz cd unixODBC-2.3.4 ./configure --sysconfdir=/etc make make install 或者直接
+yum install unixODBC 安装PostgreSQL ODBC驱动 按照之前添加源的方式安装PostgreSQL，现在可以直接安装ODBC驱动. 添加源方法
+yum install http://yum.postgresql.org/9.5/redhat/rhel-7-x86_64/pgdg-redhat95-9.5-2.noarch.rpm "><meta name=keywords content="Postgresql,Odbc"><meta name=generator content="Hugo 0.140.2"><meta property="og:url" content="https://caisong.github.io/posts/postgresql-odbc/"><meta property="og:site_name" content="Caisong's Blog"><meta property="og:title" content="PostgreSQL ODBC"><meta property="og:description" content="安装unixODBC 安装PostgreSQL ODBC驱动 检查驱动配置 添加数据源 修改PostgrsSQL认证方式 验证 ODBC 连接数据库 安装unixODBC 直接下载官网的源码编译安装就可以了，比较简单
+curl -O http://www.unixodbc.org/unixODBC-2.3.4.tar.gz tar xvf unixODBC-2.3.4.tar.gz cd unixODBC-2.3.4 ./configure --sysconfdir=/etc make make install 或者直接
+yum install unixODBC 安装PostgreSQL ODBC驱动 按照之前添加源的方式安装PostgreSQL，现在可以直接安装ODBC驱动. 添加源方法
+yum install http://yum.postgresql.org/9.5/redhat/rhel-7-x86_64/pgdg-redhat95-9.5-2.noarch.rpm"><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2016-10-12T21:32:48+00:00"><meta property="article:modified_time" content="2016-10-12T21:32:48+00:00"><meta property="article:tag" content="Postgresql"><meta property="article:tag" content="Odbc"><meta name=twitter:card content="summary"><meta name=twitter:title content="PostgreSQL ODBC"><meta name=twitter:description content="安装unixODBC 安装PostgreSQL ODBC驱动 检查驱动配置 添加数据源 修改PostgrsSQL认证方式 验证 ODBC 连接数据库 安装unixODBC 直接下载官网的源码编译安装就可以了，比较简单
+curl -O http://www.unixodbc.org/unixODBC-2.3.4.tar.gz tar xvf unixODBC-2.3.4.tar.gz cd unixODBC-2.3.4 ./configure --sysconfdir=/etc make make install 或者直接
+yum install unixODBC 安装PostgreSQL ODBC驱动 按照之前添加源的方式安装PostgreSQL，现在可以直接安装ODBC驱动. 添加源方法
+yum install http://yum.postgresql.org/9.5/redhat/rhel-7-x86_64/pgdg-redhat95-9.5-2.noarch.rpm"><link rel=stylesheet href=/css/output.min.css><style>pre{padding:1em;overflow:auto}</style><script defer src=https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js></script></head><body x-data="{
+    flip: false,
+  }"><div id=dream-global-bg></div><nav x-data="{ isSticky: false }" x-init="window.addEventListener('scroll', () => { isSticky = window.scrollY > 30 })" class="sticky top-0 z-30 mt-4 lg:mt-8 py-4" :class="{ 'bg-base-100 shadow-lg dark:border-b dark:border-base-content/30': isSticky }"><div class="container flex justify-between px-4"><section class="flex items-center gap-4"><div class="avatar cursor-pointer hover:online" @click="flip = !flip" title="Flip it!"><div class="h-10 rounded-full"><img src=/ alt="A blog about all things technical."></div></div><div><a href=https://caisong.github.io/ class="text-lg font-semibold cursor-pointer">A blog about all things technical.</a></div></section><div class="dropdown dropdown-end sm:hidden"><div tabindex=0 role=button class="btn btn-ghost btn-square" aria-label="Select an option"><ion-icon name=menu class=text-2xl></ion-icon></div><ul tabindex=0 class="dropdown-content menu w-36 bg-base-100 rounded-box z-[1] shadow-md"><li><a class="inline-flex items-center p-2 cursor-pointer" href=/index.xml title=RSS><ion-icon name=logo-rss></ion-icon>RSS</a></li><li><a class="inline-flex items-center p-2 cursor-pointer" href=/posts title=Archives><ion-icon name=archive></ion-icon>Archives</a></li><li><a class="inline-flex items-center p-2 cursor-pointer" href=/categories title="All Categories"><ion-icon name=grid></ion-icon>All Categories</a></li><li><a class="inline-flex items-center p-2 cursor-pointer" href=/tags title="All Tags"><ion-icon name=pricetags></ion-icon>All Tags</a></li></ul></div><section class="hidden sm:flex sm:items-center sm:gap-2 md:gap-4"><a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href=/index.xml title=RSS><ion-icon class=group-hover:text-primary-content name=logo-rss></ion-icon></a><div class="dropdown dropdown-end dropdown-hover"><div tabindex=0 role=button class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" aria-label="Select an option"><ion-icon class="group-hover:text-primary-content text-xl" name=menu></ion-icon></div><ul tabindex=0 class="dropdown-content menu w-36 bg-base-100 rounded-box z-[1] shadow-xl"><li><a class="inline-flex items-center p-2 cursor-pointer" href=/posts title=Archives><ion-icon name=archive></ion-icon>Archives</a></li><li><a class="inline-flex items-center p-2 cursor-pointer" href=/categories title="All Categories"><ion-icon name=grid></ion-icon>All Categories</a></li><li><a class="inline-flex items-center p-2 cursor-pointer" href=/tags title="All Tags"><ion-icon name=pricetags></ion-icon>All Tags</a></li></ul></div></section></div></nav><div class=flip-container :class="{ 'flip-it': flip }"><div class=flipper><div class=front><div class=container><div class="lg:grid lg:grid-cols-4 gap-4 mt-4 px-4"><div class="hidden lg:block"></div><div class=lg:col-span-2><article class="mx-auto prose prose-quoteless dark:prose-invert" id=dream-single-post-main itemscope itemtype=http://schema.org/Article><meta itemprop=name content="PostgreSQL ODBC"><meta itemprop=description content="安装unixODBC 安装PostgreSQL ODBC驱动 检查驱动配置 添加数据源 修改PostgrsSQL认证方式 验证 ODBC 连接数据库 安装unixODBC 直接下载官网的源码编译安装就可以了，比较简单
+curl -O http://www.unixodbc.org/unixODBC-2.3.4.tar.gz tar xvf unixODBC-2.3.4.tar.gz cd unixODBC-2.3.4 ./configure --sysconfdir=/etc make make install 或者直接
+yum install unixODBC 安装PostgreSQL ODBC驱动 按照之前添加源的方式安装PostgreSQL，现在可以直接安装ODBC驱动. 添加源方法
+yum install http://yum.postgresql.org/9.5/redhat/rhel-7-x86_64/pgdg-redhat95-9.5-2.noarch.rpm"><meta itemprop=datePublished content="2016-10-12T21:32:48+00:00"><meta itemprop=dateModified content="2016-10-12T21:32:48+00:00"><meta itemprop=wordCount content="503"><meta itemprop=keywords content="Postgresql,Odbc"><header><h1 itemprop=headline>PostgreSQL ODBC</h1><p class=text-sm>Wednesday, Oct 12, 2016
+| <span>3 minute read</span>
+| <span>Updated at
+Wednesday, Oct 12, 2016</span></p><div class="flex justify-between"><div class="flex items-center"><span>@</span>
+<span itemprop=author itemscope itemtype=https://schema.org/Person><span itemprop=name>Cai Song</span></span></div><div class="flex items-center gap-2"><a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="https://x.com/intent/post?text=PostgreSQL%20ODBC&amp;url=https://caisong.github.io/posts/postgresql-odbc/" target=_blank rel="noopener noreferrer" title="Share on X"><ion-icon class=group-hover:text-primary-content name=logo-x></ion-icon></a><a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="https://facebook.com/sharer/sharer.php?u=https://caisong.github.io/posts/postgresql-odbc/" target=_blank rel="noopener noreferrer" title="Share on Facebook"><ion-icon class=group-hover:text-primary-content name=logo-facebook></ion-icon></a><a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="https://wa.me/?text=PostgreSQL%20ODBC%20https://caisong.github.io/posts/postgresql-odbc/" target=_blank rel="noopener noreferrer" title="Share on WhatsApp"><ion-icon class=group-hover:text-primary-content name=logo-whatsapp></ion-icon></a></div></div></header><section id=dream-single-post-content itemprop=articleBody><ul><li>安装unixODBC</li><li>安装PostgreSQL ODBC驱动</li><li>检查驱动配置</li><li>添加数据源</li><li>修改PostgrsSQL认证方式</li><li>验证</li><li>ODBC 连接数据库</li></ul><h2 id=安装unixodbc>安装unixODBC</h2><p>直接下载官网的源码编译安装就可以了，比较简单</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>curl -O http://www.unixodbc.org/unixODBC-2.3.4.tar.gz
+</span></span><span style=display:flex><span>tar xvf unixODBC-2.3.4.tar.gz
+</span></span><span style=display:flex><span>cd unixODBC-2.3.4
+</span></span><span style=display:flex><span>./configure --sysconfdir<span style=color:#f92672>=</span>/etc
+</span></span><span style=display:flex><span>make
+</span></span><span style=display:flex><span>make install
+</span></span></code></pre></div><p>或者直接</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>yum install unixODBC
+</span></span></code></pre></div><h2 id=安装postgresql-odbc驱动>安装PostgreSQL ODBC驱动</h2><p>按照之前添加源的方式安装PostgreSQL，现在可以直接安装ODBC驱动.
+添加源方法</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>yum install http://yum.postgresql.org/9.5/redhat/rhel-7-x86_64/pgdg-redhat95-9.5-2.noarch.rpm
+</span></span></code></pre></div><p>安装驱动</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>yum install postgresql95-odbc postgresql95-odbc-debuginfo -y
+</span></span></code></pre></div><h2 id=检查驱动配置>检查驱动配置</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>odbcinst -q -d
+</span></span></code></pre></div><p>若没有发现<code>PostgreSQL</code>相关的驱动项,通过<code>odbcinst -j</code>查看odbc配置信息，再查看对应_Drivers_项对应文件内容. 文件内容如下：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-plain data-lang=plain><span style=display:flex><span>[ODBC Driver for PostgresSQL]
+</span></span><span style=display:flex><span>Description = ODBC Driver for PostgreSQL
+</span></span><span style=display:flex><span>Driver = /usr/pgsql-9.5/lib/psqlodbc.so
+</span></span><span style=display:flex><span>Setup = /usr/lib64/libodbcpsqlS.so
+</span></span><span style=display:flex><span>FileUsage = 1
+</span></span></code></pre></div><p>若<code>odbcinst.ini</code>文件为空，可手动更改</p><h2 id=添加数据源>添加数据源</h2><p>根据<code>odbcinst -j</code>查询的配置，修改<code>SYSTEM DATA SOURCES</code>对应的数据配置文件</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-plain data-lang=plain><span style=display:flex><span>[mydb]
+</span></span><span style=display:flex><span>Description         = PostgreSQL connection to SallyDB
+</span></span><span style=display:flex><span>Driver              = ODBC Driver for PostgresSQL
+</span></span><span style=display:flex><span>Database            = caisong
+</span></span><span style=display:flex><span>Servername          = 127.0.0.1
+</span></span><span style=display:flex><span>UserName            = caisong
+</span></span><span style=display:flex><span>Password            = 123456
+</span></span><span style=display:flex><span>Port                = 5432
+</span></span><span style=display:flex><span>Protocol            = 9.5
+</span></span><span style=display:flex><span>ReadOnly            = No
+</span></span><span style=display:flex><span>RowVersioning       = No
+</span></span><span style=display:flex><span>ShowSystemTables    = No
+</span></span><span style=display:flex><span>ConnSettings        =
+</span></span></code></pre></div><p><strong>Driver 项的值务必与驱动配置文件下的值一致</strong></p><h2 id=修改postgrssql认证方式>修改PostgrsSQL认证方式</h2><p>PostgreSQL默认本地认证方式为<code>peer</code>，远程连接认证方式为<code>ident</code> 具体差别，请参照<a href=https://www.postgresql.org/docs/9.6/static/auth-methods.html title=auth-methods>auth-methods</a> 修改host-based authentication认证文件，其路径配置在DB中，可通过SQL查询</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=display:flex><span><span style=color:#66d9ef>select</span> name, setting <span style=color:#66d9ef>from</span> pg_settings <span style=color:#66d9ef>where</span> category<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;File Locations&#39;</span>;
+</span></span></code></pre></div><p>默认配置如下：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-plain data-lang=plain><span style=display:flex><span>name        |                 setting
+</span></span><span style=display:flex><span>-------------------+-----------------------------------------
+</span></span><span style=display:flex><span>config_file       | /var/lib/pgsql/9.5/data/postgresql.conf
+</span></span><span style=display:flex><span>data_directory    | /var/lib/pgsql/9.5/data
+</span></span><span style=display:flex><span>external_pid_file |
+</span></span><span style=display:flex><span>hba_file          | /var/lib/pgsql/9.5/data/pg_hba.conf
+</span></span><span style=display:flex><span>ident_file        | /var/lib/pgsql/9.5/data/pg_ident.conf
+</span></span><span style=display:flex><span>(5 rows)
+</span></span></code></pre></div><p>修改<code># IPv4 local connections</code> 下一行中的<del>ident</del> 为 _md5_就可以了</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-plain data-lang=plain><span style=display:flex><span># IPv4 local connections:
+</span></span><span style=display:flex><span>host    all             all             127.0.0.1/32            md5
+</span></span></code></pre></div><p>修改完成之后需要重新加载配置文件 可以使用<code>pg_ctl reload</code>命令，默认该命令不在<code>PATH</code>下，其路径为<code>/usr/pgsql-9.5/bin/</code>,或者直接重启服务</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>systemctl restart postgresql-9.5
+</span></span></code></pre></div><h2 id=验证>验证</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>isql mydb
+</span></span></code></pre></div><p>如果出现错误，添加<code>-v</code>重新执行命令，此时能显示具体错误了。</p><h2 id=odbc-连接数据库>ODBC 连接数据库</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-c data-lang=c><span style=display:flex><span><span style=color:#75715e>/*
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * testing unixODBC
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * the code from unixODBC website
+</span></span></span><span style=display:flex><span><span style=color:#75715e> */</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;stdlib.h&gt;</span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;stdio.h&gt;</span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;odbc/sql.h&gt;</span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;odbc/sqlext.h&gt;</span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;odbc/sqltypes.h&gt;</span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>SQLHENV V_OD_Env;                   <span style=color:#75715e>// Handle ODBC environment
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>long</span> V_OD_erg;                      <span style=color:#75715e>// result of functions
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>SQLHDBC V_OD_hdbc;                  <span style=color:#75715e>// Handle connection
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>char</span> V_OD_stat[<span style=color:#ae81ff>10</span>];                 <span style=color:#75715e>// Status SQL
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>SQLINTEGER V_OD_err,V_OD_rowanz,V_OD_id;
+</span></span><span style=display:flex><span>SQLSMALLINT V_OD_mlen,V_OD_colanz;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>char</span> V_OD_msg[<span style=color:#ae81ff>200</span>],V_OD_buffer[<span style=color:#ae81ff>200</span>];
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>int</span> <span style=color:#a6e22e>main</span>(<span style=color:#66d9ef>int</span> argc,<span style=color:#66d9ef>char</span> <span style=color:#f92672>*</span>argv[])
+</span></span><span style=display:flex><span>{
+</span></span><span style=display:flex><span>        SQLHSTMT V_OD_hstmt;
+</span></span><span style=display:flex><span>        <span style=color:#75715e>// 1. allocate Environment handle and register version
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        V_OD_erg<span style=color:#f92672>=</span><span style=color:#a6e22e>SQLAllocHandle</span>(SQL_HANDLE_ENV,SQL_NULL_HANDLE,<span style=color:#f92672>&amp;</span>V_OD_Env);
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> ((V_OD_erg <span style=color:#f92672>!=</span> SQL_SUCCESS) <span style=color:#f92672>&amp;&amp;</span> (V_OD_erg <span style=color:#f92672>!=</span> SQL_SUCCESS_WITH_INFO))
+</span></span><span style=display:flex><span>        {
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>printf</span>(<span style=color:#e6db74>&#34;Error AllocHandle</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>);
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>exit</span>(<span style=color:#ae81ff>0</span>);
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>        V_OD_erg<span style=color:#f92672>=</span><span style=color:#a6e22e>SQLSetEnvAttr</span>(V_OD_Env, SQL_ATTR_ODBC_VERSION, (<span style=color:#66d9ef>void</span><span style=color:#f92672>*</span>)SQL_OV_ODBC3, <span style=color:#ae81ff>0</span>);
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> ((V_OD_erg <span style=color:#f92672>!=</span> SQL_SUCCESS) <span style=color:#f92672>&amp;&amp;</span> (V_OD_erg <span style=color:#f92672>!=</span> SQL_SUCCESS_WITH_INFO))
+</span></span><span style=display:flex><span>        {
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>printf</span>(<span style=color:#e6db74>&#34;Error SetEnv</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>);
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>SQLFreeHandle</span>(SQL_HANDLE_ENV, V_OD_Env);
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>exit</span>(<span style=color:#ae81ff>0</span>);
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>        <span style=color:#75715e>// 2. allocate connection handle, set timeout
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        V_OD_erg <span style=color:#f92672>=</span> <span style=color:#a6e22e>SQLAllocHandle</span>(SQL_HANDLE_DBC, V_OD_Env, <span style=color:#f92672>&amp;</span>V_OD_hdbc);
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> ((V_OD_erg <span style=color:#f92672>!=</span> SQL_SUCCESS) <span style=color:#f92672>&amp;&amp;</span> (V_OD_erg <span style=color:#f92672>!=</span> SQL_SUCCESS_WITH_INFO))
+</span></span><span style=display:flex><span>        {
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>printf</span>(<span style=color:#e6db74>&#34;Error AllocHDB %d</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>,V_OD_erg);
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>SQLFreeHandle</span>(SQL_HANDLE_ENV, V_OD_Env);
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>exit</span>(<span style=color:#ae81ff>0</span>);
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>SQLSetConnectAttr</span>(V_OD_hdbc, SQL_LOGIN_TIMEOUT, (SQLPOINTER <span style=color:#f92672>*</span>)<span style=color:#ae81ff>5</span>, <span style=color:#ae81ff>0</span>);
+</span></span><span style=display:flex><span>        <span style=color:#75715e>// 3. Connect to the datasource &#34;mydb&#34;
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        V_OD_erg <span style=color:#f92672>=</span> <span style=color:#a6e22e>SQLDriverConnect</span>(V_OD_hdbc,
+</span></span><span style=display:flex><span>                                    NULL,
+</span></span><span style=display:flex><span>                                    <span style=color:#e6db74>&#34;DRIVER={ODBC Driver for PostgresSQL};Server=127.0.0.1;Port=5432;Database=caisong;Uid=caisong;Pwd=123456;&#34;</span>,
+</span></span><span style=display:flex><span>                                    SQL_NTS,
+</span></span><span style=display:flex><span>                                    V_OD_buffer,
+</span></span><span style=display:flex><span>                                    <span style=color:#ae81ff>200</span>,
+</span></span><span style=display:flex><span>                                    <span style=color:#f92672>&amp;</span>V_OD_mlen,
+</span></span><span style=display:flex><span>                                    SQL_DRIVER_NOPROMPT);
+</span></span><span style=display:flex><span>        <span style=color:#75715e>//a. direct connect into datasource
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#75715e>/*V_OD_erg = SQLConnect(V_OD_hdbc, (SQLCHAR*) &#34;mydb&#34;, SQL_NTS,
+</span></span></span><span style=display:flex><span><span style=color:#75715e>                                         (SQLCHAR*) &#34;caisong&#34;, SQL_NTS,
+</span></span></span><span style=display:flex><span><span style=color:#75715e>                                        (SQLCHAR*) &#34;123456&#34;, SQL_NTS);
+</span></span></span><span style=display:flex><span><span style=color:#75715e>         */</span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e>//b. manual connect into target db
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#66d9ef>if</span> ((V_OD_erg <span style=color:#f92672>!=</span> SQL_SUCCESS) <span style=color:#f92672>&amp;&amp;</span> (V_OD_erg <span style=color:#f92672>!=</span> SQL_SUCCESS_WITH_INFO))
+</span></span><span style=display:flex><span>        {
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>printf</span>(<span style=color:#e6db74>&#34;Error SQLConnect %d</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>,V_OD_erg);
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>SQLGetDiagRec</span>(SQL_HANDLE_DBC, V_OD_hdbc,<span style=color:#ae81ff>1</span>,
+</span></span><span style=display:flex><span>                              V_OD_stat, <span style=color:#f92672>&amp;</span>V_OD_err,V_OD_msg,<span style=color:#ae81ff>100</span>,<span style=color:#f92672>&amp;</span>V_OD_mlen);
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>printf</span>(<span style=color:#e6db74>&#34;%s (%d)</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>,V_OD_msg,V_OD_err);
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>SQLFreeHandle</span>(SQL_HANDLE_ENV, V_OD_Env);
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>exit</span>(<span style=color:#ae81ff>0</span>);
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>printf</span>(<span style=color:#e6db74>&#34;Connected !</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>);
+</span></span><span style=display:flex><span>        V_OD_erg<span style=color:#f92672>=</span><span style=color:#a6e22e>SQLAllocHandle</span>(SQL_HANDLE_STMT, V_OD_hdbc, <span style=color:#f92672>&amp;</span>V_OD_hstmt);
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> ((V_OD_erg <span style=color:#f92672>!=</span> SQL_SUCCESS) <span style=color:#f92672>&amp;&amp;</span> (V_OD_erg <span style=color:#f92672>!=</span> SQL_SUCCESS_WITH_INFO))
+</span></span><span style=display:flex><span>        {
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>printf</span>(<span style=color:#e6db74>&#34;Fehler im AllocStatement %d</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>,V_OD_erg);
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>SQLGetDiagRec</span>(SQL_HANDLE_DBC, V_OD_hdbc,<span style=color:#ae81ff>1</span>, V_OD_stat,<span style=color:#f92672>&amp;</span>V_OD_err,V_OD_msg,<span style=color:#ae81ff>100</span>,<span style=color:#f92672>&amp;</span>V_OD_mlen);
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>printf</span>(<span style=color:#e6db74>&#34;%s (%d)</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>,V_OD_msg,V_OD_err);
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>SQLDisconnect</span>(V_OD_hdbc);
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>SQLFreeHandle</span>(SQL_HANDLE_DBC,V_OD_hdbc);
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>SQLFreeHandle</span>(SQL_HANDLE_ENV, V_OD_Env);
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>exit</span>(<span style=color:#ae81ff>0</span>);
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>SQLBindCol</span>(V_OD_hstmt,<span style=color:#ae81ff>1</span>,SQL_C_CHAR, <span style=color:#f92672>&amp;</span>V_OD_buffer,<span style=color:#ae81ff>150</span>,<span style=color:#f92672>&amp;</span>V_OD_err);
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>SQLBindCol</span>(V_OD_hstmt,<span style=color:#ae81ff>2</span>,SQL_C_ULONG,<span style=color:#f92672>&amp;</span>V_OD_id,<span style=color:#ae81ff>150</span>,<span style=color:#f92672>&amp;</span>V_OD_err);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        V_OD_erg<span style=color:#f92672>=</span><span style=color:#a6e22e>SQLExecDirect</span>(V_OD_hstmt,<span style=color:#e6db74>&#34;SELECT name, setting FROM pg_settings where category=&#39;File Locations&#39;&#34;</span>,SQL_NTS);
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> ((V_OD_erg <span style=color:#f92672>!=</span> SQL_SUCCESS) <span style=color:#f92672>&amp;&amp;</span> (V_OD_erg <span style=color:#f92672>!=</span> SQL_SUCCESS_WITH_INFO))
+</span></span><span style=display:flex><span>        {
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>printf</span>(<span style=color:#e6db74>&#34;Error in Select %d</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>,V_OD_erg);
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>SQLGetDiagRec</span>(SQL_HANDLE_DBC, V_OD_hdbc,<span style=color:#ae81ff>1</span>, V_OD_stat,<span style=color:#f92672>&amp;</span>V_OD_err,V_OD_msg,<span style=color:#ae81ff>100</span>,<span style=color:#f92672>&amp;</span>V_OD_mlen);
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>printf</span>(<span style=color:#e6db74>&#34;%s (%d)</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>,V_OD_msg,V_OD_err);
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>SQLFreeHandle</span>(SQL_HANDLE_STMT,V_OD_hstmt);
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>SQLDisconnect</span>(V_OD_hdbc);
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>SQLFreeHandle</span>(SQL_HANDLE_DBC,V_OD_hdbc);
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>SQLFreeHandle</span>(SQL_HANDLE_ENV, V_OD_Env);
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>exit</span>(<span style=color:#ae81ff>0</span>);
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>        V_OD_erg<span style=color:#f92672>=</span><span style=color:#a6e22e>SQLNumResultCols</span>(V_OD_hstmt,<span style=color:#f92672>&amp;</span>V_OD_colanz);
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> ((V_OD_erg <span style=color:#f92672>!=</span> SQL_SUCCESS) <span style=color:#f92672>&amp;&amp;</span> (V_OD_erg <span style=color:#f92672>!=</span> SQL_SUCCESS_WITH_INFO))
+</span></span><span style=display:flex><span>        {
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>SQLFreeHandle</span>(SQL_HANDLE_STMT,V_OD_hstmt);
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>SQLDisconnect</span>(V_OD_hdbc);
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>SQLFreeHandle</span>(SQL_HANDLE_DBC,V_OD_hdbc);
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>SQLFreeHandle</span>(SQL_HANDLE_ENV, V_OD_Env);
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>exit</span>(<span style=color:#ae81ff>0</span>);
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>printf</span>(<span style=color:#e6db74>&#34;Number of Columns %d</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>,V_OD_colanz);
+</span></span><span style=display:flex><span>        V_OD_erg<span style=color:#f92672>=</span><span style=color:#a6e22e>SQLRowCount</span>(V_OD_hstmt,<span style=color:#f92672>&amp;</span>V_OD_rowanz);
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> ((V_OD_erg <span style=color:#f92672>!=</span> SQL_SUCCESS) <span style=color:#f92672>&amp;&amp;</span> (V_OD_erg <span style=color:#f92672>!=</span> SQL_SUCCESS_WITH_INFO))
+</span></span><span style=display:flex><span>        {
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>printf</span>(<span style=color:#e6db74>&#34;Number ofRowCount %d</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>,V_OD_erg);
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>SQLFreeHandle</span>(SQL_HANDLE_STMT,V_OD_hstmt);
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>SQLDisconnect</span>(V_OD_hdbc);
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>SQLFreeHandle</span>(SQL_HANDLE_DBC,V_OD_hdbc);
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>SQLFreeHandle</span>(SQL_HANDLE_ENV, V_OD_Env);
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>exit</span>(<span style=color:#ae81ff>0</span>);
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>printf</span>(<span style=color:#e6db74>&#34;Number of Rows %d</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>,V_OD_rowanz);
+</span></span><span style=display:flex><span>        V_OD_erg<span style=color:#f92672>=</span><span style=color:#a6e22e>SQLFetch</span>(V_OD_hstmt);
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>while</span>(V_OD_erg <span style=color:#f92672>!=</span> SQL_NO_DATA)
+</span></span><span style=display:flex><span>        {
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>printf</span>(<span style=color:#e6db74>&#34;Result: %d %s</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>,V_OD_id,V_OD_buffer);
+</span></span><span style=display:flex><span>                V_OD_erg<span style=color:#f92672>=</span><span style=color:#a6e22e>SQLFetch</span>(V_OD_hstmt);
+</span></span><span style=display:flex><span>        };
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>SQLFreeHandle</span>(SQL_HANDLE_STMT,V_OD_hstmt);
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>SQLDisconnect</span>(V_OD_hdbc);
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>SQLFreeHandle</span>(SQL_HANDLE_DBC,V_OD_hdbc);
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>SQLFreeHandle</span>(SQL_HANDLE_ENV, V_OD_Env);
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span>(<span style=color:#ae81ff>0</span>);
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>全文完</p></section><div class=divider></div><div class="flex flex-col md:flex-row justify-between gap-4 py-4"><a class="group btn btn-outline" href=/posts/atom-config/ title="atom config 设置"><ion-icon name=chevron-back></ion-icon><div class="inline-flex flex-col items-start"><span class="text-base-content/60 group-hover:text-neutral-content/60 text-xs font-normal">Previous page</span>
+<span class="max-w-48 truncate">atom config 设置</span></div></a><a class="group btn btn-outline" href=/posts/install/ title="PostgreSQL 安装"><div class="inline-flex flex-col items-end"><span class="text-base-content/60 group-hover:text-neutral-content/60 text-xs font-normal">Next page</span>
+<span class="max-w-48 truncate">PostgreSQL 安装</span></div><ion-icon name=chevron-forward></ion-icon></a></div></article></div><div class="hidden lg:flex lg:flex-col lg:items-end"><nav id=TableOfContents><ul><li><a href=#安装unixodbc>安装unixODBC</a></li><li><a href=#安装postgresql-odbc驱动>安装PostgreSQL ODBC驱动</a></li><li><a href=#检查驱动配置>检查驱动配置</a></li><li><a href=#添加数据源>添加数据源</a></li><li><a href=#修改postgrssql认证方式>修改PostgrsSQL认证方式</a></li><li><a href=#验证>验证</a></li><li><a href=#odbc-连接数据库>ODBC 连接数据库</a></li></ul></nav></div></div><footer class="flex justify-between items-center gap-2 px-4 py-12"><div><p>© 2016 - 2025 Caisong's Blog</p><p class=text-sm>🌱
+<span class=text-base-content/60>Powered by <a class=hover:underline href=https://gohugo.io/ target=_blank>Hugo</a> with theme
+<a class=hover:underline href=https://github.com/g1eny0ung/hugo-theme-dream target=_blank>Dream</a>.</span></p></div><div x-data="{ icons: [
+    { name: 'moon', status: 'y' },
+    { name: 'sunny', status: 'n' },
+    { name: 'desktop', status: 'auto' }
+  ] }" class="flex items-center h-[32px] px-2 gap-2 border border-base-content/30 rounded-full"><template x-for="icon in icons"><div role=button tabindex=0 :aria-label="'Select ' + icon.name + ' mode'" class="group inline-flex justify-center items-center p-1 rounded-full cursor-pointer hover:bg-primary" :class="$store.darkMode.icon() === icon.name && 'bg-primary'" @click=$store.darkMode.toggle(icon.status)><ion-icon :name="`${icon.name}-outline`" class=group-hover:text-primary-content :class="$store.darkMode.icon() === icon.name && 'text-primary-content'"></ion-icon></div></template></div></footer></div></div><div class=back><div class=container><div class="dream-grid dream-grid-about"></div><footer class="flex justify-between items-center gap-2 px-4 py-12"><div><p>© 2016 - 2025 Caisong's Blog</p><p class=text-sm>🌱
+<span class=text-base-content/60>Powered by <a class=hover:underline href=https://gohugo.io/ target=_blank>Hugo</a> with theme
+<a class=hover:underline href=https://github.com/g1eny0ung/hugo-theme-dream target=_blank>Dream</a>.</span></p></div><div x-data="{ icons: [
+    { name: 'moon', status: 'y' },
+    { name: 'sunny', status: 'n' },
+    { name: 'desktop', status: 'auto' }
+  ] }" class="flex items-center h-[32px] px-2 gap-2 border border-base-content/30 rounded-full"><template x-for="icon in icons"><div role=button tabindex=0 :aria-label="'Select ' + icon.name + ' mode'" class="group inline-flex justify-center items-center p-1 rounded-full cursor-pointer hover:bg-primary" :class="$store.darkMode.icon() === icon.name && 'bg-primary'" @click=$store.darkMode.toggle(icon.status)><ion-icon :name="`${icon.name}-outline`" class=group-hover:text-primary-content :class="$store.darkMode.icon() === icon.name && 'text-primary-content'"></ion-icon></div></template></div></footer></div></div></div></div><script>window.lightTheme="emerald",window.darkTheme="forest"</script><script src=https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin=anonymous></script><script src=/js/grid.min.js></script><script src=/js/main.min.js></script><script type=module>
+      import mediumZoom from 'https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/+esm';
+      mediumZoom('#dream-single-post-content img')
+    </script><script type=module src=https://unpkg.com/ionicons@7.4.0/dist/ionicons/ionicons.esm.js></script><script nomodule src=https://unpkg.com/ionicons@7.4.0/dist/ionicons/ionicons.js></script></body></html>

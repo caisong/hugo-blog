@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Cmder on Caisong's Blog</title><link>https://caisong.github.io/tags/cmder/</link><description>Recent content in Cmder on Caisong's Blog</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Thu, 08 Aug 2019 22:52:43 +0000</lastBuildDate><atom:link href="https://caisong.github.io/tags/cmder/index.xml" rel="self" type="application/rss+xml"/><item><title>docker 记录2</title><link>https://caisong.github.io/posts/docker-1/</link><pubDate>Thu, 08 Aug 2019 22:52:43 +0000</pubDate><guid>https://caisong.github.io/posts/docker-1/</guid><description>&lt;h2 id="以上为背景">上一年双十一购置了一台云服务器，就很少搭一些环境了。最近要搭建一套自动测试环境，公司内网缺少太多工具，就打算外网docker构建一套，再导入内网。
+以上为背景。&lt;/h2>
+&lt;h2 id="win7win10差别">win7/win10差别&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>win7 使用docker toolbox&lt;/strong>
+&lt;strong>win10 使用Dcoker For Windows&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>国内用户可以选择阿里云hub加速器，说明很详细&lt;br>
+偷个懒，直接贴图
+&lt;img src="https://caisong.github.io/images/aliyun_hub.jpg" alt="aliyun_hub.jpg" title="阿里云hub加速">&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="使用cmder作为终端">使用cmder作为终端&lt;/h2>
+&lt;p>&lt;a href="https://goblincoding.com/2016/05/24/adding-docker-terminal-to-cmder-on-windows/" title="docker cmder">参考链接&lt;/a>&lt;/p>
+&lt;p>&lt;img src="https://goblincoding.files.wordpress.com/2016/05/setuptasks.gif?w=1100" alt="setuptasks.gif" title="一图胜千言">&lt;/p>
+&lt;p>其实就是将docker工具创建的快捷方式中的命令拷贝到&lt;code>cmder&lt;/code>中&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">&amp;#34;D:\Program Files\Git\bin\bash.exe --login -i &amp;#34;&lt;/span>D:&lt;span style="color:#ae81ff">\P&lt;/span>rogram Files&lt;span style="color:#ae81ff">\D&lt;/span>ockerToolbox&lt;span style="color:#ae81ff">\s&lt;/span>tart.sh&lt;span style="color:#e6db74">&amp;#34; -new_console:d:&amp;#34;&lt;/span>D:&lt;span style="color:#ae81ff">\P&lt;/span>rogram Files&lt;span style="color:#ae81ff">\D&lt;/span>ockerToolbox&lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

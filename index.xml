@@ -28,4 +28,1452 @@
 &lt;/ol>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#openssl cross compile&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ./Configure --openssldir&lt;span style="color:#f92672">=&lt;/span>/home/&amp;lt;your user&amp;gt;/workbench/openssl-1.0.1g/final shared os/compiler:arm-none-linux-gnueabi-
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Firefox搜索广告</title><link>https://caisong.github.io/posts/firefox%E6%90%9C%E7%B4%A2%E5%B9%BF%E5%91%8A/</link><pubDate>Sat, 29 Aug 2020 20:18:29 +0800</pubDate><guid>https://caisong.github.io/posts/firefox%E6%90%9C%E7%B4%A2%E5%B9%BF%E5%91%8A/</guid><description>&lt;p>about:config进入高级设置删除browser.newtabpage.pinned选项里面的数据&lt;/p></description></item><item><title>Vs2017 Show Active File in Solution Explorer</title><link>https://caisong.github.io/posts/vs2017-show-active-file-in-solution-explorer/</link><pubDate>Tue, 13 Aug 2019 20:16:56 +0800</pubDate><guid>https://caisong.github.io/posts/vs2017-show-active-file-in-solution-explorer/</guid><description>&lt;p>Tools - Options - Projects and Solutions - Track Active Item in Solution Explorer&lt;/p></description></item><item><title>Windows移植linux</title><link>https://caisong.github.io/posts/windows%E7%A7%BB%E6%A4%8Dlinux/</link><pubDate>Sun, 29 Oct 2017 20:13:54 +0800</pubDate><guid>https://caisong.github.io/posts/windows%E7%A7%BB%E6%A4%8Dlinux/</guid><description>&lt;p>Cut out summary from your post content here.&lt;/p></description></item><item><title>常用操作</title><link>https://caisong.github.io/posts/%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/</link><pubDate>Sat, 28 Oct 2017 20:09:06 +0800</pubDate><guid>https://caisong.github.io/posts/%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/</guid><description>&lt;p>Cut out summary from your post content here.&lt;/p></description></item><item><title>Tpm Env</title><link>https://caisong.github.io/posts/tpm-env/</link><pubDate>Sun, 21 May 2017 17:44:32 +0800</pubDate><guid>https://caisong.github.io/posts/tpm-env/</guid><description>&lt;p>tpm使用相关命令&lt;/p></description></item><item><title>Change Partion Size</title><link>https://caisong.github.io/posts/change-partion-size/</link><pubDate>Thu, 18 May 2017 17:41:05 +0800</pubDate><guid>https://caisong.github.io/posts/change-partion-size/</guid><description>&lt;p>修改分区大小&lt;/p></description></item><item><title>Depmod</title><link>https://caisong.github.io/posts/depmod/</link><pubDate>Wed, 17 May 2017 17:38:47 +0800</pubDate><guid>https://caisong.github.io/posts/depmod/</guid><description>&lt;p>module命令&lt;/p></description></item><item><title>用户记录操作</title><link>https://caisong.github.io/posts/%E7%94%A8%E6%88%B7%E8%AE%B0%E5%BD%95%E6%93%8D%E4%BD%9C/</link><pubDate>Wed, 22 Mar 2017 17:34:14 +0800</pubDate><guid>https://caisong.github.io/posts/%E7%94%A8%E6%88%B7%E8%AE%B0%E5%BD%95%E6%93%8D%E4%BD%9C/</guid><description>&lt;p>使用&lt;code>crontab&lt;/code>记录用户操作日志&lt;/p></description></item><item><title>Excel条件变色</title><link>https://caisong.github.io/posts/excel%E6%9D%A1%E4%BB%B6%E5%8F%98%E8%89%B2/</link><pubDate>Thu, 09 Feb 2017 17:28:58 +0800</pubDate><guid>https://caisong.github.io/posts/excel%E6%9D%A1%E4%BB%B6%E5%8F%98%E8%89%B2/</guid><description>&lt;p>Cut out summary from your post content here.&lt;/p></description></item><item><title>Yocto</title><link>https://caisong.github.io/posts/yocto/</link><pubDate>Tue, 24 Jan 2017 02:52:09 +0800</pubDate><guid>https://caisong.github.io/posts/yocto/</guid><description/></item></channel></rss>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Firefox搜索广告</title><link>https://caisong.github.io/posts/firefox%E6%90%9C%E7%B4%A2%E5%B9%BF%E5%91%8A/</link><pubDate>Sat, 29 Aug 2020 20:18:29 +0800</pubDate><guid>https://caisong.github.io/posts/firefox%E6%90%9C%E7%B4%A2%E5%B9%BF%E5%91%8A/</guid><description>&lt;p>about:config进入高级设置删除browser.newtabpage.pinned选项里面的数据&lt;/p></description></item><item><title>Vs2017 Show Active File in Solution Explorer</title><link>https://caisong.github.io/posts/vs2017-show-active-file-in-solution-explorer/</link><pubDate>Tue, 13 Aug 2019 20:16:56 +0800</pubDate><guid>https://caisong.github.io/posts/vs2017-show-active-file-in-solution-explorer/</guid><description>&lt;p>Tools - Options - Projects and Solutions - Track Active Item in Solution Explorer&lt;/p></description></item><item><title>docker 记录2</title><link>https://caisong.github.io/posts/docker-1/</link><pubDate>Thu, 08 Aug 2019 22:52:43 +0000</pubDate><guid>https://caisong.github.io/posts/docker-1/</guid><description>&lt;h2 id="以上为背景">上一年双十一购置了一台云服务器，就很少搭一些环境了。最近要搭建一套自动测试环境，公司内网缺少太多工具，就打算外网docker构建一套，再导入内网。
+以上为背景。&lt;/h2>
+&lt;h2 id="win7win10差别">win7/win10差别&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>win7 使用docker toolbox&lt;/strong>
+&lt;strong>win10 使用Dcoker For Windows&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>国内用户可以选择阿里云hub加速器，说明很详细&lt;br>
+偷个懒，直接贴图
+&lt;img src="https://caisong.github.io/images/aliyun_hub.jpg" alt="aliyun_hub.jpg" title="阿里云hub加速">&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="使用cmder作为终端">使用cmder作为终端&lt;/h2>
+&lt;p>&lt;a href="https://goblincoding.com/2016/05/24/adding-docker-terminal-to-cmder-on-windows/" title="docker cmder">参考链接&lt;/a>&lt;/p>
+&lt;p>&lt;img src="https://goblincoding.files.wordpress.com/2016/05/setuptasks.gif?w=1100" alt="setuptasks.gif" title="一图胜千言">&lt;/p>
+&lt;p>其实就是将docker工具创建的快捷方式中的命令拷贝到&lt;code>cmder&lt;/code>中&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">&amp;#34;D:\Program Files\Git\bin\bash.exe --login -i &amp;#34;&lt;/span>D:&lt;span style="color:#ae81ff">\P&lt;/span>rogram Files&lt;span style="color:#ae81ff">\D&lt;/span>ockerToolbox&lt;span style="color:#ae81ff">\s&lt;/span>tart.sh&lt;span style="color:#e6db74">&amp;#34; -new_console:d:&amp;#34;&lt;/span>D:&lt;span style="color:#ae81ff">\P&lt;/span>rogram Files&lt;span style="color:#ae81ff">\D&lt;/span>ockerToolbox&lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>取消自动脚本代理</title><link>https://caisong.github.io/posts/%E5%8F%96%E6%B6%88%E8%87%AA%E5%8A%A8%E8%84%9A%E6%9C%AC%E4%BB%A3%E7%90%86/</link><pubDate>Thu, 23 May 2019 22:22:11 +0000</pubDate><guid>https://caisong.github.io/posts/%E5%8F%96%E6%B6%88%E8%87%AA%E5%8A%A8%E8%84%9A%E6%9C%AC%E4%BB%A3%E7%90%86/</guid><description>&lt;p>使用“飞机”设置PAC模式的时候，系统代理脚本坑人就会开启，但实际过程中，但我一般直接配置Firefox的PAC URL，且PAC开关开启后，许多软件没法直接打开（可能与我使用的代理有关）。&lt;/p>
+&lt;p>之前一直是&lt;code>Win+x&lt;/code>，设置 &amp;ndash;&amp;gt; 网络和Interne &amp;ndash;&amp;gt; 代理 ，取消开关。
+实在觉得不方便，就想找个一键脚本实现。经过尝试发现，其实打开PAC代理，就是在注册表中添加了PAC的URL，直接删除就可以关闭。注册表文件内容如下：&lt;/p>
+&lt;pre tabindex="0">&lt;code class="language-powsershell" data-lang="powsershell">Windows Registry Editor Version 5.00
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings]
+&amp;#34;AutoConfigURL&amp;#34;=-
+&lt;/code>&lt;/pre>&lt;p>[下载链接](/attach/Internet Settings.reg)&lt;/p></description></item><item><title>Bash shell 字符串</title><link>https://caisong.github.io/posts/%E5%AD%97%E7%AC%A6%E4%B8%B2/</link><pubDate>Sun, 28 Apr 2019 20:17:50 +0000</pubDate><guid>https://caisong.github.io/posts/%E5%AD%97%E7%AC%A6%E4%B8%B2/</guid><description>&lt;h2 id="字符串常用操">字符串常用操&lt;/h2>
+&lt;ul>
+&lt;li>拼接
+直接拼接
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>echo &lt;span style="color:#e6db74">&amp;#34;&lt;/span>$str1$str2&lt;span style="color:#e6db74">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>查找
+&lt;ol>
+&lt;li>运算符&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">[[&lt;/span> $str3 &lt;span style="color:#f92672">=&lt;/span>~ $str1 &lt;span style="color:#f92672">]]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="2">
+&lt;li>通配符&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">[[&lt;/span> $str3 &lt;span style="color:#f92672">==&lt;/span> *$str2 &lt;span style="color:#f92672">]]&lt;/span> &lt;span style="color:#75715e">#以str2结尾&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">[[&lt;/span> $str3 &lt;span style="color:#f92672">==&lt;/span> $str1* &lt;span style="color:#f92672">]]&lt;/span> &lt;span style="color:#75715e">#以str1开头&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="3">
+&lt;li>&lt;code>case&lt;/code>&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">case&lt;/span> $str3 in 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> HELLO&lt;span style="color:#f92672">)&lt;/span> echo &lt;span style="color:#e6db74">&amp;#34;cai&amp;#34;&lt;/span> ;;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> H*O&lt;span style="color:#f92672">)&lt;/span> echo &lt;span style="color:#e6db74">&amp;#34;song&amp;#34;&lt;/span> ;;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> *&lt;span style="color:#f92672">)&lt;/span> echo &lt;span style="color:#e6db74">&amp;#34;caisong&amp;#34;&lt;/span> ;;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">esac&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>替换
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#语法：${变量/查找/替换值}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 若查找字符前以&amp;#39;//&amp;#39;开头则全部替换&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">${&lt;/span>str1/$str2/$str3&lt;span style="color:#e6db74">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>长度
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>echo &lt;span style="color:#e6db74">${#&lt;/span>str&lt;span style="color:#e6db74">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>切割
+&lt;ol>
+&lt;li>&lt;code>cut&lt;/code>&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span> echo $str|cut -d&lt;span style="color:#e6db74">&amp;#39;-&amp;#39;&lt;/span> -f2
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="2">
+&lt;li>&lt;code>IFS&lt;/code>&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#IFS指定分隔符&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>OIFS&lt;span style="color:#f92672">=&lt;/span>$IFS;IFS&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;-&amp;#39;&lt;/span>;set -- $str; str1&lt;span style="color:#f92672">=&lt;/span>$1;str2&lt;span style="color:#f92672">=&lt;/span>$2;IFS&lt;span style="color:#f92672">=&lt;/span>$OIFS;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>截取
+&lt;ol>
+&lt;li>从头部截取指定字符&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 语法：&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">${&lt;/span>varibale#*string&lt;span style="color:#e6db74">}&lt;/span> &lt;span style="color:#75715e">#截取第一个string后的字符&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">${&lt;/span>varible##*string&lt;span style="color:#e6db74">}&lt;/span> &lt;span style="color:#75715e">#截取最后一个string后的字符&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="2">
+&lt;li>从尾部截取指定字符&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 语法：&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">${&lt;/span>varibale%string*&lt;span style="color:#e6db74">}&lt;/span> &lt;span style="color:#75715e">#截取第一个string后的字符&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">${&lt;/span>varible%%string*&lt;span style="color:#e6db74">}&lt;/span> &lt;span style="color:#75715e">#截取最后一个string后的字符&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ul>
+&lt;h2 id="示例">示例&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#!/bin/bash
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>lyric1&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;Soft kitty, warm kitty, little ball of fur&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>lyric2&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;Happy kitty, sleepy kitty, purr, purr, purr&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo -e $lyric1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo -e $lyric2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo -e &lt;span style="color:#e6db74">&amp;#34;示例：拼接&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo -e &lt;span style="color:#ae81ff">\\&lt;/span>t &lt;span style="color:#e6db74">&amp;#34;&lt;/span>$lyric1&lt;span style="color:#e6db74"> &lt;/span>$lyric2&lt;span style="color:#e6db74">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo -e &lt;span style="color:#e6db74">&amp;#34;示例：查找&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo -e &lt;span style="color:#e6db74">&amp;#34;\t 1. 包含&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">[[&lt;/span> $lyric1 &lt;span style="color:#f92672">=&lt;/span>~ &lt;span style="color:#e6db74">&amp;#34;kitty&amp;#34;&lt;/span> &lt;span style="color:#f92672">]]&lt;/span> &lt;span style="color:#f92672">&amp;amp;&amp;amp;&lt;/span> echo -e &lt;span style="color:#e6db74">&amp;#34;\t The lyric include kitty&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo -e &lt;span style="color:#e6db74">&amp;#34;2. 以字符串开头&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">[[&lt;/span> $lyric1 &lt;span style="color:#f92672">==&lt;/span> Soft* &lt;span style="color:#f92672">]]&lt;/span> &lt;span style="color:#f92672">&amp;amp;&amp;amp;&lt;/span> echo -e &lt;span style="color:#e6db74">&amp;#34;\t The lyric starts with &amp;#39;Soft&amp;#39;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo -e &lt;span style="color:#e6db74">&amp;#34;3. 以字符串结尾&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">[[&lt;/span> $lyric2 &lt;span style="color:#f92672">==&lt;/span> *purr &lt;span style="color:#f92672">]]&lt;/span> &lt;span style="color:#f92672">&amp;amp;&amp;amp;&lt;/span> echo -e &lt;span style="color:#ae81ff">\\&lt;/span>t &lt;span style="color:#e6db74">&amp;#34;The lyric ends with &amp;#39;purr&amp;#39;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo -e &lt;span style="color:#e6db74">&amp;#34;4. 使用case查找&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">case&lt;/span> $lyric1 in
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> *ball&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> echo -e &lt;span style="color:#e6db74">&amp;#34;\tThe lyric include ball&amp;#34;&lt;/span> ;;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sleepy*&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> echo -e &lt;span style="color:#e6db74">&amp;#34;\tThe lyric include sleepy&amp;#34;&lt;/span> ;;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> *kitty*&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> echo -e &lt;span style="color:#e6db74">&amp;#34;\tThe lyric include kitty&amp;#34;&lt;/span> ;;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">esac&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo -e &lt;span style="color:#e6db74">&amp;#34;示例：替换&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo -e &lt;span style="color:#ae81ff">\\&lt;/span>t &lt;span style="color:#e6db74">${&lt;/span>lyric1/kitty/doraemon&lt;span style="color:#e6db74">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo -e &lt;span style="color:#ae81ff">\\&lt;/span>t &lt;span style="color:#e6db74">${&lt;/span>lyric1//kitty/doraemon&lt;span style="color:#e6db74">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo -e &lt;span style="color:#e6db74">&amp;#34;示例：长度&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo -e &lt;span style="color:#e6db74">&amp;#34;\tThe length of lryic is &lt;/span>&lt;span style="color:#66d9ef">$((&lt;/span>&lt;span style="color:#e6db74">${#&lt;/span>lyric1&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#e6db74">${#&lt;/span>lyric2&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#66d9ef">))&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo -e &lt;span style="color:#e6db74">&amp;#34;示例：切割&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo -e &lt;span style="color:#e6db74">&amp;#34;\tcut命令切割&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo -e $lyric1 | cut -d&lt;span style="color:#e6db74">&amp;#39;,&amp;#39;&lt;/span> -f1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo -e &lt;span style="color:#e6db74">&amp;#34;\tIFS切割&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>OIFS&lt;span style="color:#f92672">=&lt;/span>$IFS;IFS&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;,&amp;#39;&lt;/span>;set -- $lyric2;cat1&lt;span style="color:#f92672">=&lt;/span>$1;cat2&lt;span style="color:#f92672">=&lt;/span>$2;IFS&lt;span style="color:#f92672">=&lt;/span>$OIFS
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo -e &lt;span style="color:#e6db74">&amp;#34;\tThe two cats:&amp;#34;&lt;/span> $cat1 $cat2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo -e &lt;span style="color:#e6db74">&amp;#34;示例：截取&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo -e &lt;span style="color:#e6db74">&amp;#34;1. 从开头截取最少匹配&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo -e &lt;span style="color:#ae81ff">\\&lt;/span>t &lt;span style="color:#e6db74">${&lt;/span>lyric1#*kitty&lt;span style="color:#e6db74">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo -e &lt;span style="color:#e6db74">&amp;#34;2. 从开头截取最多匹配&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo -e &lt;span style="color:#ae81ff">\\&lt;/span>t &lt;span style="color:#e6db74">${&lt;/span>lyric1##*kitty&lt;span style="color:#e6db74">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo -e &lt;span style="color:#e6db74">&amp;#34;1. 从结尾截取最少匹配&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo -e &lt;span style="color:#ae81ff">\\&lt;/span>t &lt;span style="color:#e6db74">${&lt;/span>lyric2%kitty*&lt;span style="color:#e6db74">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo -e &lt;span style="color:#e6db74">&amp;#34;2. 从结尾截取最多匹配&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo -e &lt;span style="color:#ae81ff">\\&lt;/span>t &lt;span style="color:#e6db74">${&lt;/span>lyric2%%kitty*&lt;span style="color:#e6db74">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>输出&lt;/p></description></item><item><title>自定义语言IDE构建</title><link>https://caisong.github.io/posts/vim-ide/</link><pubDate>Fri, 21 Dec 2018 21:31:48 +0000</pubDate><guid>https://caisong.github.io/posts/vim-ide/</guid><description>&lt;p>工作需要，使用自定义的开发语言, Linux环境。&lt;/p>
+&lt;ul>
+&lt;li>notepad++ vs vim
+&lt;ul>
+&lt;li>vim自带，缺少语法高亮、自动补全。&lt;/li>
+&lt;li>notepad++方便，适合vim不熟悉的人，但上传到linux可能存在编码问题&lt;br>
+其实只要设置好，都可以，哪款编辑器方便就行。
+以下内容只涉及&lt;strong>语法高亮&lt;/strong>和&lt;strong>自动补全&lt;/strong>,&lt;strong>snippets&lt;/strong>后期补上&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="语法高亮">语法高亮&lt;/h2>
+&lt;h3 id="notepad">notepad++&lt;/h3>
+&lt;p>&lt;img src="https://caisong.github.io/images/notepad_highlight.png" alt="notepad_highlight.png" title="语法高亮">&lt;/p>
+&lt;h3 id="vim">vim&lt;/h3>
+&lt;p>如果自定义语言完全不同于现有任何格式（如xml json yaml ini等），那比较麻烦，可能需要自己写。我们讨论格式类似的情况：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>语法文件&lt;br>
+&lt;code>/usr/share/vim/{vim版本}/syntax&lt;/code>目录下存在以支持的语法文件，如果你所使用的文件格式与其中某种雷同的话，可以复制一份，自己添加你的关键词。
+如 &lt;code> cat /usr/share/vim/vim80/syntax/conf.vim&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plain" data-lang="plain">&lt;span style="display:flex;">&lt;span>&amp;#34; Vim syntax file
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;#34; Language: generic configure file
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;#34; Maintainer: Bram Moolenaar &amp;lt;Bram@vim.org&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;#34; Last Change: 2005 Jun 20
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;#34; Quit when a (custom) syntax file was already loaded
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>if exists(&amp;#34;b:current_syntax&amp;#34;)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>finish
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>endif
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>syn keyword confTodo contained TODO FIXME XXX
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;#34; Avoid matching &amp;#34;text#text&amp;#34;, used in /etc/disktab and /etc/gettytab
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>syn match confComment &amp;#34;^#.*&amp;#34; contains=confTodo
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>syn match confComment &amp;#34;\s#.*&amp;#34;ms=s+1 contains=confTodo
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>syn region confString start=+&amp;#34;+ skip=+\\\\\|\\&amp;#34;+ end=+&amp;#34;+ oneline
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>syn region confString start=+&amp;#39;+ skip=+\\\\\|\\&amp;#39;+ end=+&amp;#39;+ oneline
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;#34; Define the default highlighting.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;#34; Only used when an item doesn&amp;#39;t have highlighting yet
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>hi def link confComment Comment
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>hi def link confTodo Todo
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>hi def link confString String
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>let b:current_syntax = &amp;#34;conf&amp;#34;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;#34; vim: ts=8 sw=2
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ol>
+&lt;ul>
+&lt;li>&lt;code>syn match&lt;/code> 匹配关键词&lt;/li>
+&lt;li>&lt;code>hi def link&lt;/code> 高亮&lt;/li>
+&lt;/ul>
+&lt;ol start="2">
+&lt;li>高亮设置&lt;br>
+用户&lt;code>vimrc&lt;/code>文件中添加如下设置
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plain" data-lang="plain">&lt;span style="display:flex;">&lt;span>&amp;#34;开启语法高亮
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>syntax on 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;#34; Your Languare
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;#34; file_ext 替换为你的文件后缀
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;#34; file_type 替换为你刚设置的语法类型
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>au BufNewFile,BufRead *.{file_ext} setf {filetype}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ol>
+&lt;h2 id="自动补全">自动补全&lt;/h2>
+&lt;h3 id="notepad-1">notepad++&lt;/h3>
+&lt;p>该&lt;code>{notepad++安装目录}\plugins\APIs&lt;/code>目录下保存的自动补全的关键字，使用&lt;code>xml&lt;/code>格式。&lt;/p></description></item><item><title>django URL 匹配及参数传递</title><link>https://caisong.github.io/posts/url/</link><pubDate>Mon, 15 Oct 2018 21:35:39 +0000</pubDate><guid>https://caisong.github.io/posts/url/</guid><description>&lt;h2 id="url-匹配">URL 匹配&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> django.urls &lt;span style="color:#f92672">import&lt;/span> path, re_path, include 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> . &lt;span style="color:#f92672">import&lt;/span> views
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>urlpatterns &lt;span style="color:#f92672">=&lt;/span> [
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> path(&lt;span style="color:#e6db74">&amp;#39;articles/&amp;lt;int:year&amp;gt;/&amp;lt;int:month&amp;gt;/&amp;lt;slug:slug&amp;gt;/&amp;#39;&lt;/span>, views&lt;span style="color:#f92672">.&lt;/span>article_detail),
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> re_path(&lt;span style="color:#e6db74">r&lt;/span>&lt;span style="color:#e6db74">&amp;#39;^articles/(?P&amp;lt;year&amp;gt;[0-9]&lt;/span>&lt;span style="color:#e6db74">{4}&lt;/span>&lt;span style="color:#e6db74">)/(?P&amp;lt;month&amp;gt;[0-9]&lt;/span>&lt;span style="color:#e6db74">{2}&lt;/span>&lt;span style="color:#e6db74">)/(?P&amp;lt;slug&amp;gt;[\w-]+)/$&amp;#39;&lt;/span>, views&lt;span style="color:#f92672">.&lt;/span>article_detail),
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> path(&lt;span style="color:#e6db74">&amp;#39;contact/&amp;#39;&lt;/span>, include(&lt;span style="color:#e6db74">&amp;#39;contact.urls&amp;#39;&lt;/span>)),
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> path(&lt;span style="color:#e6db74">&amp;#39;blog/&amp;lt;int:year&amp;gt;/&amp;#39;&lt;/span>, views&lt;span style="color:#f92672">.&lt;/span>year_archive, {&lt;span style="color:#e6db74">&amp;#39;foo&amp;#39;&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;bar&amp;#39;&lt;/span>}),
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>]
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="参数传递">参数传递&lt;/h2>
+&lt;ol>
+&lt;li>URL匹配中带参数的，直接在参数中&lt;/li>
+&lt;li>URL中仅匹配头部，其他参数&lt;code>?&lt;/code>之后的，无论客户端发起何种HTTP请求，参数在URL中，都在request.GET.kwargs中获取&lt;/li>
+&lt;li>其他在参数在请求体中的，request.POST或request.body中获取,两者差别
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plain" data-lang="plain">&lt;span style="display:flex;">&lt;span>HttpRequest.body
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>The raw HTTP request body as a byte string. This is useful for processing data in different ways than conventional HTML forms: binary images, XML payload etc. For processing conventional form data, use HttpRequest.POST.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ol></description></item><item><title>openssl evp</title><link>https://caisong.github.io/posts/openssl-evp/</link><pubDate>Thu, 27 Sep 2018 21:54:43 +0000</pubDate><guid>https://caisong.github.io/posts/openssl-evp/</guid><description>&lt;p>最近使用了openssl的AES解密函数，遇到些问题。&lt;/p>
+&lt;h2 id="代码示例">代码示例&lt;/h2>
+&lt;p>以下代码结构摘录自&lt;a href="https://linux.die.net/man/3/evp_decryptfinal">man page&lt;/a>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">int&lt;/span> &lt;span style="color:#a6e22e">do_crypt&lt;/span>(FILE &lt;span style="color:#f92672">*&lt;/span>in, FILE &lt;span style="color:#f92672">*&lt;/span>out, &lt;span style="color:#66d9ef">int&lt;/span> do_encrypt)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">/* Allow enough space in output buffer for additional block */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> inbuf[&lt;span style="color:#ae81ff">1024&lt;/span>], outbuf[&lt;span style="color:#ae81ff">1024&lt;/span> &lt;span style="color:#f92672">+&lt;/span> EVP_MAX_BLOCK_LENGTH];
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">int&lt;/span> inlen, outlen;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">/* Bogus key and IV: we&amp;#39;d normally set these from
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * another source.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">unsigned&lt;/span> &lt;span style="color:#66d9ef">char&lt;/span> key[] &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;0123456789&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">unsigned&lt;/span> &lt;span style="color:#66d9ef">char&lt;/span> iv[] &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;12345678&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">/* Don&amp;#39;t set key or IV because we will modify the parameters */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">EVP_CIPHER_CTX_init&lt;/span>(&lt;span style="color:#f92672">&amp;amp;&lt;/span>ctx);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">EVP_CipherInit_ex&lt;/span>(&lt;span style="color:#f92672">&amp;amp;&lt;/span>ctx, &lt;span style="color:#a6e22e">EVP_rc2&lt;/span>(), NULL, NULL, NULL, do_encrypt);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">EVP_CIPHER_CTX_set_key_length&lt;/span>(&lt;span style="color:#f92672">&amp;amp;&lt;/span>ctx, &lt;span style="color:#ae81ff">10&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">/* We finished modifying parameters so now we can set key and IV */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">EVP_CipherInit_ex&lt;/span>(&lt;span style="color:#f92672">&amp;amp;&lt;/span>ctx, NULL, NULL, key, iv, do_encrypt);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span>(;;)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> inlen &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">fread&lt;/span>(inbuf, &lt;span style="color:#ae81ff">1&lt;/span>, &lt;span style="color:#ae81ff">1024&lt;/span>, in);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span>(inlen &lt;span style="color:#f92672">&amp;lt;=&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>) &lt;span style="color:#66d9ef">break&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span>(&lt;span style="color:#f92672">!&lt;/span>&lt;span style="color:#a6e22e">EVP_CipherUpdate&lt;/span>(&lt;span style="color:#f92672">&amp;amp;&lt;/span>ctx, outbuf, &lt;span style="color:#f92672">&amp;amp;&lt;/span>outlen, inbuf, inlen))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">/* Error */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">EVP_CIPHER_CTX_cleanup&lt;/span>(&lt;span style="color:#f92672">&amp;amp;&lt;/span>ctx);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">fwrite&lt;/span>(outbuf, &lt;span style="color:#ae81ff">1&lt;/span>, outlen, out);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span>(&lt;span style="color:#f92672">!&lt;/span>&lt;span style="color:#a6e22e">EVP_CipherFinal_ex&lt;/span>(&lt;span style="color:#f92672">&amp;amp;&lt;/span>ctx, outbuf, &lt;span style="color:#f92672">&amp;amp;&lt;/span>outlen))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">/* Error */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">EVP_CIPHER_CTX_cleanup&lt;/span>(&lt;span style="color:#f92672">&amp;amp;&lt;/span>ctx);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">fwrite&lt;/span>(outbuf, &lt;span style="color:#ae81ff">1&lt;/span>, outlen, out);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">EVP_CIPHER_CTX_cleanup&lt;/span>(&lt;span style="color:#f92672">&amp;amp;&lt;/span>ctx);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="问题记录">问题记录&lt;/h2>
+&lt;p>参考&lt;a href="https://blog.csdn.net/weixiao2015/article/details/79487775">Openssl Evp接口以及EVP_DecryptFinal使用细节&lt;/a>&lt;/p></description></item><item><title>rtp协议</title><link>https://caisong.github.io/posts/rtp/</link><pubDate>Mon, 17 Sep 2018 21:51:27 +0000</pubDate><guid>https://caisong.github.io/posts/rtp/</guid><description>&lt;ul>
+&lt;li>部分内容转载自：&lt;a href="https://blog.csdn.net/leixiaohua1020/article/details/50535230" title="leixiaohua">雷霄骅CSDN博客&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="固定头部格式">固定头部格式&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plain" data-lang="plain">&lt;span style="display:flex;">&lt;span>		1 2 3 4
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		0 1 2 3 4 5 6 7 0 1 2 3 4 5 6 7 0 1 2 3 4 5 6 7 0 1 2 3 4 5 6 7
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		|V=2|P|X| CC |M| PT | sequence number |
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		| timestamp |
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		| synchronization source (SSRC) | 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		| contributing source (CSRC) | 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>V：RTP协议的版本号，占2位，当前协议版本号为2&lt;/li>
+&lt;li>P：填充标志，占1位，如果P=1，则在该报文的尾部填充一个或多个额外的八位组，它们不是有效载荷的一部分。&lt;/li>
+&lt;li>X：扩展标志，占1位，如果X=1，则在RTP报头后跟有一个扩展报头&lt;/li>
+&lt;li>CC：CSRC计数器，占4位，指示CSRC 标识符的个数&lt;/li>
+&lt;li>M: 标记，占1位，不同的有效载荷有不同的含义，对于视频，标记一帧的结束；对于音频，标记会话的开始。&lt;/li>
+&lt;li>PT: 有效荷载类型，占7位，用于说明RTP报文中有效载荷的类型，如GSM音频、JPEG图像等,在流媒体中大部分是用来区分音频流和视频流的，这样便于客户端进行解析。&lt;/li>
+&lt;li>序列号：占16位，用于标识发送者所发送的RTP报文的序列号，每发送一个报文，序列号增1。这个字段当下层的承载协议用UDP的时候，网络状况不好的时候可以用来检查丢包。
+同时出现网络抖动的情况可以用来对数据进行重新排序，序列号的初始值是随机的，同时音频包和视频包的sequence是分别记数的。&lt;/li>
+&lt;li>时戳(Timestamp)：占32位，必须使用90 kHz 时钟频率。时戳反映了该RTP报文的第一个八位组的采样时刻。接收者使用时戳来计算延迟和延迟抖动，并进行同步控制。&lt;/li>
+&lt;li>同步信源(SSRC)标识符：占32位，用于标识同步信源。该标识符是随机选择的，参加同一视频会议的两个同步信源不能有相同的SSRC。&lt;/li>
+&lt;li>特约信源(CSRC)标识符：每个CSRC标识符占32位，可以有0～15个。每个CSRC标识了包含在该RTP报文有效载荷中的所有特约信源。&lt;/li>
+&lt;/ul>
+&lt;h2 id="固定头部解析">固定头部解析&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cpp" data-lang="cpp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">typedef&lt;/span> &lt;span style="color:#66d9ef">struct&lt;/span> &lt;span style="color:#a6e22e">_rtp_fixed_header&lt;/span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#75715e">/* byte 0 */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#66d9ef">unsigned&lt;/span> &lt;span style="color:#66d9ef">char&lt;/span> csrc_len:&lt;span style="color:#ae81ff">4&lt;/span>; &lt;span style="color:#75715e">/* expect 0 */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#66d9ef">unsigned&lt;/span> &lt;span style="color:#66d9ef">char&lt;/span> extension:&lt;span style="color:#ae81ff">1&lt;/span>; &lt;span style="color:#75715e">/* expect 1 */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#66d9ef">unsigned&lt;/span> &lt;span style="color:#66d9ef">char&lt;/span> padding:&lt;span style="color:#ae81ff">1&lt;/span>; &lt;span style="color:#75715e">/* expect 0 */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#66d9ef">unsigned&lt;/span> &lt;span style="color:#66d9ef">char&lt;/span> version:&lt;span style="color:#ae81ff">2&lt;/span>; &lt;span style="color:#75715e">/* expect 2 */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#75715e">/* byte 1 */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#66d9ef">unsigned&lt;/span> &lt;span style="color:#66d9ef">char&lt;/span> payload:&lt;span style="color:#ae81ff">7&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#66d9ef">unsigned&lt;/span> &lt;span style="color:#66d9ef">char&lt;/span> marker:&lt;span style="color:#ae81ff">1&lt;/span>; &lt;span style="color:#75715e">/* expect 1 */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#75715e">/* bytes 2, 3 */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#66d9ef">unsigned&lt;/span> &lt;span style="color:#66d9ef">short&lt;/span> seq_no; 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#75715e">/* bytes 4-7 */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#66d9ef">unsigned&lt;/span> &lt;span style="color:#66d9ef">int&lt;/span> timestamp; 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#75715e">/* bytes 8-11 */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#66d9ef">unsigned&lt;/span> &lt;span style="color:#66d9ef">int&lt;/span> ssrc; &lt;span style="color:#75715e">/* stream number is used here. */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>} RTP_FIXED_HEADER;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="补充">补充&lt;/h3>
+&lt;ul>
+&lt;li>声明后加长度，表明占用的bit, 在协议解析中常用&lt;/li>
+&lt;li>如果出现前面字段比后面字段长的情况，需要注意字节对齐的情况。&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cpp" data-lang="cpp">&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#66d9ef">typedef&lt;/span> &lt;span style="color:#66d9ef">struct&lt;/span> &lt;span style="color:#a6e22e">_some_protocol&lt;/span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#66d9ef">unsigned&lt;/span> &lt;span style="color:#66d9ef">short&lt;/span> field_A;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#66d9ef">unsigned&lt;/span> &lt;span style="color:#66d9ef">char&lt;/span> len;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#66d9ef">unsigned&lt;/span> &lt;span style="color:#66d9ef">short&lt;/span> flag_B;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	}SOME_PROTOCOL ;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>此时&lt;code>sizeof SOME_PROTOOCL&lt;/code>的长度是6，没法直接将字节流转为对应的结构体，需要指定对齐长度&lt;/p></description></item><item><title>vptr</title><link>https://caisong.github.io/posts/vptr/</link><pubDate>Tue, 24 Jul 2018 22:57:44 +0000</pubDate><guid>https://caisong.github.io/posts/vptr/</guid><description>&lt;p>之前无意中看见别人代码，在&lt;code>struct&lt;/code> 中初始函数中，直接&lt;code>memset&lt;/code>,如&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cpp" data-lang="cpp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">struct&lt;/span> &lt;span style="color:#a6e22e">Content&lt;/span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">char&lt;/span> indexx[&lt;span style="color:#ae81ff">64&lt;/span>];
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//....
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">init&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> memset(&lt;span style="color:#66d9ef">this&lt;/span>, &lt;span style="color:#ae81ff">0&lt;/span>, &lt;span style="color:#66d9ef">sizeof&lt;/span>(Content));
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>};
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>最近代码遇到成员变量较多，想采用类似方法，但程序总是崩溃，发生在基类析构函数。&lt;/p>
+&lt;p>打印发现&lt;strong>虚指针空&lt;/strong>，因为基类析构函数一般时虚函数（原因请参见effectiv C++），子类中存在&lt;code>vptr&lt;/code>。&lt;/p>
+&lt;p>摘用侯捷《度探索C++对象模型》中的实例&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cpp" data-lang="cpp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">A&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span>&lt;span style="color:#f92672">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">virtual&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> vfunc1();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">virtual&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">vfunc2&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">func1&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">func2&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">virtual&lt;/span> &lt;span style="color:#f92672">~&lt;/span>A();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">private&lt;/span>&lt;span style="color:#f92672">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">int&lt;/span> m_data1, m_data2;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}; 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">B&lt;/span> &lt;span style="color:#f92672">:&lt;/span> A {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span>&lt;span style="color:#f92672">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">virtual&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> vfunc1();;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">func2&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">virtual&lt;/span> &lt;span style="color:#f92672">~&lt;/span>B();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">private&lt;/span>&lt;span style="color:#f92672">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">int&lt;/span> m_data3;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>};
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">C&lt;/span> &lt;span style="color:#f92672">:&lt;/span> B {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span>&lt;span style="color:#f92672">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">virtual&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> vfunc1();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">func&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">private&lt;/span>&lt;span style="color:#f92672">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">int&lt;/span> m_data1, m_data4;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>};
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://caisong.github.io/images/vtpr.jpg" alt="vprt.jpg" title="内存对象模型">&lt;/p>
+&lt;p>使用本文开头的方法&lt;code>memset&lt;/code>初始化成员时，也同时将&lt;code>vptr&lt;/code>置为空，导致析构时空指针异常崩溃。&lt;/p>
+&lt;p>可以在&lt;code>memset&lt;/code>时偏移一个指针的长度。&lt;/p></description></item><item><title>c++ operator</title><link>https://caisong.github.io/posts/c-operator/</link><pubDate>Mon, 23 Jul 2018 21:08:26 +0000</pubDate><guid>https://caisong.github.io/posts/c-operator/</guid><description>&lt;p>&lt;a href="https://zh.cppreference.com/w/cpp/language/operator_precedence" title="c++ operator">运算符优先级&lt;/a>&lt;/p>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>优先级&lt;/th>
+ &lt;th>运算符&lt;/th>
+ &lt;th>描述&lt;/th>
+ &lt;th>结合性&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>1&lt;/td>
+ &lt;td>::&lt;/td>
+ &lt;td>作用域解析&lt;/td>
+ &lt;td>从左到右&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>2&lt;/td>
+ &lt;td>a++ a&amp;ndash;&lt;/td>
+ &lt;td>后缀自增与自减&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>type()   type{}&lt;/td>
+ &lt;td>函数风格转型&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>a()&lt;/td>
+ &lt;td>函数调用&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>a[]&lt;/td>
+ &lt;td>下标&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>.   -&amp;gt;&lt;/td>
+ &lt;td>成员访问&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>3&lt;/td>
+ &lt;td>++a   &amp;ndash;a&lt;/td>
+ &lt;td>前缀自增与自减&lt;/td>
+ &lt;td>从右到左&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>+a   -a&lt;/td>
+ &lt;td>一元加与减&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>!   ~&lt;/td>
+ &lt;td>逻辑非和逐位非&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>(type)&lt;/td>
+ &lt;td>C 风格转型&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>*a&lt;/td>
+ &lt;td>间接（解引用）&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&amp;amp;a&lt;/td>
+ &lt;td>取址&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>sizeof&lt;/td>
+ &lt;td>取大小&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>new   new[]&lt;/td>
+ &lt;td>动态内存分配&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>delete   delete[]&lt;/td>
+ &lt;td>动态内存分配&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>4&lt;/td>
+ &lt;td>.*   -&amp;gt;*&lt;/td>
+ &lt;td>指向成员指针&lt;/td>
+ &lt;td>从左到右&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>5&lt;/td>
+ &lt;td>a*b   a/b   a%b&lt;/td>
+ &lt;td>乘法、除法与余数&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>6&lt;/td>
+ &lt;td>a+b   a-b&lt;/td>
+ &lt;td>加法与减法&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>7&lt;/td>
+ &lt;td>&amp;laquo;   &amp;raquo;&lt;/td>
+ &lt;td>逐位左移与右移&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>8&lt;/td>
+ &lt;td>&amp;lt;=&amp;gt;&lt;/td>
+ &lt;td>三路比较运算符(C++20 起)&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>9&lt;/td>
+ &lt;td>&amp;lt;   &amp;lt;=&lt;/td>
+ &lt;td>分别为 &amp;lt; 与 ≤ 的关系运算符&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&amp;gt;   &amp;gt;=&lt;/td>
+ &lt;td>分别为 &amp;gt; 与 ≥ 的关系运算符&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>10&lt;/td>
+ &lt;td>==   !=&lt;/td>
+ &lt;td>分别为 = 与 ≠ 的关系运算符&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>11&lt;/td>
+ &lt;td>a&amp;amp;b&lt;/td>
+ &lt;td>逐位与&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>12&lt;/td>
+ &lt;td>^&lt;/td>
+ &lt;td>逐位异或（排除或）&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>13&lt;/td>
+ &lt;td>|&lt;/td>
+ &lt;td>逐位或（包含或）&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>14&lt;/td>
+ &lt;td>&amp;amp;&amp;amp;&lt;/td>
+ &lt;td>逻辑与&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>15&lt;/td>
+ &lt;td>||&lt;/td>
+ &lt;td>逻辑或&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>16&lt;/td>
+ &lt;td>a?b:c&lt;/td>
+ &lt;td>三元条件&lt;/td>
+ &lt;td>从右到左&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>throw&lt;/td>
+ &lt;td>throw 运算符&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>=&lt;/td>
+ &lt;td>直接赋值（ C++ 类默认提供）&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>+=   -=&lt;/td>
+ &lt;td>以和及差复合赋值&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>*=   /=   %=&lt;/td>
+ &lt;td>以积、商及余数复合赋值&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&amp;laquo;=   &amp;raquo;=&lt;/td>
+ &lt;td>以逐位左移及右移复合赋值&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>&amp;amp;=   ^=   |=&lt;/td>
+ &lt;td>以逐位与、异或及或复合赋值&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>17&lt;/td>
+ &lt;td>,&lt;/td>
+ &lt;td>逗号&lt;/td>
+ &lt;td>从左到右&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;p>&lt;code>.*&lt;/code> 和 &lt;code>-&amp;gt;*&lt;/code> 也是运算符，指向成员指针。在使用成员函数指针时使用。&lt;/p></description></item><item><title>little accumulation</title><link>https://caisong.github.io/posts/little-accumulation/</link><pubDate>Tue, 17 Jul 2018 22:22:52 +0000</pubDate><guid>https://caisong.github.io/posts/little-accumulation/</guid><description>&lt;p>好久没写博客了，决定重新抓起来。不一定要写多么深奥的内容，记录下收获就可以。&lt;/p>
+&lt;h2 id="rename-批量重命名文件">rename 批量重命名文件&lt;/h2>
+&lt;p>rename 批量更改文件名&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>rename txt jpg *.txt
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="timeout-指定命令运行时间">timeout 指定命令运行时间&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>timeout -s KILL 60s ping 127.0.0.1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># DURATION 默认单位s&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 指令可以通过 kill -l 查看&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="编程技巧">编程技巧&lt;/h2>
+&lt;pre>&lt;code>结构体中使用`char [0]`
+```c
+struct MyData 
+{
+ int nLen;
+ char data[0];
+};
+```
+
+在结构中，data是一个数组名，但该数组没有元素，该数组的真实地址紧随结构体MyData之后，而这个地址就是结构体后面数据的。*如果给这个结构体分配的内容大于这个结构体实际大小，后面多余的部分就是这个data的内容。*
+&lt;/code>&lt;/pre></description></item><item><title>libconfig 入门</title><link>https://caisong.github.io/posts/libconfig/</link><pubDate>Mon, 25 Dec 2017 22:59:18 +0000</pubDate><guid>https://caisong.github.io/posts/libconfig/</guid><description>&lt;p>以下内容翻译自&lt;a href="http://www.hyperrealm.com/libconfig/libconfig_manual.html" title="libconfig manual">libconfig manual&lt;/a>
+版本1.4.9，最新版本请参阅&lt;a href="https://hyperrealm.github.io/libconfig/" title="libconfig">libconfig&lt;/a>&lt;/p>
+&lt;h1 id="应用示例">应用示例&lt;/h1>
+&lt;ol>
+&lt;li>配置文件&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plain" data-lang="plain">&lt;span style="display:flex;">&lt;span># Example application configuration file
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>version = &amp;#34;1.0&amp;#34;; //①
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>application:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> window:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> title = &amp;#34;My Application&amp;#34;;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> size = { w = 640; h = 480; };
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pos = { x = 350; y = 250; }; //②
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> };
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> list = ( ( &amp;#34;abc&amp;#34;, 123, true ), 1.234, ( /* an empty list */) );
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> books = ( { title = &amp;#34;Treasure Island&amp;#34;;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> author = &amp;#34;Robert Louis Stevenson&amp;#34;;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> price = 29.95;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> qty = 5; },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> { title = &amp;#34;Snow Crash&amp;#34;; //③
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> author = &amp;#34;Neal Stephenson&amp;#34;;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> price = 9.99;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> qty = 8; } );
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> misc:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pi = 3.141592654;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> bigint = 9223372036854775807L;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> columns = [ &amp;#34;Last Name&amp;#34;, &amp;#34;First Name&amp;#34;, &amp;#34;MI&amp;#34; ];
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> bitmask = 0x1FC3;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> };
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>};
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="2">
+&lt;li>读取方式
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: left">目标&lt;/th>
+ &lt;th style="text-align: left">路径&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: left">version ①&lt;/td>
+ &lt;td style="text-align: left">version&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">x ②&lt;/td>
+ &lt;td style="text-align: left">application.window.pos.x&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">title ③&lt;/td>
+ &lt;td style="text-align: left">application.books.[1].tittle&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;/li>
+&lt;/ol>
+&lt;p>路径按照元素名层层遍历，用&amp;rsquo;.&amp;lsquo;连接。类似数组和链表的情况，使用下标（从0开始）。&lt;strong>此处与C/C++不同，请注意 title ③的路径&lt;/strong>&lt;/p></description></item><item><title>gdb problem inside docker container</title><link>https://caisong.github.io/posts/docker-gdb/</link><pubDate>Sun, 17 Dec 2017 20:53:59 +0000</pubDate><guid>https://caisong.github.io/posts/docker-gdb/</guid><description>&lt;blockquote>
+ &lt;p>warning: Error disabling address space randomization: Operation not permitted&lt;/p>
+
+ &lt;/blockquote>
+
+&lt;ul>
+&lt;li>
+&lt;p>solutions:&lt;a href="https://stackoverflow.com/questions/35860527/warning-error-disabling-address-space-randomization-operation-not-permitted">stackoverflow&lt;/a>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>docker run --cap-add&lt;span style="color:#f92672">=&lt;/span>SYS_PTRACE --security-opt seccomp&lt;span style="color:#f92672">=&lt;/span>unconfined
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>** There is no such options for &lt;code>docker exec&lt;/code> command, so I recreate a container. Maybe there are others ways, please let me know. Thanks **&lt;/p>
+&lt;/li>
+&lt;/ul></description></item><item><title>Windows移植linux</title><link>https://caisong.github.io/posts/windows%E7%A7%BB%E6%A4%8Dlinux/</link><pubDate>Sun, 29 Oct 2017 20:13:54 +0800</pubDate><guid>https://caisong.github.io/posts/windows%E7%A7%BB%E6%A4%8Dlinux/</guid><description>&lt;p>Cut out summary from your post content here.&lt;/p></description></item><item><title>docker install on windows</title><link>https://caisong.github.io/posts/docker/</link><pubDate>Sat, 28 Oct 2017 16:31:52 +0000</pubDate><guid>https://caisong.github.io/posts/docker/</guid><description>&lt;ol>
+&lt;li>安装
+阿里云下载&lt;a href="https://mirrors.aliyun.com/docker-toolbox/windows/docker-toolbox/">docker toolbox&lt;/a>&lt;/li>
+&lt;li>常见问题&lt;/li>
+&lt;/ol>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;code>error: Details: code E_FAIL (0x80004005), component MachineWrap, interface I &lt;/code>
+virtual box 版本较低导致，升级后问题解决
+P.S. 另一由于CPU不支持虚拟化的导致的问题没遇到&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>设置国内镜像仓库&lt;/p>
+&lt;ol>
+&lt;li>创建之前指定&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>docker-machine create --engine-registry-mirror&lt;span style="color:#f92672">=&lt;/span>http://hub-mirror.c.163.com -d virtualbox default
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="2">
+&lt;li>创建之后，进入machine修改&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>docker-machine ssh &amp;lt;machine-name&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo -i
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sed -i &lt;span style="color:#e6db74">&amp;#39;/^EXTRA_ARGS.*/ s/$/ ----registry-mirror=http://hub-mirror.c.163.com&amp;#39;&lt;/span> /var/lib/boot2docker/profile
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>/etc/init.d/docker restart
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>P.S. 默认docker用户，用&lt;code>sudo -i&lt;/code>切换root用户&lt;/p>
+&lt;ul>
+&lt;li>镜像路径
+默认镜像路径在用户目录下，在C盘
+&lt;ol>
+&lt;li>安装前
+设置环境变量&lt;code>MACHINE_STORAGE_PATH&lt;/code>指向你需要设置的目录&lt;/li>
+&lt;li>安装后
+P.S.&lt;/li>
+&lt;/ol>
+&lt;ul>
+&lt;li>创建快捷方式的方法失败&lt;/li>
+&lt;li>指定docker daemon graph的方法失败&lt;/li>
+&lt;li>未尝试使用&lt;code>ln&lt;/code>链接目录&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul></description></item><item><title>常用操作</title><link>https://caisong.github.io/posts/%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/</link><pubDate>Sat, 28 Oct 2017 20:09:06 +0800</pubDate><guid>https://caisong.github.io/posts/%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/</guid><description>&lt;p>Cut out summary from your post content here.&lt;/p></description></item><item><title>docker permission</title><link>https://caisong.github.io/posts/docker-permission/</link><pubDate>Fri, 22 Sep 2017 22:34:59 +0000</pubDate><guid>https://caisong.github.io/posts/docker-permission/</guid><description>&lt;h1 id="docker-权限控制">docker 权限控制&lt;/h1>
+&lt;p>docker在映射文件时，默认会使用与映射目录相同uid:gid，经常会导致一些权限问题。
+常见有以下解决方案：&lt;/p>
+&lt;ul>
+&lt;li>改变权限&lt;/li>
+&lt;/ul>
+&lt;ol>
+&lt;li>创建容器后，进入后&lt;code>chown&lt;/code>&lt;/li>
+&lt;li>通过&lt;code>docker run&lt;/code>的&lt;code>-u&lt;/code>选项&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>docker run -v &lt;span style="color:#e6db74">`&lt;/span>pwd&lt;span style="color:#e6db74">`&lt;/span>/shared:/shared -u &lt;span style="color:#e6db74">`&lt;/span>stat -c &lt;span style="color:#e6db74">&amp;#34;%u:%g&amp;#34;&lt;/span> /shared&lt;span style="color:#e6db74">`&lt;/span> ubuntu bash
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>这样做的话就等于放弃了root权限，除非再新建root组用户&lt;/p>
+&lt;ul>
+&lt;li>使用Data-only container
+[Data-only container madness](&lt;a href="http://container42.com/2014/11/18/data-only-container-madness/">http://container42.com/2014/11/18/data-only-container-madness/&lt;/a> “data-only”)
+主要手段如下:&lt;/li>
+&lt;/ul>
+&lt;ol>
+&lt;li>创建数据容器，改变目录用户权限。&lt;/li>
+&lt;li>其他容器使用&lt;code>--volumes-from&lt;/code>挂载创建的数据容器&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>docker run -v /userdata --name data busybox true
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>docker run --volumes-from data debian:jessie bash
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>arm ports differences</title><link>https://caisong.github.io/posts/arm-ports-differences/</link><pubDate>Wed, 13 Sep 2017 22:25:00 +0000</pubDate><guid>https://caisong.github.io/posts/arm-ports-differences/</guid><description>&lt;h2 id="three-ports-to-different-flavours-of-little-endian-arm-hardware">Three ports to different flavours of little-endian ARM hardware&lt;/h2>
+&lt;p>&lt;strong>The following content reproudced from Debian Wiki&lt;/strong> &lt;a href="https://wiki.debian.org/ArmPorts" title="Debian wiki">ArmPorts&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>ArmPort - the first port, using the &amp;ldquo;old&amp;rdquo; (now obsolete) ABI (OABI). First released with 2.2 (Potato), last released with 5.0 (lenny). GNU Triplet: arm-linux-gnu&lt;/li>
+&lt;li>ArmEabiPort - newer port using the &amp;ldquo;new&amp;rdquo; ABI (EABI), supported on Arm v4t and higher. First released with 5.0 (lenny). GNU Triplet: arm-linux-gnueabi&lt;/li>
+&lt;li>ArmHardFloatPort - the latest 32-bit port, using the hard-float version of the &amp;ldquo;new&amp;rdquo; ABI (EABI), targeting Arm v7 and up. First released with 7 (wheezy). GNU Triplet: arm-linux-gnueabihf&lt;/li>
+&lt;li>Arm64Port - the latest port, for the 64-bit Armv8 architecture. First released with 8 (jessie). GNU Triplet: aarch64-linux-gnu&lt;/li>
+&lt;/ul>
+&lt;h2 id="prebuilt-toolchains">Prebuilt toolchains&lt;/h2>
+&lt;ul>
+&lt;li>Debian cross-tools packages
+&lt;strong>The following content reproudced from elinux&lt;/strong> &lt;a href="http://www.elinux.org/Toolchains" title="toolchains">toolchains&lt;/a>&lt;br>
+For Debian users, the toolchains problem is fairly reliably solved.
+For a debian-based box just install pre-built cross toolchains from Debian experimental.
+Targets include nearly all debian-supported architectures As of this writing supported compiler is gcc 4.9. You can get older unsupported compilers from emdebian.
+You will need to add the target architecture to your list of installable architectures. eg.&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span> dpkg --add-architecture armhf
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> apt-get update
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> apt-get install gcc-arm-linux-gnueabihf
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># arm64 gcc-r-aarch-linux-gnu&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="toolchain-building-systems">Toolchain building systems&lt;/h2>
+&lt;ul>
+&lt;li>Bitbake
+Bitbake is the tool used by &lt;a href="http://wiki.openembedded.net/index.php/Main_Page" title="OpenEmbedded">OpenEmbedded&lt;/a>. The best way to get started is probably by just building an existing distribution that uses openembedded.&lt;/li>
+&lt;/ul></description></item><item><title>xinetd 配置</title><link>https://caisong.github.io/posts/xinetd/</link><pubDate>Wed, 07 Jun 2017 21:39:31 +0000</pubDate><guid>https://caisong.github.io/posts/xinetd/</guid><description>&lt;ol start="0">
+&lt;li>介绍&lt;/li>
+&lt;/ol>
+
+
+
+ &lt;blockquote>
+ &lt;p>xinetd - the extended Internet services daemon
+xinetd performs the same function as inetd: it starts programs that
+provide Internet services. Instead of having such servers started at
+system initialization time, and be dormant until a connection request
+arrives, xinetd is the only daemon process started and it listens on
+all service ports for the services listed in its configuration file.
+When a request comes in, xinetd starts the appropriate server. Because
+of the way it operates, xinetd (as well as inetd) is also referred to
+as a super-server.&lt;/p></description></item><item><title>Tpm Env</title><link>https://caisong.github.io/posts/tpm-env/</link><pubDate>Sun, 21 May 2017 17:44:32 +0800</pubDate><guid>https://caisong.github.io/posts/tpm-env/</guid><description>&lt;p>tpm使用相关命令&lt;/p></description></item><item><title>Change Partion Size</title><link>https://caisong.github.io/posts/change-partion-size/</link><pubDate>Thu, 18 May 2017 17:41:05 +0800</pubDate><guid>https://caisong.github.io/posts/change-partion-size/</guid><description>&lt;p>修改分区大小&lt;/p></description></item><item><title>Depmod</title><link>https://caisong.github.io/posts/depmod/</link><pubDate>Wed, 17 May 2017 17:38:47 +0800</pubDate><guid>https://caisong.github.io/posts/depmod/</guid><description>&lt;p>module命令&lt;/p></description></item><item><title>用户记录操作</title><link>https://caisong.github.io/posts/%E7%94%A8%E6%88%B7%E8%AE%B0%E5%BD%95%E6%93%8D%E4%BD%9C/</link><pubDate>Wed, 22 Mar 2017 17:34:14 +0800</pubDate><guid>https://caisong.github.io/posts/%E7%94%A8%E6%88%B7%E8%AE%B0%E5%BD%95%E6%93%8D%E4%BD%9C/</guid><description>&lt;p>使用&lt;code>crontab&lt;/code>记录用户操作日志&lt;/p></description></item><item><title>set_ip_addr_on_boot</title><link>https://caisong.github.io/posts/set-ip-addr-on-boot/</link><pubDate>Mon, 13 Mar 2017 22:29:19 +0000</pubDate><guid>https://caisong.github.io/posts/set-ip-addr-on-boot/</guid><description>&lt;h2 id="update-rcd">update-rc.d&lt;/h2>
+&lt;ul>
+&lt;li>the script (setipaddr.sh)&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#! /bin/sh
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>PATH&lt;span style="color:#f92672">=&lt;/span>/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/bin:$PATH
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ifconfig eth0 192.168.10.1/24
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>update-rc.d setting&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>chmod +x setipaddr.sh
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mv setipaddr.sh /etc/init.d
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>update-rc.d setipaddr.sh defaults
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>run level&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># If defaults is used then update-rc.d will make links to start the service in runlevels 2345 and to stop the service in runlevels 016&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>runlevel &lt;span style="color:#75715e"># get current level&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="systemctl">systemctl&lt;/h2>
+&lt;ul>
+&lt;li>service file (/etc/systemd/system/setipaddr.service)&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">[&lt;/span>Unit&lt;span style="color:#f92672">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Description&lt;span style="color:#f92672">=&lt;/span>set ip on boot
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>After&lt;span style="color:#f92672">=&lt;/span>network.target
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">[&lt;/span>Service&lt;span style="color:#f92672">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Type&lt;span style="color:#f92672">=&lt;/span>oneshot
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ExecStart&lt;span style="color:#f92672">=&lt;/span>/opt/bin/setipaddr.sh
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">[&lt;/span>Install&lt;span style="color:#f92672">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>WantedBy&lt;span style="color:#f92672">=&lt;/span>multi-user.target
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>systemctl setting&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>systemctl enable setipaddr.service
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Excel条件变色</title><link>https://caisong.github.io/posts/excel%E6%9D%A1%E4%BB%B6%E5%8F%98%E8%89%B2/</link><pubDate>Thu, 09 Feb 2017 17:28:58 +0800</pubDate><guid>https://caisong.github.io/posts/excel%E6%9D%A1%E4%BB%B6%E5%8F%98%E8%89%B2/</guid><description>&lt;p>Cut out summary from your post content here.&lt;/p></description></item><item><title>Yocto</title><link>https://caisong.github.io/posts/yocto/</link><pubDate>Tue, 24 Jan 2017 02:52:09 +0800</pubDate><guid>https://caisong.github.io/posts/yocto/</guid><description/></item><item><title>Windows 安装 Text-to-Speech</title><link>https://caisong.github.io/posts/tts/</link><pubDate>Thu, 22 Dec 2016 22:39:11 +0000</pubDate><guid>https://caisong.github.io/posts/tts/</guid><description>&lt;p>&lt;strong>Win10、Win8摘录自官方文档，Win10 已验证。Win7未尝试！&lt;/strong>&lt;/p>
+&lt;!-- raw HTML omitted -->
+&lt;h2 id="install-a-new-text-to-speech-language-in-windows-10">Install a new Text-to-Speech language in Windows 10&lt;/h2>
+&lt;p>On any edition of Windows 10, click &lt;strong>Start&lt;/strong> &amp;gt; &lt;strong>Settings&lt;/strong>, and the do the following:&lt;/p>
+&lt;ol>
+&lt;li>Select the &lt;strong>Start&lt;/strong> button, and then select &lt;strong>Settings&lt;/strong> &amp;gt; &lt;strong>Time &amp;amp; Language&lt;/strong> &amp;gt; &lt;strong>Region &amp;amp; Language&lt;/strong>.&lt;/li>
+&lt;li>Select &lt;strong>Add a language&lt;/strong> and choose the language you want from the list. Only languages listed in the table below will have Text-to-Speech capabilities.&lt;/li>
+&lt;li>After the new language has been installed (this might take a while), select it in the &lt;strong>Region &amp;amp; Language&lt;/strong> list, and then select &lt;strong>Options&lt;/strong>.&lt;/li>
+&lt;li>Under &lt;strong>Language options&lt;/strong> &amp;gt; &lt;strong>Speech&lt;/strong>, select &lt;strong>Download&lt;/strong>.&lt;/li>
+&lt;/ol>
+&lt;h2 id="install-a-new-text-to-speech-language-in-windows-81">Install a new Text-to-Speech language in Windows 8.1&lt;/h2>
+&lt;p>On any edition of Windows 8.1, do the following:&lt;/p></description></item><item><title>时间相关函数</title><link>https://caisong.github.io/posts/time-util/</link><pubDate>Mon, 19 Dec 2016 22:44:11 +0000</pubDate><guid>https://caisong.github.io/posts/time-util/</guid><description>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#incldue &amp;lt;time.h&amp;gt;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">struct&lt;/span> tm &lt;span style="color:#75715e">//calendar time type
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">int&lt;/span> tm_sec; &lt;span style="color:#75715e">//[0,60](since C99)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">int&lt;/span> tm_min; &lt;span style="color:#75715e">//[0,59]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">int&lt;/span> tm_hour; &lt;span style="color:#75715e">//[0,23]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">int&lt;/span> tm_mday; &lt;span style="color:#75715e">//[1,31]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">int&lt;/span> tm_mon; &lt;span style="color:#75715e">//[0,11]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">int&lt;/span> tm_year; &lt;span style="color:#75715e">//year since 1900
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">int&lt;/span> tm_wday; &lt;span style="color:#75715e">//days since Sunday:[0~6]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">int&lt;/span> tm_wday; &lt;span style="color:#75715e">//day since Jan 1:[0,365]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">int&lt;/span> tm_isdst;&lt;span style="color:#75715e">//夏令时时间，&amp;gt;0:有效	=0：无效	&amp;lt;0: 不可用
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>};
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">time_t&lt;/span>; &lt;span style="color:#75715e">//calendar time since epoch type
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">clock_t&lt;/span>; &lt;span style="color:#75715e">//processor time since era type
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">struct&lt;/span> timespce{ &lt;span style="color:#75715e">//time in seconds and nanoseconds
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">time_t&lt;/span> tv_sec;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">long&lt;/span> tv_nsec;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>};
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">time_t&lt;/span> &lt;span style="color:#a6e22e">time&lt;/span>(&lt;span style="color:#66d9ef">time_t&lt;/span> &lt;span style="color:#f92672">*&lt;/span>calptr); &lt;span style="color:#75715e">//returns the current calendar time of the system as ime since epoch
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">double&lt;/span> &lt;span style="color:#a6e22e">difftime&lt;/span>(&lt;span style="color:#66d9ef">time_t&lt;/span> time_end, &lt;span style="color:#66d9ef">time_t&lt;/span> time_beg); &lt;span style="color:#75715e">//computes the difference between times
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">/*
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">* format conversions
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">*/&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">char&lt;/span>&lt;span style="color:#f92672">*&lt;/span> &lt;span style="color:#a6e22e">asctime&lt;/span>( &lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#66d9ef">struct&lt;/span> tm &lt;span style="color:#f92672">*&lt;/span>time_ptr); &lt;span style="color:#75715e">//converts a tm object to a textual representation
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">char&lt;/span>&lt;span style="color:#f92672">*&lt;/span> &lt;span style="color:#a6e22e">ctime&lt;/span>(&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#66d9ef">time_t&lt;/span> &lt;span style="color:#f92672">*&lt;/span>time); &lt;span style="color:#75715e">//converts a time_t object to a textual representation; as if by calling asctime(localtime(time));
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">struct&lt;/span> tm &lt;span style="color:#f92672">*&lt;/span>&lt;span style="color:#a6e22e">gmtime&lt;/span>(&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#66d9ef">time_t&lt;/span> &lt;span style="color:#f92672">*&lt;/span>time); &lt;span style="color:#75715e">//convert time since epoch calendar time expressedd as UTC
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">struct&lt;/span> tm &lt;span style="color:#f92672">*&lt;/span>&lt;span style="color:#a6e22e">localtime&lt;/span>(&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#66d9ef">time_t&lt;/span> &lt;span style="color:#f92672">*&lt;/span>time); &lt;span style="color:#75715e">//converts time since epoch calendar time expressed as local time 
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">time_t&lt;/span> &lt;span style="color:#a6e22e">mktime&lt;/span>(&lt;span style="color:#66d9ef">struct&lt;/span> tm &lt;span style="color:#f92672">*&lt;/span>time); &lt;span style="color:#75715e">//converts calendar time to time since epoch
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">size_t&lt;/span> &lt;span style="color:#a6e22e">strftime&lt;/span>(&lt;span style="color:#66d9ef">char&lt;/span> &lt;span style="color:#f92672">*&lt;/span>str, &lt;span style="color:#66d9ef">size_t&lt;/span> count, &lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#66d9ef">char&lt;/span> &lt;span style="color:#f92672">*&lt;/span>format, &lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#66d9ef">struct&lt;/span> tm &lt;span style="color:#f92672">*&lt;/span>time); &lt;span style="color:#75715e">//converts a tm object to custom textual representation
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">char&lt;/span> &lt;span style="color:#f92672">*&lt;/span>&lt;span style="color:#a6e22e">strptime&lt;/span>(&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#66d9ef">char&lt;/span> &lt;span style="color:#f92672">*&lt;/span>s, &lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#66d9ef">char&lt;/span> &lt;span style="color:#f92672">*&lt;/span>format, &lt;span style="color:#66d9ef">struct&lt;/span> tm &lt;span style="color:#f92672">*&lt;/span>tm); &lt;span style="color:#75715e">//converse of strftime
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#include&lt;/span> &lt;span style="color:#75715e">&amp;lt;sys/time.h&amp;gt;&lt;/span>&lt;span style="color:#75715e">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#75715e">/*
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">clockid_t :
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">CLOCK_REALTIME: 实时系统时间
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">CLOCK_MONOTONIC: 不带负跳数的实时系统时间
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">CLOCK_PROCESS_CPUTIME_ID: 调用进程CPU时间 
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">CLOCK_THREAD_CPUTIME_ID: 调用线程CPU时间
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">*/&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">int&lt;/span> &lt;span style="color:#a6e22e">clock_gettime&lt;/span>(&lt;span style="color:#66d9ef">clockid_t&lt;/span> clock_id, &lt;span style="color:#66d9ef">struct&lt;/span> timespec &lt;span style="color:#f92672">*&lt;/span>tsp); &lt;span style="color:#75715e">//获取指定时钟的时间
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">int&lt;/span> &lt;span style="color:#a6e22e">clock_getres&lt;/span>(&lt;span style="color:#66d9ef">clockid_t&lt;/span> clock_id, &lt;span style="color:#66d9ef">struct&lt;/span> timespec &lt;span style="color:#f92672">*&lt;/span>tsp); &lt;span style="color:#75715e">//设置指定时钟精度
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">int&lt;/span> &lt;span style="color:#a6e22e">clock_settime&lt;/span>(&lt;span style="color:#66d9ef">clockid_t&lt;/span> clodk_id, &lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#66d9ef">struct&lt;/span> timespec &lt;span style="color:#f92672">*&lt;/span>tsp);&lt;span style="color:#75715e">//设置时钟时间
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">int&lt;/span> &lt;span style="color:#a6e22e">gettimeofday&lt;/span>(&lt;span style="color:#66d9ef">struct&lt;/span> timeval &lt;span style="color:#f92672">*&lt;/span>&lt;span style="color:#66d9ef">restrict&lt;/span> tp, &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#f92672">*&lt;/span>&lt;span style="color:#66d9ef">restrict&lt;/span> tzp);&lt;span style="color:#75715e">//获取当前时间，与其他相同作用函数相比，精度较高
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://caisong.github.io/images/time_util.jpg" alt="time_util">&lt;/p></description></item><item><title>CentOS 安装Lua 5.3</title><link>https://caisong.github.io/posts/centos-lua/</link><pubDate>Wed, 12 Oct 2016 21:47:19 +0000</pubDate><guid>https://caisong.github.io/posts/centos-lua/</guid><description>&lt;p>按照官网教程，执行以下命令&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>curl -R -O http://www.lua.org/ftp/lua-5.3.3.tar.gz
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tar zxf lua-5.3.3.tar.gz
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cd lua-5.3.3
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>make linux test
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>但其实lua并未安装，许多博文都是建立软链接，但其实&lt;code>makefile&lt;/code>文件中已经写好了，只需install就可以了&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>make linux install
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>升级lua版本之后，会导致&lt;code>luarock&lt;/code>无法使用，需要重新编译安装。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>wget http://luarocks.org/releases/luarocks-2.4.1.tar.gz
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tar zxpf luarocks-2.4.1.tar.gz
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cd luarocks-2.4.1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>./configure; sudo make bootstrap
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>atom config 设置</title><link>https://caisong.github.io/posts/atom-config/</link><pubDate>Wed, 12 Oct 2016 21:46:56 +0000</pubDate><guid>https://caisong.github.io/posts/atom-config/</guid><description>&lt;p>在文件_~/.atom/.apmrc_中添加以下内容，若该文件不存在，则创建&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-ini" data-lang="ini">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">strict-ssl&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">false&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">https-proxy&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">http://192.168.10.1:8080&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">http-proxy&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">http://192.168.10.1:8080&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;em>http与proxy之间使用的是连字符，而不是下划线&lt;/em>&lt;/p></description></item><item><title>PostgreSQL ODBC</title><link>https://caisong.github.io/posts/postgresql-odbc/</link><pubDate>Wed, 12 Oct 2016 21:32:48 +0000</pubDate><guid>https://caisong.github.io/posts/postgresql-odbc/</guid><description>&lt;!-- raw HTML omitted -->
+&lt;ul>
+&lt;li>安装unixODBC&lt;/li>
+&lt;li>安装PostgreSQL ODBC驱动&lt;/li>
+&lt;li>检查驱动配置&lt;/li>
+&lt;li>添加数据源&lt;/li>
+&lt;li>修改PostgrsSQL认证方式&lt;/li>
+&lt;li>验证&lt;/li>
+&lt;li>ODBC 连接数据库&lt;/li>
+&lt;/ul>
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;h2 id="安装unixodbc">安装unixODBC&lt;/h2>
+&lt;p>直接下载官网的源码编译安装就可以了，比较简单&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>curl -O http://www.unixodbc.org/unixODBC-2.3.4.tar.gz
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tar xvf unixODBC-2.3.4.tar.gz
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cd unixODBC-2.3.4
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>./configure --sysconfdir&lt;span style="color:#f92672">=&lt;/span>/etc
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>make
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>make install
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>或者直接&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>yum install unixODBC
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="安装postgresql-odbc驱动">安装PostgreSQL ODBC驱动&lt;/h2>
+&lt;p>按照之前添加源的方式安装PostgreSQL，现在可以直接安装ODBC驱动.&lt;!-- raw HTML omitted -->
+添加源方法&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>yum install http://yum.postgresql.org/9.5/redhat/rhel-7-x86_64/pgdg-redhat95-9.5-2.noarch.rpm
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>PostgreSQL 安装</title><link>https://caisong.github.io/posts/install/</link><pubDate>Wed, 12 Oct 2016 21:13:50 +0000</pubDate><guid>https://caisong.github.io/posts/install/</guid><description>&lt;!-- raw HTML omitted -->
+&lt;ul>
+&lt;li>安装&lt;/li>
+&lt;li>添加用户和数据库&lt;/li>
+&lt;li>登陆数据库&lt;/li>
+&lt;li>常用控制台命令&lt;/li>
+&lt;li>基本SQL操作&lt;/li>
+&lt;li>备份与恢复&lt;/li>
+&lt;/ul>
+&lt;!-- raw HTML omitted --></description></item><item><title>Shell命令行快捷键</title><link>https://caisong.github.io/posts/shell-2/</link><pubDate>Thu, 28 Jul 2016 22:06:41 +0000</pubDate><guid>https://caisong.github.io/posts/shell-2/</guid><description>&lt;ul>
+&lt;li>C-a : 光标回到命令行首（a:ahead)&lt;/li>
+&lt;li>C-e : 光标回到命令行尾（e:end)&lt;/li>
+&lt;li>C-b : 光标后退一个字符（b:backward)&lt;/li>
+&lt;li>C-f : 光标回到命令行首（f:forward)&lt;/li>
+&lt;li>C-p : 上一个使用的历史命令 (p: previous)&lt;/li>
+&lt;li>C-n : 下一个使用的历史命令 (n: next)&lt;/li>
+&lt;li>C-r : 快速检索历史命令 (r: retrieve)&lt;/li>
+&lt;li>C-h : 删除光标前一个字符&lt;/li>
+&lt;li>C-d : 删除光标后一个字符&lt;/li>
+&lt;li>C-w : 删除光标前一个word&lt;/li>
+&lt;li>C-k : 删除光标后的所有字符&lt;/li>
+&lt;li>C-u : 删除命令行字符&lt;/li>
+&lt;li>C-y : 粘贴 C-u, C-K, C-W删除的文本&lt;/li>
+&lt;li>C-t : 与前一字符交换&lt;/li>
+&lt;li>C-i : Tab&lt;/li>
+&lt;li>C-m : Enter&lt;/li>
+&lt;li>C-o : Enter&lt;/li>
+&lt;/ul></description></item><item><title>MSSQL遇到问条记录</title><link>https://caisong.github.io/posts/mssql/</link><pubDate>Sun, 24 Jul 2016 22:10:46 +0000</pubDate><guid>https://caisong.github.io/posts/mssql/</guid><description>&lt;!-- raw HTML omitted -->
+&lt;ul>
+&lt;li>登陆连接失败&lt;/li>
+&lt;li>启动sa登陆&lt;/li>
+&lt;li>服务器改为IP地址登陆&lt;/li>
+&lt;li>高版本数据库恢复到低版本数据库&lt;/li>
+&lt;li>自增长列插入指定值&lt;/li>
+&lt;li>select into from 与 insert into select 用法与区别&lt;/li>
+&lt;li>总结&lt;/li>
+&lt;/ul>
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;p>记录使用MSSQL使用过程中遇到的问题。新手，大多数搜索解决，全部实际操作过，如果不能解决您的问题，请见谅。
+ps. 自己电脑没装MSSQL，因此没有截图。&lt;/p>
+&lt;h2 id="登陆连接失败">登陆连接失败&lt;/h2>
+&lt;p>错误描述：未找到或无法访问服务器.请验证实例名称是否正确并且SQL SERVER已配置允许远程链接.(provide:命名管道提供程序,error:40 -无法打开到SQL Server的连接)(Microsoft SQL Server,错误:2)
+解决办法：&lt;/p>
+&lt;ol>
+&lt;li>开始菜单，SQL Server 20XX目录下找到 &lt;code>SQL Server Configuration Manager&lt;/code>&lt;/li>
+&lt;li>SQL Server 【Version】 服务，启动&lt;/li>
+&lt;/ol>
+
+
+
+ &lt;blockquote>
+ &lt;ul>
+&lt;li>可能存在多个服务，请启动对应你连接名的那个服务&lt;/li>
+&lt;li>如果启动失败，请选择属性——登陆——本地系统账户，再次重新启动&lt;/li>
+&lt;/ul>
+
+ &lt;/blockquote>
+
+&lt;h2 id="启动sa登陆">启动sa登陆&lt;/h2>
+&lt;p>问题描述：一般本地使用的windows账户，特别第一次安装时没注意，就没用设置sa密码，也就无法sa登陆
+解决办法：&lt;/p>
+&lt;ol>
+&lt;li>windows登陆&lt;/li>
+&lt;li>在连接上右击，属性——安全性——SQL Server 和windows身份验证模式。保存，返回&lt;/li>
+&lt;li>展开连接，安全性——登录名——sa，设置密码。切换到状态，登陆选择&lt;code>启用&lt;/code>&lt;/li>
+&lt;/ol>
+&lt;h2 id="服务器改为ip地址登陆">服务器改为IP地址登陆&lt;/h2>
+&lt;p>问题描述：一般安装完成之后，采用的是windows主机名+服务名的连接方式，而非IP地址，其他电脑无法访问
+解决办法：&lt;/p>
+&lt;ol>
+&lt;li>启动sa登陆&lt;/li>
+&lt;li>开始菜单，SQL Server 20XX目录下找到 &lt;code>SQL Server Configuration Manager&lt;/code>&lt;/li>
+&lt;li>SQL Server 【Version】网络配置，启用&lt;code>Namedpipes&lt;/code>和&lt;code>TCP/IP&lt;/code>&lt;/li>
+&lt;li>&lt;code>TCP/IP&lt;/code>属性，IP地址，配置##IP1##地址（IP2本地），##IPALL##TCP端口&lt;/li>
+&lt;li>重启SQL Server 服务，连接&lt;/li>
+&lt;/ol>
+&lt;h2 id="高版本数据库恢复到低版本数据库">高版本数据库恢复到低版本数据库&lt;/h2>
+&lt;p>问题描述： 高版本server生成的备份文件无法在低版本上恢复
+解决办法：&lt;/p></description></item><item><title>vmware 记录</title><link>https://caisong.github.io/posts/vmware/</link><pubDate>Sun, 24 Jul 2016 21:50:08 +0000</pubDate><guid>https://caisong.github.io/posts/vmware/</guid><description>&lt;h2 id="此虚拟机正在使用中取得该虚拟机的所有权失败">此虚拟机正在使用中，取得该虚拟机的所有权失败&lt;/h2>
+&lt;p>问题描述：该问题一般是由于强制关闭vmware进程导致
+解决方案：你所配置的虚拟机目录下存在*.lck文件，删除就可以了。&lt;/p>
+&lt;h2 id="centos-启动没有ipv4-地址">CentOS 启动没有IPV4 地址&lt;/h2>
+&lt;p>问题描述：centos7虚拟机，没有ipv4地址，无法ssh连接
+解决办法：默认设置没有开机激活网卡，修改网络配置文件&lt;/p>
+&lt;pre tabindex="0">&lt;code>sudo vim /etc/sysconfig/network-scripts/ifcfg-enoXXX #修改ONBOOT=yes 
+sudo systemctl restart network
+&lt;/code>&lt;/pre>&lt;h2 id="虚拟机提示failed-to-start-lsb-bring-updown-networking">虚拟机提示Failed to start LSB: Bring up/down networking&lt;/h2>
+&lt;p>问题描述：网络无法连接，重启network提示该错误&lt;code>Failed to start LSB: Bring up/down networking&lt;/code>。&lt;/p>
+&lt;ul>
+&lt;li>搜索到的解决办法一般是由于拷贝他人的虚拟机文件导致，需要更改网络配置文件中的HWADDR字段，改为你自己mac地址。(针对CentOS7)&lt;/li>
+&lt;/ul>
+&lt;pre tabindex="0">&lt;code>ip addr show #查看mac地址
+sudo vim /etc/sysconfig/network-scripts/ifcfg-enoXXX #修改HWADDR字段
+&lt;/code>&lt;/pre>&lt;ul>
+&lt;li>我遇到的问题是由于关闭了&lt;code>VMware NAT Service&lt;/code> 服务导致，启动就可以了&lt;/li>
+&lt;/ul>
+&lt;p>谨此记录，日后再补充遇到的其他问题&lt;/p>
+&lt;h2 id="ssh问题">ssh问题&lt;/h2>
+&lt;p>详见鄙人关于ssh问题的blog&lt;/p></description></item><item><title>自平衡二搜索树——红黑树</title><link>https://caisong.github.io/posts/%E7%BA%A2%E9%BB%91%E6%A0%91/</link><pubDate>Mon, 04 Jul 2016 22:25:06 +0000</pubDate><guid>https://caisong.github.io/posts/%E7%BA%A2%E9%BB%91%E6%A0%91/</guid><description>&lt;h2 id="主要属性">主要属性&lt;/h2>
+&lt;ol>
+&lt;li>所有节点要么红色，要么黑色&lt;/li>
+&lt;li>叶子节点都是黑色&lt;/li>
+&lt;li>叶子节点不包含数据&lt;/li>
+&lt;li>所有非叶子节点都有两个子节点&lt;/li>
+&lt;li>如果一个节点是红色，那么它的子节点都是黑色&lt;/li>
+&lt;/ol>
+
+
+
+ &lt;blockquote>
+ &lt;p>一个红色节点不能是其他红色节点的子节点或者父节点&lt;/p>
+
+ &lt;/blockquote>
+
+&lt;ol start="6">
+&lt;li>在一个节点到其叶子节点的路径中，如果总是包含相同数据的黑色节点，则该路径相比其他路径是最短的。&lt;/li>
+&lt;/ol>
+
+
+
+ &lt;blockquote>
+ &lt;p>从树的任何节点到其叶子节点的路径都具有相同数目的黑色节点，树里的最长路径则是红黑交替节点路径，所以最短路径必然是具有相同数量的黑色节点——只包含黑色节点的路径。因此，从根节点到叶子节点的最长路径都不会超过最短路径的两倍&lt;/p>
+
+ &lt;/blockquote></description></item><item><title>ssh问题-Connection closed by foreign host</title><link>https://caisong.github.io/posts/ssh%E9%97%AE%E9%A2%98/</link><pubDate>Thu, 30 Jun 2016 22:56:04 +0000</pubDate><guid>https://caisong.github.io/posts/ssh%E9%97%AE%E9%A2%98/</guid><description>&lt;h2 id="问题描述">问题描述&lt;/h2>
+&lt;p>使用XShell 登陆linux总是回复：&lt;code>Connection closed by foreign host.&lt;/code> 或者
+&lt;code>Disconnected from remote host&lt;/code>，
+造成该现象的原因一般是由于ssh连接长期没有操作导致的（这也是误导我的主要原因）&lt;/p>
+&lt;h2 id="原因及解决方案">原因及解决方案&lt;/h2>
+&lt;h3 id="账号被限制只允许一个人登陆暂时没遇到">账号被限制只允许一个人登陆（暂时没遇到）&lt;/h3>
+&lt;h3 id="无法保持长期连接">无法保持长期连接&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo vim /etc/ssh/sshd_config
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>结尾添加两行&lt;/p>
+&lt;pre tabindex="0">&lt;code>ClientAliveInterval 60
+ClientAliveCountMax 3
+&lt;/code>&lt;/pre>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 重启服务&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo systemctl restart sshd
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="防火墙原因">防火墙原因&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 关闭防火墙&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo systemctl stop sshd
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 或者打开22端口&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo iptables -A INPUT -p tcp --dport &lt;span style="color:#ae81ff">22&lt;/span> -j ACCEPT
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="hostsdeny文件被篡改">hosts.deny文件被篡改&lt;/h3>
+&lt;p>查看&lt;code>/etc/hosts.deny&lt;/code>文件，看是否被禁用&lt;/p>
+&lt;pre tabindex="0">&lt;code># 禁止所有ip访问linux 的ssh功能
+sshd:all:deny
+&lt;/code>&lt;/pre>
+
+
+ &lt;blockquote>
+ &lt;p>&lt;code>/etc/hosts.allow&lt;/code>（允许）和&lt;code>/etc/hosts.deny&lt;/code>（禁止）这两个文件是tcpd服务器的配置文件，tcpd服务器可以控制外部IP对本机服务的访问。
+系统会先检查&lt;code>/etc/hosts.deny&lt;/code>规则，再检查&lt;code>/etc/hosts.allow&lt;/code>规则，如果有冲突 按&lt;code>/etc/hosts.allow&lt;/code>规则处理&lt;/p>
+
+ &lt;/blockquote>
+
+&lt;h3 id="客户端连接数过多">客户端连接数过多&lt;/h3>
+&lt;p>将&lt;code>/etc/ssh/sshd_config&lt;/code>中 MaxStartUps 10 改为MaxStartups 10/100，重启sshd&lt;/p>
+&lt;h3 id="针对vmware-nat模式">针对VMware nat模式&lt;/h3>
+&lt;p>描述：连接方式使用NAT；虚拟能在ping通主机，主机无法ping通虚拟机。
+原因：虚拟机自动获取的IP与vmnet8设置的IP不在同一网段。
+解决：设置vmnet8自动获取ip即可。&lt;/p></description></item><item><title>bat切换当前目录</title><link>https://caisong.github.io/posts/bat/</link><pubDate>Mon, 20 Jun 2016 21:35:20 +0000</pubDate><guid>https://caisong.github.io/posts/bat/</guid><description>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>@echo off
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cd %~dp0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> call git pull
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> xcopy D:&lt;span style="color:#ae81ff">\g&lt;/span>oogle&lt;span style="color:#ae81ff">\h&lt;/span>osts&lt;span style="color:#ae81ff">\h&lt;/span>osts C:&lt;span style="color:#ae81ff">\W&lt;/span>indows&lt;span style="color:#ae81ff">\S&lt;/span>ystem32&lt;span style="color:#ae81ff">\d&lt;/span>rivers&lt;span style="color:#ae81ff">\e&lt;/span>tc&lt;span style="color:#ae81ff">\ &lt;/span>/Y /R
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>每次更新host，使用管理员运行显示git失败，原因是使用管理员运行时，目录切换到system32下了。
+&lt;code>cd %~dp0&lt;/code>表示切换回当前目录&lt;/p></description></item><item><title>python发送邮件（续）—— configparser</title><link>https://caisong.github.io/posts/configparser/</link><pubDate>Fri, 03 Jun 2016 20:45:12 +0000</pubDate><guid>https://caisong.github.io/posts/configparser/</guid><description>&lt;h2 id="简介">简介&lt;/h2>
+&lt;p>昨天代码一些基本配置全部在代码中，灵活性较差，考虑到通过配置文件的方式来实现。结构比较简单，不想用xml或json，类似配置数据库连接的&lt;code>property&lt;/code>文件就可以了，&lt;code>configparser&lt;/code>比较满足要求。
+python &lt;code>configparser&lt;/code>能够读取&lt;code>*.conf&lt;/code>与&lt;code>*.ini&lt;/code>的配置文件&lt;/p>
+&lt;!-- raw HTML omitted -->
+&lt;p>以下内容parser摘录自：&lt;a href="https://wiki.python.org/moin/ConfigParserExamples" title="configparserExamples">configparserExamples 示例&lt;/a>&lt;/p>
+&lt;h2 id="configparser-使用">configparser 使用&lt;/h2>
+&lt;h3 id="读配置文件">读配置文件&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-ini" data-lang="ini">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">[SectionOne]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">Status: Single&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">Name: Derek&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">Value: Yes&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">Age: 30&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">Single: True&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">[SectionTwo]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">FavoriteColor&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">Green, Red, Blue&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">[SectionThree]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">FamilyName: Johnson&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">[Others]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">Route: 66&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> ConfigParser
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>config &lt;span style="color:#f92672">=&lt;/span> ConfigParser&lt;span style="color:#f92672">.&lt;/span>ConfigParser()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>config&lt;span style="color:#f92672">.&lt;/span>read(&lt;span style="color:#e6db74">&amp;#39;config file path&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># read node&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>config&lt;span style="color:#f92672">.&lt;/span>get(&lt;span style="color:#e6db74">&amp;#39;SectionOne&amp;#39;&lt;/span>,&lt;span style="color:#e6db74">&amp;#39;Status)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># read node as list&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>config&lt;span style="color:#f92672">.&lt;/span>get(&lt;span style="color:#e6db74">&amp;#39;SectionTwo&amp;#39;&lt;/span>,&lt;span style="color:#e6db74">&amp;#39;FavoriteColor&amp;#39;&lt;/span>)&lt;span style="color:#f92672">.&lt;/span>replace(&lt;span style="color:#e6db74">&amp;#39; &amp;#39;&lt;/span>,&lt;span style="color:#e6db74">&amp;#39;&amp;#39;&lt;/span>)&lt;span style="color:#f92672">.&lt;/span>split(&lt;span style="color:#e6db74">&amp;#39;,&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="写配置文件">写配置文件&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># lets create that config file for next time...&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cfgfile &lt;span style="color:#f92672">=&lt;/span> open(&lt;span style="color:#e6db74">&amp;#34;c:&lt;/span>&lt;span style="color:#ae81ff">\\&lt;/span>&lt;span style="color:#e6db74">next.ini&amp;#34;&lt;/span>,&lt;span style="color:#e6db74">&amp;#39;w&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># add the settings to the structure of the file, and lets write it out...&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Config&lt;span style="color:#f92672">.&lt;/span>add_section(&lt;span style="color:#e6db74">&amp;#39;Person&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Config&lt;span style="color:#f92672">.&lt;/span>set(&lt;span style="color:#e6db74">&amp;#39;Person&amp;#39;&lt;/span>,&lt;span style="color:#e6db74">&amp;#39;HasEyes&amp;#39;&lt;/span>,&lt;span style="color:#66d9ef">True&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Config&lt;span style="color:#f92672">.&lt;/span>set(&lt;span style="color:#e6db74">&amp;#39;Person&amp;#39;&lt;/span>,&lt;span style="color:#e6db74">&amp;#39;Age&amp;#39;&lt;/span>, &lt;span style="color:#ae81ff">50&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Config&lt;span style="color:#f92672">.&lt;/span>write(cfgfile)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cfgfile&lt;span style="color:#f92672">.&lt;/span>close()
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="读取含有宏的配置文件">读取含有宏的配置文件&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-ini" data-lang="ini">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">[SectionOne]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">Param1: Hello&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">Param2: World&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">[SectionTwo]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">Param1: ${SectionOne:Param1} ${SectionOne:Param2}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">[SectionThree]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">Alpha: One&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">Bravo: Two&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">Charlie: ${Alpha} Mississippi&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;gt;&amp;gt;&amp;gt;&lt;/span> &lt;span style="color:#f92672">import&lt;/span> configparser
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;gt;&amp;gt;&amp;gt;&lt;/span> settings &lt;span style="color:#f92672">=&lt;/span> configparser&lt;span style="color:#f92672">.&lt;/span>ConfigParser()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;gt;&amp;gt;&amp;gt;&lt;/span> settings&lt;span style="color:#f92672">.&lt;/span>_interpolation &lt;span style="color:#f92672">=&lt;/span> configparser&lt;span style="color:#f92672">.&lt;/span>ExtendedInterpolation()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;gt;&amp;gt;&amp;gt;&lt;/span> settings&lt;span style="color:#f92672">.&lt;/span>read(&lt;span style="color:#e6db74">&amp;#39;settings.ini&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[&lt;span style="color:#e6db74">&amp;#39;settings.ini&amp;#39;&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;gt;&amp;gt;&amp;gt;&lt;/span> settings&lt;span style="color:#f92672">.&lt;/span>sections()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[&lt;span style="color:#e6db74">&amp;#39;SectionOne&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;SectionTwo&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;SectionThree&amp;#39;&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;gt;&amp;gt;&amp;gt;&lt;/span> settings&lt;span style="color:#f92672">.&lt;/span>get(&lt;span style="color:#e6db74">&amp;#39;SectionTwo&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;Param1&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">&amp;#39;Hello World&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;gt;&amp;gt;&amp;gt;&lt;/span> settings&lt;span style="color:#f92672">.&lt;/span>get(&lt;span style="color:#e6db74">&amp;#39;SectionThree&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;Charlie&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">&amp;#39;One Mississippi&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="发送邮件代码">发送邮件代码&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-ini" data-lang="ini">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">[mail]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">address: abc@qq.com&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">password: XXXXXXXXXX&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">smtp: smtp.qq.com&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">port: 465&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">subject: XXX 工作日志&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">reAddr: abc@qq.com, bcd@qq.com&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">ccAddr: abc@qq.com, bcd@qq.com&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">contextPath: a.txt&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">attachPath: b.txt &lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># -*- coding: utf-8 -*-&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">&amp;#39;&amp;#39;&amp;#39;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">发送带附件邮件
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">&amp;#39;&amp;#39;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> email.mime.text &lt;span style="color:#f92672">import&lt;/span> MIMEText
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> email.mime.multipart &lt;span style="color:#f92672">import&lt;/span> MIMEMultipart
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> smtplib
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> datetime &lt;span style="color:#f92672">import&lt;/span> date
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> configparser
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 读取配置&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>config &lt;span style="color:#f92672">=&lt;/span> configparser&lt;span style="color:#f92672">.&lt;/span>ConfigParser()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>config&lt;span style="color:#f92672">.&lt;/span>read(&lt;span style="color:#e6db74">&amp;#39;mail.ini&amp;#39;&lt;/span>, encoding&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;utf-8&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>address &lt;span style="color:#f92672">=&lt;/span> config&lt;span style="color:#f92672">.&lt;/span>get(&lt;span style="color:#e6db74">&amp;#39;mail&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;address&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 可以考虑加密&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>password &lt;span style="color:#f92672">=&lt;/span> config&lt;span style="color:#f92672">.&lt;/span>get(&lt;span style="color:#e6db74">&amp;#39;mail&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;password&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>smtp &lt;span style="color:#f92672">=&lt;/span> config&lt;span style="color:#f92672">.&lt;/span>get(&lt;span style="color:#e6db74">&amp;#39;mail&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;smtp&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>port &lt;span style="color:#f92672">=&lt;/span> config&lt;span style="color:#f92672">.&lt;/span>get(&lt;span style="color:#e6db74">&amp;#39;mail&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;port&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>subject &lt;span style="color:#f92672">=&lt;/span> config&lt;span style="color:#f92672">.&lt;/span>get(&lt;span style="color:#e6db74">&amp;#39;mail&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;subject&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 收件人&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>receiver &lt;span style="color:#f92672">=&lt;/span> config&lt;span style="color:#f92672">.&lt;/span>get(&lt;span style="color:#e6db74">&amp;#39;mail&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;reAddr&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 抄送人&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>carbonCopy &lt;span style="color:#f92672">=&lt;/span> config&lt;span style="color:#f92672">.&lt;/span>get(&lt;span style="color:#e6db74">&amp;#39;mail&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;ccAddr&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 正文&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>context &lt;span style="color:#f92672">=&lt;/span> config&lt;span style="color:#f92672">.&lt;/span>get(&lt;span style="color:#e6db74">&amp;#39;mail&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;contextPath&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 附件(暂时考虑的一个)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>attachment &lt;span style="color:#f92672">=&lt;/span> config&lt;span style="color:#f92672">.&lt;/span>get(&lt;span style="color:#e6db74">&amp;#39;mail&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;attachPath&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 创建一个带附件的实例&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>msg &lt;span style="color:#f92672">=&lt;/span> MIMEMultipart()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 加邮件头&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>msg[&lt;span style="color:#e6db74">&amp;#39;from&amp;#39;&lt;/span>] &lt;span style="color:#f92672">=&lt;/span> address
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>msg[&lt;span style="color:#e6db74">&amp;#39;to&amp;#39;&lt;/span>] &lt;span style="color:#f92672">=&lt;/span> receiver
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>msg[&lt;span style="color:#e6db74">&amp;#39;subject&amp;#39;&lt;/span>] &lt;span style="color:#f92672">=&lt;/span> date&lt;span style="color:#f92672">.&lt;/span>today()&lt;span style="color:#f92672">.&lt;/span>strftime(&lt;span style="color:#e6db74">&amp;#34;%Y-%m-&lt;/span>&lt;span style="color:#e6db74">%d&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>) &lt;span style="color:#f92672">+&lt;/span> subject
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>msg[&lt;span style="color:#e6db74">&amp;#39;cc&amp;#39;&lt;/span>] &lt;span style="color:#f92672">=&lt;/span> carbonCopy
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>msg&lt;span style="color:#f92672">.&lt;/span>attach(MIMEText(open(context, &lt;span style="color:#e6db74">&amp;#39;rb&amp;#39;&lt;/span>)&lt;span style="color:#f92672">.&lt;/span>read(), &lt;span style="color:#e6db74">&amp;#39;plain&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;utf-8&amp;#39;&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 构造附件&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">with&lt;/span> open(attachment, &lt;span style="color:#e6db74">&amp;#39;rb&amp;#39;&lt;/span>) &lt;span style="color:#66d9ef">as&lt;/span> myfile:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> att &lt;span style="color:#f92672">=&lt;/span> MIMEText(myfile&lt;span style="color:#f92672">.&lt;/span>read(), &lt;span style="color:#e6db74">&amp;#39;base64&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;utf-8&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> att[&lt;span style="color:#e6db74">&amp;#34;Content-Type&amp;#34;&lt;/span>] &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;application/octet-stream&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># 附件名&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> filename &lt;span style="color:#f92672">=&lt;/span> attachment&lt;span style="color:#f92672">.&lt;/span>split(&lt;span style="color:#e6db74">&amp;#39;&lt;/span>&lt;span style="color:#ae81ff">\\&lt;/span>&lt;span style="color:#e6db74">&amp;#39;&lt;/span>)[&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> att[&lt;span style="color:#e6db74">&amp;#34;Content-Disposition&amp;#34;&lt;/span>] &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;attachment; filename=&amp;#39;&lt;/span> &lt;span style="color:#f92672">+&lt;/span> filename
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> msg&lt;span style="color:#f92672">.&lt;/span>attach(att)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 发送邮件&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">try&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> server &lt;span style="color:#f92672">=&lt;/span> smtplib&lt;span style="color:#f92672">.&lt;/span>SMTP_SSL(smtp, int(port))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> server&lt;span style="color:#f92672">.&lt;/span>login(address, password)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># 所有收件人（包括抄送）&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> receiverList &lt;span style="color:#f92672">=&lt;/span> (receiver &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#e6db74">&amp;#39;,&amp;#39;&lt;/span> &lt;span style="color:#f92672">+&lt;/span> carbonCopy)&lt;span style="color:#f92672">.&lt;/span>replace(&lt;span style="color:#e6db74">&amp;#39; &amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;&amp;#39;&lt;/span>)&lt;span style="color:#f92672">.&lt;/span>split(&lt;span style="color:#e6db74">&amp;#39;,&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> server&lt;span style="color:#f92672">.&lt;/span>sendmail(msg[&lt;span style="color:#e6db74">&amp;#39;from&amp;#39;&lt;/span>], receiverList, msg&lt;span style="color:#f92672">.&lt;/span>as_string())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> server&lt;span style="color:#f92672">.&lt;/span>quit()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">&amp;#39;&amp;#39;&amp;#39;success&amp;#39;&amp;#39;&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">except&lt;/span> &lt;span style="color:#a6e22e">Exception&lt;/span> &lt;span style="color:#66d9ef">as&lt;/span> e:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(e)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="注意事项">注意事项&lt;/h2>
+&lt;ol>
+&lt;li>若密码中包含特殊字符，需要转义&lt;/li>
+&lt;/ol></description></item><item><title>python 发送邮件</title><link>https://caisong.github.io/posts/post/</link><pubDate>Thu, 02 Jun 2016 20:46:58 +0000</pubDate><guid>https://caisong.github.io/posts/post/</guid><description>&lt;h2 id="需求">需求&lt;/h2>
+&lt;p>每天发送工作日报，需要send一堆人，cc一堆人（公司规定，呵呵），还要添加附件。考虑到python能够方便的发送邮箱，就打算写个脚本。&lt;/p>
+&lt;!-- raw HTML omitted -->
+&lt;h2 id="代码">代码&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># -*- coding: utf-8 -*-&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#!/usr/bin/env python3&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">&amp;#39;&amp;#39;&amp;#39;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">发送带附件邮件
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">&amp;#39;&amp;#39;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> email.mime.text &lt;span style="color:#f92672">import&lt;/span> MIMEText
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> email.mime.multipart &lt;span style="color:#f92672">import&lt;/span> MIMEMultipart
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> smtplib
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> datetime &lt;span style="color:#f92672">import&lt;/span> date
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 创建一个带附件的实例&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>msg &lt;span style="color:#f92672">=&lt;/span> MIMEMultipart()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 接收列表&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>receiverList &lt;span style="color:#f92672">=&lt;/span> [&lt;span style="color:#e6db74">&amp;#39;abc@yeah.net&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;abc@qq.com&amp;#39;&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 抄送列表&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ccList &lt;span style="color:#f92672">=&lt;/span> [&lt;span style="color:#e6db74">&amp;#39;abc@yeah.net&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;abc@qq.com&amp;#39;&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 邮件头&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>msg[&lt;span style="color:#e6db74">&amp;#39;from&amp;#39;&lt;/span>] &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;song_cai@yeah.net&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>msg[&lt;span style="color:#e6db74">&amp;#39;to&amp;#39;&lt;/span>] &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;, &amp;#39;&lt;/span>&lt;span style="color:#f92672">.&lt;/span>join(receiverList)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>msg[&lt;span style="color:#e6db74">&amp;#39;subject&amp;#39;&lt;/span>] &lt;span style="color:#f92672">=&lt;/span> date&lt;span style="color:#f92672">.&lt;/span>today()&lt;span style="color:#f92672">.&lt;/span>strftime(&lt;span style="color:#e6db74">&amp;#34;%Y-%m-&lt;/span>&lt;span style="color:#e6db74">%d&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>) &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#e6db74">&amp;#39;&amp;#39;&amp;#39;XX工作日报&amp;#39;&amp;#39;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>msg[&lt;span style="color:#e6db74">&amp;#39;cc&amp;#39;&lt;/span>] &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;, &amp;#39;&lt;/span>&lt;span style="color:#f92672">.&lt;/span>join(ccList)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 正文&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>msg&lt;span style="color:#f92672">.&lt;/span>attach(MIMEText(open(&lt;span style="color:#e6db74">&amp;#39;d:&lt;/span>&lt;span style="color:#ae81ff">\\&lt;/span>&lt;span style="color:#e6db74">mailContext.txt&amp;#39;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#39;rb&amp;#39;&lt;/span>)&lt;span style="color:#f92672">.&lt;/span>read(), &lt;span style="color:#e6db74">&amp;#39;plain&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;utf-8&amp;#39;&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 附件&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>att &lt;span style="color:#f92672">=&lt;/span> MIMEText(open(&lt;span style="color:#e6db74">&amp;#39;d:&lt;/span>&lt;span style="color:#ae81ff">\\&lt;/span>&lt;span style="color:#e6db74">mailContext.txt&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;rb&amp;#39;&lt;/span>)&lt;span style="color:#f92672">.&lt;/span>read(), &lt;span style="color:#e6db74">&amp;#39;base64&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;utf-8&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>att[&lt;span style="color:#e6db74">&amp;#34;Content-Type&amp;#34;&lt;/span>] &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;application/octet-stream&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>att[&lt;span style="color:#e6db74">&amp;#34;Content-Disposition&amp;#34;&lt;/span>] &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;attachment; filename=&amp;#34;mailContext.txt&amp;#34;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>msg&lt;span style="color:#f92672">.&lt;/span>attach(att)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 发送邮件&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">try&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> server &lt;span style="color:#f92672">=&lt;/span> smtplib&lt;span style="color:#f92672">.&lt;/span>SMTP_SSL(&lt;span style="color:#e6db74">&amp;#39;&amp;#39;&amp;#39;smtp.qq.com&amp;#39;&amp;#39;&amp;#39;&lt;/span>, &lt;span style="color:#ae81ff">465&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> server&lt;span style="color:#f92672">.&lt;/span>login(&lt;span style="color:#e6db74">&amp;#39;song_cai@yeah.net&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;&amp;#39;&amp;#39;xxxxx&amp;#39;&amp;#39;&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> server&lt;span style="color:#f92672">.&lt;/span>sendmail(msg[&lt;span style="color:#e6db74">&amp;#39;from&amp;#39;&lt;/span>], receiverList &lt;span style="color:#f92672">+&lt;/span> ccList, msg&lt;span style="color:#f92672">.&lt;/span>as_string())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> server&lt;span style="color:#f92672">.&lt;/span>quit()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">&amp;#39;&amp;#39;&amp;#39;success&amp;#39;&amp;#39;&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">except&lt;/span> &lt;span style="color:#a6e22e">Exception&lt;/span> &lt;span style="color:#66d9ef">as&lt;/span> e:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> input(e)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="注意事项">注意事项&lt;/h2>
+&lt;ul>
+&lt;li>现在大部分邮箱使用SSL方式，所以对应地必须使用&lt;code>SMTP_SSL&lt;/code>,直接指定地址和端口，使用&lt;code>connect&lt;/code>的方式指定存在问题&lt;/li>
+&lt;li>正文要写在附件之前，否则会出现两个附件（即正文部分也成为附件了）&lt;/li>
+&lt;/ul>
+&lt;p>** 懒惰使人进步 **&lt;/p></description></item><item><title>记录</title><link>https://caisong.github.io/posts/%E8%AE%B0%E5%BD%95/</link><pubDate>Fri, 20 May 2016 00:08:04 +0000</pubDate><guid>https://caisong.github.io/posts/%E8%AE%B0%E5%BD%95/</guid><description>&lt;p>搭建的一晚上的成果, 随便发个帖子试试。&lt;/p>
+&lt;ol>
+&lt;li>安装nodejs hexo&lt;/li>
+&lt;li>安装next 主题&lt;/li>
+&lt;li>添加第三方插件&lt;/li>
+&lt;li>设置个人信息&lt;/li>
+&lt;/ol></description></item><item><title/><link>https://caisong.github.io/posts/apache/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://caisong.github.io/posts/apache/</guid><description>&lt;h2 id="tags-django-apach2">title: deploy django website to apache2
+date: 2018-04-01 20:55:39
+tags: django, apach2&lt;/h2>
+&lt;p>最近学习使用django，尝试部署至apaache2。&lt;/p>
+&lt;ol>
+&lt;li>required env&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo apt-get install apache2 libapache2-mod-wsgi-py3
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo pip install django
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="2">
+&lt;li>
+&lt;p>拷贝目录至&lt;code>/var/www&lt;/code>(apache2的默认网站目录)，之前未拷贝，在其他目录尝试了几次都未成功。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>添加配置website&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>配置网站配置&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>cd /etc/apache2/sites-avaliable/ &lt;span style="color:#f92672">&amp;amp;&amp;amp;&lt;/span> cp 000-default.conf yoursite.conf
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>配置详情&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;VirtualHost&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">*:80&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	ServerName 127.0.0.1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	ServerAdmin webmaster@localhost
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	# 网站根目录, 请根据自身目录配置，下同
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	DocumentRoot /var/www/web
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	#静态文件目录
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	Alias /static/ /var/www/web/static/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#f92672">&amp;lt;Directory&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">/var/www/web/static&lt;/span>&lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		Require all granted
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#f92672">&amp;lt;/Directory&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	WSGIScriptAlias / /var/www/web/web/wsgi.py
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#f92672">&amp;lt;Directory&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">/var/www/web/web&lt;/span>&lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#f92672">&amp;lt;Files&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">wsgi.py&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		Require all granted
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#f92672">&amp;lt;/Files&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#f92672">&amp;lt;/Directory&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;/VirtualHost&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="3">
+&lt;li>查看django wigi.py文件
+默认生成的文件没有问题，不需要修改即可运行。&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> os
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> os.path &lt;span style="color:#f92672">import&lt;/span> join, dirname,abspath
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> django.core.wsgi &lt;span style="color:#f92672">import&lt;/span> get_wsgi_application
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>PROJECT_DIR &lt;span style="color:#f92672">=&lt;/span> dirname(dirname(abspath(__file__)))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> sys
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sys&lt;span style="color:#f92672">.&lt;/span>path&lt;span style="color:#f92672">.&lt;/span>insert(&lt;span style="color:#ae81ff">0&lt;/span>, PROJECT_DIR)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>os&lt;span style="color:#f92672">.&lt;/span>environ&lt;span style="color:#f92672">.&lt;/span>setdefault(&lt;span style="color:#e6db74">&amp;#34;DJANGO_SETTINGS_MODULE&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;web.settings&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>application &lt;span style="color:#f92672">=&lt;/span> get_wsgi_application()
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="4">
+&lt;li>配置django环境
+进入你的网站根目录&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#static files&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#前提在你的setting.py文件中设置好STATIC_ROOT目录&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>python manage.py collectstatic
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>python manage.py migrate
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="5">
+&lt;li>修改目录权限为&lt;code>www-data&lt;/code>&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo chown www-data:www-data webroot
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 如果存在数据库，请同时修改相应权限&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="6">
+&lt;li>使网站生效&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>	sudo a2ensite yoursite.conf
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	service apache2 reload
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ol></description></item><item><title/><link>https://caisong.github.io/posts/mongodb/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://caisong.github.io/posts/mongodb/</guid><description>&lt;h2 id="category-database">layout: &amp;lsquo;&amp;lsquo;&amp;lsquo;mssql&amp;rsquo;
+title: transfer mssql data to mongodb&amp;rsquo;
+date: 2017-09-05 19:56:02
+tags: mssql, mongodb
+category: database&lt;/h2>
+&lt;p>写得比较基础&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#!/usr/bin/env python&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># -*- coding:utf-8 -*-&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> pymssql
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> pymongo
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sql &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;&amp;#39;&amp;#39;SELECT [Name]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[CardNo]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[Descriot]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[CtfTp]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[CtfId]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[Gender]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[Birthday]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[Address]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[Zip]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[Dirty]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[District1]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[District2]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[District3]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[District4]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[District5]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[District6]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[FirstNm]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[LastNm]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[Duty]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[Mobile]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[Tel]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[Fax]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[EMail]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[Nation]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[Taste]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[Education]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[Company]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[CTel]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[CAddress]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[CZip]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[Family]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[Version]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> FROM cdsgus&amp;#39;&amp;#39;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ms_conn &lt;span style="color:#f92672">=&lt;/span> pymssql&lt;span style="color:#f92672">.&lt;/span>connect(host&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;127.0.0.1&amp;#34;&lt;/span>, user&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;sa&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> password&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;root&amp;#34;&lt;/span>, database&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;database&amp;#34;&lt;/span>, charset&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;utf8&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ms_cur &lt;span style="color:#f92672">=&lt;/span> ms_conn&lt;span style="color:#f92672">.&lt;/span>cursor(as_dict&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#66d9ef">True&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ms_cur&lt;span style="color:#f92672">.&lt;/span>execute(sql)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>row &lt;span style="color:#f92672">=&lt;/span> ms_cur&lt;span style="color:#f92672">.&lt;/span>fetchone()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mongo_conn &lt;span style="color:#f92672">=&lt;/span> pymongo&lt;span style="color:#f92672">.&lt;/span>MongoClient(&lt;span style="color:#e6db74">&amp;#39;127.0.0.1&amp;#39;&lt;/span>, &lt;span style="color:#ae81ff">27017&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mongo_db &lt;span style="color:#f92672">=&lt;/span> mongo_conn[&lt;span style="color:#e6db74">&amp;#39;test&amp;#39;&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">while&lt;/span> row:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> mongo_db&lt;span style="color:#f92672">.&lt;/span>kf_data&lt;span style="color:#f92672">.&lt;/span>insert_one(row)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> row &lt;span style="color:#f92672">=&lt;/span> ms_cur&lt;span style="color:#f92672">.&lt;/span>fetchone()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ms_conn&lt;span style="color:#f92672">.&lt;/span>commit()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ms_conn&lt;span style="color:#f92672">.&lt;/span>close()
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>
