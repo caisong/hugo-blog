@@ -14,7 +14,7 @@ tags:
   - yocto
   - 交叉编译
 # nolastmod: true
-draft: true
+draft: false
 ---
 
 
