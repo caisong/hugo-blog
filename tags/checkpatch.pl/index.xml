@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Checkpatch.pl on Caisong's Blog</title><link>https://caisong.github.io/tags/checkpatch.pl/</link><description>Recent content in Checkpatch.pl on Caisong's Blog</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Fri, 03 Sep 2021 20:42:08 +0800</lastBuildDate><atom:link href="https://caisong.github.io/tags/checkpatch.pl/index.xml" rel="self" type="application/rss+xml"/><item><title>Checkpatch.pl</title><link>https://caisong.github.io/posts/checkpatch.pl/</link><pubDate>Fri, 03 Sep 2021 20:42:08 +0800</pubDate><guid>https://caisong.github.io/posts/checkpatch.pl/</guid><description>&lt;p>$ ./checkpatch.pl &amp;ndash;no-tree -f sample_module.c&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># ignore file mode&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git config --global core.filemode false
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git config --global core.filemode false
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol>
+&lt;li>git rebase -i xxxxxx&lt;/li>
+&lt;li>change pick &amp;ndash;&amp;gt; edit&lt;/li>
+&lt;li>git commit &amp;ndash;amend -s &amp;ndash;author &amp;quot; &amp;quot;&lt;/li>
+&lt;li>git rebase &amp;ndash;continue&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#openssl cross compile&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ./Configure --openssldir&lt;span style="color:#f92672">=&lt;/span>/home/&amp;lt;your user&amp;gt;/workbench/openssl-1.0.1g/final shared os/compiler:arm-none-linux-gnueabi-
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>
