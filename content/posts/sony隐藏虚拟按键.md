@@ -14,7 +14,7 @@ tags:
   - phone
   - sony xp
 # nolastmod: true
-draft: true
+draft: false
 ---
 
 ```shell

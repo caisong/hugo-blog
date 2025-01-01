@@ -15,7 +15,7 @@ tags:
   - 编程
   - 多线程
 # nolastmod: true
-draft: true
+draft: false
 ---
 
 * `info threads` 显示当前可调试的所有线程，每个线程会有一个GDB为其分配的ID，后面操作线程的时候会用到这个ID。 前面有*的是当前调试的线程。

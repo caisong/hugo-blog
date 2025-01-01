@@ -13,7 +13,7 @@ categories:
 tags:
   - firefox
 # nolastmod: true
-draft: true
+draft: false
 ---
 
 security.mixed_content.block_active_content = false
