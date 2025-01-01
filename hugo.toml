@@ -12,8 +12,8 @@ siteStartYear = 2016
 rss = true
 
 email = "ujscs@live.cn"
-#Syntax highlighting
-customSyntaxHighlighting = true
+# #Syntax highlighting
+# customSyntaxHighlighting = true
 
 # options
  stickyNav = true
@@ -24,3 +24,4 @@ customSyntaxHighlighting = true
  showSummaryCoverInPost = true
  imageZoomableInPost = true
  showPrevNextPost = true
+
