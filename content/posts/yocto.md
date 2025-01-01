@@ -1,8 +1,8 @@
 ---
 title: Yocto
-date: 2025-01-01T17:09:09+08:00
-lastmod: 2025-01-01T17:09:09+08:00
-author: Author Name
+date: 2017-01-24T02:52:09+08:00
+lastmod: 2017-01-24T02:52:09+08:00
+author: Cai Song
 # avatar: /img/author.jpg
 # authorlink: https://author.site
 cover: /img/cover.jpg
