@@ -1,0 +1,448 @@
+<!doctype html><html lang=en-us x-data :class=$store.darkMode.class() :data-theme=$store.darkMode.theme()><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><title>简化代码 | Caisong's Blog</title>
+<link rel=canonical href=https://caisong.github.io/posts/%E7%AE%80%E5%8C%96%E4%BB%A3%E7%A0%81/><meta name=author content="Cai Song"><meta name=description content="Cut out summary from your post content here.
+"><meta name=keywords content="Tag1,Tag2"><meta name=generator content="Hugo 0.140.2"><meta property="og:url" content="https://caisong.github.io/posts/%E7%AE%80%E5%8C%96%E4%BB%A3%E7%A0%81/"><meta property="og:site_name" content="Caisong's Blog"><meta property="og:title" content="简化代码"><meta property="og:description" content="Cut out summary from your post content here."><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2024-10-16T21:41:47+08:00"><meta property="article:modified_time" content="2024-10-16T21:41:47+08:00"><meta property="article:tag" content="Tag1"><meta property="article:tag" content="Tag2"><meta name=twitter:card content="summary"><meta name=twitter:title content="简化代码"><meta name=twitter:description content="Cut out summary from your post content here."><link rel=stylesheet href=/css/output.min.css><style>pre{padding:1em;overflow:auto}</style><script defer src=https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js></script></head><body x-data="{
+    flip: false,
+  }"><div id=dream-global-bg></div><nav x-data="{ isSticky: false }" x-init="window.addEventListener('scroll', () => { isSticky = window.scrollY > 30 })" class="sticky top-0 z-30 mt-4 lg:mt-8 py-4" :class="{ 'bg-base-100 shadow-lg dark:border-b dark:border-base-content/30': isSticky }"><div class="container flex justify-between px-4"><section class="flex items-center gap-4"><div class="avatar cursor-pointer hover:online" @click="flip = !flip" title="Flip it!"><div class="h-10 rounded-full"><img src=/ alt="A blog about all things technical."></div></div><div><a href=https://caisong.github.io/ class="text-lg font-semibold cursor-pointer">A blog about all things technical.</a></div></section><div class="dropdown dropdown-end sm:hidden"><div tabindex=0 role=button class="btn btn-ghost btn-square" aria-label="Select an option"><ion-icon name=menu class=text-2xl></ion-icon></div><ul tabindex=0 class="dropdown-content menu w-36 bg-base-100 rounded-box z-[1] shadow-md"><li><a class="inline-flex items-center p-2 cursor-pointer" href=/index.xml title=RSS><ion-icon name=logo-rss></ion-icon>RSS</a></li><li><a class="inline-flex items-center p-2 cursor-pointer" href=/posts title=Archives><ion-icon name=archive></ion-icon>Archives</a></li><li><a class="inline-flex items-center p-2 cursor-pointer" href=/categories title="All Categories"><ion-icon name=grid></ion-icon>All Categories</a></li><li><a class="inline-flex items-center p-2 cursor-pointer" href=/tags title="All Tags"><ion-icon name=pricetags></ion-icon>All Tags</a></li></ul></div><section class="hidden sm:flex sm:items-center sm:gap-2 md:gap-4"><a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href=/index.xml title=RSS><ion-icon class=group-hover:text-primary-content name=logo-rss></ion-icon></a><div class="dropdown dropdown-end dropdown-hover"><div tabindex=0 role=button class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" aria-label="Select an option"><ion-icon class="group-hover:text-primary-content text-xl" name=menu></ion-icon></div><ul tabindex=0 class="dropdown-content menu w-36 bg-base-100 rounded-box z-[1] shadow-xl"><li><a class="inline-flex items-center p-2 cursor-pointer" href=/posts title=Archives><ion-icon name=archive></ion-icon>Archives</a></li><li><a class="inline-flex items-center p-2 cursor-pointer" href=/categories title="All Categories"><ion-icon name=grid></ion-icon>All Categories</a></li><li><a class="inline-flex items-center p-2 cursor-pointer" href=/tags title="All Tags"><ion-icon name=pricetags></ion-icon>All Tags</a></li></ul></div></section></div></nav><div class=flip-container :class="{ 'flip-it': flip }"><div class=flipper><div class=front><div class=container><div class="lg:grid lg:grid-cols-4 gap-4 mt-4 px-4"><div class="hidden lg:block"></div><div class=lg:col-span-2><article class="mx-auto prose prose-quoteless dark:prose-invert" id=dream-single-post-main itemscope itemtype=http://schema.org/Article><meta itemprop=name content="简化代码"><meta itemprop=description content="Cut out summary from your post content here."><meta itemprop=datePublished content="2024-10-16T21:41:47+08:00"><meta itemprop=dateModified content="2024-10-16T21:41:47+08:00"><meta itemprop=wordCount content="1406"><meta itemprop=keywords content="Tag1,Tag2"><header><h1 itemprop=headline>简化代码</h1><p class=text-sm>Wednesday, Oct 16, 2024
+| <span>7 minute read</span>
+| <span>Updated at
+Wednesday, Oct 16, 2024</span></p><div class="flex justify-between"><div class="flex items-center"><span>@</span>
+<span itemprop=author itemscope itemtype=https://schema.org/Person><span itemprop=name>Cai Song</span></span></div><div class="flex items-center gap-2"><a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="https://x.com/intent/post?text=%e7%ae%80%e5%8c%96%e4%bb%a3%e7%a0%81&amp;url=https://caisong.github.io/posts/%E7%AE%80%E5%8C%96%E4%BB%A3%E7%A0%81/" target=_blank rel="noopener noreferrer" title="Share on X"><ion-icon class=group-hover:text-primary-content name=logo-x></ion-icon></a><a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="https://facebook.com/sharer/sharer.php?u=https://caisong.github.io/posts/%E7%AE%80%E5%8C%96%E4%BB%A3%E7%A0%81/" target=_blank rel="noopener noreferrer" title="Share on Facebook"><ion-icon class=group-hover:text-primary-content name=logo-facebook></ion-icon></a><a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="https://wa.me/?text=%e7%ae%80%e5%8c%96%e4%bb%a3%e7%a0%81%20https://caisong.github.io/posts/%E7%AE%80%E5%8C%96%E4%BB%A3%E7%A0%81/" target=_blank rel="noopener noreferrer" title="Share on WhatsApp"><ion-icon class=group-hover:text-primary-content name=logo-whatsapp></ion-icon></a></div></div></header><section id=dream-single-post-content itemprop=articleBody><img src=/img/cover.jpg alt=简化代码><p>Cut out summary from your post content here.</p><p>The remaining content of your post.</p><h1 id=简化代码>简化代码</h1><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-c data-lang=c><span style=display:flex><span><span style=color:#75715e>/* SPDX-License-Identifier: BSD-3-Clause
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * Copyright 2017 Mellanox Technologies, Ltd
+</span></span></span><span style=display:flex><span><span style=color:#75715e> */</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;stdio.h&gt;</span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;stdlib.h&gt;</span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;string.h&gt;</span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;stdint.h&gt;</span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;inttypes.h&gt;</span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;sys/types.h&gt;</span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;sys/queue.h&gt;</span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;setjmp.h&gt;</span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;stdarg.h&gt;</span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;ctype.h&gt;</span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;errno.h&gt;</span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;getopt.h&gt;</span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;signal.h&gt;</span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;stdbool.h&gt;</span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;rte_eal.h&gt;</span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;rte_common.h&gt;</span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;rte_malloc.h&gt;</span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;rte_ether.h&gt;</span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;rte_ethdev.h&gt;</span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;rte_mempool.h&gt;</span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;rte_mbuf.h&gt;</span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;rte_net.h&gt;</span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;rte_flow.h&gt;</span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;rte_cycles.h&gt;</span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>static</span> <span style=color:#66d9ef>volatile</span> <span style=color:#66d9ef>bool</span> force_quit;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>static</span> <span style=color:#66d9ef>uint16_t</span> port_id;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>static</span> <span style=color:#66d9ef>uint16_t</span> nr_queues <span style=color:#f92672>=</span> <span style=color:#ae81ff>5</span>;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>static</span> <span style=color:#66d9ef>uint8_t</span> selected_queue <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>struct</span> rte_mempool <span style=color:#f92672>*</span>mbuf_pool;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>struct</span> rte_flow <span style=color:#f92672>*</span>flow;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#define SRC_IP ((0&lt;&lt;24) + (0&lt;&lt;16) + (0&lt;&lt;8) + 0) </span><span style=color:#75715e>/* src ip = 0.0.0.0 */</span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#define DEST_IP ((192&lt;&lt;24) + (168&lt;&lt;16) + (1&lt;&lt;8) + 1) </span><span style=color:#75715e>/* dest ip = 192.168.1.1 */</span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#define FULL_MASK 0xffffffff </span><span style=color:#75715e>/* full mask */</span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#define EMPTY_MASK 0x0 </span><span style=color:#75715e>/* empty mask */</span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&#34;flow_blocks.c&#34;</span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#75715e>//五元组 规则匹配
+</span></span></span><span style=display:flex><span><span style=color:#75715e>//匹配端口 若端口存在，则结束匹配。（端口规则）
+</span></span></span><span style=display:flex><span><span style=color:#75715e>//匹配IP 
+</span></span></span><span style=display:flex><span><span style=color:#75715e>// 先用布隆判断IP是否存在， 再去hash表查找对应规则ID，二次确认。
+</span></span></span><span style=display:flex><span><span style=color:#75715e>// 先用宿IP（服务端IP），再用源IP
+</span></span></span><span style=display:flex><span><span style=color:#75715e>// 特征码：
+</span></span></span><span style=display:flex><span><span style=color:#75715e>// 固定：直接根据报文解析去匹配
+</span></span></span><span style=display:flex><span><span style=color:#75715e>// 浮动：使用hs匹配
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span> <span style=color:#75715e>// 创建哈希表
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>struct</span> rte_hash <span style=color:#f92672>*</span>hash_table <span style=color:#f92672>=</span> <span style=color:#a6e22e>rte_hash_create</span>(<span style=color:#e6db74>&#34;packet_hash&#34;</span>, <span style=color:#ae81ff>16</span>, <span style=color:#a6e22e>rte_hash_get_empty_key</span>(), NULL,
+</span></span><span style=display:flex><span>                                                  rte_hash_hash_crc, rte_hash_compare_crc);
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> (hash_table <span style=color:#f92672>==</span> NULL) {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>fprintf</span>(stderr, <span style=color:#e6db74>&#34;Failed to create hash table.</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>);
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>hs_free_scratch</span>(scratch);
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>hs_free_database</span>(database);
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;stdio.h&gt;</span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;stdlib.h&gt;</span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;stdint.h&gt;</span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;string.h&gt;</span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;hs/hs.h&gt;</span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;rte_mbuf.h&gt;</span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>static</span> <span style=color:#66d9ef>int</span> <span style=color:#a6e22e>eventHandler</span>(<span style=color:#66d9ef>unsigned</span> <span style=color:#66d9ef>int</span> id, <span style=color:#66d9ef>unsigned</span> <span style=color:#66d9ef>long</span> <span style=color:#66d9ef>long</span> from, <span style=color:#66d9ef>unsigned</span> <span style=color:#66d9ef>long</span> <span style=color:#66d9ef>long</span> to, <span style=color:#66d9ef>unsigned</span> <span style=color:#66d9ef>int</span> flags, <span style=color:#66d9ef>void</span> <span style=color:#f92672>*</span>context) {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>printf</span>(<span style=color:#e6db74>&#34;Match found: id = %u, from = %llu, to = %llu</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>, id, from, to);
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>int</span> <span style=color:#a6e22e>main</span>() {
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// 编译 Hyperscan 数据库，使用流模式
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>hs_database_t</span> <span style=color:#f92672>*</span>database;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>hs_compile_error_t</span> compileError;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>const</span> <span style=color:#66d9ef>char</span> <span style=color:#f92672>*</span>expressions[] <span style=color:#f92672>=</span> {<span style=color:#e6db74>&#34;your_pattern_here&#34;</span>};
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>hs_compile_multi</span>(expressions, NULL, <span style=color:#ae81ff>0</span>, HS_MODE_STREAM, NULL, <span style=color:#f92672>&amp;</span>database, <span style=color:#f92672>&amp;</span>compileError)<span style=color:#f92672>!=</span> HS_SUCCESS) {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>fprintf</span>(stderr, <span style=color:#e6db74>&#34;Compile error: %s</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>, compileError.message);
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>hs_scratch_t</span> <span style=color:#f92672>*</span>scratch;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>hs_alloc_scratch</span>(database, <span style=color:#f92672>&amp;</span>scratch)<span style=color:#f92672>!=</span> HS_SUCCESS) {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>fprintf</span>(stderr, <span style=color:#e6db74>&#34;Failed to allocate scratch space.</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>);
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>hs_free_database</span>(database);
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// 假设从 DPDK 接收到一个 mbuf
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>struct</span> rte_mbuf <span style=color:#f92672>*</span>mbuf <span style=color:#f92672>=</span> <span style=color:#75715e>/* 通过 DPDK 的接收函数获取的 mbuf */</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// 使用流模式进行匹配
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>hs_stream_t</span> stream_id;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>hs_open_stream</span>(database, <span style=color:#f92672>&amp;</span>stream_id)<span style=color:#f92672>!=</span> HS_SUCCESS) {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>fprintf</span>(stderr, <span style=color:#e6db74>&#34;Failed to open stream.</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>);
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>hs_free_scratch</span>(scratch);
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>hs_free_database</span>(database);
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>size_t</span> offset <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>while</span> (offset <span style=color:#f92672>&lt;</span> mbuf<span style=color:#f92672>-&gt;</span>pkt_len) {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>size_t</span> remaining <span style=color:#f92672>=</span> mbuf<span style=color:#f92672>-&gt;</span>pkt_len <span style=color:#f92672>-</span> offset;
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>size_t</span> chunkSize <span style=color:#f92672>=</span> remaining <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>10</span><span style=color:#f92672>?</span> <span style=color:#ae81ff>10</span> <span style=color:#f92672>:</span> remaining;
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>hs_status_t</span> status <span style=color:#f92672>=</span> <span style=color:#a6e22e>hs_scan_stream</span>(database, (<span style=color:#66d9ef>const</span> <span style=color:#66d9ef>char</span> <span style=color:#f92672>*</span>)(mbuf<span style=color:#f92672>-&gt;</span>data <span style=color:#f92672>+</span> offset), chunkSize, <span style=color:#ae81ff>0</span>, scratch, eventHandler, NULL);
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> (status<span style=color:#f92672>!=</span> HS_SUCCESS) {
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>fprintf</span>(stderr, <span style=color:#e6db74>&#34;Scan error.</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>);
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>hs_close_stream</span>(database, stream_id);
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>hs_free_scratch</span>(scratch);
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>hs_free_database</span>(database);
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>;
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>        offset <span style=color:#f92672>+=</span> chunkSize;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>hs_close_stream</span>(database, stream_id)<span style=color:#f92672>!=</span> HS_SUCCESS) {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>fprintf</span>(stderr, <span style=color:#e6db74>&#34;Failed to close stream.</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>);
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>hs_free_scratch</span>(scratch);
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>hs_free_database</span>(database);
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>hs_free_scratch</span>(scratch);
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>hs_free_database</span>(database);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>static</span> <span style=color:#66d9ef>inline</span> <span style=color:#66d9ef>void</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>print_ether_addr</span>(<span style=color:#66d9ef>const</span> <span style=color:#66d9ef>char</span> <span style=color:#f92672>*</span>what, <span style=color:#66d9ef>struct</span> rte_ether_addr <span style=color:#f92672>*</span>eth_addr)
+</span></span><span style=display:flex><span>{
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>char</span> buf[RTE_ETHER_ADDR_FMT_SIZE];
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>rte_ether_format_addr</span>(buf, RTE_ETHER_ADDR_FMT_SIZE, eth_addr);
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>printf</span>(<span style=color:#e6db74>&#34;%s%s&#34;</span>, what, buf);
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>/* Main_loop for flow filtering. 8&lt; */</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>static</span> <span style=color:#66d9ef>int</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>main_loop</span>(<span style=color:#66d9ef>void</span>)
+</span></span><span style=display:flex><span>{
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>static</span> <span style=color:#66d9ef>const</span> <span style=color:#66d9ef>int</span> MAX_PKT_BURST <span style=color:#f92672>=</span> <span style=color:#ae81ff>32</span>;
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>struct</span> rte_mbuf <span style=color:#f92672>*</span>mbufs[MAX_PKT_BURST];
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>struct</span> rte_ether_hdr <span style=color:#f92672>*</span>eth_hdr;
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>struct</span> rte_flow_error error;
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>uint16_t</span> nb_rx;
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>uint16_t</span> i;
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>uint16_t</span> j;
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>int</span> ret;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#75715e>/* Reading the packets from all queues. 8&lt; */</span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>while</span> (<span style=color:#f92672>!</span>force_quit) {
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>for</span> (i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; i <span style=color:#f92672>&lt;</span> nr_queues; i<span style=color:#f92672>++</span>) {
+</span></span><span style=display:flex><span>			nb_rx <span style=color:#f92672>=</span> <span style=color:#a6e22e>rte_eth_rx_burst</span>(port_id, i, mbufs, MAX_PKT_BURST);
+</span></span><span style=display:flex><span>			<span style=color:#66d9ef>if</span> (nb_rx) {
+</span></span><span style=display:flex><span>				<span style=color:#66d9ef>for</span> (j <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; j <span style=color:#f92672>&lt;</span> nb_rx; j<span style=color:#f92672>++</span>) {
+</span></span><span style=display:flex><span>					   <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>rte_be_to_cpu_16</span>(pkts_burst[j]<span style=color:#f92672>-&gt;</span>packet_type) <span style=color:#f92672>==</span> ETH_P_IPV4 <span style=color:#f92672>&amp;&amp;</span>
+</span></span><span style=display:flex><span>       						((<span style=color:#66d9ef>struct</span> ipv4_hdr <span style=color:#f92672>*</span>)pkts_burst[j]<span style=color:#f92672>-&gt;</span>data)<span style=color:#f92672>-&gt;</span>version <span style=color:#f92672>==</span> <span style=color:#ae81ff>4</span> <span style=color:#f92672>&amp;&amp;</span>
+</span></span><span style=display:flex><span>      						((<span style=color:#66d9ef>struct</span> ipv4_hdr <span style=color:#f92672>*</span>)pkts_burst[j]<span style=color:#f92672>-&gt;</span>data)<span style=color:#f92672>-&gt;</span>ihl <span style=color:#f92672>==</span> <span style=color:#ae81ff>5</span> <span style=color:#f92672>&amp;&amp;</span>
+</span></span><span style=display:flex><span>       						((<span style=color:#66d9ef>struct</span> ipv4_hdr <span style=color:#f92672>*</span>)((<span style=color:#66d9ef>uint8_t</span> <span style=color:#f92672>*</span>)pkts_burst[j]<span style=color:#f92672>-&gt;</span>data <span style=color:#f92672>+</span> <span style=color:#ae81ff>20</span>))<span style=color:#f92672>-&gt;</span>version <span style=color:#f92672>==</span> <span style=color:#ae81ff>4</span> <span style=color:#f92672>&amp;&amp;</span>
+</span></span><span style=display:flex><span>       						((<span style=color:#66d9ef>struct</span> ipv4_hdr <span style=color:#f92672>*</span>)((<span style=color:#66d9ef>uint8_t</span> <span style=color:#f92672>*</span>)pkts_burst[j]<span style=color:#f92672>-&gt;</span>data <span style=color:#f92672>+</span> <span style=color:#ae81ff>20</span>))<span style=color:#f92672>-&gt;</span>ihl <span style=color:#f92672>==</span> <span style=color:#ae81ff>5</span>) {
+</span></span><span style=display:flex><span>       						<span style=color:#75715e>// IP-in-IP tunnel detected
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>   						}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>						<span style=color:#66d9ef>struct</span> ipv4_hdr <span style=color:#f92672>*</span>ip_hdr <span style=color:#f92672>=</span> (<span style=color:#66d9ef>struct</span> ipv4_hdr <span style=color:#f92672>*</span>)pkts_burst[j]<span style=color:#f92672>-&gt;</span>data;
+</span></span><span style=display:flex><span>						<span style=color:#66d9ef>if</span> (ip_hdr<span style=color:#f92672>-&gt;</span>next_proto_id <span style=color:#f92672>==</span> IPPROTO_UDP <span style=color:#f92672>&amp;&amp;</span>
+</span></span><span style=display:flex><span>							<span style=color:#a6e22e>rte_be_to_cpu_16</span>(((<span style=color:#66d9ef>struct</span> udp_hdr <span style=color:#f92672>*</span>)(ip_hdr <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>))<span style=color:#f92672>-&gt;</span>dst_port) <span style=color:#f92672>==</span> <span style=color:#ae81ff>4789</span>) {
+</span></span><span style=display:flex><span>							<span style=color:#75715e>// VXLAN tunnel detected
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>						}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>						<span style=color:#66d9ef>if</span> (ip_hdr<span style=color:#f92672>-&gt;</span>next_proto_id <span style=color:#f92672>==</span> <span style=color:#ae81ff>47</span>) {
+</span></span><span style=display:flex><span>       						<span style=color:#75715e>// GRE tunnel detected
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>   						}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>						<span style=color:#66d9ef>struct</span> ipv4_hdr <span style=color:#f92672>*</span>ip_hdr <span style=color:#f92672>=</span> (<span style=color:#66d9ef>struct</span> ipv4_hdr <span style=color:#f92672>*</span>)packet<span style=color:#f92672>-&gt;</span>data;
+</span></span><span style=display:flex><span>						<span style=color:#66d9ef>if</span> (ip_hdr<span style=color:#f92672>-&gt;</span>next_proto_id <span style=color:#f92672>==</span> IPPROTO_UDP <span style=color:#f92672>&amp;&amp;</span>
+</span></span><span style=display:flex><span>							<span style=color:#a6e22e>rte_be_to_cpu_16</span>(((<span style=color:#66d9ef>struct</span> udp_hdr <span style=color:#f92672>*</span>)(ip_hdr <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>))<span style=color:#f92672>-&gt;</span>dst_port) <span style=color:#f92672>==</span> <span style=color:#ae81ff>2152</span>) {
+</span></span><span style=display:flex><span>							<span style=color:#75715e>// GTP-U tunnel detected
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>						}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>						<span style=color:#66d9ef>if</span> (is_ip_in_ip_tunnel) {
+</span></span><span style=display:flex><span>       						pkts_burst[<span style=color:#ae81ff>0</span>]<span style=color:#f92672>-&gt;</span>data <span style=color:#f92672>+=</span> <span style=color:#ae81ff>20</span>;
+</span></span><span style=display:flex><span>       						pkts_burst[<span style=color:#ae81ff>0</span>]<span style=color:#f92672>-&gt;</span>pkt_len <span style=color:#f92672>-=</span> <span style=color:#ae81ff>20</span>;
+</span></span><span style=display:flex><span>						} <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span> (is_vxlan_tunnel) {
+</span></span><span style=display:flex><span>							pkts_burst[<span style=color:#ae81ff>0</span>]<span style=color:#f92672>-&gt;</span>data <span style=color:#f92672>+=</span> <span style=color:#ae81ff>8</span> <span style=color:#f92672>+</span> <span style=color:#ae81ff>8</span>;
+</span></span><span style=display:flex><span>							pkts_burst[<span style=color:#ae81ff>0</span>]<span style=color:#f92672>-&gt;</span>pkt_len <span style=color:#f92672>-=</span> <span style=color:#ae81ff>8</span> <span style=color:#f92672>+</span> <span style=color:#ae81ff>8</span>;
+</span></span><span style=display:flex><span>						} <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span> (is_gre_tunnel) {
+</span></span><span style=display:flex><span>							<span style=color:#75715e>// calculate GRE header length and adjust pointer and length accordingly
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>						} <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span> (is_gtp_tunnel){
+</span></span><span style=display:flex><span>							<span style=color:#66d9ef>struct</span> gtp_hdr <span style=color:#f92672>*</span>gtp_hdr <span style=color:#f92672>=</span> (<span style=color:#66d9ef>struct</span> gtp_hdr <span style=color:#f92672>*</span>)((<span style=color:#66d9ef>uint8_t</span> <span style=color:#f92672>*</span>)packet<span style=color:#f92672>-&gt;</span>data <span style=color:#f92672>+</span> <span style=color:#66d9ef>sizeof</span>(<span style=color:#66d9ef>struct</span> ipv4_hdr) <span style=color:#f92672>+</span> <span style=color:#66d9ef>sizeof</span>(<span style=color:#66d9ef>struct</span> udp_hdr));
+</span></span><span style=display:flex><span>   							<span style=color:#66d9ef>uint32_t</span> tunnel_id <span style=color:#f92672>=</span> <span style=color:#a6e22e>rte_be_to_cpu_32</span>(gtp_hdr<span style=color:#f92672>-&gt;</span>tunnel_id);
+</span></span><span style=display:flex><span>							<span style=color:#66d9ef>uint8_t</span> <span style=color:#f92672>*</span>user_data <span style=color:#f92672>=</span> (<span style=color:#66d9ef>uint8_t</span> <span style=color:#f92672>*</span>)(gtp_hdr <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>);
+</span></span><span style=display:flex><span>							<span style=color:#66d9ef>uint16_t</span> user_data_len <span style=color:#f92672>=</span> packet<span style=color:#f92672>-&gt;</span>pkt_len <span style=color:#f92672>-</span> (<span style=color:#66d9ef>sizeof</span>(<span style=color:#66d9ef>struct</span> ipv4_hdr) <span style=color:#f92672>+</span> <span style=color:#66d9ef>sizeof</span>(<span style=color:#66d9ef>struct</span> udp_hdr) <span style=color:#f92672>+</span> <span style=color:#66d9ef>sizeof</span>(<span style=color:#66d9ef>struct</span> gtp_hdr));
+</span></span><span style=display:flex><span>							<span style=color:#75715e>// Process user data
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>						}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>					<span style=color:#66d9ef>struct</span> rte_mbuf <span style=color:#f92672>*</span>m <span style=color:#f92672>=</span> mbufs[j];
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>					eth_hdr <span style=color:#f92672>=</span> <span style=color:#a6e22e>rte_pktmbuf_mtod</span>(m,
+</span></span><span style=display:flex><span>							<span style=color:#66d9ef>struct</span> rte_ether_hdr <span style=color:#f92672>*</span>);
+</span></span><span style=display:flex><span>					<span style=color:#a6e22e>print_ether_addr</span>(<span style=color:#e6db74>&#34;src=&#34;</span>,
+</span></span><span style=display:flex><span>							<span style=color:#f92672>&amp;</span>eth_hdr<span style=color:#f92672>-&gt;</span>src_addr);
+</span></span><span style=display:flex><span>					<span style=color:#a6e22e>print_ether_addr</span>(<span style=color:#e6db74>&#34; - dst=&#34;</span>,
+</span></span><span style=display:flex><span>							<span style=color:#f92672>&amp;</span>eth_hdr<span style=color:#f92672>-&gt;</span>dst_addr);
+</span></span><span style=display:flex><span>					<span style=color:#a6e22e>printf</span>(<span style=color:#e6db74>&#34; - queue=0x%x&#34;</span>,
+</span></span><span style=display:flex><span>							(<span style=color:#66d9ef>unsigned</span> <span style=color:#66d9ef>int</span>)i);
+</span></span><span style=display:flex><span>					<span style=color:#a6e22e>printf</span>(<span style=color:#e6db74>&#34;</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>					<span style=color:#a6e22e>rte_pktmbuf_free</span>(m);
+</span></span><span style=display:flex><span>				}
+</span></span><span style=display:flex><span>			}
+</span></span><span style=display:flex><span>		}
+</span></span><span style=display:flex><span>	}
+</span></span><span style=display:flex><span>	<span style=color:#75715e>/* &gt;8 End of reading the packets from all queues. */</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#75715e>/* closing and releasing resources */</span>
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>rte_flow_flush</span>(port_id, <span style=color:#f92672>&amp;</span>error);
+</span></span><span style=display:flex><span>	ret <span style=color:#f92672>=</span> <span style=color:#a6e22e>rte_eth_dev_stop</span>(port_id);
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>if</span> (ret <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>0</span>)
+</span></span><span style=display:flex><span>		<span style=color:#a6e22e>printf</span>(<span style=color:#e6db74>&#34;Failed to stop port %u: %s&#34;</span>,
+</span></span><span style=display:flex><span>		       port_id, <span style=color:#a6e22e>rte_strerror</span>(<span style=color:#f92672>-</span>ret));
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>rte_eth_dev_close</span>(port_id);
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>return</span> ret;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span><span style=color:#75715e>/* &gt;8 End of main_loop for flow filtering. */</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#define CHECK_INTERVAL 1000  </span><span style=color:#75715e>/* 100ms */</span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#define MAX_REPEAT_TIMES 90  </span><span style=color:#75715e>/* 9s (90 * 100ms) in total */</span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>static</span> <span style=color:#66d9ef>void</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>assert_link_status</span>(<span style=color:#66d9ef>void</span>)
+</span></span><span style=display:flex><span>{
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>struct</span> rte_eth_link link;
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>uint8_t</span> rep_cnt <span style=color:#f92672>=</span> MAX_REPEAT_TIMES;
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>int</span> link_get_err <span style=color:#f92672>=</span> <span style=color:#f92672>-</span>EINVAL;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>memset</span>(<span style=color:#f92672>&amp;</span>link, <span style=color:#ae81ff>0</span>, <span style=color:#66d9ef>sizeof</span>(link));
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>do</span> {
+</span></span><span style=display:flex><span>		link_get_err <span style=color:#f92672>=</span> <span style=color:#a6e22e>rte_eth_link_get</span>(port_id, <span style=color:#f92672>&amp;</span>link);
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>if</span> (link_get_err <span style=color:#f92672>==</span> <span style=color:#ae81ff>0</span> <span style=color:#f92672>&amp;&amp;</span> link.link_status <span style=color:#f92672>==</span> RTE_ETH_LINK_UP)
+</span></span><span style=display:flex><span>			<span style=color:#66d9ef>break</span>;
+</span></span><span style=display:flex><span>		<span style=color:#a6e22e>rte_delay_ms</span>(CHECK_INTERVAL);
+</span></span><span style=display:flex><span>	} <span style=color:#66d9ef>while</span> (<span style=color:#f92672>--</span>rep_cnt);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>if</span> (link_get_err <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>0</span>)
+</span></span><span style=display:flex><span>		<span style=color:#a6e22e>rte_exit</span>(EXIT_FAILURE, <span style=color:#e6db74>&#34;:: error: link get is failing: %s</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>,
+</span></span><span style=display:flex><span>			 <span style=color:#a6e22e>rte_strerror</span>(<span style=color:#f92672>-</span>link_get_err));
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>if</span> (link.link_status <span style=color:#f92672>==</span> RTE_ETH_LINK_DOWN)
+</span></span><span style=display:flex><span>		<span style=color:#a6e22e>rte_exit</span>(EXIT_FAILURE, <span style=color:#e6db74>&#34;:: error: link is still down</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>);
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>/* Port initialization used in flow filtering. 8&lt; */</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>static</span> <span style=color:#66d9ef>void</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>init_port</span>(<span style=color:#66d9ef>void</span>)
+</span></span><span style=display:flex><span>{
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>int</span> ret;
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>uint16_t</span> i;
+</span></span><span style=display:flex><span>	<span style=color:#75715e>/* Ethernet port configured with default settings. 8&lt; */</span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>struct</span> rte_eth_conf port_conf <span style=color:#f92672>=</span> {
+</span></span><span style=display:flex><span>		.rxmode <span style=color:#f92672>=</span> {
+</span></span><span style=display:flex><span>			.split_hdr_size <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>,
+</span></span><span style=display:flex><span>		},
+</span></span><span style=display:flex><span>		.txmode <span style=color:#f92672>=</span> {
+</span></span><span style=display:flex><span>			.offloads <span style=color:#f92672>=</span>
+</span></span><span style=display:flex><span>				RTE_ETH_TX_OFFLOAD_VLAN_INSERT <span style=color:#f92672>|</span>
+</span></span><span style=display:flex><span>				RTE_ETH_TX_OFFLOAD_IPV4_CKSUM  <span style=color:#f92672>|</span>
+</span></span><span style=display:flex><span>				RTE_ETH_TX_OFFLOAD_UDP_CKSUM   <span style=color:#f92672>|</span>
+</span></span><span style=display:flex><span>				RTE_ETH_TX_OFFLOAD_TCP_CKSUM   <span style=color:#f92672>|</span>
+</span></span><span style=display:flex><span>				RTE_ETH_TX_OFFLOAD_SCTP_CKSUM  <span style=color:#f92672>|</span>
+</span></span><span style=display:flex><span>				RTE_ETH_TX_OFFLOAD_TCP_TSO,
+</span></span><span style=display:flex><span>		},
+</span></span><span style=display:flex><span>	};
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>struct</span> rte_eth_txconf txq_conf;
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>struct</span> rte_eth_rxconf rxq_conf;
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>struct</span> rte_eth_dev_info dev_info;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	ret <span style=color:#f92672>=</span> <span style=color:#a6e22e>rte_eth_dev_info_get</span>(port_id, <span style=color:#f92672>&amp;</span>dev_info);
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>if</span> (ret <span style=color:#f92672>!=</span> <span style=color:#ae81ff>0</span>)
+</span></span><span style=display:flex><span>		<span style=color:#a6e22e>rte_exit</span>(EXIT_FAILURE,
+</span></span><span style=display:flex><span>			<span style=color:#e6db74>&#34;Error during getting device (port %u) info: %s</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>,
+</span></span><span style=display:flex><span>			port_id, <span style=color:#a6e22e>strerror</span>(<span style=color:#f92672>-</span>ret));
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	port_conf.txmode.offloads <span style=color:#f92672>&amp;=</span> dev_info.tx_offload_capa;
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>printf</span>(<span style=color:#e6db74>&#34;:: initializing port: %d</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>, port_id);
+</span></span><span style=display:flex><span>	ret <span style=color:#f92672>=</span> <span style=color:#a6e22e>rte_eth_dev_configure</span>(port_id,
+</span></span><span style=display:flex><span>				nr_queues, nr_queues, <span style=color:#f92672>&amp;</span>port_conf);
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>if</span> (ret <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>0</span>) {
+</span></span><span style=display:flex><span>		<span style=color:#a6e22e>rte_exit</span>(EXIT_FAILURE,
+</span></span><span style=display:flex><span>			<span style=color:#e6db74>&#34;:: cannot configure device: err=%d, port=%u</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>,
+</span></span><span style=display:flex><span>			ret, port_id);
+</span></span><span style=display:flex><span>	}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	rxq_conf <span style=color:#f92672>=</span> dev_info.default_rxconf;
+</span></span><span style=display:flex><span>	rxq_conf.offloads <span style=color:#f92672>=</span> port_conf.rxmode.offloads;
+</span></span><span style=display:flex><span>	<span style=color:#75715e>/* &gt;8 End of ethernet port configured with default settings. */</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#75715e>/* Configuring number of RX and TX queues connected to single port. 8&lt; */</span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>for</span> (i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; i <span style=color:#f92672>&lt;</span> nr_queues; i<span style=color:#f92672>++</span>) {
+</span></span><span style=display:flex><span>		ret <span style=color:#f92672>=</span> <span style=color:#a6e22e>rte_eth_rx_queue_setup</span>(port_id, i, <span style=color:#ae81ff>512</span>,
+</span></span><span style=display:flex><span>				     <span style=color:#a6e22e>rte_eth_dev_socket_id</span>(port_id),
+</span></span><span style=display:flex><span>				     <span style=color:#f92672>&amp;</span>rxq_conf,
+</span></span><span style=display:flex><span>				     mbuf_pool);
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>if</span> (ret <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>0</span>) {
+</span></span><span style=display:flex><span>			<span style=color:#a6e22e>rte_exit</span>(EXIT_FAILURE,
+</span></span><span style=display:flex><span>				<span style=color:#e6db74>&#34;:: Rx queue setup failed: err=%d, port=%u</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>,
+</span></span><span style=display:flex><span>				ret, port_id);
+</span></span><span style=display:flex><span>		}
+</span></span><span style=display:flex><span>	}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	txq_conf <span style=color:#f92672>=</span> dev_info.default_txconf;
+</span></span><span style=display:flex><span>	txq_conf.offloads <span style=color:#f92672>=</span> port_conf.txmode.offloads;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>for</span> (i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; i <span style=color:#f92672>&lt;</span> nr_queues; i<span style=color:#f92672>++</span>) {
+</span></span><span style=display:flex><span>		ret <span style=color:#f92672>=</span> <span style=color:#a6e22e>rte_eth_tx_queue_setup</span>(port_id, i, <span style=color:#ae81ff>512</span>,
+</span></span><span style=display:flex><span>				<span style=color:#a6e22e>rte_eth_dev_socket_id</span>(port_id),
+</span></span><span style=display:flex><span>				<span style=color:#f92672>&amp;</span>txq_conf);
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>if</span> (ret <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>0</span>) {
+</span></span><span style=display:flex><span>			<span style=color:#a6e22e>rte_exit</span>(EXIT_FAILURE,
+</span></span><span style=display:flex><span>				<span style=color:#e6db74>&#34;:: Tx queue setup failed: err=%d, port=%u</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>,
+</span></span><span style=display:flex><span>				ret, port_id);
+</span></span><span style=display:flex><span>		}
+</span></span><span style=display:flex><span>	}
+</span></span><span style=display:flex><span>	<span style=color:#75715e>/* &gt;8 End of Configuring RX and TX queues connected to single port. */</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#75715e>/* Setting the RX port to promiscuous mode. 8&lt; */</span>
+</span></span><span style=display:flex><span>	ret <span style=color:#f92672>=</span> <span style=color:#a6e22e>rte_eth_promiscuous_enable</span>(port_id);
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>if</span> (ret <span style=color:#f92672>!=</span> <span style=color:#ae81ff>0</span>)
+</span></span><span style=display:flex><span>		<span style=color:#a6e22e>rte_exit</span>(EXIT_FAILURE,
+</span></span><span style=display:flex><span>			<span style=color:#e6db74>&#34;:: promiscuous mode enable failed: err=%s, port=%u</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>,
+</span></span><span style=display:flex><span>			<span style=color:#a6e22e>rte_strerror</span>(<span style=color:#f92672>-</span>ret), port_id);
+</span></span><span style=display:flex><span>	<span style=color:#75715e>/* &gt;8 End of setting the RX port to promiscuous mode. */</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#75715e>/* Starting the port. 8&lt; */</span>
+</span></span><span style=display:flex><span>	ret <span style=color:#f92672>=</span> <span style=color:#a6e22e>rte_eth_dev_start</span>(port_id);
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>if</span> (ret <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>0</span>) {
+</span></span><span style=display:flex><span>		<span style=color:#a6e22e>rte_exit</span>(EXIT_FAILURE,
+</span></span><span style=display:flex><span>			<span style=color:#e6db74>&#34;rte_eth_dev_start:err=%d, port=%u</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>,
+</span></span><span style=display:flex><span>			ret, port_id);
+</span></span><span style=display:flex><span>	}
+</span></span><span style=display:flex><span>	<span style=color:#75715e>/* &gt;8 End of starting the port. */</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>assert_link_status</span>();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>printf</span>(<span style=color:#e6db74>&#34;:: initializing port: %d done</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>, port_id);
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span><span style=color:#75715e>/* &gt;8 End of Port initialization used in flow filtering. */</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>static</span> <span style=color:#66d9ef>void</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>signal_handler</span>(<span style=color:#66d9ef>int</span> signum)
+</span></span><span style=display:flex><span>{
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>if</span> (signum <span style=color:#f92672>==</span> SIGINT <span style=color:#f92672>||</span> signum <span style=color:#f92672>==</span> SIGTERM) {
+</span></span><span style=display:flex><span>		<span style=color:#a6e22e>printf</span>(<span style=color:#e6db74>&#34;</span><span style=color:#ae81ff>\n\n</span><span style=color:#e6db74>Signal %d received, preparing to exit...</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>,
+</span></span><span style=display:flex><span>				signum);
+</span></span><span style=display:flex><span>		force_quit <span style=color:#f92672>=</span> true;
+</span></span><span style=display:flex><span>	}
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>int</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>main</span>(<span style=color:#66d9ef>int</span> argc, <span style=color:#66d9ef>char</span> <span style=color:#f92672>**</span>argv)
+</span></span><span style=display:flex><span>{
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>int</span> ret;
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>uint16_t</span> nr_ports;
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>struct</span> rte_flow_error error;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#75715e>/* Initialize EAL. 8&lt; */</span>
+</span></span><span style=display:flex><span>	ret <span style=color:#f92672>=</span> <span style=color:#a6e22e>rte_eal_init</span>(argc, argv);
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>if</span> (ret <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>0</span>)
+</span></span><span style=display:flex><span>		<span style=color:#a6e22e>rte_exit</span>(EXIT_FAILURE, <span style=color:#e6db74>&#34;:: invalid EAL arguments</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>);
+</span></span><span style=display:flex><span>	<span style=color:#75715e>/* &gt;8 End of Initialization of EAL. */</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	force_quit <span style=color:#f92672>=</span> false;
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>signal</span>(SIGINT, signal_handler);
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>signal</span>(SIGTERM, signal_handler);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	nr_ports <span style=color:#f92672>=</span> <span style=color:#a6e22e>rte_eth_dev_count_avail</span>();
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>if</span> (nr_ports <span style=color:#f92672>==</span> <span style=color:#ae81ff>0</span>)
+</span></span><span style=display:flex><span>		<span style=color:#a6e22e>rte_exit</span>(EXIT_FAILURE, <span style=color:#e6db74>&#34;:: no Ethernet ports found</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>);
+</span></span><span style=display:flex><span>	port_id <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>;
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>if</span> (nr_ports <span style=color:#f92672>!=</span> <span style=color:#ae81ff>1</span>) {
+</span></span><span style=display:flex><span>		<span style=color:#a6e22e>printf</span>(<span style=color:#e6db74>&#34;:: warn: %d ports detected, but we use only one: port %u</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>,
+</span></span><span style=display:flex><span>			nr_ports, port_id);
+</span></span><span style=display:flex><span>	}
+</span></span><span style=display:flex><span>	<span style=color:#75715e>/* Allocates a mempool to hold the mbufs. 8&lt; */</span>
+</span></span><span style=display:flex><span>	mbuf_pool <span style=color:#f92672>=</span> <span style=color:#a6e22e>rte_pktmbuf_pool_create</span>(<span style=color:#e6db74>&#34;mbuf_pool&#34;</span>, <span style=color:#ae81ff>4096</span>, <span style=color:#ae81ff>128</span>, <span style=color:#ae81ff>0</span>,
+</span></span><span style=display:flex><span>					    RTE_MBUF_DEFAULT_BUF_SIZE,
+</span></span><span style=display:flex><span>					    <span style=color:#a6e22e>rte_socket_id</span>());
+</span></span><span style=display:flex><span>	<span style=color:#75715e>/* &gt;8 End of allocating a mempool to hold the mbufs. */</span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>if</span> (mbuf_pool <span style=color:#f92672>==</span> NULL)
+</span></span><span style=display:flex><span>		<span style=color:#a6e22e>rte_exit</span>(EXIT_FAILURE, <span style=color:#e6db74>&#34;Cannot init mbuf pool</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#75715e>/* Initializes all the ports using the user defined init_port(). 8&lt; */</span>
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>init_port</span>();
+</span></span><span style=display:flex><span>	<span style=color:#75715e>/* &gt;8 End of Initializing the ports using user defined init_port(). */</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#75715e>/* Create flow for send packet with. 8&lt; */</span>
+</span></span><span style=display:flex><span>	flow <span style=color:#f92672>=</span> <span style=color:#a6e22e>generate_ipv4_flow</span>(port_id, selected_queue,
+</span></span><span style=display:flex><span>				SRC_IP, EMPTY_MASK,
+</span></span><span style=display:flex><span>				DEST_IP, FULL_MASK, <span style=color:#f92672>&amp;</span>error);
+</span></span><span style=display:flex><span>	<span style=color:#75715e>/* &gt;8 End of create flow and the flow rule. */</span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>if</span> (<span style=color:#f92672>!</span>flow) {
+</span></span><span style=display:flex><span>		<span style=color:#a6e22e>printf</span>(<span style=color:#e6db74>&#34;Flow can&#39;t be created %d message: %s</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>,
+</span></span><span style=display:flex><span>			error.type,
+</span></span><span style=display:flex><span>			error.message <span style=color:#f92672>?</span> error.message : <span style=color:#e6db74>&#34;(no stated reason)&#34;</span>);
+</span></span><span style=display:flex><span>		<span style=color:#a6e22e>rte_exit</span>(EXIT_FAILURE, <span style=color:#e6db74>&#34;error in creating flow&#34;</span>);
+</span></span><span style=display:flex><span>	}
+</span></span><span style=display:flex><span>	<span style=color:#75715e>/* &gt;8 End of creating flow for send packet with. */</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#75715e>/* Launching main_loop(). 8&lt; */</span>
+</span></span><span style=display:flex><span>	ret <span style=color:#f92672>=</span> <span style=color:#a6e22e>main_loop</span>();
+</span></span><span style=display:flex><span>	<span style=color:#75715e>/* &gt;8 End of launching main_loop(). */</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#75715e>/* clean up the EAL */</span>
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>rte_eal_cleanup</span>();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>return</span> ret;
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div></section><div class=divider></div><div class="flex flex-col md:flex-row justify-between gap-4 py-4"><a class="group btn btn-outline" href=/posts/%E6%8A%A5%E6%96%87%E5%88%87%E5%89%B2/ title=报文切割><ion-icon name=chevron-back></ion-icon><div class="inline-flex flex-col items-start"><span class="text-base-content/60 group-hover:text-neutral-content/60 text-xs font-normal">Previous page</span>
+<span class="max-w-48 truncate">报文切割</span></div></a><a class="group btn btn-outline" href=/posts/ubuntuqemuarm/ title=Ubuntuqemuarm><div class="inline-flex flex-col items-end"><span class="text-base-content/60 group-hover:text-neutral-content/60 text-xs font-normal">Next page</span>
+<span class="max-w-48 truncate">Ubuntuqemuarm</span></div><ion-icon name=chevron-forward></ion-icon></a></div></article></div><div class="hidden lg:flex lg:flex-col lg:items-end"><nav id=TableOfContents></nav></div></div><footer class="flex justify-between items-center gap-2 px-4 py-12"><div><p>© 2016 - 2025 Caisong's Blog</p><p class=text-sm>🌱
+<span class=text-base-content/60>Powered by <a class=hover:underline href=https://gohugo.io/ target=_blank>Hugo</a> with theme
+<a class=hover:underline href=https://github.com/g1eny0ung/hugo-theme-dream target=_blank>Dream</a>.</span></p></div><div x-data="{ icons: [
+    { name: 'moon', status: 'y' },
+    { name: 'sunny', status: 'n' },
+    { name: 'desktop', status: 'auto' }
+  ] }" class="flex items-center h-[32px] px-2 gap-2 border border-base-content/30 rounded-full"><template x-for="icon in icons"><div role=button tabindex=0 :aria-label="'Select ' + icon.name + ' mode'" class="group inline-flex justify-center items-center p-1 rounded-full cursor-pointer hover:bg-primary" :class="$store.darkMode.icon() === icon.name && 'bg-primary'" @click=$store.darkMode.toggle(icon.status)><ion-icon :name="`${icon.name}-outline`" class=group-hover:text-primary-content :class="$store.darkMode.icon() === icon.name && 'text-primary-content'"></ion-icon></div></template></div></footer></div></div><div class=back><div class=container><div class="dream-grid dream-grid-about"></div><footer class="flex justify-between items-center gap-2 px-4 py-12"><div><p>© 2016 - 2025 Caisong's Blog</p><p class=text-sm>🌱
+<span class=text-base-content/60>Powered by <a class=hover:underline href=https://gohugo.io/ target=_blank>Hugo</a> with theme
+<a class=hover:underline href=https://github.com/g1eny0ung/hugo-theme-dream target=_blank>Dream</a>.</span></p></div><div x-data="{ icons: [
+    { name: 'moon', status: 'y' },
+    { name: 'sunny', status: 'n' },
+    { name: 'desktop', status: 'auto' }
+  ] }" class="flex items-center h-[32px] px-2 gap-2 border border-base-content/30 rounded-full"><template x-for="icon in icons"><div role=button tabindex=0 :aria-label="'Select ' + icon.name + ' mode'" class="group inline-flex justify-center items-center p-1 rounded-full cursor-pointer hover:bg-primary" :class="$store.darkMode.icon() === icon.name && 'bg-primary'" @click=$store.darkMode.toggle(icon.status)><ion-icon :name="`${icon.name}-outline`" class=group-hover:text-primary-content :class="$store.darkMode.icon() === icon.name && 'text-primary-content'"></ion-icon></div></template></div></footer></div></div></div></div><script>window.lightTheme="emerald",window.darkTheme="forest"</script><script src=https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin=anonymous></script><script src=/js/grid.min.js></script><script src=/js/main.min.js></script><script type=module>
+      import mediumZoom from 'https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/+esm';
+      mediumZoom('#dream-single-post-content img')
+    </script><script type=module src=https://unpkg.com/ionicons@7.4.0/dist/ionicons/ionicons.esm.js></script><script nomodule src=https://unpkg.com/ionicons@7.4.0/dist/ionicons/ionicons.js></script></body></html>

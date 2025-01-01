@@ -1,0 +1,113 @@
+<!doctype html><html lang=en-us x-data :class=$store.darkMode.class() :data-theme=$store.darkMode.theme()><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><title>1.将字符串的时间转换为时间戳 | Caisong's Blog</title>
+<link rel=canonical href=https://caisong.github.io/posts/1.%E5%B0%86%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%97%B6%E9%97%B4%E8%BD%AC%E6%8D%A2%E4%B8%BA%E6%97%B6%E9%97%B4%E6%88%B3/><meta name=author content="Cai Song"><meta name=description content="Cut out summary from your post content here.
+"><meta name=keywords content="Tag1,Tag2"><meta name=generator content="Hugo 0.140.2"><meta property="og:url" content="https://caisong.github.io/posts/1.%E5%B0%86%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%97%B6%E9%97%B4%E8%BD%AC%E6%8D%A2%E4%B8%BA%E6%97%B6%E9%97%B4%E6%88%B3/"><meta property="og:site_name" content="Caisong's Blog"><meta property="og:title" content="1.将字符串的时间转换为时间戳"><meta property="og:description" content="Cut out summary from your post content here."><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2021-09-03T21:42:04+08:00"><meta property="article:modified_time" content="2021-09-03T21:42:04+08:00"><meta property="article:tag" content="Tag1"><meta property="article:tag" content="Tag2"><meta name=twitter:card content="summary"><meta name=twitter:title content="1.将字符串的时间转换为时间戳"><meta name=twitter:description content="Cut out summary from your post content here."><link rel=stylesheet href=/css/output.min.css><style>pre{padding:1em;overflow:auto}</style><script defer src=https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js></script></head><body x-data="{
+    flip: false,
+  }"><div id=dream-global-bg></div><nav x-data="{ isSticky: false }" x-init="window.addEventListener('scroll', () => { isSticky = window.scrollY > 30 })" class="sticky top-0 z-30 mt-4 lg:mt-8 py-4" :class="{ 'bg-base-100 shadow-lg dark:border-b dark:border-base-content/30': isSticky }"><div class="container flex justify-between px-4"><section class="flex items-center gap-4"><div class="avatar cursor-pointer hover:online" @click="flip = !flip" title="Flip it!"><div class="h-10 rounded-full"><img src=/ alt="A blog about all things technical."></div></div><div><a href=https://caisong.github.io/ class="text-lg font-semibold cursor-pointer">A blog about all things technical.</a></div></section><div class="dropdown dropdown-end sm:hidden"><div tabindex=0 role=button class="btn btn-ghost btn-square" aria-label="Select an option"><ion-icon name=menu class=text-2xl></ion-icon></div><ul tabindex=0 class="dropdown-content menu w-36 bg-base-100 rounded-box z-[1] shadow-md"><li><a class="inline-flex items-center p-2 cursor-pointer" href=/index.xml title=RSS><ion-icon name=logo-rss></ion-icon>RSS</a></li><li><a class="inline-flex items-center p-2 cursor-pointer" href=/posts title=Archives><ion-icon name=archive></ion-icon>Archives</a></li><li><a class="inline-flex items-center p-2 cursor-pointer" href=/categories title="All Categories"><ion-icon name=grid></ion-icon>All Categories</a></li><li><a class="inline-flex items-center p-2 cursor-pointer" href=/tags title="All Tags"><ion-icon name=pricetags></ion-icon>All Tags</a></li></ul></div><section class="hidden sm:flex sm:items-center sm:gap-2 md:gap-4"><a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href=/index.xml title=RSS><ion-icon class=group-hover:text-primary-content name=logo-rss></ion-icon></a><div class="dropdown dropdown-end dropdown-hover"><div tabindex=0 role=button class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" aria-label="Select an option"><ion-icon class="group-hover:text-primary-content text-xl" name=menu></ion-icon></div><ul tabindex=0 class="dropdown-content menu w-36 bg-base-100 rounded-box z-[1] shadow-xl"><li><a class="inline-flex items-center p-2 cursor-pointer" href=/posts title=Archives><ion-icon name=archive></ion-icon>Archives</a></li><li><a class="inline-flex items-center p-2 cursor-pointer" href=/categories title="All Categories"><ion-icon name=grid></ion-icon>All Categories</a></li><li><a class="inline-flex items-center p-2 cursor-pointer" href=/tags title="All Tags"><ion-icon name=pricetags></ion-icon>All Tags</a></li></ul></div></section></div></nav><div class=flip-container :class="{ 'flip-it': flip }"><div class=flipper><div class=front><div class=container><div class="lg:grid lg:grid-cols-4 gap-4 mt-4 px-4"><div class="hidden lg:block"></div><div class=lg:col-span-2><article class="mx-auto prose prose-quoteless dark:prose-invert" id=dream-single-post-main itemscope itemtype=http://schema.org/Article><meta itemprop=name content="1.将字符串的时间转换为时间戳"><meta itemprop=description content="Cut out summary from your post content here."><meta itemprop=datePublished content="2021-09-03T21:42:04+08:00"><meta itemprop=dateModified content="2021-09-03T21:42:04+08:00"><meta itemprop=wordCount content="234"><meta itemprop=keywords content="Tag1,Tag2"><header><h1 itemprop=headline>1.将字符串的时间转换为时间戳</h1><p class=text-sm>Friday, Sep 3, 2021
+| <span>2 minute read</span>
+| <span>Updated at
+Friday, Sep 3, 2021</span></p><div class="flex justify-between"><div class="flex items-center"><span>@</span>
+<span itemprop=author itemscope itemtype=https://schema.org/Person><span itemprop=name>Cai Song</span></span></div><div class="flex items-center gap-2"><a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="https://x.com/intent/post?text=1.%e5%b0%86%e5%ad%97%e7%ac%a6%e4%b8%b2%e7%9a%84%e6%97%b6%e9%97%b4%e8%bd%ac%e6%8d%a2%e4%b8%ba%e6%97%b6%e9%97%b4%e6%88%b3&amp;url=https://caisong.github.io/posts/1.%E5%B0%86%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%97%B6%E9%97%B4%E8%BD%AC%E6%8D%A2%E4%B8%BA%E6%97%B6%E9%97%B4%E6%88%B3/" target=_blank rel="noopener noreferrer" title="Share on X"><ion-icon class=group-hover:text-primary-content name=logo-x></ion-icon></a><a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="https://facebook.com/sharer/sharer.php?u=https://caisong.github.io/posts/1.%E5%B0%86%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%97%B6%E9%97%B4%E8%BD%AC%E6%8D%A2%E4%B8%BA%E6%97%B6%E9%97%B4%E6%88%B3/" target=_blank rel="noopener noreferrer" title="Share on Facebook"><ion-icon class=group-hover:text-primary-content name=logo-facebook></ion-icon></a><a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="https://wa.me/?text=1.%e5%b0%86%e5%ad%97%e7%ac%a6%e4%b8%b2%e7%9a%84%e6%97%b6%e9%97%b4%e8%bd%ac%e6%8d%a2%e4%b8%ba%e6%97%b6%e9%97%b4%e6%88%b3%20https://caisong.github.io/posts/1.%E5%B0%86%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%97%B6%E9%97%B4%E8%BD%AC%E6%8D%A2%E4%B8%BA%E6%97%B6%E9%97%B4%E6%88%B3/" target=_blank rel="noopener noreferrer" title="Share on WhatsApp"><ion-icon class=group-hover:text-primary-content name=logo-whatsapp></ion-icon></a></div></div></header><section id=dream-single-post-content itemprop=articleBody><img src=/img/cover.jpg alt=1.将字符串的时间转换为时间戳><p>Cut out summary from your post content here.</p><p>The remaining content of your post.
+1.将字符串的时间转换为时间戳.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>    a <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;2013-10-10 23:40:00&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>#将其转换为时间数组</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>import</span> time
+</span></span><span style=display:flex><span>    timeArray <span style=color:#f92672>=</span> time<span style=color:#f92672>.</span>strptime(a, <span style=color:#e6db74>&#34;%Y-%m-</span><span style=color:#e6db74>%d</span><span style=color:#e6db74> %H:%M:%S&#34;</span>)
+</span></span><span style=display:flex><span>    <span style=color:#75715e>#转换为时间戳:</span>
+</span></span><span style=display:flex><span>    timeStamp <span style=color:#f92672>=</span> int(time<span style=color:#f92672>.</span>mktime(timeArray))
+</span></span><span style=display:flex><span>    timeStamp <span style=color:#f92672>==</span> <span style=color:#ae81ff>1381419600</span>
+</span></span></code></pre></div><p>2.字符串格式更改
+如a = &ldquo;2013-10-10 23:40:00&rdquo;,想改为 a = &ldquo;2013/10/10 23:40:00&rdquo;</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>    方法:先转换为时间数组,然后转换为其他格式
+</span></span><span style=display:flex><span>    timeArray <span style=color:#f92672>=</span> time<span style=color:#f92672>.</span>strptime(a, <span style=color:#e6db74>&#34;%Y-%m-</span><span style=color:#e6db74>%d</span><span style=color:#e6db74> %H:%M:%S&#34;</span>)
+</span></span><span style=display:flex><span>    otherStyleTime <span style=color:#f92672>=</span> time<span style=color:#f92672>.</span>strftime(<span style=color:#e6db74>&#34;%Y/%m/</span><span style=color:#e6db74>%d</span><span style=color:#e6db74> %H:%M:%S&#34;</span>, timeArray)
+</span></span><span style=display:flex><span>    <span style=color:#960050;background-color:#1e0010>```</span>
+</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span><span style=color:#ae81ff>3.</span>时间戳转换为指定格式日期:
+</span></span><span style=display:flex><span>    方法一:
+</span></span><span style=display:flex><span>        利用localtime()转换为时间数组,然后格式化为需要的格式,如<span style=color:#960050;background-color:#1e0010>```</span>python
+</span></span><span style=display:flex><span>        timeStamp <span style=color:#f92672>=</span> <span style=color:#ae81ff>1381419600</span>
+</span></span><span style=display:flex><span>        timeArray <span style=color:#f92672>=</span> time<span style=color:#f92672>.</span>localtime(timeStamp)
+</span></span><span style=display:flex><span>        otherStyleTime <span style=color:#f92672>=</span> time<span style=color:#f92672>.</span>strftime(<span style=color:#e6db74>&#34;%Y-%m-</span><span style=color:#e6db74>%d</span><span style=color:#e6db74> %H:%M:%S&#34;</span>, timeArray)
+</span></span><span style=display:flex><span>        otherStyletime <span style=color:#f92672>==</span> <span style=color:#e6db74>&#34;2013-10-10 23:40:00&#34;</span>
+</span></span></code></pre></div><pre><code>方法二:
+</code></pre><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>        <span style=color:#f92672>import</span> datetime
+</span></span><span style=display:flex><span>        timeStamp <span style=color:#f92672>=</span> <span style=color:#ae81ff>1381419600</span>
+</span></span><span style=display:flex><span>        dateArray <span style=color:#f92672>=</span> datetime<span style=color:#f92672>.</span>datetime<span style=color:#f92672>.</span>utcfromtimestamp(timeStamp)
+</span></span><span style=display:flex><span>        otherStyleTime <span style=color:#f92672>=</span> dateArray<span style=color:#f92672>.</span>strftime(<span style=color:#e6db74>&#34;%Y-%m-</span><span style=color:#e6db74>%d</span><span style=color:#e6db74> %H:%M:%S&#34;</span>)
+</span></span><span style=display:flex><span>        otherStyletime <span style=color:#f92672>==</span> <span style=color:#e6db74>&#34;2013-10-10 23:40:00&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#960050;background-color:#1e0010>```</span>
+</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span><span style=color:#ae81ff>4.</span>获取当前时间并转换为指定日期格式
+</span></span><span style=display:flex><span>    方法一:
+</span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010>```</span>python
+</span></span><span style=display:flex><span>        <span style=color:#f92672>import</span> time
+</span></span><span style=display:flex><span>        获得当前时间时间戳
+</span></span><span style=display:flex><span>        now <span style=color:#f92672>=</span> int(time<span style=color:#f92672>.</span>time())  <span style=color:#f92672>-&gt;</span>这是时间戳
+</span></span><span style=display:flex><span>        转换为其他日期格式,如:<span style=color:#e6db74>&#34;%Y-%m-</span><span style=color:#e6db74>%d</span><span style=color:#e6db74> %H:%M:%S&#34;</span>
+</span></span><span style=display:flex><span>        timeArray <span style=color:#f92672>=</span> time<span style=color:#f92672>.</span>localtime(timeStamp)
+</span></span><span style=display:flex><span>        otherStyleTime <span style=color:#f92672>=</span> time<span style=color:#f92672>.</span>strftime(<span style=color:#e6db74>&#34;%Y-%m-</span><span style=color:#e6db74>%d</span><span style=color:#e6db74> %H:%M:%S&#34;</span>, timeArray)
+</span></span></code></pre></div><pre><code>方法二:
+</code></pre><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>        <span style=color:#f92672>import</span> datetime
+</span></span><span style=display:flex><span>        获得当前时间
+</span></span><span style=display:flex><span>        now <span style=color:#f92672>=</span> datetime<span style=color:#f92672>.</span>datetime<span style=color:#f92672>.</span>now()  <span style=color:#f92672>-&gt;</span>这是时间数组格式
+</span></span><span style=display:flex><span>        转换为指定的格式:
+</span></span><span style=display:flex><span>        otherStyleTime <span style=color:#f92672>=</span> now<span style=color:#f92672>.</span>strftime(<span style=color:#e6db74>&#34;%Y-%m-</span><span style=color:#e6db74>%d</span><span style=color:#e6db74> %H:%M:%S&#34;</span>)
+</span></span></code></pre></div><p>5.获得三天前的时间
+方法:</p><pre tabindex=0><code class=language-ptyhon data-lang=ptyhon>        impor ttime
+        import datetime
+        先获得时间数组格式的日期
+        threeDayAgo = (datetime.datetime.now() - datetime.timedelta(days = 3))
+        转换为时间戳:
+            timeStamp = int(time.mktime(threeDayAgo.timetuple()))
+        转换为其他字符串格式:
+            otherStyleTime = threeDayAgo.strftime(&#34;%Y-%m-%d %H:%M:%S&#34;)
+    # timedelta()的参数有:days,hours,seconds,microseconds
+</code></pre><p>6.给定时间戳,计算该时间的几天前时间:</p><pre tabindex=0><code class=language-ptyhon data-lang=ptyhon>    timeStamp = 1381419600
+    # 先转换为datetime
+    import datetime
+    import time
+    dateArray = datetime.datetime.utcfromtimestamp(timeStamp)
+    threeDayAgo = dateArray - datetime.timedelta(days = 3)
+    参考5,可以转换为其他的任意格式了
+</code></pre><p>对于时间之间的格式：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-plain data-lang=plain><span style=display:flex><span>%a 星期的简写。如 星期三为Web
+</span></span><span style=display:flex><span>%A 星期的全写。如 星期三为Wednesday
+</span></span><span style=display:flex><span>%b 月份的简写。如4月份为Apr
+</span></span><span style=display:flex><span>%B 月份的全写。如4月份为April
+</span></span><span style=display:flex><span>%c:  日期时间的字符串表示。（如： 04/07/10 10:43:39）
+</span></span><span style=display:flex><span>%d:  日在这个月中的天数（是这个月的第几天）
+</span></span><span style=display:flex><span>%f:  微秒（范围[0,999999]）
+</span></span><span style=display:flex><span>%H:  小时（24小时制，[0, 23]）
+</span></span><span style=display:flex><span>%I:  小时（12小时制，[0, 11]）
+</span></span><span style=display:flex><span>%j:  日在年中的天数 [001,366]（是当年的第几天）
+</span></span><span style=display:flex><span>%m:  月份（[01,12]）
+</span></span><span style=display:flex><span>%M:  分钟（[00,59]）
+</span></span><span style=display:flex><span>%p:  AM或者PM
+</span></span><span style=display:flex><span>%S:  秒（范围为[00,61]，为什么不是[00, 59]，参考python手册~_~）
+</span></span><span style=display:flex><span>%U:  周在当年的周数当年的第几周），星期天作为周的第一天
+</span></span><span style=display:flex><span>%w:  今天在这周的天数，范围为[0, 6]，6表示星期天
+</span></span><span style=display:flex><span>%W:  周在当年的周数（是当年的第几周），星期一作为周的第一天
+</span></span><span style=display:flex><span>%x:  日期字符串（如：04/07/10）
+</span></span><span style=display:flex><span>%X:  时间字符串（如：10:43:39）
+</span></span><span style=display:flex><span>%y:  2个数字表示的年份
+</span></span><span style=display:flex><span>%Y:  4个数字表示的年份
+</span></span><span style=display:flex><span>%z:  与utc时间的间隔 （如果是本地时间，返回空字符串）
+</span></span><span style=display:flex><span>%Z:  时区名称（如果是本地时间，返回空字符串）
+</span></span><span style=display:flex><span>%%:  %% =&gt; %
+</span></span></code></pre></div><p>Tags:
+python, timestamp</p></section><div class=divider></div><div class="flex flex-col md:flex-row justify-between gap-4 py-4"><a class="group btn btn-outline" href=/posts/1.%E9%87%8D%E8%A6%81%E7%9A%84%E5%9B%BE%E7%89%87%E6%88%96%E8%80%85%E6%96%87%E6%A1%A3%E5%86%85%E5%8A%A0%E6%B0%B4%E5%8D%B0%E6%96%87%E4%BB%B6%E9%87%8C%E9%9D%A2%E5%86%8D%E5%8A%A0%E4%B8%8A%E5%85%A8%E6%81%AF%E6%95%B0%E5%AD%97%E6%B0%B4%E5%8D%B0%E8%BF%99%E4%B8%AA%E5%A4%A7%E5%AE%B6%E9%83%BD%E8%AF%B4%E5%BE%97%E5%BE%88%E5%85%A8%E9%9D%A2/ title=1.重要的图片或者文档内加水印，文件里面再加上全息数字水印（这个大家都说得很全面><ion-icon name=chevron-back></ion-icon><div class="inline-flex flex-col items-start"><span class="text-base-content/60 group-hover:text-neutral-content/60 text-xs font-normal">Previous page</span>
+<span class="max-w-48 truncate">1.重要的图片或者文档内加水印，文件里面再加上全息数字水印（这个大家都说得很全面</span></div></a><a class="group btn btn-outline" href=/posts/1.%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6/ title=1.常用软件><div class="inline-flex flex-col items-end"><span class="text-base-content/60 group-hover:text-neutral-content/60 text-xs font-normal">Next page</span>
+<span class="max-w-48 truncate">1.常用软件</span></div><ion-icon name=chevron-forward></ion-icon></a></div></article></div><div class="hidden lg:flex lg:flex-col lg:items-end"><nav id=TableOfContents></nav></div></div><footer class="flex justify-between items-center gap-2 px-4 py-12"><div><p>© 2016 - 2025 Caisong's Blog</p><p class=text-sm>🌱
+<span class=text-base-content/60>Powered by <a class=hover:underline href=https://gohugo.io/ target=_blank>Hugo</a> with theme
+<a class=hover:underline href=https://github.com/g1eny0ung/hugo-theme-dream target=_blank>Dream</a>.</span></p></div><div x-data="{ icons: [
+    { name: 'moon', status: 'y' },
+    { name: 'sunny', status: 'n' },
+    { name: 'desktop', status: 'auto' }
+  ] }" class="flex items-center h-[32px] px-2 gap-2 border border-base-content/30 rounded-full"><template x-for="icon in icons"><div role=button tabindex=0 :aria-label="'Select ' + icon.name + ' mode'" class="group inline-flex justify-center items-center p-1 rounded-full cursor-pointer hover:bg-primary" :class="$store.darkMode.icon() === icon.name && 'bg-primary'" @click=$store.darkMode.toggle(icon.status)><ion-icon :name="`${icon.name}-outline`" class=group-hover:text-primary-content :class="$store.darkMode.icon() === icon.name && 'text-primary-content'"></ion-icon></div></template></div></footer></div></div><div class=back><div class=container><div class="dream-grid dream-grid-about"></div><footer class="flex justify-between items-center gap-2 px-4 py-12"><div><p>© 2016 - 2025 Caisong's Blog</p><p class=text-sm>🌱
+<span class=text-base-content/60>Powered by <a class=hover:underline href=https://gohugo.io/ target=_blank>Hugo</a> with theme
+<a class=hover:underline href=https://github.com/g1eny0ung/hugo-theme-dream target=_blank>Dream</a>.</span></p></div><div x-data="{ icons: [
+    { name: 'moon', status: 'y' },
+    { name: 'sunny', status: 'n' },
+    { name: 'desktop', status: 'auto' }
+  ] }" class="flex items-center h-[32px] px-2 gap-2 border border-base-content/30 rounded-full"><template x-for="icon in icons"><div role=button tabindex=0 :aria-label="'Select ' + icon.name + ' mode'" class="group inline-flex justify-center items-center p-1 rounded-full cursor-pointer hover:bg-primary" :class="$store.darkMode.icon() === icon.name && 'bg-primary'" @click=$store.darkMode.toggle(icon.status)><ion-icon :name="`${icon.name}-outline`" class=group-hover:text-primary-content :class="$store.darkMode.icon() === icon.name && 'text-primary-content'"></ion-icon></div></template></div></footer></div></div></div></div><script>window.lightTheme="emerald",window.darkTheme="forest"</script><script src=https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin=anonymous></script><script src=/js/grid.min.js></script><script src=/js/main.min.js></script><script type=module>
+      import mediumZoom from 'https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/+esm';
+      mediumZoom('#dream-single-post-content img')
+    </script><script type=module src=https://unpkg.com/ionicons@7.4.0/dist/ionicons/ionicons.esm.js></script><script nomodule src=https://unpkg.com/ionicons@7.4.0/dist/ionicons/ionicons.js></script></body></html>

@@ -1,0 +1,225 @@
+<!doctype html><html lang=en-us x-data :class=$store.darkMode.class() :data-theme=$store.darkMode.theme()><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Nginx代理grpchttps | Caisong's Blog</title>
+<link rel=canonical href=https://caisong.github.io/posts/nginx%E4%BB%A3%E7%90%86grpchttps/><meta name=author content="Cai Song"><meta name=description content="Cut out summary from your post content here.
+"><meta name=keywords content="Tag1,Tag2"><meta name=generator content="Hugo 0.140.2"><meta property="og:url" content="https://caisong.github.io/posts/nginx%E4%BB%A3%E7%90%86grpchttps/"><meta property="og:site_name" content="Caisong's Blog"><meta property="og:title" content="Nginx代理grpchttps"><meta property="og:description" content="Cut out summary from your post content here."><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2024-08-28T21:42:16+08:00"><meta property="article:modified_time" content="2024-08-28T21:42:16+08:00"><meta property="article:tag" content="Tag1"><meta property="article:tag" content="Tag2"><meta name=twitter:card content="summary"><meta name=twitter:title content="Nginx代理grpchttps"><meta name=twitter:description content="Cut out summary from your post content here."><link rel=stylesheet href=/css/output.min.css><style>pre{padding:1em;overflow:auto}</style><script defer src=https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js></script></head><body x-data="{
+    flip: false,
+  }"><div id=dream-global-bg></div><nav x-data="{ isSticky: false }" x-init="window.addEventListener('scroll', () => { isSticky = window.scrollY > 30 })" class="sticky top-0 z-30 mt-4 lg:mt-8 py-4" :class="{ 'bg-base-100 shadow-lg dark:border-b dark:border-base-content/30': isSticky }"><div class="container flex justify-between px-4"><section class="flex items-center gap-4"><div class="avatar cursor-pointer hover:online" @click="flip = !flip" title="Flip it!"><div class="h-10 rounded-full"><img src=/ alt="A blog about all things technical."></div></div><div><a href=https://caisong.github.io/ class="text-lg font-semibold cursor-pointer">A blog about all things technical.</a></div></section><div class="dropdown dropdown-end sm:hidden"><div tabindex=0 role=button class="btn btn-ghost btn-square" aria-label="Select an option"><ion-icon name=menu class=text-2xl></ion-icon></div><ul tabindex=0 class="dropdown-content menu w-36 bg-base-100 rounded-box z-[1] shadow-md"><li><a class="inline-flex items-center p-2 cursor-pointer" href=/index.xml title=RSS><ion-icon name=logo-rss></ion-icon>RSS</a></li><li><a class="inline-flex items-center p-2 cursor-pointer" href=/posts title=Archives><ion-icon name=archive></ion-icon>Archives</a></li><li><a class="inline-flex items-center p-2 cursor-pointer" href=/categories title="All Categories"><ion-icon name=grid></ion-icon>All Categories</a></li><li><a class="inline-flex items-center p-2 cursor-pointer" href=/tags title="All Tags"><ion-icon name=pricetags></ion-icon>All Tags</a></li></ul></div><section class="hidden sm:flex sm:items-center sm:gap-2 md:gap-4"><a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href=/index.xml title=RSS><ion-icon class=group-hover:text-primary-content name=logo-rss></ion-icon></a><div class="dropdown dropdown-end dropdown-hover"><div tabindex=0 role=button class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" aria-label="Select an option"><ion-icon class="group-hover:text-primary-content text-xl" name=menu></ion-icon></div><ul tabindex=0 class="dropdown-content menu w-36 bg-base-100 rounded-box z-[1] shadow-xl"><li><a class="inline-flex items-center p-2 cursor-pointer" href=/posts title=Archives><ion-icon name=archive></ion-icon>Archives</a></li><li><a class="inline-flex items-center p-2 cursor-pointer" href=/categories title="All Categories"><ion-icon name=grid></ion-icon>All Categories</a></li><li><a class="inline-flex items-center p-2 cursor-pointer" href=/tags title="All Tags"><ion-icon name=pricetags></ion-icon>All Tags</a></li></ul></div></section></div></nav><div class=flip-container :class="{ 'flip-it': flip }"><div class=flipper><div class=front><div class=container><div class="lg:grid lg:grid-cols-4 gap-4 mt-4 px-4"><div class="hidden lg:block"></div><div class=lg:col-span-2><article class="mx-auto prose prose-quoteless dark:prose-invert" id=dream-single-post-main itemscope itemtype=http://schema.org/Article><meta itemprop=name content="Nginx代理grpchttps"><meta itemprop=description content="Cut out summary from your post content here."><meta itemprop=datePublished content="2024-08-28T21:42:16+08:00"><meta itemprop=dateModified content="2024-08-28T21:42:16+08:00"><meta itemprop=wordCount content="484"><meta itemprop=keywords content="Tag1,Tag2"><header><h1 itemprop=headline>Nginx代理grpchttps</h1><p class=text-sm>Wednesday, Aug 28, 2024
+| <span>3 minute read</span>
+| <span>Updated at
+Wednesday, Aug 28, 2024</span></p><div class="flex justify-between"><div class="flex items-center"><span>@</span>
+<span itemprop=author itemscope itemtype=https://schema.org/Person><span itemprop=name>Cai Song</span></span></div><div class="flex items-center gap-2"><a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="https://x.com/intent/post?text=Nginx%e4%bb%a3%e7%90%86grpchttps&amp;url=https://caisong.github.io/posts/nginx%E4%BB%A3%E7%90%86grpchttps/" target=_blank rel="noopener noreferrer" title="Share on X"><ion-icon class=group-hover:text-primary-content name=logo-x></ion-icon></a><a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="https://facebook.com/sharer/sharer.php?u=https://caisong.github.io/posts/nginx%E4%BB%A3%E7%90%86grpchttps/" target=_blank rel="noopener noreferrer" title="Share on Facebook"><ion-icon class=group-hover:text-primary-content name=logo-facebook></ion-icon></a><a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="https://wa.me/?text=Nginx%e4%bb%a3%e7%90%86grpchttps%20https://caisong.github.io/posts/nginx%E4%BB%A3%E7%90%86grpchttps/" target=_blank rel="noopener noreferrer" title="Share on WhatsApp"><ion-icon class=group-hover:text-primary-content name=logo-whatsapp></ion-icon></a></div></div></header><section id=dream-single-post-content itemprop=articleBody><img src=/img/cover.jpg alt=Nginx代理grpchttps><p>Cut out summary from your post content here.</p><p>The remaining content of your post.
+nginx 代理grpc https</p><h2 id=tls证书>tls证书</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>openssl req -new -x509 -nodes -days <span style=color:#ae81ff>365</span> -newkey rsa:2048 -keyout key.pem -out cert.pem -subj <span style=color:#e6db74>&#34;/CN=10.1.19.100&#34;</span> -addext <span style=color:#e6db74>&#34;subjectAltName=IP:10.1.19.100&#34;</span>
+</span></span></code></pre></div><h2 id=grpc>grpc</h2><h3 id=消息>消息</h3><ol><li>proto文件</li></ol><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-plain data-lang=plain><span style=display:flex><span>syntax = &#34;proto3&#34;;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>// 根据自己module name写就行，然后字节拷贝过去
+</span></span><span style=display:flex><span>option go_package = &#34;mygrpc/message/helloworld&#34;;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>// 官方示例里没注释，不过对go应该也没啥作用
+</span></span><span style=display:flex><span>//option java_multiple_files = true;
+</span></span><span style=display:flex><span>//option java_package = &#34;io.grpc.examples.helloworld&#34;;
+</span></span><span style=display:flex><span>//option java_outer_classname = &#34;HelloWorldProto&#34;;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>package helloworld;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>// The greeting service definition.
+</span></span><span style=display:flex><span>service Greeter {
+</span></span><span style=display:flex><span>  // Sends a greeting
+</span></span><span style=display:flex><span>  rpc SayHello (HelloRequest) returns (HelloReply) {}
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>// The request message containing the user&#39;s name.
+</span></span><span style=display:flex><span>message HelloRequest {
+</span></span><span style=display:flex><span>  string name = 1;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>// The response message containing the greetings
+</span></span><span style=display:flex><span>message HelloReply {
+</span></span><span style=display:flex><span>  string message = 1;
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><ol start=2><li>代码生成</li></ol><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>sudo apt install rotoc-gen-go protoc-gen-go-grpc
+</span></span><span style=display:flex><span><span style=color:#75715e># 生成</span>
+</span></span><span style=display:flex><span>protoc --go_out<span style=color:#f92672>=</span>. --go-grpc_out<span style=color:#f92672>=</span>. ./helloworld.proto 
+</span></span></code></pre></div><h3 id=服务端>服务端</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=display:flex><span><span style=color:#f92672>package</span> <span style=color:#a6e22e>main</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> (
+</span></span><span style=display:flex><span>	<span style=color:#e6db74>&#34;context&#34;</span>
+</span></span><span style=display:flex><span>	<span style=color:#e6db74>&#34;log&#34;</span>
+</span></span><span style=display:flex><span>	<span style=color:#e6db74>&#34;net&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;fmt&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;flag&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>pb</span> <span style=color:#e6db74>&#34;mygrpc/message/helloworld&#34;</span>
+</span></span><span style=display:flex><span>	<span style=color:#e6db74>&#34;google.golang.org/grpc&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;google.golang.org/grpc/credentials&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#960050;background-color:#1e0010>#</span><span style=color:#e6db74>&#34;google.golang.org/grpc/interceptor&#34;</span>
+</span></span><span style=display:flex><span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>type</span> <span style=color:#a6e22e>server</span> <span style=color:#66d9ef>struct</span> {
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>pb</span>.<span style=color:#a6e22e>UnimplementedGreeterServer</span>
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>func</span> (<span style=color:#a6e22e>s</span> <span style=color:#f92672>*</span><span style=color:#a6e22e>server</span>) <span style=color:#a6e22e>SayHello</span>(<span style=color:#a6e22e>ctx</span> <span style=color:#a6e22e>context</span>.<span style=color:#a6e22e>Context</span>, <span style=color:#a6e22e>req</span> <span style=color:#f92672>*</span><span style=color:#a6e22e>pb</span>.<span style=color:#a6e22e>HelloRequest</span>) (<span style=color:#f92672>*</span><span style=color:#a6e22e>pb</span>.<span style=color:#a6e22e>HelloReply</span>, <span style=color:#66d9ef>error</span>) {
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>return</span> <span style=color:#f92672>&amp;</span><span style=color:#a6e22e>pb</span>.<span style=color:#a6e22e>HelloReply</span>{<span style=color:#a6e22e>Message</span>: <span style=color:#e6db74>&#34;Hello &#34;</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>req</span>.<span style=color:#a6e22e>Name</span>}, <span style=color:#66d9ef>nil</span>
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>func</span> <span style=color:#a6e22e>main</span>() {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>certFile</span><span style=color:#f92672>:=</span><span style=color:#e6db74>&#34;/data/code/grpc/cert.pem&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>keyFile</span><span style=color:#f92672>:=</span><span style=color:#e6db74>&#34;/data/code/grpc/key.pem&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>creds</span>, <span style=color:#a6e22e>err</span><span style=color:#f92672>:=</span><span style=color:#a6e22e>credentials</span>.<span style=color:#a6e22e>NewServerTLSFromFile</span>(<span style=color:#a6e22e>certFile</span>, <span style=color:#a6e22e>keyFile</span>)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> <span style=color:#a6e22e>err</span><span style=color:#f92672>!=</span><span style=color:#66d9ef>nil</span> {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>log</span>.<span style=color:#a6e22e>Fatalf</span>(<span style=color:#e6db74>&#34;Failed to generated credentials: %v&#34;</span>, <span style=color:#a6e22e>err</span>)
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>grpcServer</span> <span style=color:#f92672>:=</span> <span style=color:#a6e22e>grpc</span>.<span style=color:#a6e22e>NewServer</span>(<span style=color:#a6e22e>grpc</span>.<span style=color:#a6e22e>Creds</span>(<span style=color:#a6e22e>creds</span>))
+</span></span><span style=display:flex><span>	<span style=color:#75715e>// 注册 Greeter 服务
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>	<span style=color:#a6e22e>pb</span>.<span style=color:#a6e22e>RegisterGreeterServer</span>(<span style=color:#a6e22e>grpcServer</span>, <span style=color:#f92672>&amp;</span><span style=color:#a6e22e>server</span>{})
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>var</span> <span style=color:#a6e22e>port</span> <span style=color:#66d9ef>int</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>flag</span>.<span style=color:#a6e22e>IntVar</span>(<span style=color:#f92672>&amp;</span><span style=color:#a6e22e>port</span>, <span style=color:#e6db74>&#34;port&#34;</span>, <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>, <span style=color:#e6db74>&#34;listten port&#34;</span>)
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>flag</span>.<span style=color:#a6e22e>Parse</span>()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#75715e>// 监听端口
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#a6e22e>listener</span>, <span style=color:#a6e22e>err</span> <span style=color:#f92672>:=</span> <span style=color:#a6e22e>net</span>.<span style=color:#a6e22e>Listen</span>(<span style=color:#e6db74>&#34;tcp&#34;</span>, <span style=color:#a6e22e>fmt</span>.<span style=color:#a6e22e>Sprintf</span>(<span style=color:#e6db74>&#34;:%d&#34;</span>, <span style=color:#a6e22e>port</span>))
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>if</span> <span style=color:#a6e22e>err</span> <span style=color:#f92672>!=</span> <span style=color:#66d9ef>nil</span> {
+</span></span><span style=display:flex><span>		<span style=color:#a6e22e>log</span>.<span style=color:#a6e22e>Fatalf</span>(<span style=color:#e6db74>&#34;Failed to listen on port %d: %v&#34;</span>, <span style=color:#a6e22e>port</span>, <span style=color:#a6e22e>err</span>)
+</span></span><span style=display:flex><span>	}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#75715e>// 启动 gRPC 服务器
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>	<span style=color:#a6e22e>log</span>.<span style=color:#a6e22e>Println</span>(<span style=color:#e6db74>&#34;gRPC server is listening on port&#34;</span>, <span style=color:#a6e22e>port</span>)
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>if</span> <span style=color:#a6e22e>err</span> <span style=color:#f92672>:=</span> <span style=color:#a6e22e>grpcServer</span>.<span style=color:#a6e22e>Serve</span>(<span style=color:#a6e22e>listener</span>); <span style=color:#a6e22e>err</span> <span style=color:#f92672>!=</span> <span style=color:#66d9ef>nil</span> {
+</span></span><span style=display:flex><span>		<span style=color:#a6e22e>log</span>.<span style=color:#a6e22e>Fatalf</span>(<span style=color:#e6db74>&#34;Failed to serve: %v&#34;</span>, <span style=color:#a6e22e>err</span>)
+</span></span><span style=display:flex><span>	}
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><h3 id=客户端>客户端</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=display:flex><span><span style=color:#f92672>package</span> <span style=color:#a6e22e>main</span> 
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> (
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;context&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;log&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#e6db74>&#34;google.golang.org/grpc&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;google.golang.org/grpc/credentials&#34;</span>
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>pb</span> <span style=color:#e6db74>&#34;grpcclient/message/helloworld&#34;</span>
+</span></span><span style=display:flex><span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>func</span> <span style=color:#a6e22e>main</span>() {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>certFile</span> <span style=color:#f92672>:=</span> <span style=color:#e6db74>&#34;/data/code/grpc/cert.pem&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>creds</span>, <span style=color:#a6e22e>err</span><span style=color:#f92672>:=</span><span style=color:#a6e22e>credentials</span>.<span style=color:#a6e22e>NewClientTLSFromFile</span>(<span style=color:#a6e22e>certFile</span>,<span style=color:#e6db74>&#34;&#34;</span>)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> <span style=color:#a6e22e>err</span><span style=color:#f92672>!=</span><span style=color:#66d9ef>nil</span>{
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>log</span>.<span style=color:#a6e22e>Fatalf</span>(<span style=color:#e6db74>&#34;Failed to load credentials %v&#34;</span>, <span style=color:#a6e22e>err</span>)
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>conn</span>, <span style=color:#a6e22e>err</span><span style=color:#f92672>:=</span><span style=color:#a6e22e>grpc</span>.<span style=color:#a6e22e>Dial</span>(<span style=color:#e6db74>&#34;10.1.19.100:443&#34;</span>, <span style=color:#a6e22e>grpc</span>.<span style=color:#a6e22e>WithTransportCredentials</span>(<span style=color:#a6e22e>creds</span>))
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> <span style=color:#a6e22e>err</span><span style=color:#f92672>!=</span><span style=color:#66d9ef>nil</span>{
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>log</span>.<span style=color:#a6e22e>Fatalf</span>(<span style=color:#e6db74>&#34;Faield to connect %v&#34;</span>, <span style=color:#a6e22e>err</span>)
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>defer</span> <span style=color:#a6e22e>conn</span>.<span style=color:#a6e22e>Close</span>()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>client</span><span style=color:#f92672>:=</span> <span style=color:#a6e22e>pb</span>.<span style=color:#a6e22e>NewGreeterClient</span>(<span style=color:#a6e22e>conn</span>)
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>resp</span>, <span style=color:#a6e22e>err</span><span style=color:#f92672>:=</span> <span style=color:#a6e22e>client</span>.<span style=color:#a6e22e>SayHello</span>(<span style=color:#a6e22e>context</span>.<span style=color:#a6e22e>Background</span>(), <span style=color:#f92672>&amp;</span><span style=color:#a6e22e>pb</span>.<span style=color:#a6e22e>HelloRequest</span>{<span style=color:#a6e22e>Name</span>:<span style=color:#e6db74>&#34;grpc&#34;</span>})
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> <span style=color:#a6e22e>err</span><span style=color:#f92672>!=</span><span style=color:#66d9ef>nil</span> {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>log</span>.<span style=color:#a6e22e>Fatalf</span>(<span style=color:#e6db74>&#34;Faield to say hello %v&#34;</span>, <span style=color:#a6e22e>err</span>)
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>log</span>.<span style=color:#a6e22e>Printf</span>(<span style=color:#e6db74>&#34;Response %s&#34;</span>, <span style=color:#a6e22e>resp</span>.<span style=color:#a6e22e>Message</span>)
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><h2 id=https>https</h2><h3 id=服务端-1>服务端</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=display:flex><span><span style=color:#f92672>package</span> <span style=color:#a6e22e>main</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> (
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;log&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;net/http&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;fmt&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;flag&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;github.com/labstack/echo/v4&#34;</span>
+</span></span><span style=display:flex><span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>func</span> <span style=color:#a6e22e>main</span>(){
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>e</span> <span style=color:#f92672>:=</span> <span style=color:#a6e22e>echo</span>.<span style=color:#a6e22e>New</span>()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>var</span> <span style=color:#a6e22e>port</span> <span style=color:#66d9ef>int</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>flag</span>.<span style=color:#a6e22e>IntVar</span>(<span style=color:#f92672>&amp;</span><span style=color:#a6e22e>port</span>, <span style=color:#e6db74>&#34;port&#34;</span>, <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>, <span style=color:#e6db74>&#34;listen port&#34;</span>)
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>flag</span>.<span style=color:#a6e22e>Parse</span>()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>e</span>.<span style=color:#a6e22e>GET</span>(<span style=color:#e6db74>&#34;/h/&#34;</span>, <span style=color:#66d9ef>func</span>(<span style=color:#a6e22e>c</span> <span style=color:#a6e22e>echo</span>.<span style=color:#a6e22e>Context</span>) <span style=color:#66d9ef>error</span> {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>c</span>.<span style=color:#a6e22e>String</span>(<span style=color:#a6e22e>http</span>.<span style=color:#a6e22e>StatusOK</span>, <span style=color:#e6db74>&#34;Hello, Https World&#34;</span>)
+</span></span><span style=display:flex><span>    })
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>err</span> <span style=color:#f92672>:=</span> <span style=color:#a6e22e>e</span>.<span style=color:#a6e22e>StartTLS</span>(<span style=color:#a6e22e>fmt</span>.<span style=color:#a6e22e>Sprintf</span>(<span style=color:#e6db74>&#34;:%d&#34;</span>, <span style=color:#a6e22e>port</span>), <span style=color:#e6db74>&#34;/data/code/grpc/cert.pem&#34;</span>, <span style=color:#e6db74>&#34;/data/code/grpc/key.pem&#34;</span>)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> <span style=color:#a6e22e>err</span><span style=color:#f92672>!=</span><span style=color:#66d9ef>nil</span> {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>log</span>.<span style=color:#a6e22e>Fatalf</span>(<span style=color:#e6db74>&#34;failed to start server: %v&#34;</span>, <span style=color:#a6e22e>err</span>)
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><h2 id=nginx代理>nginx代理</h2><p>原来想给grpc添加前缀的，但是grpc添加前缀有点麻烦，就给http添加前缀了。</p><pre tabindex=0><code class=language-config data-lang=config>pstream grpc_backend {
+    server 10.1.19.100:50051;
+    #server grpc_backend2:50051;
+}
+
+upstream http_backend {
+    server 10.1.19.100:60010;
+    # server http_backend2:60011;
+}
+
+server {
+    listen 443 ssl http2;
+    server_name 10.1.19.100;
+
+    ssl_certificate /data/code/grpc/cert.pem;
+    ssl_certificate_key /data/code/grpc/key.pem;
+
+
+# 处理普通 HTTPS 流量
+    location /h/ {
+        proxy_pass https://http_backend;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+    
+    grpc_ssl_verify off;
+    # grpc_ssl_session_reuser on;
+    # 处理 gRPC 流量
+    location / {
+        # grpcs 表示grpc + tls
+        grpc_pass grpcs://grpc_backend;
+        error_page 502 = /error502grpc;
+    }
+    
+    location = /error502grpc {
+        internal;
+        add_header content-type application/grpc;
+        add_header grpc-status 14;
+        add_header content-length 0;
+        add_header grpc-message &#34;Unreachable&#34;;
+        add_header x-grpc-error-deailts &#34;service unavailable&#34;;
+        return 204;
+    }
+
+# 自定义错误页面
+    location = /error502 {
+        internal;
+        add_header content-type text/plain;
+        return 502 &#34;Bad Gateway&#34;;
+    }
+}
+</code></pre></section><div class=divider></div><div class="flex flex-col md:flex-row justify-between gap-4 py-4"><a class="group btn btn-outline" href=/posts/golang%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E5%9D%91/ title=Golang数据库连接坑><ion-icon name=chevron-back></ion-icon><div class="inline-flex flex-col items-start"><span class="text-base-content/60 group-hover:text-neutral-content/60 text-xs font-normal">Previous page</span>
+<span class="max-w-48 truncate">Golang数据库连接坑</span></div></a><a class="group btn btn-outline" href=/posts/%E8%87%AA%E7%AD%BE%E8%AF%81%E4%B9%A6/ title=自签证书><div class="inline-flex flex-col items-end"><span class="text-base-content/60 group-hover:text-neutral-content/60 text-xs font-normal">Next page</span>
+<span class="max-w-48 truncate">自签证书</span></div><ion-icon name=chevron-forward></ion-icon></a></div></article></div><div class="hidden lg:flex lg:flex-col lg:items-end"><nav id=TableOfContents><ul><li><a href=#tls证书>tls证书</a></li><li><a href=#grpc>grpc</a><ul><li><a href=#消息>消息</a></li><li><a href=#服务端>服务端</a></li><li><a href=#客户端>客户端</a></li></ul></li><li><a href=#https>https</a><ul><li><a href=#服务端-1>服务端</a></li></ul></li><li><a href=#nginx代理>nginx代理</a></li></ul></nav></div></div><footer class="flex justify-between items-center gap-2 px-4 py-12"><div><p>© 2016 - 2025 Caisong's Blog</p><p class=text-sm>🌱
+<span class=text-base-content/60>Powered by <a class=hover:underline href=https://gohugo.io/ target=_blank>Hugo</a> with theme
+<a class=hover:underline href=https://github.com/g1eny0ung/hugo-theme-dream target=_blank>Dream</a>.</span></p></div><div x-data="{ icons: [
+    { name: 'moon', status: 'y' },
+    { name: 'sunny', status: 'n' },
+    { name: 'desktop', status: 'auto' }
+  ] }" class="flex items-center h-[32px] px-2 gap-2 border border-base-content/30 rounded-full"><template x-for="icon in icons"><div role=button tabindex=0 :aria-label="'Select ' + icon.name + ' mode'" class="group inline-flex justify-center items-center p-1 rounded-full cursor-pointer hover:bg-primary" :class="$store.darkMode.icon() === icon.name && 'bg-primary'" @click=$store.darkMode.toggle(icon.status)><ion-icon :name="`${icon.name}-outline`" class=group-hover:text-primary-content :class="$store.darkMode.icon() === icon.name && 'text-primary-content'"></ion-icon></div></template></div></footer></div></div><div class=back><div class=container><div class="dream-grid dream-grid-about"></div><footer class="flex justify-between items-center gap-2 px-4 py-12"><div><p>© 2016 - 2025 Caisong's Blog</p><p class=text-sm>🌱
+<span class=text-base-content/60>Powered by <a class=hover:underline href=https://gohugo.io/ target=_blank>Hugo</a> with theme
+<a class=hover:underline href=https://github.com/g1eny0ung/hugo-theme-dream target=_blank>Dream</a>.</span></p></div><div x-data="{ icons: [
+    { name: 'moon', status: 'y' },
+    { name: 'sunny', status: 'n' },
+    { name: 'desktop', status: 'auto' }
+  ] }" class="flex items-center h-[32px] px-2 gap-2 border border-base-content/30 rounded-full"><template x-for="icon in icons"><div role=button tabindex=0 :aria-label="'Select ' + icon.name + ' mode'" class="group inline-flex justify-center items-center p-1 rounded-full cursor-pointer hover:bg-primary" :class="$store.darkMode.icon() === icon.name && 'bg-primary'" @click=$store.darkMode.toggle(icon.status)><ion-icon :name="`${icon.name}-outline`" class=group-hover:text-primary-content :class="$store.darkMode.icon() === icon.name && 'text-primary-content'"></ion-icon></div></template></div></footer></div></div></div></div><script>window.lightTheme="emerald",window.darkTheme="forest"</script><script src=https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin=anonymous></script><script src=/js/grid.min.js></script><script src=/js/main.min.js></script><script type=module>
+      import mediumZoom from 'https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/+esm';
+      mediumZoom('#dream-single-post-content img')
+    </script><script type=module src=https://unpkg.com/ionicons@7.4.0/dist/ionicons/ionicons.esm.js></script><script nomodule src=https://unpkg.com/ionicons@7.4.0/dist/ionicons/ionicons.js></script></body></html>
