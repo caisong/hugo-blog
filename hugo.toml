@@ -4,11 +4,23 @@ title = "Caisong's Blog"
 theme = "dream"
 
 [params]
-  author = "Cai Song"
-  description = "A blog about all things technical."
+author = "Cai Song"
+headerTitle = "A blog about all things technical."
+lightTheme = "emerald"
+darkTheme = "forest"
+siteStartYear = 2016
+rss = true
 
-  [[params.social]]
-    icon = "github"
-    name = "GitHub"
-    url = "https://github.com/caisong"
+email = "ujscs@live.cn"
+#Syntax highlighting
+customSyntaxHighlighting = true
 
+# options
+ stickyNav = true
+ reorderNavItems = ["search", "rss", "posts", "categories", "tags"]
+ collapseNavItems = ["posts", "categories", "tags"]
+ noDefaultSummaryCover = true
+ showTableOfContents = true
+ showSummaryCoverInPost = true
+ imageZoomableInPost = true
+ showPrevNextPost = true
