@@ -10,18 +10,20 @@ lightTheme = "emerald"
 darkTheme = "forest"
 siteStartYear = 2016
 rss = true
+avatar = "img/avatar.png"
+images = ["img/background.jpg"]
 
 email = "ujscs@live.cn"
 # #Syntax highlighting
 # customSyntaxHighlighting = true
 
 # options
- stickyNav = true
- reorderNavItems = ["search", "rss", "posts", "categories", "tags"]
- collapseNavItems = ["posts", "categories", "tags"]
- noDefaultSummaryCover = true
- showTableOfContents = true
- showSummaryCoverInPost = true
- imageZoomableInPost = true
- showPrevNextPost = true
+stickyNav = true
+reorderNavItems = ["search", "rss", "posts", "categories", "tags"]
+collapseNavItems = ["posts", "categories", "tags"]
+noDefaultSummaryCover = true
+showTableOfContents = true
+showSummaryCoverInPost = true
+imageZoomableInPost = true
+showPrevNextPost = true
 
