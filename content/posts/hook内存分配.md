@@ -1,5 +1,5 @@
 ---
-title: Hook内存分配
+title: 内存泄漏检测
 date: 2024-12-26T21:40:58+08:00
 lastmod: 2024-12-26T21:40:58+08:00
 author: Cai Song
@@ -9,20 +9,15 @@ cover: /img/cover.jpg
 # images:
 #   - /img/cover.jpg
 categories:
-  - category1
+  - 编程
 tags:
-  - tag1
-  - tag2
+  - 内存泄漏
+  - hook
 # nolastmod: true
 draft: false
 ---
 
-Cut out summary from your post content here.
-
-<!--more-->
-
-The remaining content of your post.
-# hook内存分配
+内存泄漏检测
 ```cpp
 #define _GNU_SOURCE
 #include <dlfcn.h>

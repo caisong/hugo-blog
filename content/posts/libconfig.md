@@ -1,9 +1,22 @@
 ---
 title: libconfig 入门
-date: 2017-12-25 22:59:18
-tags: libconfig
-categories: tools
+date: 2017-12-25T22:59:18+08:00
+lastmod: 2017-12-25T22:59:18+08:00
+author: Cai Song
+# avatar: /img/author.jpg
+# authorlink: https://author.site
+cover: /img/cover.jpg
+# images:
+#   - /img/cover.jpg
+categories:
+  - 编程
+tags:
+  - libconfig 
+# nolastmod: true
+draft: false
 ---
+
+
 
 以下内容翻译自[libconfig manual](http://www.hyperrealm.com/libconfig/libconfig_manual.html "libconfig manual")
 版本1.4.9，最新版本请参阅[libconfig](https://hyperrealm.github.io/libconfig/ "libconfig")
@@ -320,5 +333,4 @@ apt-get install libconfig++-dev
 
 g++ example1.cpp -o example -lconfig++
 ```
-
 

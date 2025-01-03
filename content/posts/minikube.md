@@ -1,5 +1,5 @@
 ---
-title: Minikube
+title: Minikube 部署
 date: 2021-09-03T21:41:11+08:00
 lastmod: 2021-09-03T21:41:11+08:00
 author: Cai Song
@@ -9,19 +9,13 @@ cover: /img/cover.jpg
 # images:
 #   - /img/cover.jpg
 categories:
-  - category1
+  - 运维
 tags:
-  - tag1
-  - tag2
+  - minikube
 # nolastmod: true
 draft: false
 ---
 
-Cut out summary from your post content here.
-
-<!--more-->
-
-The remaining content of your post.
 # minikube
 https://github.com/AliyunContainerService/minikube
 https://developer.aliyun.com/article/221687
@@ -30,5 +24,3 @@ https://minikube.sigs.k8s.io/docs/start/
 https://www.jianshu.com/p/a42eeb66a19c
 https://www.cnblogs.com/kazihuo/p/10184286.html
 
-Tags:
-  minikube

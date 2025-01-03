@@ -1,5 +1,5 @@
 ---
-title: Iptables
+title: Iptables 记录
 date: 2021-09-03T21:41:02+08:00
 lastmod: 2021-09-03T21:41:02+08:00
 author: Cai Song
@@ -9,22 +9,12 @@ cover: /img/cover.jpg
 # images:
 #   - /img/cover.jpg
 categories:
-  - category1
+  - 运维
 tags:
-  - tag1
-  - tag2
+  - iptables
 # nolastmod: true
 draft: false
 ---
-
-Cut out summary from your post content here.
-
-<!--more-->
-
-The remaining content of your post.
-
-
-# iptables
 
 The `iptables` command will attempt a reverse lookup on ip addresses. This will produce exactly the behavior you describe. You can inhibit the reverse lookup with the -n flag, which is why I always list rules like this:
 ```shell
@@ -48,7 +38,6 @@ suppressed until you use
 
   iptables -L -v
 ```
-
 
 Tags:
   iptables

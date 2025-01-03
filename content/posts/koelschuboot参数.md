@@ -1,5 +1,5 @@
 ---
-title: Koelschuboot参数
+title: Koelsch uboot参数
 date: 2021-09-03T21:41:04+08:00
 lastmod: 2021-09-03T21:41:04+08:00
 author: Cai Song
@@ -9,20 +9,14 @@ cover: /img/cover.jpg
 # images:
 #   - /img/cover.jpg
 categories:
-  - category1
+  - 嵌入式
 tags:
-  - tag1
-  - tag2
+  - koelsch 
+  - uboot
 # nolastmod: true
 draft: false
 ---
 
-Cut out summary from your post content here.
-
-<!--more-->
-
-The remaining content of your post.
-# koelsch uboot参数
 ## init env
 ```shell
 setenv ethaddr 2e:09:0a:00:6c:e1
@@ -67,6 +61,3 @@ setenv bootcmd 'sf probe;sf read 0x40007fc0 0x140000 ${kern_size};sf read 0x40f0
 saveenv
 ```
 
-
-Tags:
-  koelsch

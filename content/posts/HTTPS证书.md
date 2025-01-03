@@ -1,5 +1,5 @@
 ---
-title: HTTPS证书
+title: 自签HTTPS证书
 date: 2022-08-30T21:40:59+08:00
 lastmod: 2022-08-30T21:40:59+08:00
 author: Cai Song
@@ -9,19 +9,14 @@ cover: /img/cover.jpg
 # images:
 #   - /img/cover.jpg
 categories:
-  - category1
+  - 运维
 tags:
-  - tag1
-  - tag2
+  - https
+  - linux
 # nolastmod: true
 draft: false
 ---
 
-Cut out summary from your post content here.
-
-<!--more-->
-
-The remaining content of your post.
 # HTTPS证书
 
 ```shell

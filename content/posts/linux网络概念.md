@@ -9,19 +9,16 @@ cover: /img/cover.jpg
 # images:
 #   - /img/cover.jpg
 categories:
-  - category1
+  - linux
+  - 网络
 tags:
-  - tag1
-  - tag2
+  - linux
 # nolastmod: true
 draft: false
 ---
 
-Cut out summary from your post content here.
+**这篇装载的，忘记转自哪儿了！侵删！**
 
-<!--more-->
-
-The remaining content of your post.
 # linux 网络概念
 
 ## 虚拟网络设备
@@ -86,10 +83,3 @@ The remaining content of your post.
 网关可以分为传输型网关和应用型网关，它的功能是充当转换重任，实质上就是一个网络通向其他网络的IP地址。
 
 路由器的功能主要有：连通不同的网络和信息传输作用。按照使用可分为：接入、企业级、骨干级、太比特、多WAN以及3G无线等。
-
-
-
-
-
-Tags:
-  linux, 网络

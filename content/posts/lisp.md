@@ -9,19 +9,16 @@ cover: /img/cover.jpg
 # images:
 #   - /img/cover.jpg
 categories:
-  - category1
+  - lisp
 tags:
-  - tag1
+  - emacs
   - tag2
 # nolastmod: true
 draft: false
 ---
 
-Cut out summary from your post content here.
+忘记干啥的，先留着吧
 
-<!--more-->
-
-The remaining content of your post.
 ```lisp
 (setq backup-directory-alist '(("." . "~/.emacs.d/backup"))
   backup-by-copying t    ; Don't delink hardlinks
@@ -31,6 +28,3 @@ The remaining content of your post.
   kept-old-versions 5    ; and how many of the old
   )
 ```
-
-Tags:
-  lisp

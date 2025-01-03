@@ -9,10 +9,9 @@ cover: /img/cover.jpg
 # images:
 #   - /img/cover.jpg
 categories:
-  - category1
+  - 运维
 tags:
-  - tag1
-  - tag2
+  - ipv6
 # nolastmod: true
 draft: false
 ---
@@ -41,6 +40,3 @@ route add default gw IP
 #删除路由
 route del –host 192.168.168.110 dev eth0
 ```
-
-Tags:
-  ip, linux

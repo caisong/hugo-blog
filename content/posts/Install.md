@@ -1,9 +1,20 @@
 ---
 title: PostgreSQL 安装
-date: 2016-10-12 21:13:50
+date: 2016-10-12T21:13:50+08:00
+lastmod: 2016-10-12T21:13:50+08:00
+author: Cai Song
+# avatar: /img/author.jpg
+# authorlink: https://author.site
+cover: /img/cover.jpg
+# images:
+#   - /img/cover.jpg
+categories:
+  - DataBase
 tags:
-  - PostgreSQL
-categories: DataBase
+  - pg
+  - db
+# nolastmod: true
+draft: false
 ---
 <!-- MarkdownTOC -->
 

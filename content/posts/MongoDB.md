@@ -1,11 +1,24 @@
-layout: '''mssql'
-title: transfer mssql data to mongodb'
-date: 2017-09-05 19:56:02
-tags: mssql, mongodb
+---
+title: sql server数据转存mongodb
+date: 2021-09-03T21:41:11+08:00
+lastmod: 2021-09-03T21:41:11+08:00
+author: Cai Song
+# avatar: /img/author.jpg
+# authorlink: https://author.site
+cover: /img/cover.jpg
+# images:
+#   - /img/cover.jpg
+categories:
+  - python2
+tags:
+  - sql server
+  - mongodb
+# nolastmod: true
+draft: false
 category: database
 ---
 
-写得比较基础
+写得比较简单，直接查询插入了
 
 ```python
 #!/usr/bin/env python

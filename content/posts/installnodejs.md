@@ -1,5 +1,5 @@
 ---
-title: Installnodejs
+title: Install nodejs
 date: 2021-09-03T21:41:01+08:00
 lastmod: 2021-09-03T21:41:01+08:00
 author: Cai Song
@@ -9,10 +9,9 @@ cover: /img/cover.jpg
 # images:
 #   - /img/cover.jpg
 categories:
-  - category1
+  - nodejs
 tags:
-  - tag1
-  - tag2
+  - nodejs
 # nolastmod: true
 draft: false
 ---
@@ -36,8 +35,8 @@ The remaining content of your post.
 
 4. 安装cnpm
   ```cmd
-  npm install -g cnpm --registry=https://registry.npm.taobao.org
+  # 这个域名已经失效了
+  # npm install -g cnpm --registry=https://registry.npm.taobao.org
+  # 新的
+  npm config set registry https://registry.npmmirror.com
   ```
-
-Tags:
-  nodejs, tutorial

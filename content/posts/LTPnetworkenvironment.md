@@ -1,5 +1,5 @@
 ---
-title: LTPnetworkenvironment
+title: LTP network environment
 date: 2021-09-03T21:41:08+08:00
 lastmod: 2021-09-03T21:41:08+08:00
 author: Cai Song
@@ -9,20 +9,13 @@ cover: /img/cover.jpg
 # images:
 #   - /img/cover.jpg
 categories:
-  - category1
+  - LTP 
 tags:
-  - tag1
-  - tag2
+  - LTP
 # nolastmod: true
 draft: false
 ---
-
-Cut out summary from your post content here.
-
-<!--more-->
-
-The remaining content of your post.
-# LTP network environment
+LTP 网络相关测试集环境配置
 
 ## client(debian) 
 
@@ -86,8 +79,3 @@ export IPV6_NETWORK="fe80::20c:29ff"
 export NS_DURATION=60
 
 ```
-
-
-
-Tags:
-  ltp

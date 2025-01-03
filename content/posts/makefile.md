@@ -1,5 +1,5 @@
 ---
-title: Makefile
+title: Makefile通用模板
 date: 2022-09-23T21:41:09+08:00
 lastmod: 2022-09-23T21:41:09+08:00
 author: Cai Song
@@ -9,20 +9,14 @@ cover: /img/cover.jpg
 # images:
 #   - /img/cover.jpg
 categories:
-  - category1
+  - 编程
 tags:
-  - tag1
-  - tag2
+  - makefile
 # nolastmod: true
 draft: false
 ---
 
-Cut out summary from your post content here.
-
-<!--more-->
-
-The remaining content of your post.
-# make file
+简单makefile套用模板
 
 ```shell
 # 编译当前文件夹下的所有cpp文件
@@ -50,6 +44,3 @@ all: $(target)
 clean:
 	rm $(target)
 ```
-
-Tags:
-  makefile

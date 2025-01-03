@@ -1,8 +1,20 @@
 ---
 title: MSSQL遇到问条记录
-date: 2016-07-24 22:10:46
-tags: MSSQL, SQL Server
-category: DataBase
+date: 2016-07-24T22:10:46+08:00
+lastmod: 2016-07-24T22:10:46+08:00
+author: Cai Song
+# avatar: /img/author.jpg
+# authorlink: https://author.site
+cover: /img/cover.jpg
+# images:
+#   - /img/cover.jpg
+categories:
+  - database
+tags:
+  - MSSQL
+  - SQL Server
+# nolastmod: true
+draft: false
 ---
 <!-- MarkdownTOC -->
 

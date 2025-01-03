@@ -9,10 +9,9 @@ cover: /img/cover.jpg
 # images:
 #   - /img/cover.jpg
 categories:
-  - category1
+  - 运维
 tags:
-  - tag1
-  - tag2
+  - kafka
 # nolastmod: true
 draft: false
 ---
