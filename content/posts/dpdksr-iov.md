@@ -1,5 +1,5 @@
 ---
-title: Dpdksr Iov
+title: Dpdk sr-iov
 date: 2024-12-30T21:40:42+08:00
 lastmod: 2024-12-30T21:40:42+08:00
 author: Cai Song
@@ -9,20 +9,17 @@ cover: /img/cover.jpg
 # images:
 #   - /img/cover.jpg
 categories:
-  - category1
+  - dpdk
 tags:
-  - tag1
-  - tag2
+  - sr-iov
 # nolastmod: true
 draft: false
 ---
 
-Cut out summary from your post content here.
+dpdk sr-iov支持
 
 <!--more-->
 
-The remaining content of your post.
-# dpdk sr-iov
 ## 检查网卡是否支持
 ```bash
 ifconfig

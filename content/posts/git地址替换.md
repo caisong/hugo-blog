@@ -9,23 +9,21 @@ cover: /img/cover.jpg
 # images:
 #   - /img/cover.jpg
 categories:
-  - category1
+  - 工具
 tags:
-  - tag1
-  - tag2
+  - git
 # nolastmod: true
 draft: false
 ---
 
-Cut out summary from your post content here.
+设置git直接替换镜像地址
 
-<!--more-->
-
-The remaining content of your post.
-git 地址替换
+```shell
 git config url.https://hub.njuu.cf/.insteadof https://github.com/
+```
 
 
 
 
-https://github.com/P4ELTE/t4p4s
+
+

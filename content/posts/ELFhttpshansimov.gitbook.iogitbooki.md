@@ -1,5 +1,5 @@
 ---
-title: ELFhttpshansimov.gitbook.iogitbooki
+title: ELF 字段说明
 date: 2024-06-05T21:40:26+08:00
 lastmod: 2024-06-05T21:40:26+08:00
 author: Cai Song
@@ -9,10 +9,10 @@ cover: /img/cover.jpg
 # images:
 #   - /img/cover.jpg
 categories:
-  - category1
+  - elf
 tags:
-  - tag1
-  - tag2
+  - linux
+  - ld
 # nolastmod: true
 draft: false
 ---
@@ -21,8 +21,7 @@ Cut out summary from your post content here.
 
 <!--more-->
 
-The remaining content of your post.
-![ELF](https://hansimov.gitbook.io/~gitbook/image?url=https%3A%2F%2F4154149387-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-legacy-files%2Fo%2Fassets%252F-MHt_spaxGgCbp2POnfq%252F-MI8p7rbEV-s_nV5Ru6X%252F-MI8pJh5IxzFL80HMTY3%252F07-03%2520%25E5%2585%25B8%25E5%259E%258B%25E7%259A%2584ELF%25E5%258F%25AF%25E9%2587%258D%25E5%25AE%259A%25E4%25BD%258D%25E7%259B%25AE%25E6%25A0%2587%25E6%2596%2587%25E4%25BB%25B6.png%3Falt%3Dmedia%26token%3Dd9d57c1c-24ef-401a-bf91-04bdf60fad68&width=400&dpr=3&quality=100&sign=5497b0ac1cb3f1a79b9438c992a2cd70c2c1a7c4fce58b010b191fad44aaec12)
+![ELF](https://hansimov.gitbook.io/~gitbook/image?url=https%3A%2F%2F4154149387-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-legacy-files%2Fo%2Fassets%252F-MHt_spaxGgCbp2POnfq%252F-MI8p7rbEV-s_nV5Ru6X%252F-MI8pJh5IxzFL80HMTY3%252F07-03%2520%25E5%2585%25B8%25E5%259E%258B%25E7%259A%2584ELF%25E5%258F%25AF%25E9%2587%258D%25E5%25AE%259A%25E4%25BD%258D%25E7%259B%25AE%25E6%25A0%2587%25E6%2596%2587%25E4%25BB%25B6.png%3Falt%3Dmedia%26token%3Dd9d57c1c-24ef-401a-bf91-04bdf60fad68&width=400&dpr=3&quality=100&sign=5497b0ac1cb3f1a79b9438c992a2cd70c2c1a7c4fce58b010b191fad44aaec12 "elf")
 
 .symtab：一个符号表，它存放在程序中定义和引用的函数和全局变量的信息。一些程序员错误地认为必须通过 -g 选项来编译一个程序，才能得到符号表信息。实际上，每个可重定位目标文件在 .symtab 中都有一张符号表（除非程序员特意用 STRIP 命令去掉它）。然而，和编译器中的符号表不同，.symtab 符号表不包含局部变量的条目。
 
@@ -87,5 +86,4 @@ off mod align = 0xdf8 mod 0x200000 = 0xdf8
 
 
 [打桩](https://hansimov.gitbook.io/csapp/part2/ch07-linking/7.13-library-interpositioning)
-
 

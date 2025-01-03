@@ -17,12 +17,7 @@ tags:
 draft: false
 ---
 
-Cut out summary from your post content here.
-
-<!--more-->
-
-The remaining content of your post.
-# ffsb结果解析
+ffsb结果解析
 ```plain
 FFSB version 6.0-RC2 started
 
@@ -1855,6 +1850,3 @@ print(sumValue)
 for s in sumNames:
     print(s,avg_benchmark_sum[s].values())
 ```
-
-Tags:
-  ffsb

@@ -1,5 +1,5 @@
 ---
-title: Echo&webdav
+title: go echo构建webdav服务器
 date: 2024-12-14T21:40:44+08:00
 lastmod: 2024-12-14T21:40:44+08:00
 author: Cai Song
@@ -9,20 +9,14 @@ cover: /img/cover.jpg
 # images:
 #   - /img/cover.jpg
 categories:
-  - category1
+  - golang
 tags:
-  - tag1
-  - tag2
+  - webdav
+  - echo
 # nolastmod: true
 draft: false
 ---
 
-Cut out summary from your post content here.
-
-<!--more-->
-
-The remaining content of your post.
-# echo & webdav
 ```golang
 package main
 
@@ -67,6 +61,3 @@ func main() {
 	}
 }
 ```
-
-Tags:
-  webdav

@@ -17,15 +17,8 @@ tags:
 draft: false
 ---
 
-Cut out summary from your post content here.
-
-<!--more-->
-
-The remaining content of your post.
-# gitbook 配置
+## gitbook 安装流程
 ```bash
-# gitbook 安装流程
-
 mkdir -p ~/.nvm/versions/node
 tar xvf node-v12.22.12-linux-x64.tar.xz
 mv node-v12.22.12-linux-x64 ~/.nvm/versions/node/v12.22.12
@@ -39,6 +32,7 @@ gitbook build
 gitbook install
 ```
 
+## 设置book配置
 *book.json* 
 ```json
 {

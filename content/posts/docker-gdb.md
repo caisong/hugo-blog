@@ -1,10 +1,19 @@
 ---
 title: gdb problem inside docker container
-date: 2017-12-17 20:53:59
-tags: 
+date: 2017-12-17T20:53:59+08:00
+lastmod: 2017-12-17T20:53:59+08:00
+author: Cai Song
+# avatar: /img/author.jpg
+# authorlink: https://author.site
+cover: /img/cover.jpg
+# images:
+#   - /img/cover.jpg
+categories:
   - docker
+tags:
   - gdb
-categories: docker
+# nolastmod: true
+draft: false
 ---
 
 > warning: Error disabling address space randomization: Operation not permitted
@@ -16,5 +25,4 @@ categories: docker
   ```
 
   ** There is no such options for `docker exec` command, so I recreate a container. Maybe there are others ways, please let me know. Thanks **
-
 

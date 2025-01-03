@@ -1,5 +1,5 @@
 ---
-title: DockerToolbox
+title: Docker Toolbox
 date: 2021-09-03T21:42:09+08:00
 lastmod: 2021-09-03T21:42:09+08:00
 author: Cai Song
@@ -9,20 +9,16 @@ cover: /img/cover.jpg
 # images:
 #   - /img/cover.jpg
 categories:
-  - category1
+  - docker
 tags:
-  - tag1
-  - tag2
+  - toolbox
 # nolastmod: true
 draft: false
 ---
 
-Cut out summary from your post content here.
+Docker Toolbox 设置docker镜像
 
 <!--more-->
-
-The remaining content of your post.
-Docker Toolbox
 
 在Windows、Mac系统上使用Docker Toolbox使用Docker的话
 推荐做法是在创建Linux虚拟机的时候，就将加速器的地址配置进去

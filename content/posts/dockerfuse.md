@@ -1,5 +1,5 @@
 ---
-title: Dockerfuse
+title: Docker fuse
 date: 2024-12-24T21:40:39+08:00
 lastmod: 2024-12-24T21:40:39+08:00
 author: Cai Song
@@ -9,19 +9,17 @@ cover: /img/cover.jpg
 # images:
 #   - /img/cover.jpg
 categories:
-  - category1
+  - docker
 tags:
-  - tag1
-  - tag2
+  - fuse
 # nolastmod: true
 draft: false
 ---
 
-Cut out summary from your post content here.
+docker fuse权限问题
 
 <!--more-->
 
-The remaining content of your post.
 # docker fuse
 
 At first, you should have docker image with installed fuse package inside container. For allow mount inside container need to run docker run command with `--cap-add SYS_ADMIN --device /dev/fuse:/dev/fuse --security-opt apparmor:unconfined`

@@ -1,5 +1,5 @@
 ---
-title: Ensp三层路由
+title: ensp三层路由
 date: 2022-08-22T21:40:46+08:00
 lastmod: 2022-08-22T21:40:46+08:00
 author: Cai Song
@@ -9,20 +9,13 @@ cover: /img/cover.jpg
 # images:
 #   - /img/cover.jpg
 categories:
-  - category1
+  - 网络
 tags:
-  - tag1
-  - tag2
+  - ensp
 # nolastmod: true
 draft: false
 ---
 
-Cut out summary from your post content here.
-
-<!--more-->
-
-The remaining content of your post.
-# ensp 三层路由
 ```shell
 # 两个交换机
 # 第二层交换机配置网关

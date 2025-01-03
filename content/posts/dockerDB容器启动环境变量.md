@@ -9,10 +9,9 @@ cover: /img/cover.jpg
 # images:
 #   - /img/cover.jpg
 categories:
-  - category1
+  - docker
 tags:
-  - tag1
-  - tag2
+  - database
 # nolastmod: true
 draft: false
 ---

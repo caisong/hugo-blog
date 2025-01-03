@@ -9,19 +9,13 @@ cover: /img/cover.jpg
 # images:
 #   - /img/cover.jpg
 categories:
-  - category1
+  - linux
 tags:
-  - tag1
-  - tag2
+  - gpg
 # nolastmod: true
 draft: false
 ---
 
-Cut out summary from your post content here.
-
-<!--more-->
-
-The remaining content of your post.
 GPG错误 NO PUBLIC KEY
 [no pulic key 修复](https://my.oschina.net/emptytimespace/blog/83633)
 
@@ -31,6 +25,3 @@ apt-get install debian-keyring debian-archive-keyring
 apt-key update
 apt-get upgrade
 ```
-
-Tags:
-  gpg, linux

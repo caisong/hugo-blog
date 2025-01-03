@@ -9,20 +9,18 @@ cover: /img/cover.jpg
 # images:
 #   - /img/cover.jpg
 categories:
-  - category1
+  - 运维
 tags:
-  - tag1
-  - tag2
+  - centos
+  - syslog
 # nolastmod: true
 draft: false
 ---
 
-Cut out summary from your post content here.
+centos 7 默认不携带mmnormlize这个module,需要额外安装
 
 <!--more-->
 
-The remaining content of your post.
-# centos 更新rsyslog
 ```bash
 curl -O http://rpms.adiscon.com/v8-stable/rsyslog.repo 
 

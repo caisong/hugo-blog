@@ -9,20 +9,14 @@ cover: /img/cover.jpg
 # images:
 #   - /img/cover.jpg
 categories:
-  - category1
+  - 网络
 tags:
-  - tag1
+  - ensp
   - tag2
 # nolastmod: true
 draft: false
 ---
 
-Cut out summary from your post content here.
-
-<!--more-->
-
-The remaining content of your post.
-# ensp单臂路由
 ```shell
 # 关闭提示信息
 # undo info-center enable
@@ -60,5 +54,4 @@ ip address 192.168.2.254 24
 arp br en
 ```
 
-Tags:
-  ensp
+  

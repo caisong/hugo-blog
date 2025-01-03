@@ -1,5 +1,5 @@
 ---
-title: Docker容器基于宿主机内核，容器的内核和宿主机的内容相同。
+title: Docker内核
 date: 2024-07-04T21:42:10+08:00
 lastmod: 2024-07-04T21:42:10+08:00
 author: Cai Song
@@ -17,12 +17,9 @@ tags:
 draft: false
 ---
 
-Cut out summary from your post content here.
+docker容器基于宿主机内核，容器的内核和宿主机的内容相同。
 
 <!--more-->
-
-The remaining content of your post.
-docker容器基于宿主机内核，容器的内核和宿主机的内容相同。
 
 1. elrepo 升级 centos 7 kernel
 2. centos 7 创建 centos 8 容器

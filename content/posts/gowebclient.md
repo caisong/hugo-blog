@@ -9,43 +9,37 @@ cover: /img/cover.jpg
 # images:
 #   - /img/cover.jpg
 categories:
-  - category1
+  - golang
 tags:
-  - tag1
-  - tag2
+  - webdav
 # nolastmod: true
 draft: false
 ---
 
-Cut out summary from your post content here.
-
-<!--more-->
-
-The remaining content of your post.
-# goweb client
+go webdav client示例
  ```golang
 package main
 
 import (
-        "github.com/studio-b12/gowebdav"
-        "fmt"
+  "github.com/studio-b12/gowebdav"
+  "fmt"
 )
 
 func main(){
-                cli:=gowebdav.NewAuthClient("http://127.0.0.1:10080", gowebdav.NewEmptyAuth())
-                if err:=cli.Connect();err!=nil{
-                                panic(err)
-                }
-                entries, err:= cli.ReadDir("/")
-                if err!=nil{
-                                panic(err)
-                }
-                for _, entry:= range entries {
-                                if entry.IsDir() {
-                                                fmt.Println("Dir ", entry.Name())
-                                }else{
-                                                fmt.Println("File ", entry.Name())
-                                }
-                }
+  cli:=gowebdav.NewAuthClient("http://127.0.0.1:10080", gowebdav.NewEmptyAuth())
+  if err:=cli.Connect();err!=nil{
+    panic(err)
+  }
+  entries, err:= cli.ReadDir("/")
+  if err!=nil{
+    panic(err)
+  }
+  for _, entry:= range entries {
+    if entry.IsDir() {
+      fmt.Println("Dir ", entry.Name())
+    }else{
+      fmt.Println("File ", entry.Name())
+    }
+  }
 }
  ```

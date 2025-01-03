@@ -1,5 +1,5 @@
 ---
-title: Golang条件编译
+title: golang 编译动态参数
 date: 2024-07-22T21:40:55+08:00
 lastmod: 2024-07-22T21:40:55+08:00
 author: Cai Song
@@ -9,20 +9,17 @@ cover: /img/cover.jpg
 # images:
 #   - /img/cover.jpg
 categories:
-  - category1
+  - golang
 tags:
-  - tag1
-  - tag2
+  - 条件编译
 # nolastmod: true
 draft: false
 ---
 
-Cut out summary from your post content here.
+golang 编译时指定变量值
 
 <!--more-->
 
-The remaining content of your post.
-# golang 条件编译
 ```shell
 go build -ldflags "-w -s -X main.Version=${VERSION} -X github.com/demo/version.BuildNo=${BUILD_NO}"
 

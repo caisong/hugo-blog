@@ -1,12 +1,25 @@
 ---
-title: python发送邮件（续）—— configparser
-date: 2016-06-03 20:45:12
+title: python发送邮件
+date: 2016-06-03T20:45:12+08:00
+lastmod: 2016-06-03T20:45:12+08:00
+author: Cai Song
+# avatar: /img/author.jpg
+# authorlink: https://author.site
+cover: /img/cover.jpg
+# images:
+#   - /img/cover.jpg
+categories:
+  - python
 tags:
   - mail
-  - config
+  - configparser
   - ini
-categories: python
+# nolastmod: true
+draft: false
 ---
+
+
+
 ## 简介
 昨天代码一些基本配置全部在代码中，灵活性较差，考虑到通过配置文件的方式来实现。结构比较简单，不想用xml或json，类似配置数据库连接的`property`文件就可以了，`configparser`比较满足要求。
 python `configparser`能够读取`*.conf`与`*.ini`的配置文件

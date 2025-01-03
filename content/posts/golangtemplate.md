@@ -1,5 +1,5 @@
 ---
-title: Golangtemplate
+title: Golang template
 date: 2024-07-29T21:40:54+08:00
 lastmod: 2024-07-29T21:40:54+08:00
 author: Cai Song
@@ -9,20 +9,15 @@ cover: /img/cover.jpg
 # images:
 #   - /img/cover.jpg
 categories:
-  - category1
+  - golang
 tags:
-  - tag1
-  - tag2
+  - template
+  - database
 # nolastmod: true
 draft: false
 ---
 
-Cut out summary from your post content here.
-
-<!--more-->
-
-The remaining content of your post.
-# golang template
+golang 使用 template 生成检测文件，检测DB连接
 
  ```golang
  //模板文件
@@ -56,7 +51,7 @@ host: {{ .Host }}
     {{- end }}
   {{- end }}
   {{- if eq .Category "Server" }}
-    {{- if eq .Role "FDP" }}
+    {{- if eq .Role "app1" }}
   task: check fdp server
   cmd.server.tool:
     name: fdp
@@ -66,7 +61,7 @@ host: {{ .Host }}
     {{- end }}
   {{- end }}
   {{- if eq .Category "Web" }}
-    {{- if eq .Role "FullTextWeb" }}
+    {{- if eq .Role "app2" }}
   task: check full text web
   cmd.web.tool:
     name: fulltext
@@ -109,12 +104,12 @@ func main() {
 			true, false, false, false,
 		},
 		{
-			"FDP", "Server", "", "172.16.10.31",
+			"app1", "Server", "", "172.16.10.31",
 			"", "", "",
 			true, true, false, false,
 		},
 		{
-			"FullTextWeb", "Web", "", "172.16.10.41",
+			"app2", "Web", "", "172.16.10.41",
 			"", "", "",
 			true, true, true, true,
 		},

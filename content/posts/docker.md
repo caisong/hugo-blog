@@ -1,7 +1,20 @@
 ---
 title: docker install on windows
-date: 2017-10-28 16:31:52
-tags: docker
+date: 2017-10-28T16:31:52+08:00
+lastmod: 2017-10-28T16:31:52+08:00
+author: Cai Song
+# avatar: /img/author.jpg
+# authorlink: https://author.site
+cover: /img/cover.jpg
+# images:
+#   - /img/cover.jpg
+categories:
+  - docker
+tags:
+  - docker
+  - windows
+# nolastmod: true
+draft: false
 ---
 
 1. 安装

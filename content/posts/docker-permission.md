@@ -1,7 +1,19 @@
 ---
 title: docker permission
-date: 2017-09-22 22:34:59
-tags: docker
+date: 2017-09-22T22:34:59+08:00
+lastmod: 2017-09-22T22:34:59+08:00
+author: Cai Song
+# avatar: /img/author.jpg
+# authorlink: https://author.site
+cover: /img/cover.jpg
+# images:
+#   - /img/cover.jpg
+categories:
+  - docker
+tags:
+  - permission
+# nolastmod: true
+draft: false
 ---
 # docker 权限控制
 docker在映射文件时，默认会使用与映射目录相同uid:gid，经常会导致一些权限问题。

@@ -1,5 +1,5 @@
 ---
-title: Golangsftp
+title: Golang sftp
 date: 2024-12-24T21:40:53+08:00
 lastmod: 2024-12-24T21:40:53+08:00
 author: Cai Song
@@ -17,12 +17,7 @@ tags:
 draft: false
 ---
 
-Cut out summary from your post content here.
-
-<!--more-->
-
-The remaining content of your post.
-# golang sftp
+golang 连接 sftp
 ```go
 package main
 
@@ -89,6 +84,3 @@ func main() {
 }
 
 ```
-
-Tags:
-  go, sftp

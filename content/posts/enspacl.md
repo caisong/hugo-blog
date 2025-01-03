@@ -1,5 +1,5 @@
 ---
-title: Enspacl
+title: ensp acl
 date: 2022-08-23T21:40:45+08:00
 lastmod: 2022-08-23T21:40:45+08:00
 author: Cai Song
@@ -9,20 +9,12 @@ cover: /img/cover.jpg
 # images:
 #   - /img/cover.jpg
 categories:
-  - category1
+  - 网络
 tags:
-  - tag1
-  - tag2
+  - ensp
 # nolastmod: true
 draft: false
 ---
-
-Cut out summary from your post content here.
-
-<!--more-->
-
-The remaining content of your post.
-# ensp acl
 
 ```shell
 # 不知道指令直接输入？会有提示

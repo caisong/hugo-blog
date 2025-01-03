@@ -1,5 +1,5 @@
 ---
-title: Dpdk验证
+title: ovs-dpdk验证
 date: 2021-09-23T21:40:43+08:00
 lastmod: 2021-09-23T21:40:43+08:00
 author: Cai Song
@@ -9,10 +9,9 @@ cover: /img/cover.jpg
 # images:
 #   - /img/cover.jpg
 categories:
-  - category1
+  - dpdk
 tags:
-  - tag1
-  - tag2
+  - open vswitch
 # nolastmod: true
 draft: false
 ---
@@ -89,8 +88,3 @@ ovs-ofctl add-flow ovs-br0 in_port=2,idle_timeout=0,action=output:1
 - [x] testpmd作用
 - [ ] port br作用
 - [ ] 流表查看、验证（testpmd）
-
-
-
-Tags:
-  dpdk, ovs
