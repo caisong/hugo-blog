@@ -1,6 +1,44 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Windows on Caisong's Blog</title><link>https://caisong.github.io/tags/windows/</link><description>Recent content in Windows on Caisong's Blog</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Tue, 13 Aug 2019 20:16:56 +0800</lastBuildDate><atom:link href="https://caisong.github.io/tags/windows/index.xml" rel="self" type="application/rss+xml"/><item><title>Vs2017 Show Active File in Solution Explorer</title><link>https://caisong.github.io/posts/vs2017-show-active-file-in-solution-explorer/</link><pubDate>Tue, 13 Aug 2019 20:16:56 +0800</pubDate><guid>https://caisong.github.io/posts/vs2017-show-active-file-in-solution-explorer/</guid><description>&lt;p>Tools - Options - Projects and Solutions - Track Active Item in Solution Explorer&lt;/p></description></item><item><title>Windows移植linux</title><link>https://caisong.github.io/posts/windows%E7%A7%BB%E6%A4%8Dlinux/</link><pubDate>Sun, 29 Oct 2017 20:13:54 +0800</pubDate><guid>https://caisong.github.io/posts/windows%E7%A7%BB%E6%A4%8Dlinux/</guid><description>&lt;p>Cut out summary from your post content here.&lt;/p></description></item><item><title>bat切换当前目录</title><link>https://caisong.github.io/posts/bat/</link><pubDate>Mon, 20 Jun 2016 21:35:20 +0000</pubDate><guid>https://caisong.github.io/posts/bat/</guid><description>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>@echo off
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cd %~dp0
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> call git pull
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> xcopy D:&lt;span style="color:#ae81ff">\g&lt;/span>oogle&lt;span style="color:#ae81ff">\h&lt;/span>osts&lt;span style="color:#ae81ff">\h&lt;/span>osts C:&lt;span style="color:#ae81ff">\W&lt;/span>indows&lt;span style="color:#ae81ff">\S&lt;/span>ystem32&lt;span style="color:#ae81ff">\d&lt;/span>rivers&lt;span style="color:#ae81ff">\e&lt;/span>tc&lt;span style="color:#ae81ff">\ &lt;/span>/Y /R
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>每次更新host，使用管理员运行显示git失败，原因是使用管理员运行时，目录切换到system32下了。
-&lt;code>cd %~dp0&lt;/code>表示切换回当前目录&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Windows on Caisong's Blog</title><link>https://caisong.github.io/tags/windows/</link><description>Recent content in Windows on Caisong's Blog</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Tue, 13 Aug 2019 20:16:56 +0800</lastBuildDate><atom:link href="https://caisong.github.io/tags/windows/index.xml" rel="self" type="application/rss+xml"/><item><title>Vs2017 Show Active File in Solution Explorer</title><link>https://caisong.github.io/posts/vs2017-show-active-file-in-solution-explorer/</link><pubDate>Tue, 13 Aug 2019 20:16:56 +0800</pubDate><guid>https://caisong.github.io/posts/vs2017-show-active-file-in-solution-explorer/</guid><description>&lt;p>Tools - Options - Projects and Solutions - Track Active Item in Solution Explorer&lt;/p></description></item><item><title>Windows移植linux</title><link>https://caisong.github.io/posts/windows%E7%A7%BB%E6%A4%8Dlinux/</link><pubDate>Sun, 29 Oct 2017 20:13:54 +0800</pubDate><guid>https://caisong.github.io/posts/windows%E7%A7%BB%E6%A4%8Dlinux/</guid><description>&lt;p>Cut out summary from your post content here.&lt;/p></description></item><item><title>docker install on windows</title><link>https://caisong.github.io/posts/docker/</link><pubDate>Sat, 28 Oct 2017 16:31:52 +0800</pubDate><guid>https://caisong.github.io/posts/docker/</guid><description>&lt;ol>
+&lt;li>安装
+阿里云下载&lt;a href="https://mirrors.aliyun.com/docker-toolbox/windows/docker-toolbox/">docker toolbox&lt;/a>&lt;/li>
+&lt;li>常见问题&lt;/li>
+&lt;/ol>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;code>error: Details: code E_FAIL (0x80004005), component MachineWrap, interface I &lt;/code>
+virtual box 版本较低导致，升级后问题解决
+P.S. 另一由于CPU不支持虚拟化的导致的问题没遇到&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>设置国内镜像仓库&lt;/p>
+&lt;ol>
+&lt;li>创建之前指定&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>docker-machine create --engine-registry-mirror&lt;span style="color:#f92672">=&lt;/span>http://hub-mirror.c.163.com -d virtualbox default
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="2">
+&lt;li>创建之后，进入machine修改&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>docker-machine ssh &amp;lt;machine-name&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo -i
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sed -i &lt;span style="color:#e6db74">&amp;#39;/^EXTRA_ARGS.*/ s/$/ ----registry-mirror=http://hub-mirror.c.163.com&amp;#39;&lt;/span> /var/lib/boot2docker/profile
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>/etc/init.d/docker restart
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>P.S. 默认docker用户，用&lt;code>sudo -i&lt;/code>切换root用户&lt;/p>
+&lt;ul>
+&lt;li>镜像路径
+默认镜像路径在用户目录下，在C盘
+&lt;ol>
+&lt;li>安装前
+设置环境变量&lt;code>MACHINE_STORAGE_PATH&lt;/code>指向你需要设置的目录&lt;/li>
+&lt;li>安装后
+P.S.&lt;/li>
+&lt;/ol>
+&lt;ul>
+&lt;li>创建快捷方式的方法失败&lt;/li>
+&lt;li>指定docker daemon graph的方法失败&lt;/li>
+&lt;li>未尝试使用&lt;code>ln&lt;/code>链接目录&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul></description></item></channel></rss>

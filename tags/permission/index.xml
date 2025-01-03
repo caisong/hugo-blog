@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Permission on Caisong's Blog</title><link>https://caisong.github.io/tags/permission/</link><description>Recent content in Permission on Caisong's Blog</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Fri, 22 Sep 2017 22:34:59 +0800</lastBuildDate><atom:link href="https://caisong.github.io/tags/permission/index.xml" rel="self" type="application/rss+xml"/><item><title>docker permission</title><link>https://caisong.github.io/posts/docker-permission/</link><pubDate>Fri, 22 Sep 2017 22:34:59 +0800</pubDate><guid>https://caisong.github.io/posts/docker-permission/</guid><description>&lt;h1 id="docker-权限控制">docker 权限控制&lt;/h1>
+&lt;p>docker在映射文件时，默认会使用与映射目录相同uid:gid，经常会导致一些权限问题。
+常见有以下解决方案：&lt;/p>
+&lt;ul>
+&lt;li>改变权限&lt;/li>
+&lt;/ul>
+&lt;ol>
+&lt;li>创建容器后，进入后&lt;code>chown&lt;/code>&lt;/li>
+&lt;li>通过&lt;code>docker run&lt;/code>的&lt;code>-u&lt;/code>选项&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>docker run -v &lt;span style="color:#e6db74">`&lt;/span>pwd&lt;span style="color:#e6db74">`&lt;/span>/shared:/shared -u &lt;span style="color:#e6db74">`&lt;/span>stat -c &lt;span style="color:#e6db74">&amp;#34;%u:%g&amp;#34;&lt;/span> /shared&lt;span style="color:#e6db74">`&lt;/span> ubuntu bash
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>这样做的话就等于放弃了root权限，除非再新建root组用户&lt;/p>
+&lt;ul>
+&lt;li>使用Data-only container
+[Data-only container madness](&lt;a href="http://container42.com/2014/11/18/data-only-container-madness/">http://container42.com/2014/11/18/data-only-container-madness/&lt;/a> “data-only”)
+主要手段如下:&lt;/li>
+&lt;/ul>
+&lt;ol>
+&lt;li>创建数据容器，改变目录用户权限。&lt;/li>
+&lt;li>其他容器使用&lt;code>--volumes-from&lt;/code>挂载创建的数据容器&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>docker run -v /userdata --name data busybox true
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>docker run --volumes-from data debian:jessie bash
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

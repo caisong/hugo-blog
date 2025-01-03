@@ -12,4 +12,96 @@
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#960050;background-color:#1e0010">&lt;/span> PASSWORD: secret1234&lt;span style="color:#960050;background-color:#1e0010">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#960050;background-color:#1e0010">&lt;/span> volumes:&lt;span style="color:#960050;background-color:#1e0010">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#960050;background-color:#1e0010">&lt;/span> - /srv/dav:/var/lib/dav&lt;span style="color:#960050;background-color:#1e0010">
-&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Apache webdav配置</title><link>https://caisong.github.io/posts/apachewebdav%E9%85%8D%E7%BD%AE/</link><pubDate>Tue, 24 Dec 2024 21:40:28 +0800</pubDate><guid>https://caisong.github.io/posts/apachewebdav%E9%85%8D%E7%BD%AE/</guid><description>&lt;p>apache webdav配置&lt;/p></description></item><item><title>Gowebclient</title><link>https://caisong.github.io/posts/gowebclient/</link><pubDate>Fri, 20 Dec 2024 21:40:56 +0800</pubDate><guid>https://caisong.github.io/posts/gowebclient/</guid><description>&lt;p>go webdav client示例&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-golang" data-lang="golang">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">package&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> (
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;github.com/studio-b12/gowebdav&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;fmt&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">func&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>(){
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">cli&lt;/span>&lt;span style="color:#f92672">:=&lt;/span>&lt;span style="color:#a6e22e">gowebdav&lt;/span>.&lt;span style="color:#a6e22e">NewAuthClient&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;http://127.0.0.1:10080&amp;#34;&lt;/span>, &lt;span style="color:#a6e22e">gowebdav&lt;/span>.&lt;span style="color:#a6e22e">NewEmptyAuth&lt;/span>())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#a6e22e">err&lt;/span>&lt;span style="color:#f92672">:=&lt;/span>&lt;span style="color:#a6e22e">cli&lt;/span>.&lt;span style="color:#a6e22e">Connect&lt;/span>();&lt;span style="color:#a6e22e">err&lt;/span>&lt;span style="color:#f92672">!=&lt;/span>&lt;span style="color:#66d9ef">nil&lt;/span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> panic(&lt;span style="color:#a6e22e">err&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">entries&lt;/span>, &lt;span style="color:#a6e22e">err&lt;/span>&lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#a6e22e">cli&lt;/span>.&lt;span style="color:#a6e22e">ReadDir&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;/&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#a6e22e">err&lt;/span>&lt;span style="color:#f92672">!=&lt;/span>&lt;span style="color:#66d9ef">nil&lt;/span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> panic(&lt;span style="color:#a6e22e">err&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span> &lt;span style="color:#a6e22e">_&lt;/span>, &lt;span style="color:#a6e22e">entry&lt;/span>&lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#66d9ef">range&lt;/span> &lt;span style="color:#a6e22e">entries&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#a6e22e">entry&lt;/span>.&lt;span style="color:#a6e22e">IsDir&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">fmt&lt;/span>.&lt;span style="color:#a6e22e">Println&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;Dir &amp;#34;&lt;/span>, &lt;span style="color:#a6e22e">entry&lt;/span>.&lt;span style="color:#a6e22e">Name&lt;/span>())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }&lt;span style="color:#66d9ef">else&lt;/span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">fmt&lt;/span>.&lt;span style="color:#a6e22e">Println&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;File &amp;#34;&lt;/span>, &lt;span style="color:#a6e22e">entry&lt;/span>.&lt;span style="color:#a6e22e">Name&lt;/span>())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>go echo构建webdav服务器</title><link>https://caisong.github.io/posts/echowebdav/</link><pubDate>Sat, 14 Dec 2024 21:40:44 +0800</pubDate><guid>https://caisong.github.io/posts/echowebdav/</guid><description>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-golang" data-lang="golang">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">package&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> (
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#e6db74">&amp;#34;golang.org/x/net/webdav&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#e6db74">&amp;#34;log&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#e6db74">&amp;#34;os&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#e6db74">&amp;#34;github.com/labstack/echo/v4&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#e6db74">&amp;#34;github.com/labstack/echo/v4/middleware&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">func&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#75715e">// 获取当前工作目录作为WebDAV服务器的根目录（可按需替换为实际的目录路径）
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>	&lt;span style="color:#a6e22e">rootDir&lt;/span>, &lt;span style="color:#a6e22e">err&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#a6e22e">os&lt;/span>.&lt;span style="color:#a6e22e">Getwd&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#a6e22e">err&lt;/span> &lt;span style="color:#f92672">!=&lt;/span> &lt;span style="color:#66d9ef">nil&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#a6e22e">log&lt;/span>.&lt;span style="color:#a6e22e">Fatal&lt;/span>(&lt;span style="color:#a6e22e">err&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#75715e">// 创建WebDAV文件系统处理程序
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>	&lt;span style="color:#a6e22e">handler&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#a6e22e">webdav&lt;/span>.&lt;span style="color:#a6e22e">Handler&lt;/span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#a6e22e">FileSystem&lt;/span>: &lt;span style="color:#a6e22e">webdav&lt;/span>.&lt;span style="color:#a6e22e">Dir&lt;/span>(&lt;span style="color:#a6e22e">rootDir&lt;/span>),
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#a6e22e">LockSystem&lt;/span>: &lt;span style="color:#a6e22e">webdav&lt;/span>.&lt;span style="color:#a6e22e">NewMemLS&lt;/span>(),
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#75715e">// 创建Echo实例
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>	&lt;span style="color:#a6e22e">e&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#a6e22e">echo&lt;/span>.&lt;span style="color:#a6e22e">New&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#75715e">// 添加中间件（可按需添加更多如日志记录、跨域等中间件，此处以基本的恢复中间件为例）
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>	&lt;span style="color:#a6e22e">e&lt;/span>.&lt;span style="color:#a6e22e">Use&lt;/span>(&lt;span style="color:#a6e22e">middleware&lt;/span>.&lt;span style="color:#a6e22e">Recover&lt;/span>())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#75715e">// 将WebDAV处理程序挂载到Echo框架的路由上，这里假设所有路径都由WebDAV处理
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>	&lt;span style="color:#a6e22e">e&lt;/span>.&lt;span style="color:#a6e22e">Any&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;/*&amp;#34;&lt;/span>, &lt;span style="color:#a6e22e">echo&lt;/span>.&lt;span style="color:#a6e22e">WrapHandler&lt;/span>(&lt;span style="color:#f92672">&amp;amp;&lt;/span>&lt;span style="color:#a6e22e">handler&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#75715e">// 设置服务器监听的地址和端口，这里以8080为例
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>	&lt;span style="color:#a6e22e">addr&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;:8080&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#a6e22e">log&lt;/span>.&lt;span style="color:#a6e22e">Printf&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;Starting WebDAV server on %s&amp;#34;&lt;/span>, &lt;span style="color:#a6e22e">addr&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#75715e">// 启动服务器
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>	&lt;span style="color:#a6e22e">err&lt;/span> = &lt;span style="color:#a6e22e">e&lt;/span>.&lt;span style="color:#a6e22e">Start&lt;/span>(&lt;span style="color:#a6e22e">addr&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#a6e22e">err&lt;/span> &lt;span style="color:#f92672">!=&lt;/span> &lt;span style="color:#66d9ef">nil&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#a6e22e">log&lt;/span>.&lt;span style="color:#a6e22e">Fatal&lt;/span>(&lt;span style="color:#a6e22e">err&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>arm ports differences</title><link>https://caisong.github.io/posts/arm-ports-differences/</link><pubDate>Wed, 13 Sep 2017 22:25:00 +0800</pubDate><guid>https://caisong.github.io/posts/arm-ports-differences/</guid><description>&lt;h2 id="three-ports-to-different-flavours-of-little-endian-arm-hardware">Three ports to different flavours of little-endian ARM hardware&lt;/h2>
+&lt;p>&lt;strong>The following content reproudced from Debian Wiki&lt;/strong> &lt;a href="https://wiki.debian.org/ArmPorts" title="Debian wiki">ArmPorts&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>ArmPort - the first port, using the &amp;ldquo;old&amp;rdquo; (now obsolete) ABI (OABI). First released with 2.2 (Potato), last released with 5.0 (lenny). GNU Triplet: arm-linux-gnu&lt;/li>
+&lt;li>ArmEabiPort - newer port using the &amp;ldquo;new&amp;rdquo; ABI (EABI), supported on Arm v4t and higher. First released with 5.0 (lenny). GNU Triplet: arm-linux-gnueabi&lt;/li>
+&lt;li>ArmHardFloatPort - the latest 32-bit port, using the hard-float version of the &amp;ldquo;new&amp;rdquo; ABI (EABI), targeting Arm v7 and up. First released with 7 (wheezy). GNU Triplet: arm-linux-gnueabihf&lt;/li>
+&lt;li>Arm64Port - the latest port, for the 64-bit Armv8 architecture. First released with 8 (jessie). GNU Triplet: aarch64-linux-gnu&lt;/li>
+&lt;/ul>
+&lt;h2 id="prebuilt-toolchains">Prebuilt toolchains&lt;/h2>
+&lt;ul>
+&lt;li>Debian cross-tools packages
+&lt;strong>The following content reproudced from elinux&lt;/strong> &lt;a href="http://www.elinux.org/Toolchains" title="toolchains">toolchains&lt;/a>&lt;br>
+For Debian users, the toolchains problem is fairly reliably solved.
+For a debian-based box just install pre-built cross toolchains from Debian experimental.
+Targets include nearly all debian-supported architectures As of this writing supported compiler is gcc 4.9. You can get older unsupported compilers from emdebian.
+You will need to add the target architecture to your list of installable architectures. eg.&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span> dpkg --add-architecture armhf
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> apt-get update
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> apt-get install gcc-arm-linux-gnueabihf
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># arm64 gcc-r-aarch-linux-gnu&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="toolchain-building-systems">Toolchain building systems&lt;/h2>
+&lt;ul>
+&lt;li>Bitbake
+Bitbake is the tool used by &lt;a href="http://wiki.openembedded.net/index.php/Main_Page" title="OpenEmbedded">OpenEmbedded&lt;/a>. The best way to get started is probably by just building an existing distribution that uses openembedded.&lt;/li>
+&lt;/ul></description></item></channel></rss>

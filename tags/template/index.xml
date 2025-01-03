@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Template on Caisong's Blog</title><link>https://caisong.github.io/tags/template/</link><description>Recent content in Template on Caisong's Blog</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Mon, 29 Jul 2024 21:40:54 +0800</lastBuildDate><atom:link href="https://caisong.github.io/tags/template/index.xml" rel="self" type="application/rss+xml"/><item><title>Golang template</title><link>https://caisong.github.io/posts/golangtemplate/</link><pubDate>Mon, 29 Jul 2024 21:40:54 +0800</pubDate><guid>https://caisong.github.io/posts/golangtemplate/</guid><description>&lt;p>golang 使用 template 生成检测文件，检测DB连接&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-golang" data-lang="golang">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">//模板文件
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>{{&lt;span style="color:#f92672">-&lt;/span> &lt;span style="color:#66d9ef">range&lt;/span> . }}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">host&lt;/span>: {{ .&lt;span style="color:#a6e22e">Host&lt;/span> }}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {{&lt;span style="color:#f92672">-&lt;/span> &lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#a6e22e">eq&lt;/span> .&lt;span style="color:#a6e22e">Category&lt;/span> &lt;span style="color:#e6db74">&amp;#34;DataBase&amp;#34;&lt;/span> }}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {{&lt;span style="color:#f92672">-&lt;/span> &lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#a6e22e">eq&lt;/span> .&lt;span style="color:#a6e22e">Role&lt;/span> &lt;span style="color:#e6db74">&amp;#34;PostgreSQL&amp;#34;&lt;/span> }}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">task&lt;/span>: &lt;span style="color:#a6e22e">check&lt;/span> &lt;span style="color:#a6e22e">postgresql&lt;/span> &lt;span style="color:#a6e22e">connection&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">cmd&lt;/span>.&lt;span style="color:#a6e22e">database&lt;/span>.&lt;span style="color:#a6e22e">dbtool&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">name&lt;/span>: &lt;span style="color:#a6e22e">pg&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">args&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">port&lt;/span>: {{ .&lt;span style="color:#a6e22e">DBPort&lt;/span> }}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">user&lt;/span>: {{ .&lt;span style="color:#a6e22e">DBUser&lt;/span> }}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">passwd&lt;/span>: {{ .&lt;span style="color:#a6e22e">DBPasswd&lt;/span> }}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">dbname&lt;/span> : {{ .&lt;span style="color:#a6e22e">DBName&lt;/span> }}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {{&lt;span style="color:#f92672">-&lt;/span> &lt;span style="color:#66d9ef">else&lt;/span> &lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#a6e22e">eq&lt;/span> .&lt;span style="color:#a6e22e">Role&lt;/span> &lt;span style="color:#e6db74">&amp;#34;MongoDB&amp;#34;&lt;/span> }}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">task&lt;/span>: &lt;span style="color:#a6e22e">check&lt;/span> &lt;span style="color:#a6e22e">mongodb&lt;/span> &lt;span style="color:#a6e22e">connection&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">cmd&lt;/span>.&lt;span style="color:#a6e22e">database&lt;/span>.&lt;span style="color:#a6e22e">dbtool&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">name&lt;/span>: &lt;span style="color:#a6e22e">mongo&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">args&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">port&lt;/span>: {{ .&lt;span style="color:#a6e22e">DBPort&lt;/span> }}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">user&lt;/span>: {{ .&lt;span style="color:#a6e22e">DBUser&lt;/span> }}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">passwd&lt;/span>: {{ .&lt;span style="color:#a6e22e">DBPasswd&lt;/span> }}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {{&lt;span style="color:#f92672">-&lt;/span> &lt;span style="color:#66d9ef">else&lt;/span> &lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#a6e22e">eq&lt;/span> .&lt;span style="color:#a6e22e">Role&lt;/span> &lt;span style="color:#e6db74">&amp;#34;Redis&amp;#34;&lt;/span> }}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">task&lt;/span>: &lt;span style="color:#a6e22e">check&lt;/span> &lt;span style="color:#a6e22e">redis&lt;/span> &lt;span style="color:#a6e22e">connection&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">cmd&lt;/span>.&lt;span style="color:#a6e22e">database&lt;/span>.&lt;span style="color:#a6e22e">dbtool&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">name&lt;/span>: &lt;span style="color:#a6e22e">redis&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">args&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">port&lt;/span>: {{ .&lt;span style="color:#a6e22e">DBPort&lt;/span> }}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">passwd&lt;/span>: {{ .&lt;span style="color:#a6e22e">DBPasswd&lt;/span> }}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {{&lt;span style="color:#f92672">-&lt;/span> &lt;span style="color:#a6e22e">end&lt;/span> }}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {{&lt;span style="color:#f92672">-&lt;/span> &lt;span style="color:#a6e22e">end&lt;/span> }}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {{&lt;span style="color:#f92672">-&lt;/span> &lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#a6e22e">eq&lt;/span> .&lt;span style="color:#a6e22e">Category&lt;/span> &lt;span style="color:#e6db74">&amp;#34;Server&amp;#34;&lt;/span> }}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {{&lt;span style="color:#f92672">-&lt;/span> &lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#a6e22e">eq&lt;/span> .&lt;span style="color:#a6e22e">Role&lt;/span> &lt;span style="color:#e6db74">&amp;#34;app1&amp;#34;&lt;/span> }}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">task&lt;/span>: &lt;span style="color:#a6e22e">check&lt;/span> &lt;span style="color:#a6e22e">fdp&lt;/span> &lt;span style="color:#a6e22e">server&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">cmd&lt;/span>.&lt;span style="color:#a6e22e">server&lt;/span>.&lt;span style="color:#a6e22e">tool&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">name&lt;/span>: &lt;span style="color:#a6e22e">fdp&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">args&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">-&lt;/span> &lt;span style="color:#a6e22e">arg1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">-&lt;/span> &lt;span style="color:#a6e22e">arg2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {{&lt;span style="color:#f92672">-&lt;/span> &lt;span style="color:#a6e22e">end&lt;/span> }}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {{&lt;span style="color:#f92672">-&lt;/span> &lt;span style="color:#a6e22e">end&lt;/span> }}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {{&lt;span style="color:#f92672">-&lt;/span> &lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#a6e22e">eq&lt;/span> .&lt;span style="color:#a6e22e">Category&lt;/span> &lt;span style="color:#e6db74">&amp;#34;Web&amp;#34;&lt;/span> }}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {{&lt;span style="color:#f92672">-&lt;/span> &lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#a6e22e">eq&lt;/span> .&lt;span style="color:#a6e22e">Role&lt;/span> &lt;span style="color:#e6db74">&amp;#34;app2&amp;#34;&lt;/span> }}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">task&lt;/span>: &lt;span style="color:#a6e22e">check&lt;/span> &lt;span style="color:#a6e22e">full&lt;/span> &lt;span style="color:#a6e22e">text&lt;/span> &lt;span style="color:#a6e22e">web&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">cmd&lt;/span>.&lt;span style="color:#a6e22e">web&lt;/span>.&lt;span style="color:#a6e22e">tool&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">name&lt;/span>: &lt;span style="color:#a6e22e">fulltext&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">args&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {{&lt;span style="color:#f92672">-&lt;/span> &lt;span style="color:#a6e22e">end&lt;/span> }}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {{&lt;span style="color:#f92672">-&lt;/span> &lt;span style="color:#a6e22e">end&lt;/span> }}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{{&lt;span style="color:#f92672">-&lt;/span> &lt;span style="color:#a6e22e">end&lt;/span> }}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-golang" data-lang="golang">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">package&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> (
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;log&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;os&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;text/template&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">type&lt;/span> &lt;span style="color:#a6e22e">RoleInfo&lt;/span> &lt;span style="color:#66d9ef">struct&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">Role&lt;/span>, &lt;span style="color:#a6e22e">Category&lt;/span>, &lt;span style="color:#a6e22e">DBName&lt;/span>, &lt;span style="color:#a6e22e">Host&lt;/span>, &lt;span style="color:#a6e22e">DBPort&lt;/span>, &lt;span style="color:#a6e22e">DBUser&lt;/span>, &lt;span style="color:#a6e22e">DBPasswd&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">SshRequired&lt;/span>, &lt;span style="color:#a6e22e">SudoRequired&lt;/span>, &lt;span style="color:#a6e22e">FudeRequired&lt;/span>, &lt;span style="color:#a6e22e">InstallRequired&lt;/span> &lt;span style="color:#66d9ef">bool&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">func&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">log&lt;/span>.&lt;span style="color:#a6e22e">SetFlags&lt;/span>(&lt;span style="color:#a6e22e">log&lt;/span>.&lt;span style="color:#a6e22e">Lshortfile&lt;/span> | &lt;span style="color:#a6e22e">log&lt;/span>.&lt;span style="color:#a6e22e">Ltime&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">roles&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> []&lt;span style="color:#a6e22e">RoleInfo&lt;/span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 	{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 		&lt;span style="color:#e6db74">&amp;#34;PostgreSQL&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;DataBase&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;postgres&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;172.16.10.21&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 		&lt;span style="color:#e6db74">&amp;#34;5432&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;postgres&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;123456&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 		&lt;span style="color:#66d9ef">true&lt;/span>, &lt;span style="color:#66d9ef">true&lt;/span>, &lt;span style="color:#66d9ef">true&lt;/span>, &lt;span style="color:#66d9ef">false&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 	},
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 	{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 		&lt;span style="color:#e6db74">&amp;#34;MongoDB&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;DataBase&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;test&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;172.16.10.22&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 		&lt;span style="color:#e6db74">&amp;#34;27017&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;mongo&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;123456&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 		&lt;span style="color:#66d9ef">true&lt;/span>, &lt;span style="color:#66d9ef">true&lt;/span>, &lt;span style="color:#66d9ef">false&lt;/span>, &lt;span style="color:#66d9ef">false&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 	},
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 	{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 		&lt;span style="color:#e6db74">&amp;#34;Redis&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;DataBase&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;172.16.10.23&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 		&lt;span style="color:#e6db74">&amp;#34;6379&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;123456&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 		&lt;span style="color:#66d9ef">true&lt;/span>, &lt;span style="color:#66d9ef">false&lt;/span>, &lt;span style="color:#66d9ef">false&lt;/span>, &lt;span style="color:#66d9ef">false&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 	},
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 	{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 		&lt;span style="color:#e6db74">&amp;#34;app1&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;Server&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;172.16.10.31&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 		&lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 		&lt;span style="color:#66d9ef">true&lt;/span>, &lt;span style="color:#66d9ef">true&lt;/span>, &lt;span style="color:#66d9ef">false&lt;/span>, &lt;span style="color:#66d9ef">false&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 	},
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 	{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 		&lt;span style="color:#e6db74">&amp;#34;app2&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;Web&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;172.16.10.41&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 		&lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 		&lt;span style="color:#66d9ef">true&lt;/span>, &lt;span style="color:#66d9ef">true&lt;/span>, &lt;span style="color:#66d9ef">true&lt;/span>, &lt;span style="color:#66d9ef">true&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 	},
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">tmpl&lt;/span>, &lt;span style="color:#a6e22e">err&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#a6e22e">template&lt;/span>.&lt;span style="color:#a6e22e">ParseFiles&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;task.tpl&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#a6e22e">err&lt;/span> &lt;span style="color:#f92672">!=&lt;/span> &lt;span style="color:#66d9ef">nil&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 	&lt;span style="color:#a6e22e">log&lt;/span>.&lt;span style="color:#a6e22e">Fatal&lt;/span>(&lt;span style="color:#a6e22e">err&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">err&lt;/span> = &lt;span style="color:#a6e22e">tmpl&lt;/span>.&lt;span style="color:#a6e22e">Execute&lt;/span>(&lt;span style="color:#a6e22e">os&lt;/span>.&lt;span style="color:#a6e22e">Stdout&lt;/span>, &lt;span style="color:#a6e22e">roles&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#a6e22e">err&lt;/span> &lt;span style="color:#f92672">!=&lt;/span> &lt;span style="color:#66d9ef">nil&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 	&lt;span style="color:#a6e22e">log&lt;/span>.&lt;span style="color:#a6e22e">Fatal&lt;/span>(&lt;span style="color:#a6e22e">err&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

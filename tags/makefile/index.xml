@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Makefile on Caisong's Blog</title><link>https://caisong.github.io/tags/makefile/</link><description>Recent content in Makefile on Caisong's Blog</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Fri, 23 Sep 2022 21:41:09 +0800</lastBuildDate><atom:link href="https://caisong.github.io/tags/makefile/index.xml" rel="self" type="application/rss+xml"/><item><title>Makefile通用模板</title><link>https://caisong.github.io/posts/makefile/</link><pubDate>Fri, 23 Sep 2022 21:41:09 +0800</pubDate><guid>https://caisong.github.io/posts/makefile/</guid><description>&lt;p>简单makefile套用模板&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 编译当前文件夹下的所有cpp文件&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>CC&lt;span style="color:#f92672">=&lt;/span>g++ -std&lt;span style="color:#f92672">=&lt;/span>c++11
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>objects :&lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">$(&lt;/span>patsubst %.cpp,%.o,&lt;span style="color:#66d9ef">$(&lt;/span>wildcard *.cpp&lt;span style="color:#66d9ef">))&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>target :&lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">$(&lt;/span>basename &lt;span style="color:#66d9ef">$(&lt;/span>objects&lt;span style="color:#66d9ef">))&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>all: &lt;span style="color:#66d9ef">$(&lt;/span>target&lt;span style="color:#66d9ef">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">$(&lt;/span>target&lt;span style="color:#66d9ef">)&lt;/span>: &lt;span style="color:#66d9ef">$(&lt;/span>objects&lt;span style="color:#66d9ef">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">$(&lt;/span>CC&lt;span style="color:#66d9ef">)&lt;/span> -o $@ $@.o
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">$(&lt;/span>objects&lt;span style="color:#66d9ef">)&lt;/span>: %.o: %.cpp
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">$(&lt;/span>CC&lt;span style="color:#66d9ef">)&lt;/span> -c &lt;span style="color:#66d9ef">$(&lt;/span>CLFAGS&lt;span style="color:#66d9ef">)&lt;/span> $&amp;lt; -o $@
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>.PHONY : clean
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>clean:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> rm &lt;span style="color:#66d9ef">$(&lt;/span>target&lt;span style="color:#66d9ef">)&lt;/span> &lt;span style="color:#66d9ef">$(&lt;/span>objects&lt;span style="color:#66d9ef">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>CC&lt;span style="color:#f92672">=&lt;/span>g++ -std&lt;span style="color:#f92672">=&lt;/span>c++11
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>target :&lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">$(&lt;/span>patsubst %.cpp,%,&lt;span style="color:#66d9ef">$(&lt;/span>wildcard *.cpp&lt;span style="color:#66d9ef">))&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>all: &lt;span style="color:#66d9ef">$(&lt;/span>target&lt;span style="color:#66d9ef">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>clean:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	rm &lt;span style="color:#66d9ef">$(&lt;/span>target&lt;span style="color:#66d9ef">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

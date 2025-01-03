@@ -115,7 +115,25 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo -e &lt;span style="color:#ae81ff">\\&lt;/span>t &lt;span style="color:#e6db74">${&lt;/span>lyric2%kitty*&lt;span style="color:#e6db74">}&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo -e &lt;span style="color:#e6db74">&amp;#34;2. 从结尾截取最多匹配&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo -e &lt;span style="color:#ae81ff">\\&lt;/span>t &lt;span style="color:#e6db74">${&lt;/span>lyric2%%kitty*&lt;span style="color:#e6db74">}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>输出&lt;/p></description></item><item><title>Tpm Env</title><link>https://caisong.github.io/posts/tpm-env/</link><pubDate>Sun, 21 May 2017 17:44:32 +0800</pubDate><guid>https://caisong.github.io/posts/tpm-env/</guid><description>&lt;p>tpm使用相关命令&lt;/p></description></item><item><title>Shell命令行快捷键</title><link>https://caisong.github.io/posts/shell-2/</link><pubDate>Thu, 28 Jul 2016 22:06:41 +0000</pubDate><guid>https://caisong.github.io/posts/shell-2/</guid><description>&lt;ul>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>输出&lt;/p></description></item><item><title>little accumulation</title><link>https://caisong.github.io/posts/little-accumulation/</link><pubDate>Tue, 17 Jul 2018 22:22:52 +0800</pubDate><guid>https://caisong.github.io/posts/little-accumulation/</guid><description>&lt;p>好久没写博客了，决定重新抓起来。不一定要写多么深奥的内容，记录下收获就可以。&lt;/p>
+&lt;h2 id="rename-批量重命名文件">rename 批量重命名文件&lt;/h2>
+&lt;p>rename 批量更改文件名&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>rename txt jpg *.txt
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="timeout-指定命令运行时间">timeout 指定命令运行时间&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>timeout -s KILL 60s ping 127.0.0.1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># DURATION 默认单位s&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 指令可以通过 kill -l 查看&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="长度0数组">长度0数组&lt;/h2>
+&lt;pre>&lt;code>结构体中使用`char [0]`
+```c
+struct MyData 
+{
+ int nLen;
+ char data[0];
+};
+```
+&lt;/code>&lt;/pre>
+&lt;p>在结构中，data是一个数组名，但该数组没有元素，该数组的真实地址紧随结构体MyData之后，而这个地址就是结构体后面数据的。&lt;em>如果给这个结构体分配的内容大于这个结构体实际大小，后面多余的部分就是这个data的内容。&lt;/em>&lt;/p></description></item><item><title>Tpm Env</title><link>https://caisong.github.io/posts/tpm-env/</link><pubDate>Sun, 21 May 2017 17:44:32 +0800</pubDate><guid>https://caisong.github.io/posts/tpm-env/</guid><description>&lt;p>tpm使用相关命令&lt;/p></description></item><item><title>Shell命令行快捷键</title><link>https://caisong.github.io/posts/shell-2/</link><pubDate>Thu, 28 Jul 2016 22:06:41 +0000</pubDate><guid>https://caisong.github.io/posts/shell-2/</guid><description>&lt;ul>
 &lt;li>C-a : 光标回到命令行首（a:ahead)&lt;/li>
 &lt;li>C-e : 光标回到命令行尾（e:end)&lt;/li>
 &lt;li>C-b : 光标后退一个字符（b:backward)&lt;/li>

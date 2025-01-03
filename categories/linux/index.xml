@@ -15,7 +15,70 @@
 &lt;p>&lt;code>/etc/ssh/sshd_config&lt;/code>中添加撤销文件&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plain" data-lang="plain">&lt;span style="display:flex;">&lt;span># 撤销列表 
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>RevokedKeys /path/to/crl_file
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>报文切割</title><link>https://caisong.github.io/posts/%E6%8A%A5%E6%96%87%E5%88%87%E5%89%B2/</link><pubDate>Fri, 18 Oct 2024 21:41:43 +0800</pubDate><guid>https://caisong.github.io/posts/%E6%8A%A5%E6%96%87%E5%88%87%E5%89%B2/</guid><description>&lt;p>基于&lt;code>gopacket&lt;/code>实现报文切割，支持隧道。&lt;/p></description></item><item><title>　手动链接</title><link>https://caisong.github.io/posts/%E6%89%8B%E5%8A%A8%E9%93%BE%E6%8E%A5/</link><pubDate>Wed, 09 Oct 2024 21:41:53 +0800</pubDate><guid>https://caisong.github.io/posts/%E6%89%8B%E5%8A%A8%E9%93%BE%E6%8E%A5/</guid><description>&lt;p>通过解析ELF文件，实现ELF依赖库的加载&lt;/p></description></item><item><title>1.将字符串的时间转换为时间戳</title><link>https://caisong.github.io/posts/1.%E5%B0%86%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%97%B6%E9%97%B4%E8%BD%AC%E6%8D%A2%E4%B8%BA%E6%97%B6%E9%97%B4%E6%88%B3/</link><pubDate>Fri, 03 Sep 2021 21:42:04 +0800</pubDate><guid>https://caisong.github.io/posts/1.%E5%B0%86%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%97%B6%E9%97%B4%E8%BD%AC%E6%8D%A2%E4%B8%BA%E6%97%B6%E9%97%B4%E6%88%B3/</guid><description>&lt;!-- raw HTML omitted -->
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>报文切割</title><link>https://caisong.github.io/posts/%E6%8A%A5%E6%96%87%E5%88%87%E5%89%B2/</link><pubDate>Fri, 18 Oct 2024 21:41:43 +0800</pubDate><guid>https://caisong.github.io/posts/%E6%8A%A5%E6%96%87%E5%88%87%E5%89%B2/</guid><description>&lt;p>基于&lt;code>gopacket&lt;/code>实现报文切割，支持隧道。&lt;/p></description></item><item><title>　手动链接</title><link>https://caisong.github.io/posts/%E6%89%8B%E5%8A%A8%E9%93%BE%E6%8E%A5/</link><pubDate>Wed, 09 Oct 2024 21:41:53 +0800</pubDate><guid>https://caisong.github.io/posts/%E6%89%8B%E5%8A%A8%E9%93%BE%E6%8E%A5/</guid><description>&lt;p>通过解析ELF文件，实现ELF依赖库的加载&lt;/p></description></item><item><title>CentOS 8网络安装源配置</title><link>https://caisong.github.io/posts/centos8%E7%BD%91%E7%BB%9C%E5%AE%89%E8%A3%85%E6%BA%90%E9%85%8D%E7%BD%AE/</link><pubDate>Sat, 18 May 2024 21:40:33 +0800</pubDate><guid>https://caisong.github.io/posts/centos8%E7%BD%91%E7%BB%9C%E5%AE%89%E8%A3%85%E6%BA%90%E9%85%8D%E7%BD%AE/</guid><description>&lt;p>CentOS 8 网络安装源配置&lt;/p>
+&lt;p>&lt;a href="https://mirror.nju.edu.cn/centos/8-stream/BaseOS/aarch64/os/">https://mirror.nju.edu.cn/centos/8-stream/BaseOS/aarch64/os/&lt;/a>&lt;/p>
+&lt;p>&lt;strong>不要远程使用brctl 添加网桥，会造成网络IP丢失，断开！！！！！！！！！！！&lt;/strong>&lt;/p></description></item><item><title>Linux网络概念</title><link>https://caisong.github.io/posts/linux%E7%BD%91%E7%BB%9C%E6%A6%82%E5%BF%B5/</link><pubDate>Thu, 14 Oct 2021 21:41:07 +0800</pubDate><guid>https://caisong.github.io/posts/linux%E7%BD%91%E7%BB%9C%E6%A6%82%E5%BF%B5/</guid><description>&lt;p>&lt;strong>这篇装载的，忘记转自哪儿了！侵删！&lt;/strong>&lt;/p>
+&lt;h1 id="linux-网络概念">linux 网络概念&lt;/h1>
+&lt;h2 id="虚拟网络设备">虚拟网络设备&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>Network Namespace （以下简称netns）&lt;/p>
+&lt;p>是Linux内核提供的一项实现网络隔离的功能，它能隔离多个不同的网络空间，并且各自拥有独立的网络协议栈，这其中便包括了网络接口（网卡），路由表，iptables规则等。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>veth pair&lt;/p>
+&lt;p>是成对出现的一种虚拟网络设备接口，一端连着网络协议栈，一端彼此相连。如下图所示：
+&lt;img src="https://pic2.zhimg.com/v2-6b0a6467e43cedacc73275b04421490d_r.jpg" alt="img">&lt;/p>
+&lt;p>由于它的这个特性，常常被用于构建虚拟网络拓扑。例如连接两个不同的网络命名空间(netns)，连接docker容器，连接网桥(Bridge)等，其中一个很常见的案例就是OpenStack Neutron底层用它来构建非常复杂的网络拓扑。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>tun/tap&lt;/p>
+&lt;p>tun是网络层的虚拟网络设备，可以收发第三层数据报文包，如IP封包，因此常用于一些点对点IP隧道，例如OpenVPN，IPSec等。&lt;/p>
+&lt;p>tap是链路层的虚拟网络设备，等同于一个以太网设备，它可以收发第二层数据报文包，如以太网数据帧。Tap最常见的用途就是做为虚拟机的网卡，因为它和普通的物理网卡更加相近，也经常用作普通机器的虚拟网卡。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>bridge&lt;/p>
+&lt;p>Linux Bridge（网桥）是用纯软件实现的虚拟交换机，有着和物理交换机相同的功能，例如二层交换，MAC地址学习等。因此我们可以把tun/tap，veth pair等设备绑定到网桥上，就像是把设备连接到物理交换机上一样。此外它和veth pair、tun/tap一样，也是一种虚拟网络设备，具有虚拟设备的所有特性，例如配置IP，MAC地址等。&lt;/p>
+&lt;p>Linux Bridge通常是搭配KVM、docker等虚拟化技术一起使用的，用于构建虚拟网络。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>本地回环lo&lt;/p>
+&lt;p>大多数操作系统都在网络层实现了环回能力，通常是使用一个虚拟的环回网络接口来实现。这个虚拟的环回网络接口看着像是一个真实的网卡，实际上是操作系统用软件模拟的，它可以通过&lt;code>TCP/IP&lt;/code>与同一台主机上的其他服务进行通信，以&lt;code>127&lt;/code>开头的&lt;code>IPv4&lt;/code>地址就是为它保留的，主流&lt;code>Linux&lt;/code>操作系统为环回网卡分配的地址都是&lt;code>127.0.0.1&lt;/code>，主机名是&lt;code>localhost&lt;/code>。&lt;/p>
+&lt;p>环回网络接口之所以被称之为环回网络接口，**是因为从本机发送到本机任意一个IP的数据报文都会在网络层交给环回网络接口，不再下发到数据链路层进行处理，环回网络接口直接发送回网络层，最终交由应用层软件程序进行处理。**这种方式对于性能测试非常有用，因为省去了硬件的开销，可以直接测试协议栈软件所需要的时间。&lt;/p>
+&lt;p>那环回网络接口是如何判断目的IP是否为本机地址的呢？答案就是网络层在进行路由转发的时候会先查本地的路由表，发现是本机IP后交给环回网络接口。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="设备">设备&lt;/h2>
+&lt;ul>
+&lt;li>网关&lt;/li>
+&lt;/ul>
+&lt;p>网关是 电信中使用的网络节点，它将具有不同传输协议的两个网络连接在一起。网关充当网络的入口和出口点，因为所有数据在路由之前必须经过网关或与网关通信。在大多数基于IP的网络中，唯一不通过至少一个网关的流量是在同一局域网（LAN）段上的节点之间流动的流量。术语默认网关或网络网关也可用于描述相同的概念。&lt;/p>
+&lt;ul>
+&lt;li>路由器&lt;/li>
+&lt;/ul>
+&lt;p>路由器（Router）是一种负责寻径的网络设备，它在互连网络中从多条路径中寻找通讯量最少的一条网络路径提供给用户通信。路由器用于连接多个逻辑上分开的网络。对用户提供最佳的通信路径，路由器利用路由表为数据传输选择路径，路由表包含网络地址以及各地址之间距离的清单，路由器利用路由表查找数据包从当前位置到目的地址的正确路径。路由器使用最少时间算法或最优路径算法来调整信息传递的路径，如果某一网络路径发生故障或堵塞，路由器可选择另一条路径，以保证信息的正常传输。路由器可进行数据格式的转换，成为不同协议之间网络互连的必要设备。&lt;/p>
+&lt;h3 id="区别">区别&lt;/h3>
+&lt;ol>
+&lt;li>本质区别&lt;/li>
+&lt;/ol>
+&lt;p>网关这种设备它主要是用来连接两种不同的网络，同时，网关它还能够同时与两边的主机之间进行通信。但是两边的主机是不能够直接进行通信，是必须要经过网关才能进行通信。网关的工作是在应用层当中。&lt;/p>
+&lt;p>路由器它是属于网络层设备，通常是以包为单位进行数据的发送。在路由器的子接口，是有分割广播域的作用，所以当我们用交换机做VLAN以后，都是要在路由器上做一个三层的路由。&lt;/p>
+&lt;ol start="2">
+&lt;li>使用方式的区别&lt;/li>
+&lt;/ol>
+&lt;p>网关它可以是路由器，交换机或者是PC。在同一网段之内进行通信，是不需要将网关介入其中，只有当主机个非本网段设备进行通信的时候，才需要将数据包全部发给网关设备，再经由网关设备进行转发或者是有路由处理等。&lt;/p>
+&lt;p>路由器它是一个网络层系统，路由器在现在市场上一般是被分成了两大类，一类是单协议路由器，另一类是多协议路由器。路由器它可以进行数据格式的转换，成为不同于协议之间的网络互连的必要设备。&lt;/p>
+&lt;ol start="3">
+&lt;li>功能上的区别&lt;/li>
+&lt;/ol>
+&lt;p>网关可以分为传输型网关和应用型网关，它的功能是充当转换重任，实质上就是一个网络通向其他网络的IP地址。&lt;/p>
+&lt;p>路由器的功能主要有：连通不同的网络和信息传输作用。按照使用可分为：接入、企业级、骨干级、太比特、多WAN以及3G无线等。&lt;/p></description></item><item><title>GPG错误NOPUBLICKEY</title><link>https://caisong.github.io/posts/gpg%E9%94%99%E8%AF%AFnopublickey/</link><pubDate>Fri, 03 Sep 2021 21:42:15 +0800</pubDate><guid>https://caisong.github.io/posts/gpg%E9%94%99%E8%AF%AFnopublickey/</guid><description>&lt;p>GPG错误 NO PUBLIC KEY
+&lt;a href="https://my.oschina.net/emptytimespace/blog/83633">no pulic key 修复&lt;/a>&lt;/p>
+&lt;p>ubuntu有效&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>apt-get install debian-keyring debian-archive-keyring
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>apt-key update
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>apt-get upgrade
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>1.将字符串的时间转换为时间戳</title><link>https://caisong.github.io/posts/1.%E5%B0%86%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%97%B6%E9%97%B4%E8%BD%AC%E6%8D%A2%E4%B8%BA%E6%97%B6%E9%97%B4%E6%88%B3/</link><pubDate>Fri, 03 Sep 2021 21:42:04 +0800</pubDate><guid>https://caisong.github.io/posts/1.%E5%B0%86%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%97%B6%E9%97%B4%E8%BD%AC%E6%8D%A2%E4%B8%BA%E6%97%B6%E9%97%B4%E6%88%B3/</guid><description>&lt;!-- raw HTML omitted -->
 &lt;ul>
 &lt;li>将字符串的时间转换为时间戳&lt;/li>
 &lt;li>字符串格式更改&lt;/li>
@@ -24,14 +87,14 @@
 &lt;li>修改PostgrsSQL认证方式&lt;/li>
 &lt;li>验证&lt;/li>
 &lt;li>ODBC 连接数据库&lt;/li>
-&lt;/ul></description></item><item><title>Linux开机启动</title><link>https://caisong.github.io/posts/linux%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8/</link><pubDate>Fri, 03 Sep 2021 21:04:38 +0800</pubDate><guid>https://caisong.github.io/posts/linux%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8/</guid><description>&lt;ol>
-&lt;li>/etc/inittab Line Syntax&lt;/li>
-&lt;/ol>
+&lt;/ul></description></item><item><title>Atime noatime nodiratime relatime 区别</title><link>https://caisong.github.io/posts/atimenoatimenodiratimerelatime/</link><pubDate>Fri, 03 Sep 2021 21:41:56 +0800</pubDate><guid>https://caisong.github.io/posts/atimenoatimenodiratimerelatime/</guid><description>&lt;p>atime/noatime/nodiratime/relatime 差异&lt;/p></description></item><item><title>deb解压</title><link>https://caisong.github.io/posts/deb%E8%A7%A3%E5%8E%8B/</link><pubDate>Fri, 03 Sep 2021 21:40:37 +0800</pubDate><guid>https://caisong.github.io/posts/deb%E8%A7%A3%E5%8E%8B/</guid><description>&lt;p>deb 格式还是基于zip封装的，有自己的头部，后部分内容还是zip。可以直接使用7zip打开。linux终端下可以按以下操作：&lt;/p></description></item><item><title>Linux开机启动</title><link>https://caisong.github.io/posts/linux%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8/</link><pubDate>Fri, 03 Sep 2021 21:04:38 +0800</pubDate><guid>https://caisong.github.io/posts/linux%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8/</guid><description>&lt;h2 id="etcinittab-line-syntax">/etc/inittab Line Syntax&lt;/h2>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>id:rstate:action:process
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="2">
-&lt;li>/etc/init /etc/init.d&lt;/li>
-&lt;/ol>
-&lt;p>&lt;code>/etc/init.d&lt;/code> contains scripts used by the System V init tools (SysVinit). This is the traditional service management package for Linux, containing the init program (the first process that is run when the kernel has finished initializing¹) as well as some infrastructure to start and stop services and configure them. Specifically, files in /etc/init.d are shell scripts that respond to start, stop, restart, and (when supported) reload commands to manage a particular service. These scripts can be invoked directly or (most commonly) via some other trigger (typically the presence of a symbolic link in &lt;code>/etc/rc?.d/&lt;/code>).&lt;/p></description></item><item><title>Gdb多线程调试</title><link>https://caisong.github.io/posts/gdb%E5%A4%9A%E7%BA%BF%E7%A8%8B%E8%B0%83%E8%AF%95/</link><pubDate>Fri, 03 Sep 2021 20:51:41 +0800</pubDate><guid>https://caisong.github.io/posts/gdb%E5%A4%9A%E7%BA%BF%E7%A8%8B%E8%B0%83%E8%AF%95/</guid><description>&lt;ul>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="etcinit----etcinitd">/etc/init &amp;amp;&amp;amp; /etc/init.d&lt;/h2>
+
+
+
+ &lt;blockquote>
+ &lt;p>&lt;code>/etc/init.d&lt;/code> contains scripts used by the System V init tools (SysVinit). This is the traditional service management package for Linux, containing the init program (the first process that is run when the kernel has finished initializing¹) as well as some infrastructure to start and stop services and configure them. Specifically, files in /etc/init.d are shell scripts that respond to start, stop, restart, and (when supported) reload commands to manage a particular service. These scripts can be invoked directly or (most commonly) via some other trigger (typically the presence of a symbolic link in &lt;code>/etc/rc?.d/&lt;/code>).&lt;/p></description></item><item><title>Gdb多线程调试</title><link>https://caisong.github.io/posts/gdb%E5%A4%9A%E7%BA%BF%E7%A8%8B%E8%B0%83%E8%AF%95/</link><pubDate>Fri, 03 Sep 2021 20:51:41 +0800</pubDate><guid>https://caisong.github.io/posts/gdb%E5%A4%9A%E7%BA%BF%E7%A8%8B%E8%B0%83%E8%AF%95/</guid><description>&lt;ul>
 &lt;li>&lt;code>info threads&lt;/code> 显示当前可调试的所有线程，每个线程会有一个GDB为其分配的ID，后面操作线程的时候会用到这个ID。 前面有*的是当前调试的线程。&lt;/li>
 &lt;li>&lt;code>thread ID&lt;/code> 切换当前调试的线程为指定ID的线程。&lt;/li>
 &lt;li>&lt;code>break thread_test.c:123 thread all&lt;/code> 在所有线程中相应的行上设置断点&lt;/li>

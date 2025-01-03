@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Uboot on Caisong's Blog</title><link>https://caisong.github.io/tags/uboot/</link><description>Recent content in Uboot on Caisong's Blog</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Fri, 03 Sep 2021 21:41:04 +0800</lastBuildDate><atom:link href="https://caisong.github.io/tags/uboot/index.xml" rel="self" type="application/rss+xml"/><item><title>Koelsch uboot参数</title><link>https://caisong.github.io/posts/koelschuboot%E5%8F%82%E6%95%B0/</link><pubDate>Fri, 03 Sep 2021 21:41:04 +0800</pubDate><guid>https://caisong.github.io/posts/koelschuboot%E5%8F%82%E6%95%B0/</guid><description>&lt;h2 id="init-env">init env&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>setenv ethaddr 2e:09:0a:00:6c:e1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>setenv ipaddr 192.168.10.5
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>setenv serverip 192.168.10.2
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="bootcmd">bootcmd&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># zImage&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>setenv bootcmd &lt;span style="color:#e6db74">&amp;#39;tftp 0x40007fc0 zImage;tftp 0x40f00000 r8a7791-koelsch.dtb;bootz 0x40007fc0 - 0x40f00000&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># uImage&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>setenv bootcmd &lt;span style="color:#e6db74">&amp;#39;tftp 0x40007fc0 uImage;tftp 0x40f00000 r8a7791-koelsch.dtb;bootm 0x40007fc0 - 0x40f00000&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="bootargs">bootargs&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># nfs&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>setenv bootargs &lt;span style="color:#e6db74">&amp;#39;console=ttySC6,38400 vmalloc=384M ip=192.168.10.5 root=/dev/nfs nfsroot=192.168.10.2:/opt/koelsch&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># sd&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>setenv bootargs &lt;span style="color:#e6db74">&amp;#39;console=ttySC6,38400 vmalloc=384M root=/dev/mmcblk0p1&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="optional">optional&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#kernel 写入flash&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>setenv bootcmd &lt;span style="color:#e6db74">&amp;#39;tftp 0x40007fc0 zImage;tftp 0x40f00000 r8a7791-koelsch.dtb;bootz 0x40007fc0 - 0x40f00000&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tftpboot 0x41000000 r8a7791-koelsch.dtb
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sf probe
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sf erase 0x100000 0x40000
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sf write 0x41000000 0x100000 0x40000
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>setenv bootargs &lt;span style="color:#e6db74">&amp;#39;console=ttySC6,38400 vmalloc=384M ip=192.168.10.5 root=/dev/nfs nfsroot=192.168.10.2:/opt/koelsch&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tftpboot 0x41000000 zImage
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 0x340000 - 内核大小256向上取整&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>setenv kern_size 0x340000
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sf probe
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sf erase 0x140000 &lt;span style="color:#e6db74">${&lt;/span>kern_size&lt;span style="color:#e6db74">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sf write 0x41000000 0x140000 &lt;span style="color:#e6db74">${&lt;/span>kern_size&lt;span style="color:#e6db74">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>setenv bootcmd &lt;span style="color:#e6db74">&amp;#39;sf probe;sf read 0x40007fc0 0x140000 ${kern_size};sf read 0x40f00000 0x100000 0x40000;bootz 0x40007fc0 - 0x40f00000&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>saveenv
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

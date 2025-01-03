@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Iptables on Caisong's Blog</title><link>https://caisong.github.io/tags/iptables/</link><description>Recent content in Iptables on Caisong's Blog</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Fri, 03 Sep 2021 21:41:02 +0800</lastBuildDate><atom:link href="https://caisong.github.io/tags/iptables/index.xml" rel="self" type="application/rss+xml"/><item><title>Iptables 记录</title><link>https://caisong.github.io/posts/iptables/</link><pubDate>Fri, 03 Sep 2021 21:41:02 +0800</pubDate><guid>https://caisong.github.io/posts/iptables/</guid><description>&lt;p>The &lt;code>iptables&lt;/code> command will attempt a reverse lookup on ip addresses. This will produce exactly the behavior you describe. You can inhibit the reverse lookup with the -n flag, which is why I always list rules like this:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>iptables -vnL
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This fact and many other useful tidbits can be found in the &lt;code>iptables&lt;/code> man page. The relevant section concerning &lt;code>-n&lt;/code> reads:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>-L, --list &lt;span style="color:#f92672">[&lt;/span>chain&lt;span style="color:#f92672">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>List all rules in the selected chain. If no chain is selected, all chains
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>are listed. Like every other iptables command, it applies to the specified
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>table &lt;span style="color:#f92672">(&lt;/span>filter is the default&lt;span style="color:#f92672">)&lt;/span>, so NAT rules get listed by
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> iptables -t nat -n -L
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Please note that it is often used with the -n option, in order to avoid
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>long reverse DNS lookups. It is legal to specify the -Z &lt;span style="color:#f92672">(&lt;/span>zero&lt;span style="color:#f92672">)&lt;/span> option as
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>well, in which &lt;span style="color:#66d9ef">case&lt;/span> the chain&lt;span style="color:#f92672">(&lt;/span>s&lt;span style="color:#f92672">)&lt;/span> will be atomically listed and zeroed. The
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>exact output is affected by the other arguments given. The exact rules are
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>suppressed &lt;span style="color:#66d9ef">until&lt;/span> you use
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> iptables -L -v
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Tags:
+iptables&lt;/p></description></item></channel></rss>

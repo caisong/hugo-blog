@@ -12,26 +12,7 @@
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#960050;background-color:#1e0010">&lt;/span> PASSWORD: secret1234&lt;span style="color:#960050;background-color:#1e0010">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#960050;background-color:#1e0010">&lt;/span> volumes:&lt;span style="color:#960050;background-color:#1e0010">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#960050;background-color:#1e0010">&lt;/span> - /srv/dav:/var/lib/dav&lt;span style="color:#960050;background-color:#1e0010">
-&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>docker 记录2</title><link>https://caisong.github.io/posts/docker-1/</link><pubDate>Thu, 08 Aug 2019 22:52:43 +0000</pubDate><guid>https://caisong.github.io/posts/docker-1/</guid><description>&lt;h2 id="以上为背景">上一年双十一购置了一台云服务器，就很少搭一些环境了。最近要搭建一套自动测试环境，公司内网缺少太多工具，就打算外网docker构建一套，再导入内网。
-以上为背景。&lt;/h2>
-&lt;h2 id="win7win10差别">win7/win10差别&lt;/h2>
-&lt;ul>
-&lt;li>
-&lt;p>&lt;strong>win7 使用docker toolbox&lt;/strong>
-&lt;strong>win10 使用Dcoker For Windows&lt;/strong>&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>国内用户可以选择阿里云hub加速器，说明很详细&lt;br>
-偷个懒，直接贴图
-&lt;img src="https://caisong.github.io/images/aliyun_hub.jpg" alt="aliyun_hub.jpg" title="阿里云hub加速">&lt;/p>
-&lt;/li>
-&lt;/ul>
-&lt;h2 id="使用cmder作为终端">使用cmder作为终端&lt;/h2>
-&lt;p>&lt;a href="https://goblincoding.com/2016/05/24/adding-docker-terminal-to-cmder-on-windows/" title="docker cmder">参考链接&lt;/a>&lt;/p>
-&lt;p>&lt;img src="https://goblincoding.files.wordpress.com/2016/05/setuptasks.gif?w=1100" alt="setuptasks.gif" title="一图胜千言">&lt;/p>
-&lt;p>其实就是将docker工具创建的快捷方式中的命令拷贝到&lt;code>cmder&lt;/code>中&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">&amp;#34;D:\Program Files\Git\bin\bash.exe --login -i &amp;#34;&lt;/span>D:&lt;span style="color:#ae81ff">\P&lt;/span>rogram Files&lt;span style="color:#ae81ff">\D&lt;/span>ockerToolbox&lt;span style="color:#ae81ff">\s&lt;/span>tart.sh&lt;span style="color:#e6db74">&amp;#34; -new_console:d:&amp;#34;&lt;/span>D:&lt;span style="color:#ae81ff">\P&lt;/span>rogram Files&lt;span style="color:#ae81ff">\D&lt;/span>ockerToolbox&lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>gdb problem inside docker container</title><link>https://caisong.github.io/posts/docker-gdb/</link><pubDate>Sun, 17 Dec 2017 20:53:59 +0000</pubDate><guid>https://caisong.github.io/posts/docker-gdb/</guid><description>&lt;blockquote>
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docker fuse</title><link>https://caisong.github.io/posts/dockerfuse/</link><pubDate>Tue, 24 Dec 2024 21:40:39 +0800</pubDate><guid>https://caisong.github.io/posts/dockerfuse/</guid><description>&lt;p>docker fuse权限问题&lt;/p></description></item><item><title>DockerDB容器启动环境变量</title><link>https://caisong.github.io/posts/dockerdb%E5%AE%B9%E5%99%A8%E5%90%AF%E5%8A%A8%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/</link><pubDate>Mon, 22 Jul 2024 21:40:38 +0800</pubDate><guid>https://caisong.github.io/posts/dockerdb%E5%AE%B9%E5%99%A8%E5%90%AF%E5%8A%A8%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/</guid><description>&lt;p>Cut out summary from your post content here.&lt;/p></description></item><item><title>Docker Toolbox</title><link>https://caisong.github.io/posts/dockertoolbox/</link><pubDate>Fri, 03 Sep 2021 21:42:09 +0800</pubDate><guid>https://caisong.github.io/posts/dockertoolbox/</guid><description>&lt;p>Docker Toolbox 设置docker镜像&lt;/p></description></item><item><title>docker 折腾记录</title><link>https://caisong.github.io/posts/docker-1/</link><pubDate>Thu, 08 Aug 2019 22:52:43 +0800</pubDate><guid>https://caisong.github.io/posts/docker-1/</guid><description>&lt;p>上一年双十一购置了一台云服务器，就很少搭一些环境了。最近要搭建一套自动测试环境，公司内网缺少太多工具，就打算外网docker构建一套，再导入内网。&lt;/p></description></item><item><title>gdb problem inside docker container</title><link>https://caisong.github.io/posts/docker-gdb/</link><pubDate>Sun, 17 Dec 2017 20:53:59 +0800</pubDate><guid>https://caisong.github.io/posts/docker-gdb/</guid><description>&lt;blockquote>
  &lt;p>warning: Error disabling address space randomization: Operation not permitted&lt;/p>
 
  &lt;/blockquote>
@@ -42,4 +23,70 @@
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>docker run --cap-add&lt;span style="color:#f92672">=&lt;/span>SYS_PTRACE --security-opt seccomp&lt;span style="color:#f92672">=&lt;/span>unconfined
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>** There is no such options for &lt;code>docker exec&lt;/code> command, so I recreate a container. Maybe there are others ways, please let me know. Thanks **&lt;/p>
 &lt;/li>
-&lt;/ul></description></item></channel></rss>
+&lt;/ul></description></item><item><title>docker install on windows</title><link>https://caisong.github.io/posts/docker/</link><pubDate>Sat, 28 Oct 2017 16:31:52 +0800</pubDate><guid>https://caisong.github.io/posts/docker/</guid><description>&lt;ol>
+&lt;li>安装
+阿里云下载&lt;a href="https://mirrors.aliyun.com/docker-toolbox/windows/docker-toolbox/">docker toolbox&lt;/a>&lt;/li>
+&lt;li>常见问题&lt;/li>
+&lt;/ol>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;code>error: Details: code E_FAIL (0x80004005), component MachineWrap, interface I &lt;/code>
+virtual box 版本较低导致，升级后问题解决
+P.S. 另一由于CPU不支持虚拟化的导致的问题没遇到&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>设置国内镜像仓库&lt;/p>
+&lt;ol>
+&lt;li>创建之前指定&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>docker-machine create --engine-registry-mirror&lt;span style="color:#f92672">=&lt;/span>http://hub-mirror.c.163.com -d virtualbox default
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="2">
+&lt;li>创建之后，进入machine修改&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>docker-machine ssh &amp;lt;machine-name&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo -i
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sed -i &lt;span style="color:#e6db74">&amp;#39;/^EXTRA_ARGS.*/ s/$/ ----registry-mirror=http://hub-mirror.c.163.com&amp;#39;&lt;/span> /var/lib/boot2docker/profile
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>/etc/init.d/docker restart
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>P.S. 默认docker用户，用&lt;code>sudo -i&lt;/code>切换root用户&lt;/p>
+&lt;ul>
+&lt;li>镜像路径
+默认镜像路径在用户目录下，在C盘
+&lt;ol>
+&lt;li>安装前
+设置环境变量&lt;code>MACHINE_STORAGE_PATH&lt;/code>指向你需要设置的目录&lt;/li>
+&lt;li>安装后
+P.S.&lt;/li>
+&lt;/ol>
+&lt;ul>
+&lt;li>创建快捷方式的方法失败&lt;/li>
+&lt;li>指定docker daemon graph的方法失败&lt;/li>
+&lt;li>未尝试使用&lt;code>ln&lt;/code>链接目录&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul></description></item><item><title>docker permission</title><link>https://caisong.github.io/posts/docker-permission/</link><pubDate>Fri, 22 Sep 2017 22:34:59 +0800</pubDate><guid>https://caisong.github.io/posts/docker-permission/</guid><description>&lt;h1 id="docker-权限控制">docker 权限控制&lt;/h1>
+&lt;p>docker在映射文件时，默认会使用与映射目录相同uid:gid，经常会导致一些权限问题。
+常见有以下解决方案：&lt;/p>
+&lt;ul>
+&lt;li>改变权限&lt;/li>
+&lt;/ul>
+&lt;ol>
+&lt;li>创建容器后，进入后&lt;code>chown&lt;/code>&lt;/li>
+&lt;li>通过&lt;code>docker run&lt;/code>的&lt;code>-u&lt;/code>选项&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>docker run -v &lt;span style="color:#e6db74">`&lt;/span>pwd&lt;span style="color:#e6db74">`&lt;/span>/shared:/shared -u &lt;span style="color:#e6db74">`&lt;/span>stat -c &lt;span style="color:#e6db74">&amp;#34;%u:%g&amp;#34;&lt;/span> /shared&lt;span style="color:#e6db74">`&lt;/span> ubuntu bash
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>这样做的话就等于放弃了root权限，除非再新建root组用户&lt;/p>
+&lt;ul>
+&lt;li>使用Data-only container
+[Data-only container madness](&lt;a href="http://container42.com/2014/11/18/data-only-container-madness/">http://container42.com/2014/11/18/data-only-container-madness/&lt;/a> “data-only”)
+主要手段如下:&lt;/li>
+&lt;/ul>
+&lt;ol>
+&lt;li>创建数据容器，改变目录用户权限。&lt;/li>
+&lt;li>其他容器使用&lt;code>--volumes-from&lt;/code>挂载创建的数据容器&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>docker run -v /userdata --name data busybox true
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>docker run --volumes-from data debian:jessie bash
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

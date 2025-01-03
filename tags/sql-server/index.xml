@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>SQL Server on Caisong's Blog</title><link>https://caisong.github.io/tags/sql-server/</link><description>Recent content in SQL Server on Caisong's Blog</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Fri, 03 Sep 2021 21:41:11 +0800</lastBuildDate><atom:link href="https://caisong.github.io/tags/sql-server/index.xml" rel="self" type="application/rss+xml"/><item><title>sql server数据转存mongodb</title><link>https://caisong.github.io/posts/mongodb/</link><pubDate>Fri, 03 Sep 2021 21:41:11 +0800</pubDate><guid>https://caisong.github.io/posts/mongodb/</guid><description>&lt;p>写得比较简单，直接查询插入了&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#!/usr/bin/env python&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># -*- coding:utf-8 -*-&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> pymssql
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> pymongo
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sql &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;&amp;#39;&amp;#39;SELECT [Name]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[CardNo]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[Descriot]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[CtfTp]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[CtfId]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[Gender]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[Birthday]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[Address]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[Zip]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[Dirty]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[District1]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[District2]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[District3]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[District4]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[District5]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[District6]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[FirstNm]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[LastNm]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[Duty]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[Mobile]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[Tel]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[Fax]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[EMail]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[Nation]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[Taste]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[Education]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[Company]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[CTel]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[CAddress]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[CZip]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[Family]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[Version]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> FROM cdsgus&amp;#39;&amp;#39;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ms_conn &lt;span style="color:#f92672">=&lt;/span> pymssql&lt;span style="color:#f92672">.&lt;/span>connect(host&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;127.0.0.1&amp;#34;&lt;/span>, user&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;sa&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> password&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;root&amp;#34;&lt;/span>, database&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;database&amp;#34;&lt;/span>, charset&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;utf8&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ms_cur &lt;span style="color:#f92672">=&lt;/span> ms_conn&lt;span style="color:#f92672">.&lt;/span>cursor(as_dict&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#66d9ef">True&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ms_cur&lt;span style="color:#f92672">.&lt;/span>execute(sql)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>row &lt;span style="color:#f92672">=&lt;/span> ms_cur&lt;span style="color:#f92672">.&lt;/span>fetchone()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mongo_conn &lt;span style="color:#f92672">=&lt;/span> pymongo&lt;span style="color:#f92672">.&lt;/span>MongoClient(&lt;span style="color:#e6db74">&amp;#39;127.0.0.1&amp;#39;&lt;/span>, &lt;span style="color:#ae81ff">27017&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mongo_db &lt;span style="color:#f92672">=&lt;/span> mongo_conn[&lt;span style="color:#e6db74">&amp;#39;test&amp;#39;&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">while&lt;/span> row:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> mongo_db&lt;span style="color:#f92672">.&lt;/span>kf_data&lt;span style="color:#f92672">.&lt;/span>insert_one(row)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> row &lt;span style="color:#f92672">=&lt;/span> ms_cur&lt;span style="color:#f92672">.&lt;/span>fetchone()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ms_conn&lt;span style="color:#f92672">.&lt;/span>commit()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ms_conn&lt;span style="color:#f92672">.&lt;/span>close()
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>MSSQL遇到问条记录</title><link>https://caisong.github.io/posts/mssql/</link><pubDate>Sun, 24 Jul 2016 22:10:46 +0800</pubDate><guid>https://caisong.github.io/posts/mssql/</guid><description>&lt;!-- raw HTML omitted -->
+&lt;ul>
+&lt;li>登陆连接失败&lt;/li>
+&lt;li>启动sa登陆&lt;/li>
+&lt;li>服务器改为IP地址登陆&lt;/li>
+&lt;li>高版本数据库恢复到低版本数据库&lt;/li>
+&lt;li>自增长列插入指定值&lt;/li>
+&lt;li>select into from 与 insert into select 用法与区别&lt;/li>
+&lt;li>总结&lt;/li>
+&lt;/ul>
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;p>记录使用MSSQL使用过程中遇到的问题。新手，大多数搜索解决，全部实际操作过，如果不能解决您的问题，请见谅。
+ps. 自己电脑没装MSSQL，因此没有截图。&lt;/p>
+&lt;h2 id="登陆连接失败">登陆连接失败&lt;/h2>
+&lt;p>错误描述：未找到或无法访问服务器.请验证实例名称是否正确并且SQL SERVER已配置允许远程链接.(provide:命名管道提供程序,error:40 -无法打开到SQL Server的连接)(Microsoft SQL Server,错误:2)
+解决办法：&lt;/p>
+&lt;ol>
+&lt;li>开始菜单，SQL Server 20XX目录下找到 &lt;code>SQL Server Configuration Manager&lt;/code>&lt;/li>
+&lt;li>SQL Server 【Version】 服务，启动&lt;/li>
+&lt;/ol>
+
+
+
+ &lt;blockquote>
+ &lt;ul>
+&lt;li>可能存在多个服务，请启动对应你连接名的那个服务&lt;/li>
+&lt;li>如果启动失败，请选择属性——登陆——本地系统账户，再次重新启动&lt;/li>
+&lt;/ul>
+
+ &lt;/blockquote>
+
+&lt;h2 id="启动sa登陆">启动sa登陆&lt;/h2>
+&lt;p>问题描述：一般本地使用的windows账户，特别第一次安装时没注意，就没用设置sa密码，也就无法sa登陆
+解决办法：&lt;/p>
+&lt;ol>
+&lt;li>windows登陆&lt;/li>
+&lt;li>在连接上右击，属性——安全性——SQL Server 和windows身份验证模式。保存，返回&lt;/li>
+&lt;li>展开连接，安全性——登录名——sa，设置密码。切换到状态，登陆选择&lt;code>启用&lt;/code>&lt;/li>
+&lt;/ol>
+&lt;h2 id="服务器改为ip地址登陆">服务器改为IP地址登陆&lt;/h2>
+&lt;p>问题描述：一般安装完成之后，采用的是windows主机名+服务名的连接方式，而非IP地址，其他电脑无法访问
+解决办法：&lt;/p>
+&lt;ol>
+&lt;li>启动sa登陆&lt;/li>
+&lt;li>开始菜单，SQL Server 20XX目录下找到 &lt;code>SQL Server Configuration Manager&lt;/code>&lt;/li>
+&lt;li>SQL Server 【Version】网络配置，启用&lt;code>Namedpipes&lt;/code>和&lt;code>TCP/IP&lt;/code>&lt;/li>
+&lt;li>&lt;code>TCP/IP&lt;/code>属性，IP地址，配置##IP1##地址（IP2本地），##IPALL##TCP端口&lt;/li>
+&lt;li>重启SQL Server 服务，连接&lt;/li>
+&lt;/ol>
+&lt;h2 id="高版本数据库恢复到低版本数据库">高版本数据库恢复到低版本数据库&lt;/h2>
+&lt;p>问题描述： 高版本server生成的备份文件无法在低版本上恢复
+解决办法：&lt;/p></description></item></channel></rss>

@@ -9,4 +9,118 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 另外配置下出口静态路由&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ip route static 220.220.118.0 255.255.255.0 13.25.46.25
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>ensp acl</title><link>https://caisong.github.io/posts/enspacl/</link><pubDate>Tue, 23 Aug 2022 21:40:45 +0800</pubDate><guid>https://caisong.github.io/posts/enspacl/</guid><description>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 不知道指令直接输入？会有提示&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>acl name test
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 进入acl&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>rule deny ip source 192.168.10.0 0.0.0.255 destination 192.168.30.0 0.0.0.255
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>rule permit ip source any dentination any
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>q
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>int g0/0/03
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>traffic-filter inbound acl name test
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>ensp三层路由</title><link>https://caisong.github.io/posts/ensp%E4%B8%89%E5%B1%82%E8%B7%AF%E7%94%B1/</link><pubDate>Mon, 22 Aug 2022 21:40:46 +0800</pubDate><guid>https://caisong.github.io/posts/ensp%E4%B8%89%E5%B1%82%E8%B7%AF%E7%94%B1/</guid><description>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 两个交换机&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 第二层交换机配置网关&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>vlan batch &lt;span style="color:#ae81ff">10&lt;/span> to &lt;span style="color:#ae81ff">20&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>int g0/0/1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>port link-type trunk
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>port trunk allow-pass vlan &lt;span style="color:#ae81ff">10&lt;/span> &lt;span style="color:#ae81ff">20&lt;/span> &lt;span style="color:#ae81ff">30&lt;/span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>int vlanif &lt;span style="color:#ae81ff">10&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ip address 192.168.10.254 255.255.255.0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>int vlanif &lt;span style="color:#ae81ff">20&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ip address 192.168.20.254 255.255.255.0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>int vlanif &lt;span style="color:#ae81ff">30&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ip address 192.168.30.254 255.255.255.0
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Ensp单臂路由</title><link>https://caisong.github.io/posts/ensp%E5%8D%95%E8%87%82%E8%B7%AF%E7%94%B1/</link><pubDate>Tue, 16 Aug 2022 21:40:47 +0800</pubDate><guid>https://caisong.github.io/posts/ensp%E5%8D%95%E8%87%82%E8%B7%AF%E7%94%B1/</guid><description>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 关闭提示信息&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># undo info-center enable&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>un in en
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 进入system view&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sys
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 创建vlan，批量创建待补充&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>vlan &lt;span style="color:#ae81ff">10&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>vlan &lt;span style="color:#ae81ff">20&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 交换机&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 端口操作&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>int g0/0/1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>port link-type access
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>port default vlan &lt;span style="color:#ae81ff">10&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>int g0/0/2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>port link-type access
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>port default vlan &lt;span style="color:#ae81ff">20&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>int g0/0/3
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>port link-type trunk
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>port trunk allow-pass vlan &lt;span style="color:#ae81ff">10&lt;/span> &lt;span style="color:#ae81ff">20&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 路由器&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>int e0/0/0.1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dot1q termination vid &lt;span style="color:#ae81ff">10&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ip address 192.168.1.254 &lt;span style="color:#ae81ff">24&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>arp broadcast enable
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>int e0/0/0.2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dot1q termination vid &lt;span style="color:#ae81ff">20&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ip address 192.168.2.254 &lt;span style="color:#ae81ff">24&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>arp br en
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Linux网络概念</title><link>https://caisong.github.io/posts/linux%E7%BD%91%E7%BB%9C%E6%A6%82%E5%BF%B5/</link><pubDate>Thu, 14 Oct 2021 21:41:07 +0800</pubDate><guid>https://caisong.github.io/posts/linux%E7%BD%91%E7%BB%9C%E6%A6%82%E5%BF%B5/</guid><description>&lt;p>&lt;strong>这篇装载的，忘记转自哪儿了！侵删！&lt;/strong>&lt;/p>
+&lt;h1 id="linux-网络概念">linux 网络概念&lt;/h1>
+&lt;h2 id="虚拟网络设备">虚拟网络设备&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>Network Namespace （以下简称netns）&lt;/p>
+&lt;p>是Linux内核提供的一项实现网络隔离的功能，它能隔离多个不同的网络空间，并且各自拥有独立的网络协议栈，这其中便包括了网络接口（网卡），路由表，iptables规则等。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>veth pair&lt;/p>
+&lt;p>是成对出现的一种虚拟网络设备接口，一端连着网络协议栈，一端彼此相连。如下图所示：
+&lt;img src="https://pic2.zhimg.com/v2-6b0a6467e43cedacc73275b04421490d_r.jpg" alt="img">&lt;/p>
+&lt;p>由于它的这个特性，常常被用于构建虚拟网络拓扑。例如连接两个不同的网络命名空间(netns)，连接docker容器，连接网桥(Bridge)等，其中一个很常见的案例就是OpenStack Neutron底层用它来构建非常复杂的网络拓扑。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>tun/tap&lt;/p>
+&lt;p>tun是网络层的虚拟网络设备，可以收发第三层数据报文包，如IP封包，因此常用于一些点对点IP隧道，例如OpenVPN，IPSec等。&lt;/p>
+&lt;p>tap是链路层的虚拟网络设备，等同于一个以太网设备，它可以收发第二层数据报文包，如以太网数据帧。Tap最常见的用途就是做为虚拟机的网卡，因为它和普通的物理网卡更加相近，也经常用作普通机器的虚拟网卡。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>bridge&lt;/p>
+&lt;p>Linux Bridge（网桥）是用纯软件实现的虚拟交换机，有着和物理交换机相同的功能，例如二层交换，MAC地址学习等。因此我们可以把tun/tap，veth pair等设备绑定到网桥上，就像是把设备连接到物理交换机上一样。此外它和veth pair、tun/tap一样，也是一种虚拟网络设备，具有虚拟设备的所有特性，例如配置IP，MAC地址等。&lt;/p>
+&lt;p>Linux Bridge通常是搭配KVM、docker等虚拟化技术一起使用的，用于构建虚拟网络。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>本地回环lo&lt;/p>
+&lt;p>大多数操作系统都在网络层实现了环回能力，通常是使用一个虚拟的环回网络接口来实现。这个虚拟的环回网络接口看着像是一个真实的网卡，实际上是操作系统用软件模拟的，它可以通过&lt;code>TCP/IP&lt;/code>与同一台主机上的其他服务进行通信，以&lt;code>127&lt;/code>开头的&lt;code>IPv4&lt;/code>地址就是为它保留的，主流&lt;code>Linux&lt;/code>操作系统为环回网卡分配的地址都是&lt;code>127.0.0.1&lt;/code>，主机名是&lt;code>localhost&lt;/code>。&lt;/p>
+&lt;p>环回网络接口之所以被称之为环回网络接口，**是因为从本机发送到本机任意一个IP的数据报文都会在网络层交给环回网络接口，不再下发到数据链路层进行处理，环回网络接口直接发送回网络层，最终交由应用层软件程序进行处理。**这种方式对于性能测试非常有用，因为省去了硬件的开销，可以直接测试协议栈软件所需要的时间。&lt;/p>
+&lt;p>那环回网络接口是如何判断目的IP是否为本机地址的呢？答案就是网络层在进行路由转发的时候会先查本地的路由表，发现是本机IP后交给环回网络接口。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="设备">设备&lt;/h2>
+&lt;ul>
+&lt;li>网关&lt;/li>
+&lt;/ul>
+&lt;p>网关是 电信中使用的网络节点，它将具有不同传输协议的两个网络连接在一起。网关充当网络的入口和出口点，因为所有数据在路由之前必须经过网关或与网关通信。在大多数基于IP的网络中，唯一不通过至少一个网关的流量是在同一局域网（LAN）段上的节点之间流动的流量。术语默认网关或网络网关也可用于描述相同的概念。&lt;/p>
+&lt;ul>
+&lt;li>路由器&lt;/li>
+&lt;/ul>
+&lt;p>路由器（Router）是一种负责寻径的网络设备，它在互连网络中从多条路径中寻找通讯量最少的一条网络路径提供给用户通信。路由器用于连接多个逻辑上分开的网络。对用户提供最佳的通信路径，路由器利用路由表为数据传输选择路径，路由表包含网络地址以及各地址之间距离的清单，路由器利用路由表查找数据包从当前位置到目的地址的正确路径。路由器使用最少时间算法或最优路径算法来调整信息传递的路径，如果某一网络路径发生故障或堵塞，路由器可选择另一条路径，以保证信息的正常传输。路由器可进行数据格式的转换，成为不同协议之间网络互连的必要设备。&lt;/p>
+&lt;h3 id="区别">区别&lt;/h3>
+&lt;ol>
+&lt;li>本质区别&lt;/li>
+&lt;/ol>
+&lt;p>网关这种设备它主要是用来连接两种不同的网络，同时，网关它还能够同时与两边的主机之间进行通信。但是两边的主机是不能够直接进行通信，是必须要经过网关才能进行通信。网关的工作是在应用层当中。&lt;/p>
+&lt;p>路由器它是属于网络层设备，通常是以包为单位进行数据的发送。在路由器的子接口，是有分割广播域的作用，所以当我们用交换机做VLAN以后，都是要在路由器上做一个三层的路由。&lt;/p>
+&lt;ol start="2">
+&lt;li>使用方式的区别&lt;/li>
+&lt;/ol>
+&lt;p>网关它可以是路由器，交换机或者是PC。在同一网段之内进行通信，是不需要将网关介入其中，只有当主机个非本网段设备进行通信的时候，才需要将数据包全部发给网关设备，再经由网关设备进行转发或者是有路由处理等。&lt;/p>
+&lt;p>路由器它是一个网络层系统，路由器在现在市场上一般是被分成了两大类，一类是单协议路由器，另一类是多协议路由器。路由器它可以进行数据格式的转换，成为不同于协议之间的网络互连的必要设备。&lt;/p>
+&lt;ol start="3">
+&lt;li>功能上的区别&lt;/li>
+&lt;/ol>
+&lt;p>网关可以分为传输型网关和应用型网关，它的功能是充当转换重任，实质上就是一个网络通向其他网络的IP地址。&lt;/p>
+&lt;p>路由器的功能主要有：连通不同的网络和信息传输作用。按照使用可分为：接入、企业级、骨干级、太比特、多WAN以及3G无线等。&lt;/p></description></item></channel></rss>

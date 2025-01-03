@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Lua on Caisong's Blog</title><link>https://caisong.github.io/tags/lua/</link><description>Recent content in Lua on Caisong's Blog</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Wed, 12 Oct 2016 21:47:19 +0800</lastBuildDate><atom:link href="https://caisong.github.io/tags/lua/index.xml" rel="self" type="application/rss+xml"/><item><title>CentOS 安装Lua 5.3</title><link>https://caisong.github.io/posts/centos-lua/</link><pubDate>Wed, 12 Oct 2016 21:47:19 +0800</pubDate><guid>https://caisong.github.io/posts/centos-lua/</guid><description>&lt;p>按照官网教程，执行以下命令&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>curl -R -O http://www.lua.org/ftp/lua-5.3.3.tar.gz
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tar zxf lua-5.3.3.tar.gz
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cd lua-5.3.3
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>make linux test
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>但其实lua并未安装，许多博文都是建立软链接，但其实&lt;code>makefile&lt;/code>文件中已经写好了，只需install就可以了&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>make linux install
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>升级lua版本之后，会导致&lt;code>luarock&lt;/code>无法使用，需要重新编译安装。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>wget http://luarocks.org/releases/luarocks-2.4.1.tar.gz
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tar zxpf luarocks-2.4.1.tar.gz
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cd luarocks-2.4.1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>./configure; sudo make bootstrap
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

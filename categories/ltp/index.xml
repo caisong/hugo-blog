@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>LTP on Caisong's Blog</title><link>https://caisong.github.io/categories/ltp/</link><description>Recent content in LTP on Caisong's Blog</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Fri, 03 Sep 2021 21:41:08 +0800</lastBuildDate><atom:link href="https://caisong.github.io/categories/ltp/index.xml" rel="self" type="application/rss+xml"/><item><title>LTP network environment</title><link>https://caisong.github.io/posts/ltpnetworkenvironment/</link><pubDate>Fri, 03 Sep 2021 21:41:08 +0800</pubDate><guid>https://caisong.github.io/posts/ltpnetworkenvironment/</guid><description>&lt;p>LTP 网络相关测试集环境配置&lt;/p>
+&lt;h2 id="clientdebian">client(debian)&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>sudo apt-get install rsh-server nfs-kernel-server fingerd
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo $client_hostname &amp;gt;&amp;gt; /root/.rhosts
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>/sbin/restorecon -v /root/.rhosts &lt;span style="color:#f92672">[&lt;/span>optional&lt;span style="color:#f92672">]&lt;/span> &lt;span style="color:#f92672">(&lt;/span>sudo apt-get install policycoreutils&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">for&lt;/span> i in rlogin rsh rexec; &lt;span style="color:#66d9ef">do&lt;/span> echo $i &amp;gt;&amp;gt; /etc/securetty; &lt;span style="color:#66d9ef">done&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>export RHOST&lt;span style="color:#f92672">=&lt;/span>$SERVER_HOSTNAME
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>export PASSWD&lt;span style="color:#f92672">=&lt;/span>$ROOT_PASSWD
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="serverubuntu">server(ubuntu)&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>sudo apt-get install rsh-server telnetd cfingerd rdist rsync udhcpd lighttpd nfs-kernel-server
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo $client_hostname &amp;gt;&amp;gt; /root/.rhosts
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>/sbin/restorecon -v /root/.rhosts &lt;span style="color:#f92672">[&lt;/span>optional&lt;span style="color:#f92672">]&lt;/span> &lt;span style="color:#f92672">(&lt;/span>sudo apt-get install policycoreutils&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">for&lt;/span> i in rlogin rsh rexec; &lt;span style="color:#66d9ef">do&lt;/span> echo $i &amp;gt;&amp;gt; /etc/securetty; &lt;span style="color:#66d9ef">done&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>vim /etc/ftpusers
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># comment line containing &amp;#34;root&amp;#34; string&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>export RHOST&lt;span style="color:#f92672">=&lt;/span>$CLIENT_HOSTNAME
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>export PASSWD&lt;span style="color:#f92672">=&lt;/span>$ROOT_PASSWD
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="network-test">network test&lt;/h1>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>export PATH&lt;span style="color:#f92672">=&lt;/span>/opt/ltp/testcases/bin:/usr/bin:$PATH
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>export LHOST_HWADDRS&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;00:0c:29:f8:7d:01&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>export RHOST_HWADDRS&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;00:0c:29:ce:b3:2f&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>export LHOST_IFACES&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;eth0&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>export RHOST_IFACES&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;ens33&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>export IPV4_NETWORK&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;192.168.30&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>export LHOST_IPV4_HOST&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">130&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>export RHOST_IPV4_HOST&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">134&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>export LTP_RSH&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">${&lt;/span>LTP_RSH&lt;span style="color:#66d9ef">:-&lt;/span>&lt;span style="color:#e6db74">&amp;#34;rsh -n&amp;#34;&lt;/span>&lt;span style="color:#e6db74">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>LTP_RSH&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">${&lt;/span>LTP_RSH&lt;span style="color:#66d9ef">:-&lt;/span>&lt;span style="color:#e6db74">&amp;#34;rsh -n&amp;#34;&lt;/span>&lt;span style="color:#e6db74">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>export LTP_RSH&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>$LTP_RSH&lt;span style="color:#e6db74">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>export LHOST_IPV6_HOST&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;fef8:7d01&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>export RHOST_IPV6_HOST&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;fece:b32f&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>export IPV6_NETWORK&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;fe80::20c:29ff&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>export NS_DURATION&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">60&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>构建LTP测试环境</title><link>https://caisong.github.io/posts/buildltpenv/</link><pubDate>Fri, 03 Sep 2021 21:40:30 +0800</pubDate><guid>https://caisong.github.io/posts/buildltpenv/</guid><description>&lt;p>板卡上运行LTP测试集，需要构建部分环境。&lt;/p></description></item></channel></rss>

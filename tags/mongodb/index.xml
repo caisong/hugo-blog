@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Mongodb on Caisong's Blog</title><link>https://caisong.github.io/tags/mongodb/</link><description>Recent content in Mongodb on Caisong's Blog</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Fri, 03 Sep 2021 21:41:11 +0800</lastBuildDate><atom:link href="https://caisong.github.io/tags/mongodb/index.xml" rel="self" type="application/rss+xml"/><item><title>sql server数据转存mongodb</title><link>https://caisong.github.io/posts/mongodb/</link><pubDate>Fri, 03 Sep 2021 21:41:11 +0800</pubDate><guid>https://caisong.github.io/posts/mongodb/</guid><description>&lt;p>写得比较简单，直接查询插入了&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#!/usr/bin/env python&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># -*- coding:utf-8 -*-&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> pymssql
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> pymongo
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sql &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;&amp;#39;&amp;#39;SELECT [Name]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[CardNo]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[Descriot]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[CtfTp]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[CtfId]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[Gender]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[Birthday]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[Address]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[Zip]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[Dirty]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[District1]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[District2]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[District3]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[District4]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[District5]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[District6]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[FirstNm]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[LastNm]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[Duty]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[Mobile]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[Tel]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[Fax]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[EMail]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[Nation]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[Taste]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[Education]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[Company]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[CTel]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[CAddress]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[CZip]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[Family]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> ,[Version]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> FROM cdsgus&amp;#39;&amp;#39;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ms_conn &lt;span style="color:#f92672">=&lt;/span> pymssql&lt;span style="color:#f92672">.&lt;/span>connect(host&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;127.0.0.1&amp;#34;&lt;/span>, user&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;sa&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> password&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;root&amp;#34;&lt;/span>, database&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;database&amp;#34;&lt;/span>, charset&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;utf8&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ms_cur &lt;span style="color:#f92672">=&lt;/span> ms_conn&lt;span style="color:#f92672">.&lt;/span>cursor(as_dict&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#66d9ef">True&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ms_cur&lt;span style="color:#f92672">.&lt;/span>execute(sql)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>row &lt;span style="color:#f92672">=&lt;/span> ms_cur&lt;span style="color:#f92672">.&lt;/span>fetchone()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mongo_conn &lt;span style="color:#f92672">=&lt;/span> pymongo&lt;span style="color:#f92672">.&lt;/span>MongoClient(&lt;span style="color:#e6db74">&amp;#39;127.0.0.1&amp;#39;&lt;/span>, &lt;span style="color:#ae81ff">27017&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mongo_db &lt;span style="color:#f92672">=&lt;/span> mongo_conn[&lt;span style="color:#e6db74">&amp;#39;test&amp;#39;&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">while&lt;/span> row:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> mongo_db&lt;span style="color:#f92672">.&lt;/span>kf_data&lt;span style="color:#f92672">.&lt;/span>insert_one(row)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> row &lt;span style="color:#f92672">=&lt;/span> ms_cur&lt;span style="color:#f92672">.&lt;/span>fetchone()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ms_conn&lt;span style="color:#f92672">.&lt;/span>commit()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ms_conn&lt;span style="color:#f92672">.&lt;/span>close()
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

@@ -1,4 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>DataBase on Caisong's Blog</title><link>https://caisong.github.io/categories/database/</link><description>Recent content in DataBase on Caisong's Blog</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Wed, 12 Oct 2016 21:32:48 +0000</lastBuildDate><atom:link href="https://caisong.github.io/categories/database/index.xml" rel="self" type="application/rss+xml"/><item><title>PostgreSQL ODBC</title><link>https://caisong.github.io/posts/postgresql-odbc/</link><pubDate>Wed, 12 Oct 2016 21:32:48 +0000</pubDate><guid>https://caisong.github.io/posts/postgresql-odbc/</guid><description>&lt;!-- raw HTML omitted -->
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>DataBase on Caisong's Blog</title><link>https://caisong.github.io/categories/database/</link><description>Recent content in DataBase on Caisong's Blog</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Mon, 04 Nov 2024 21:41:12 +0800</lastBuildDate><atom:link href="https://caisong.github.io/categories/database/index.xml" rel="self" type="application/rss+xml"/><item><title>mongo docker部署</title><link>https://caisong.github.io/posts/mongodocker%E8%BF%90%E8%A1%8C/</link><pubDate>Mon, 04 Nov 2024 21:41:12 +0800</pubDate><guid>https://caisong.github.io/posts/mongodocker%E8%BF%90%E8%A1%8C/</guid><description>&lt;p>mongo docker部署&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>docker run -d -p 27017:27017 -v mongo-data:/data/db -e MONGODB_INITDB_ROOT_USERNAME&lt;span style="color:#f92672">=&lt;/span>username -e MONGODB_INITDB_ROOT_PASSWORD&lt;span style="color:#f92672">=&lt;/span>password mongo
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>PostgreSQL ODBC</title><link>https://caisong.github.io/posts/postgresql-odbc/</link><pubDate>Wed, 12 Oct 2016 21:32:48 +0800</pubDate><guid>https://caisong.github.io/posts/postgresql-odbc/</guid><description>&lt;!-- raw HTML omitted -->
 &lt;ul>
 &lt;li>安装unixODBC&lt;/li>
 &lt;li>安装PostgreSQL ODBC驱动&lt;/li>
@@ -24,7 +26,7 @@
 &lt;p>按照之前添加源的方式安装PostgreSQL，现在可以直接安装ODBC驱动.&lt;!-- raw HTML omitted -->
 添加源方法&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>yum install http://yum.postgresql.org/9.5/redhat/rhel-7-x86_64/pgdg-redhat95-9.5-2.noarch.rpm
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>PostgreSQL 安装</title><link>https://caisong.github.io/posts/install/</link><pubDate>Wed, 12 Oct 2016 21:13:50 +0000</pubDate><guid>https://caisong.github.io/posts/install/</guid><description>&lt;!-- raw HTML omitted -->
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>PostgreSQL 安装</title><link>https://caisong.github.io/posts/install/</link><pubDate>Wed, 12 Oct 2016 21:13:50 +0800</pubDate><guid>https://caisong.github.io/posts/install/</guid><description>&lt;!-- raw HTML omitted -->
 &lt;ul>
 &lt;li>安装&lt;/li>
 &lt;li>添加用户和数据库&lt;/li>
@@ -33,4 +35,56 @@
 &lt;li>基本SQL操作&lt;/li>
 &lt;li>备份与恢复&lt;/li>
 &lt;/ul>
-&lt;!-- raw HTML omitted --></description></item></channel></rss>
+&lt;!-- raw HTML omitted --></description></item><item><title>MSSQL遇到问条记录</title><link>https://caisong.github.io/posts/mssql/</link><pubDate>Sun, 24 Jul 2016 22:10:46 +0800</pubDate><guid>https://caisong.github.io/posts/mssql/</guid><description>&lt;!-- raw HTML omitted -->
+&lt;ul>
+&lt;li>登陆连接失败&lt;/li>
+&lt;li>启动sa登陆&lt;/li>
+&lt;li>服务器改为IP地址登陆&lt;/li>
+&lt;li>高版本数据库恢复到低版本数据库&lt;/li>
+&lt;li>自增长列插入指定值&lt;/li>
+&lt;li>select into from 与 insert into select 用法与区别&lt;/li>
+&lt;li>总结&lt;/li>
+&lt;/ul>
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;p>记录使用MSSQL使用过程中遇到的问题。新手，大多数搜索解决，全部实际操作过，如果不能解决您的问题，请见谅。
+ps. 自己电脑没装MSSQL，因此没有截图。&lt;/p>
+&lt;h2 id="登陆连接失败">登陆连接失败&lt;/h2>
+&lt;p>错误描述：未找到或无法访问服务器.请验证实例名称是否正确并且SQL SERVER已配置允许远程链接.(provide:命名管道提供程序,error:40 -无法打开到SQL Server的连接)(Microsoft SQL Server,错误:2)
+解决办法：&lt;/p>
+&lt;ol>
+&lt;li>开始菜单，SQL Server 20XX目录下找到 &lt;code>SQL Server Configuration Manager&lt;/code>&lt;/li>
+&lt;li>SQL Server 【Version】 服务，启动&lt;/li>
+&lt;/ol>
+
+
+
+ &lt;blockquote>
+ &lt;ul>
+&lt;li>可能存在多个服务，请启动对应你连接名的那个服务&lt;/li>
+&lt;li>如果启动失败，请选择属性——登陆——本地系统账户，再次重新启动&lt;/li>
+&lt;/ul>
+
+ &lt;/blockquote>
+
+&lt;h2 id="启动sa登陆">启动sa登陆&lt;/h2>
+&lt;p>问题描述：一般本地使用的windows账户，特别第一次安装时没注意，就没用设置sa密码，也就无法sa登陆
+解决办法：&lt;/p>
+&lt;ol>
+&lt;li>windows登陆&lt;/li>
+&lt;li>在连接上右击，属性——安全性——SQL Server 和windows身份验证模式。保存，返回&lt;/li>
+&lt;li>展开连接，安全性——登录名——sa，设置密码。切换到状态，登陆选择&lt;code>启用&lt;/code>&lt;/li>
+&lt;/ol>
+&lt;h2 id="服务器改为ip地址登陆">服务器改为IP地址登陆&lt;/h2>
+&lt;p>问题描述：一般安装完成之后，采用的是windows主机名+服务名的连接方式，而非IP地址，其他电脑无法访问
+解决办法：&lt;/p>
+&lt;ol>
+&lt;li>启动sa登陆&lt;/li>
+&lt;li>开始菜单，SQL Server 20XX目录下找到 &lt;code>SQL Server Configuration Manager&lt;/code>&lt;/li>
+&lt;li>SQL Server 【Version】网络配置，启用&lt;code>Namedpipes&lt;/code>和&lt;code>TCP/IP&lt;/code>&lt;/li>
+&lt;li>&lt;code>TCP/IP&lt;/code>属性，IP地址，配置##IP1##地址（IP2本地），##IPALL##TCP端口&lt;/li>
+&lt;li>重启SQL Server 服务，连接&lt;/li>
+&lt;/ol>
+&lt;h2 id="高版本数据库恢复到低版本数据库">高版本数据库恢复到低版本数据库&lt;/h2>
+&lt;p>问题描述： 高版本server生成的备份文件无法在低版本上恢复
+解决办法：&lt;/p></description></item></channel></rss>

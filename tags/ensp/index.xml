@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ensp on Caisong's Blog</title><link>https://caisong.github.io/tags/ensp/</link><description>Recent content in Ensp on Caisong's Blog</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Tue, 23 Aug 2022 21:40:45 +0800</lastBuildDate><atom:link href="https://caisong.github.io/tags/ensp/index.xml" rel="self" type="application/rss+xml"/><item><title>ensp acl</title><link>https://caisong.github.io/posts/enspacl/</link><pubDate>Tue, 23 Aug 2022 21:40:45 +0800</pubDate><guid>https://caisong.github.io/posts/enspacl/</guid><description>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 不知道指令直接输入？会有提示&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>acl name test
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 进入acl&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>rule deny ip source 192.168.10.0 0.0.0.255 destination 192.168.30.0 0.0.0.255
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>rule permit ip source any dentination any
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>q
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>int g0/0/03
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>traffic-filter inbound acl name test
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>ensp三层路由</title><link>https://caisong.github.io/posts/ensp%E4%B8%89%E5%B1%82%E8%B7%AF%E7%94%B1/</link><pubDate>Mon, 22 Aug 2022 21:40:46 +0800</pubDate><guid>https://caisong.github.io/posts/ensp%E4%B8%89%E5%B1%82%E8%B7%AF%E7%94%B1/</guid><description>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 两个交换机&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 第二层交换机配置网关&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>vlan batch &lt;span style="color:#ae81ff">10&lt;/span> to &lt;span style="color:#ae81ff">20&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>int g0/0/1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>port link-type trunk
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>port trunk allow-pass vlan &lt;span style="color:#ae81ff">10&lt;/span> &lt;span style="color:#ae81ff">20&lt;/span> &lt;span style="color:#ae81ff">30&lt;/span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>int vlanif &lt;span style="color:#ae81ff">10&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ip address 192.168.10.254 255.255.255.0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>int vlanif &lt;span style="color:#ae81ff">20&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ip address 192.168.20.254 255.255.255.0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>int vlanif &lt;span style="color:#ae81ff">30&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ip address 192.168.30.254 255.255.255.0
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Ensp单臂路由</title><link>https://caisong.github.io/posts/ensp%E5%8D%95%E8%87%82%E8%B7%AF%E7%94%B1/</link><pubDate>Tue, 16 Aug 2022 21:40:47 +0800</pubDate><guid>https://caisong.github.io/posts/ensp%E5%8D%95%E8%87%82%E8%B7%AF%E7%94%B1/</guid><description>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 关闭提示信息&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># undo info-center enable&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>un in en
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 进入system view&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sys
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 创建vlan，批量创建待补充&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>vlan &lt;span style="color:#ae81ff">10&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>vlan &lt;span style="color:#ae81ff">20&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 交换机&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 端口操作&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>int g0/0/1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>port link-type access
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>port default vlan &lt;span style="color:#ae81ff">10&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>int g0/0/2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>port link-type access
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>port default vlan &lt;span style="color:#ae81ff">20&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>int g0/0/3
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>port link-type trunk
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>port trunk allow-pass vlan &lt;span style="color:#ae81ff">10&lt;/span> &lt;span style="color:#ae81ff">20&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 路由器&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>int e0/0/0.1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dot1q termination vid &lt;span style="color:#ae81ff">10&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ip address 192.168.1.254 &lt;span style="color:#ae81ff">24&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>arp broadcast enable
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>int e0/0/0.2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dot1q termination vid &lt;span style="color:#ae81ff">20&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ip address 192.168.2.254 &lt;span style="color:#ae81ff">24&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>arp br en
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>
