@@ -9,23 +9,21 @@ cover: /img/cover.jpg
 # images:
 #   - /img/cover.jpg
 categories:
-  - category1
+  - 运维
 tags:
-  - tag1
-  - tag2
+  - alpine
+  - k8s
 # nolastmod: true
 draft: false
 ---
 
-Cut out summary from your post content here.
-
-<!--more-->
-
-The remaining content of your post.
-# alpine k8s安装
+## alpine k8s安装
 [安装参考](https://dev.to/xphoniex/how-to-create-a-kubernetes-cluster-on-alpine-linux-kcg)
-## 配置vagrant
-## master节点安装
+### 配置vagrant
+
+略
+
+### master节点安装
 1. 添加edge软件源
 ```shell
 https://mirrors.ustc.edu.cn/alpine/latest-stable/main
@@ -84,8 +82,3 @@ kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl versio
 
 6. 其他
 * 修改主机名，默认主机名一致
-
-
-
-Tags:
-  k8s

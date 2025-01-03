@@ -9,23 +9,24 @@ cover: /img/cover.jpg
 # images:
 #   - /img/cover.jpg
 categories:
-  - category1
+  - 运维
 tags:
-  - tag1
-  - tag2
+  - kubectl
+  - minikube
+  - k8s
+  - alpine
 # nolastmod: true
 draft: false
 ---
 
-Cut out summary from your post content here.
+使用alpine镜像构建ks8 minikube集群
 
 <!--more-->
 
-The remaining content of your post.
 * alpine 无法使用minikube，具体原因未知
 
 * docker安装
-debian 最新版impish没有对应包，无法安装，debian上用上衣发行版 **bullseye**
+debian 最新版impish没有对应包，无法安装，debian上用上一发行版 **bullseye**
 软件源啥的可以参考中科大源
 
 * minikube 启动
@@ -72,8 +73,3 @@ apt-get install bash-completion
 kubectl completion bash >/etc/bash_completion.d/kubectl
 source /usr/share/bash-completion/bash_completion
 ```
-
-
-
-Tags:
-  kubectl, minikube

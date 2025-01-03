@@ -9,20 +9,17 @@ cover: /img/cover.jpg
 # images:
 #   - /img/cover.jpg
 categories:
-  - category1
+  - 编程
 tags:
-  - tag1
-  - tag2
+  - linux
+  - dpdk
+  - docker
 # nolastmod: true
 draft: false
 ---
 
-Cut out summary from your post content here.
+构建DPDK环境 `docker`镜像，未优化。
 
-<!--more-->
-
-The remaining content of your post.
-# 构建DPDK环境  
 ```dockerfile
 FROM ccr.ccs.tencentyun.com/library/centos:latest
 

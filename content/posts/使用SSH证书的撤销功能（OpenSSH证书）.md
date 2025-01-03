@@ -9,40 +9,38 @@ cover: /img/cover.jpg
 # images:
 #   - /img/cover.jpg
 categories:
-  - category1
+  - linux
 tags:
-  - tag1
-  - tag2
+  - ssh
+  - 证书
 # nolastmod: true
 draft: false
 ---
 
-Cut out summary from your post content here.
+## ssh 证书CA授权
 
-<!--more-->
+```shell
+# 授权给用户
+ssh-keygen -s /path/to/ca_key -I 标识 -n username -V +52w -z <serial number> /path/to/client.pub
+```
+* 52w 一年, 另外还支持授权给`host`
 
-The remaining content of your post.
-# 使用 SSH 证书的撤销功能（OpenSSH 证书）
-
-如果你使用的是 OpenSSH 证书（比如通过 SSH 证书颁发机构生成的公钥证书），撤销证书的过程稍微复杂一些。SSH 证书是一个包含公钥和身份验证信息的文件，通常由证书颁发机构（CA）签名。如果需要撤销某个 SSH 证书，你需要修改撤销列表或使用撤销证书的方法。
-
-## 更新 CRL（证书撤销列表）
-1. 对于基于 SSH 证书的认证系统（例如，使用 OpenSSH 的 CA 证书），你可以使用证书撤销列表（CRL）来撤销证书。CRL 是一个列出已被撤销证书的文件，OpenSSH 会检查 CRL 来决定证书是否有效。
-使用 ssh-keygen 或其他工具生成一个 CRL 文件，该文件列出所有被撤销的证书。
-```ssh
-ssh-keygen -Z <serial_number> -f /path/to/ca_key -i /path/to/crl_file
+`/etc/ssh/sshd_config`中添加`ca` 证书公钥
+```shell
+# 用户信任列表
+TrustedUserCAKeys /path/to/pub-cert.pub
 ```
 
-2. 将 CRL 文件应用到 SSH 配置中：
-
-在服务器的 sshd_config 文件中，配置 AuthorizedKeysCommand 来指向 CRL 文件。在 sshd_config 文件中添加或更新以下配置项：
-```config
-AuthorizedKeysCommand /usr/bin/ssh-keyscan -t rsa -p 22 %u
-AuthorizedKeysCommandUser nobody
+## 撤销授权
+```shell
+ssh-keygen -k -f krl_file -z <serial number> xk-cert.pub
+# -s 指定ca公钥
+# -k 指定撤销
 ```
+ps. 不要使用ca 公钥去撤销，要使用授权时的序列表，否则该ca证书的所有授权都不被取消
 
-## 使用证书撤销命令
-如果你的 SSH 配置支持证书撤销，你可以直接撤销证书并重新生成一个 CRL（证书撤销列表）。通常你需要一个 CRL 文件，它会列出所有撤销的证书。
-
-
-
+`/etc/ssh/sshd_config`中添加撤销文件
+```plain
+# 撤销列表 
+RevokedKeys /path/to/crl_file
+```

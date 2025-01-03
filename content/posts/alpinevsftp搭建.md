@@ -1,5 +1,5 @@
 ---
-title: Alpinevsftp搭建
+title: Alpine vsftp搭建
 date: 2024-07-18T21:42:06+08:00
 lastmod: 2024-07-18T21:42:06+08:00
 author: Cai Song
@@ -9,20 +9,15 @@ cover: /img/cover.jpg
 # images:
 #   - /img/cover.jpg
 categories:
-  - category1
+  - 运维
 tags:
-  - tag1
-  - tag2
+  - alpine 
+  - ftp
 # nolastmod: true
 draft: false
 ---
 
-Cut out summary from your post content here.
-
-<!--more-->
-
-The remaining content of your post.
-alpine vsftp  搭建
+alpine 搭建 vsftp  配置
 ```ini
 anonymous_enable=NO
 dirmessage_enable=YES

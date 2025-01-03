@@ -9,23 +9,15 @@ cover: /img/cover.jpg
 # images:
 #   - /img/cover.jpg
 categories:
-  - category1
+  - windows
 tags:
-  - tag1
-  - tag2
+  - msixbundle
 # nolastmod: true
 draft: false
 ---
 
-Cut out summary from your post content here.
-
-<!--more-->
-
-The remaining content of your post.
 安装win10 商店安装包
 ```powershell
 Add-AppPackage *.msixbundle
 ```
 
-Tags:
-  msixbundle
