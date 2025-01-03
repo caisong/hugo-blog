@@ -1,7 +1,7 @@
 ---
 title:  bat切换当前目录
 date: 2016-06-20T21:35:20+08:00
-lastmod: 2016-06-20T21:35:206+08:00
+lastmod: 2016-06-20T21:35:20+08:00
 author: Cai Song
 # avatar: /img/author.jpg
 # authorlink: https://author.site

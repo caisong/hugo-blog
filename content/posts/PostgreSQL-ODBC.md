@@ -1,10 +1,11 @@
 ---
 title: PostgreSQL ODBC
-date: 2016-10-12 21:32:48
+date: 2016-10-12T21:32:48+08:00
+lastmod: 2016-10-12T21:32:48+08:00
+categories: DataBase
 tags:
   - postgresql
   - odbc
-categories: DataBase
 ---
 <!-- MarkdownTOC -->
 
