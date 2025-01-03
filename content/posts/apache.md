@@ -1,9 +1,24 @@
-title: deploy django website to apache2
-date: 2018-04-01 20:55:39
-tags: django, apach2
+---
+title: django部署apache2
+date: 2018-04-01T20:55:39
+lastmod: 2018-04-01T20:55:39
+author: Cai Song
+# avatar: /img/author.jpg
+# authorlink: https://author.site
+cover: /img/cover.jpg
+# images:
+#   - /img/cover.jpg
+categories:
+  - 运维
+tags:
+  - django 
+  - apache2
+# nolastmod: true
+draft: false
 ---
 
-最近学习使用django，尝试部署至apaache2。
+
+最近学习使用django，尝试部署至apache2。
 
 1. required env
 ```bash
@@ -35,17 +50,17 @@ sudo pip install django
 		</Directory>
 		
 		WSGIScriptAlias / /var/www/web/web/wsgi.py
-
+	
 		<Directory /var/www/web/web/>
 		<Files wsgi.py>
 			Require all granted
 		</Files>
 		</Directory>
 	</VirtualHost>
-	``` 
+	```
 
 	3. 查看django wigi.py文件
-	  默认生成的文件没有问题，不需要修改即可运行。
+	    默认生成的文件没有问题，不需要修改即可运行。
 	  ```python
 	  import os
       from os.path import join, dirname,abspath
@@ -60,7 +75,7 @@ sudo pip install django
       os.environ.setdefault("DJANGO_SETTINGS_MODULE", "web.settings")
       
       application = get_wsgi_application()
-
+	
 	  ```
 
 	4. 配置django环境
@@ -69,7 +84,7 @@ sudo pip install django
 	#static files
 	#前提在你的setting.py文件中设置好STATIC_ROOT目录
 	python manage.py collectstatic
-
+	
 	python manage.py migrate
 	```
 

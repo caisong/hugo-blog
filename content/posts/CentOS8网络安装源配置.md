@@ -1,5 +1,5 @@
 ---
-title: CentOS8网络安装源配置
+title: CentOS 8网络安装源配置
 date: 2024-05-18T21:40:33+08:00
 lastmod: 2024-05-18T21:40:33+08:00
 author: Cai Song
@@ -9,20 +9,14 @@ cover: /img/cover.jpg
 # images:
 #   - /img/cover.jpg
 categories:
-  - category1
+  - linux
 tags:
-  - tag1
-  - tag2
+  - centos
 # nolastmod: true
 draft: false
 ---
 
-Cut out summary from your post content here.
-
-<!--more-->
-
-The remaining content of your post.
-# CentOS 8  网络安装源配置
+CentOS 8  网络安装源配置
 
 https://mirror.nju.edu.cn/centos/8-stream/BaseOS/aarch64/os/
 

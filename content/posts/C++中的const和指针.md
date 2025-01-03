@@ -9,18 +9,13 @@ cover: /img/cover.jpg
 # images:
 #   - /img/cover.jpg
 categories:
-  - category1
+  - 编程
 tags:
-  - tag1
-  - tag2
+  - cpp
+  - c
 # nolastmod: true
 draft: false
 ---
 
-Cut out summary from your post content here.
-
-<!--more-->
-
-The remaining content of your post.
-# C++中的const 和指针
+C++中的const 和指针
 原则：从右向左读。* 读成 pointer to。

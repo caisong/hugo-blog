@@ -1,5 +1,5 @@
 ---
-title: Buildltpenv
+title: 构建LTP测试环境
 date: 2021-09-03T21:40:30+08:00
 lastmod: 2021-09-03T21:40:30+08:00
 author: Cai Song
@@ -9,20 +9,17 @@ cover: /img/cover.jpg
 # images:
 #   - /img/cover.jpg
 categories:
-  - category1
+  - LTP
 tags:
-  - tag1
-  - tag2
+  - linux
+  - ltp
 # nolastmod: true
 draft: false
 ---
 
-Cut out summary from your post content here.
+板卡上运行LTP测试集，需要构建部分环境。
 
 <!--more-->
-
-The remaining content of your post.
-# build ltp env
 
 ## build server env
 1. comile LTP on server
@@ -50,11 +47,11 @@ make install
    echo rlogin >>/etc/securetty
    echo rexec >>/etc/securetty
    echo telnet >>/etc/securetty
-
+   
    for i in $(seq 10); do
    echo tty$i >> /etc/securetty
    done
-
+   
    echo "dragonboard-410c root" >> ~/.rhosts
    # replace with real ip of db410c
    echo "192.168.10.35 dragonboard-410c" >> /etc/hosts
@@ -64,7 +61,7 @@ make install
    ```shell
    # client
    ssh-keygen -t rsa -N ""  -f /home/root/.ssh/id_rsa
-
+   
    # server
    scp root@dragonboard-410c:/home/root/.ssh/id_ras.pub db410c.pub
    cat  db410c.pub >> ~/.ssh/authorized_keys
@@ -116,7 +113,7 @@ make install
     # profile
     echo "export PATH=\$PATH:/app2/usr/bin:/app2/usr/local/bin:/app2/etc/:/app2/sbin:/app2/usr/sbin" >> /etc/profile
     PATH=$PATH:/app2/usr/bin:/app2/usr/local/bin:/app2/etc/'
-
+    
     # rlogin required
     ln -sf /app2/usr/lib/tcl8.6 /usr/lib
     ```
@@ -129,20 +126,20 @@ make install
     PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/bin:/opt/:$PATH
     ifconfig eth0 192.168.10.35 up
     EOF
-
+    
     cat > /etc/systemd/system/setipaddr.service << "EOF" &&
     [Unit]
     Description=set ip on boot
     After=network.target
-
+    
     [Service]
     Type=oneshot
     ExecStart=/opt/setipaddr.sh
-
+    
     [Install]
     WantedBy=multi-user.target
     EOF
-
+    
     (cd /etc/systemd/system/ && systemctl enable setipaddr && systemctl start setipaddr)
     ```
 
@@ -185,6 +182,3 @@ make install
     make install
     ```
 
-
-Tags:
-  ltp

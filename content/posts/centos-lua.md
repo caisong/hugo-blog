@@ -1,8 +1,19 @@
 ---
 title: CentOS 安装Lua 5.3
-date: 2016-10-12 21:47:19
-tags: record
-category: lua
+date: 2016-10-12T21:47:19+08:00
+lastmod: 2016-10-12T21:47:19+08:00
+author: Cai Song
+# avatar: /img/author.jpg
+# authorlink: https://author.site
+cover: /img/cover.jpg
+# images:
+#   - /img/cover.jpg
+categories:
+  - 工具
+tags:
+  - lua
+# nolastmod: true
+draft: false
 ---
 
 按照官网教程，执行以下命令

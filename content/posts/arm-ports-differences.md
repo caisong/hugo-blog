@@ -1,11 +1,21 @@
 ---
 title: arm ports differences
-date: 2017-09-13 22:25:00
-tags: arm
-category: embedded
+date: 2017-09-13T22:25:00+08:00
+lastmod: 2017-09-13T22:25:00+08:00
+author: Cai Song
+# avatar: /img/author.jpg
+# authorlink: https://author.site
+cover: /img/cover.jpg
+# images:
+#   - /img/cover.jpg
+categories:
+  - embedded
+tags:
+  - apache
+  - webdav
+# nolastmod: true
+draft: false
 ---
-
-
 
 ## Three ports to different flavours of little-endian ARM hardware  
 **The following content reproudced from Debian Wiki** [ArmPorts](https://wiki.debian.org/ArmPorts "Debian wiki")  

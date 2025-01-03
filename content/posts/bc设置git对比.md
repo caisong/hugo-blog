@@ -1,5 +1,5 @@
 ---
-title: Bc设置git对比
+title: beyond compare设置git diff
 date: 2024-11-06T21:40:29+08:00
 lastmod: 2024-11-06T21:40:29+08:00
 author: Cai Song
@@ -9,20 +9,18 @@ cover: /img/cover.jpg
 # images:
 #   - /img/cover.jpg
 categories:
-  - category1
+  - 工具
 tags:
-  - tag1
-  - tag2
+  - bc
+  - git
 # nolastmod: true
 draft: false
 ---
 
-Cut out summary from your post content here.
+bc设置git 对比
 
 <!--more-->
 
-The remaining content of your post.
-# bc设置git 对比
 [原始链接](https://www.scootersoftware.com/kb/vcs#tortoisegit "bc")
 
 ## git windows
@@ -49,8 +47,8 @@ The remaining content of your post.
 
 #### 其他
 ```bat
-    git config --global difftool.prompt false
-    git config --global mergetool.keepBackup false
+git config --global difftool.prompt false
+git config --global mergetool.keepBackup false
 ```
 
 ## git linux
@@ -63,15 +61,15 @@ git config --global difftool.bc.trustExitCode true
 
 ### merge
 ```bash
- git config --global merge.tool bc
- git config --global mergetool.bc.trustExitCode true
- ```
+git config --global merge.tool bc
+git config --global mergetool.bc.trustExitCode true
+```
 
   ### 使用
   ```bash
 git difftool file.ext   
 git mergetool file.ext
-```
+  ```
 
 ** git 1.7的暂时不记录了**
 

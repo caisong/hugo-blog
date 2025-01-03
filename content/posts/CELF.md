@@ -1,5 +1,5 @@
 ---
-title: CELF
+title: C解析ELF
 date: 2024-12-24T21:40:31+08:00
 lastmod: 2024-12-24T21:40:31+08:00
 author: Cai Song
@@ -9,20 +9,17 @@ cover: /img/cover.jpg
 # images:
 #   - /img/cover.jpg
 categories:
-  - category1
+  - 编程
 tags:
-  - tag1
-  - tag2
+  - ELF
+  - c
 # nolastmod: true
 draft: false
 ---
 
-Cut out summary from your post content here.
+C解析elf文件
 
 <!--more-->
-
-The remaining content of your post.
-# C ELF
 
 ```c
 #include <stdio.h>
@@ -136,5 +133,3 @@ int main(int argc, char **argv)
 }
 ```
 
-Tags:
-  elf

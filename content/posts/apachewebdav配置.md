@@ -1,5 +1,5 @@
 ---
-title: Apachewebdav配置
+title: Apache webdav配置
 date: 2024-12-24T21:40:28+08:00
 lastmod: 2024-12-24T21:40:28+08:00
 author: Cai Song
@@ -9,20 +9,18 @@ cover: /img/cover.jpg
 # images:
 #   - /img/cover.jpg
 categories:
-  - category1
+  - 运维
 tags:
-  - tag1
-  - tag2
+  - apache
+  - webdav
 # nolastmod: true
 draft: false
 ---
 
-Cut out summary from your post content here.
+apache webdav配置 
 
 <!--more-->
 
-The remaining content of your post.
-# apache webdav配置 
 
 ```conf
 DavLockDB "/usr/local/apache2/var/DavLock"
