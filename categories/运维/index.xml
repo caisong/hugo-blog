@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>运维 on Caisong's Blog</title><link>https://caisong.github.io/categories/%E8%BF%90%E7%BB%B4/</link><description>Recent content in 运维 on Caisong's Blog</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Thu, 18 Jul 2024 21:42:06 +0800</lastBuildDate><atom:link href="https://caisong.github.io/categories/%E8%BF%90%E7%BB%B4/index.xml" rel="self" type="application/rss+xml"/><item><title>Alpine vsftp搭建</title><link>https://caisong.github.io/posts/alpinevsftp%E6%90%AD%E5%BB%BA/</link><pubDate>Thu, 18 Jul 2024 21:42:06 +0800</pubDate><guid>https://caisong.github.io/posts/alpinevsftp%E6%90%AD%E5%BB%BA/</guid><description>&lt;p>alpine 搭建 vsftp 配置&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-ini" data-lang="ini">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">anonymous_enable&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">NO&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">dirmessage_enable&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">YES&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">xferlog_enable&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">YES&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">connect_from_port_20&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">YES&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">listen&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">YES&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">local_enable&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">YES&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">chroot_local_user&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">YES&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">allow_writeable_chroot&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">YES&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">background&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">NO&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">ftpd_banner&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">Welcome to FTP Server&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">dirmessage_enable&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">YES&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">max_clients&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">10&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">max_per_ip&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">5&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">write_enable&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">YES&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">local_umask&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">022&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">passwd_chroot_enable&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">yes&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">listen_ipv6&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">NO&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">seccomp_sandbox&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">NO&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">log_ftp_protocol&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">YES&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">xferlog_enable&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">YES&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">xferlog_std_format&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">NO&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">dual_log_enable&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">YES&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">xferlog_file&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">/var/log/vsftpd/xferlog.log&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">vsftpd_log_file&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">/var/log/vsftpd/vsftpd.log&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>创建用户&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>addgroup -S ftpuser
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>adduser -D -G ftpuser -h /home/vsftpd/ftpuser -s /bin/false ftpuser
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mkdir -p /home/vsftpd/ftpuser
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>chown -R ftpuser:ftpuser /home/vs
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo &lt;span style="color:#e6db74">&amp;#34;&lt;/span>$FTP_USER&lt;span style="color:#e6db74">:&lt;/span>$FTP_PASS&lt;span style="color:#e6db74">&amp;#34;&lt;/span> | /usr/sbin/chpasswd
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>启动服务&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>rc-service vsftpd start
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>运维管理分发</title><link>https://caisong.github.io/posts/%E8%BF%90%E7%BB%B4%E7%AE%A1%E7%90%86%E5%88%86%E5%8F%91/</link><pubDate>Mon, 03 Jun 2024 21:41:53 +0800</pubDate><guid>https://caisong.github.io/posts/%E8%BF%90%E7%BB%B4%E7%AE%A1%E7%90%86%E5%88%86%E5%8F%91/</guid><description>&lt;p>运维分发工具,记录下。后期使用了再补充。&lt;/p></description></item><item><title>运维接口</title><link>https://caisong.github.io/posts/%E8%BF%90%E7%BB%B4%E6%8E%A5%E5%8F%A3/</link><pubDate>Sun, 22 Oct 2023 21:41:54 +0800</pubDate><guid>https://caisong.github.io/posts/%E8%BF%90%E7%BB%B4%E6%8E%A5%E5%8F%A3/</guid><description>&lt;p>考虑如何上报运维数据，未落地方案&lt;/p></description></item><item><title>Alpinek8s安装</title><link>https://caisong.github.io/posts/alpinek8s%E5%AE%89%E8%A3%85/</link><pubDate>Thu, 17 Mar 2022 21:40:27 +0800</pubDate><guid>https://caisong.github.io/posts/alpinek8s%E5%AE%89%E8%A3%85/</guid><description>&lt;h2 id="alpine-k8s安装">alpine k8s安装&lt;/h2>
+&lt;p>&lt;a href="https://dev.to/xphoniex/how-to-create-a-kubernetes-cluster-on-alpine-linux-kcg">安装参考&lt;/a>&lt;/p>
+&lt;h3 id="配置vagrant">配置vagrant&lt;/h3>
+&lt;p>略&lt;/p>
+&lt;h3 id="master节点安装">master节点安装&lt;/h3>
+&lt;ol>
+&lt;li>添加edge软件源&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>https://mirrors.ustc.edu.cn/alpine/latest-stable/main
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>https://mirrors.ustc.edu.cn/alpine/latest-stable/community
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>@testing http://mirrors.ustc.edu.cn/alpine/edge/testing
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>@community http://mirrors.ustc.edu.cn/alpine/edge/community
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="2">
+&lt;li>apk更新后，重启，否则docker启动失败，报iptables相关错误&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 重启后失败再尝试以下命令&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo modprobe ip_tables
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo echo &lt;span style="color:#e6db74">&amp;#39;ip_tables&amp;#39;&lt;/span> &amp;gt;&amp;gt; /etc/modules
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="3">
+&lt;li>安装软件包&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># mater节点&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo apk add kubernetes@testing
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo apk add docker@community
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo apk add cni-plugins@testing
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo apk add kubelet@testing
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># node节点&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo apk add docker@community
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo apk add kubelet@testing
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="3">
+&lt;li>kubeadm init 的时候指定镜像源&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 先查看IP和kubernetes的版本&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>kubeadm version
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># init的时候指定registry源&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo kubeadm init --kubernetes-version&lt;span style="color:#f92672">=&lt;/span>v1.23.4 --image-repository registry.aliyuncs.com/google_containers --apiserver-advertise-address&lt;span style="color:#f92672">=&lt;/span>192.168.33.10
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>记录命令执行后返回的结果&lt;/p></description></item><item><title>Alpine无法使用minikube，具体原因未知</title><link>https://caisong.github.io/posts/alpine%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8minikube%E5%85%B7%E4%BD%93%E5%8E%9F%E5%9B%A0%E6%9C%AA%E7%9F%A5/</link><pubDate>Tue, 21 Dec 2021 21:42:07 +0800</pubDate><guid>https://caisong.github.io/posts/alpine%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8minikube%E5%85%B7%E4%BD%93%E5%8E%9F%E5%9B%A0%E6%9C%AA%E7%9F%A5/</guid><description>&lt;p>使用alpine镜像构建ks8 minikube集群&lt;/p></description></item></channel></rss>

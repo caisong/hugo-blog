@@ -10,10 +10,4 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tar zxpf luarocks-2.4.1.tar.gz
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cd luarocks-2.4.1
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>./configure; sudo make bootstrap
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>记录</title><link>https://caisong.github.io/posts/%E8%AE%B0%E5%BD%95/</link><pubDate>Fri, 20 May 2016 00:08:04 +0000</pubDate><guid>https://caisong.github.io/posts/%E8%AE%B0%E5%BD%95/</guid><description>&lt;p>搭建的一晚上的成果, 随便发个帖子试试。&lt;/p>
-&lt;ol>
-&lt;li>安装nodejs hexo&lt;/li>
-&lt;li>安装next 主题&lt;/li>
-&lt;li>添加第三方插件&lt;/li>
-&lt;li>设置个人信息&lt;/li>
-&lt;/ol></description></item></channel></rss>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

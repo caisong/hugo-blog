@@ -1,1 +1,17 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Proxy on Caisong's Blog</title><link>https://caisong.github.io/tags/proxy/</link><description>Recent content in Proxy on Caisong's Blog</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Sat, 28 Oct 2017 20:09:06 +0800</lastBuildDate><atom:link href="https://caisong.github.io/tags/proxy/index.xml" rel="self" type="application/rss+xml"/><item><title>常用操作</title><link>https://caisong.github.io/posts/%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/</link><pubDate>Sat, 28 Oct 2017 20:09:06 +0800</pubDate><guid>https://caisong.github.io/posts/%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/</guid><description>&lt;p>Cut out summary from your post content here.&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Proxy on Caisong's Blog</title><link>https://caisong.github.io/tags/proxy/</link><description>Recent content in Proxy on Caisong's Blog</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Mon, 28 Oct 2024 21:42:31 +0800</lastBuildDate><atom:link href="https://caisong.github.io/tags/proxy/index.xml" rel="self" type="application/rss+xml"/><item><title>取消全局代理</title><link>https://caisong.github.io/posts/%E5%8F%96%E6%B6%88%E5%85%A8%E5%B1%80%E4%BB%A3%E7%90%86/</link><pubDate>Mon, 28 Oct 2024 21:42:31 +0800</pubDate><guid>https://caisong.github.io/posts/%E5%8F%96%E6%B6%88%E5%85%A8%E5%B1%80%E4%BB%A3%E7%90%86/</guid><description>&lt;p>使用“飞机”设置PAC模式的时候，系统代理脚本坑人就会开启，但实际过程中，但我一般直接配置Firefox的PAC URL，且PAC开关开启后，许多软件没法直接打开（可能与我使用的代理有关）。&lt;/p>
+&lt;p>之前一直是&lt;code>Win+x&lt;/code>，设置 &amp;ndash;&amp;gt; 网络和Interne &amp;ndash;&amp;gt; 代理 ，取消开关。
+实在觉得不方便，就想找个一键脚本实现。经过尝试发现，其实打开PAC代理，就是在注册表中添加了PAC的URL，直接删除就可以关闭。注册表文件内容如下：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span>Windows Registry Editor Version 5.00
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;#34;AutoConfigURL&amp;#34;=-
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>常用操作</title><link>https://caisong.github.io/posts/%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/</link><pubDate>Sat, 28 Oct 2017 20:09:06 +0800</pubDate><guid>https://caisong.github.io/posts/%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/</guid><description>&lt;!-- raw HTML omitted -->
+&lt;ul>
+&lt;li>代理设置&lt;/li>
+&lt;li>git 操作&lt;/li>
+&lt;li>文件夹比较&lt;/li>
+&lt;li>flash 分区&lt;/li>
+&lt;li>阻止软件更新&lt;/li>
+&lt;li>docker设置国内镜像&lt;/li>
+&lt;li>linux语言环境设置&lt;/li>
+&lt;/ul></description></item></channel></rss>
