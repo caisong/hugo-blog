@@ -5,6 +5,7 @@ theme = "dream"
 
 [params]
 author = "Cai Song"
+zenMode = true
 headerTitle = "A blog about all things technical."
 lightTheme = "emerald"
 darkTheme = "forest"
