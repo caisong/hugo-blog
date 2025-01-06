@@ -1,7 +1,20 @@
 ---
 title: rtp协议
-date: 2018-09-17 21:51:27
-tags: rtp,c++
+date: 2018-09-17T21:51:27+08:00
+lastmod: 2018-09-17T21:51:27+08:00
+author: Cai Song
+# avatar: /img/author.jpg
+# authorlink: https://author.site
+cover: /img/cover.jpg
+# images:
+#   - /img/cover.jpg
+categories:
+  - 编程
+tags:
+  - rtp
+  - CPP
+# nolastmod: true
+draft: false
 ---
 
 * 部分内容转载自：[雷霄骅CSDN博客](https://blog.csdn.net/leixiaohua1020/article/details/50535230 "leixiaohua")

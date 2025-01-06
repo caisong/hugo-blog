@@ -1,5 +1,5 @@
 ---
-title: Pythonhook
+title: Python hook
 date: 2024-07-05T21:41:20+08:00
 lastmod: 2024-07-05T21:41:20+08:00
 author: Cai Song
@@ -9,20 +9,14 @@ cover: /img/cover.jpg
 # images:
 #   - /img/cover.jpg
 categories:
-  - category1
+  - python
 tags:
-  - tag1
-  - tag2
+  - hook
 # nolastmod: true
 draft: false
 ---
 
-Cut out summary from your post content here.
-
-<!--more-->
-
-The remaining content of your post.
-# python hook
+## python hook
 
 ```python
 # -*- coding: utf-8 -*-

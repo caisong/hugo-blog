@@ -9,19 +9,14 @@ cover: /img/cover.jpg
 # images:
 #   - /img/cover.jpg
 categories:
-  - category1
+  - python
 tags:
-  - tag1
-  - tag2
+  - python2
+  - python3
 # nolastmod: true
 draft: false
 ---
 
-Cut out summary from your post content here.
-
-<!--more-->
-
-The remaining content of your post.
 # python换行符处理
 
 ##  Python 2（PEP 278 -- Universal Newline Support）
@@ -36,7 +31,7 @@ The remaining content of your post.
   content = file(fn, 'rU').read()
   # test\ntest2
   # 所有的换行都被统一，不分系统
-```
+  ```
 
 ## Python 3(Open函数: 2. Built-in Functions)
 ** 请注意：Python 3不推荐用rU模式！**
@@ -46,10 +41,3 @@ open(file, mode='r', buffering=-1, encoding=None, errors=None, newline=None, clo
 ```
 在Python 3，可以通过open函数的**newline**参数来控制**Universal new line mode**：读取时候，不指定newline，则默认开启Universal new line mode，所有\n, \r, or \r\n被默认转换为\n ；写入时，不指定newline，则换行符为各系统默认的换行符（\n, \r, or \r\n, ），指定为newline='\n'，则都替换为\n（相当于Universal new line mode）；不论读或者写时，newline=''都表示不转换。
 
-作者：知乎用户
-链接：https://www.zhihu.com/question/19751023/answer/19909758
-来源：知乎
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
-
-Tags:
-  python

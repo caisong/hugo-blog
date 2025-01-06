@@ -1,5 +1,5 @@
 ---
-title: Rsyslog问题记录
+title: Rsyslog 问题记录
 date: 2024-12-24T21:42:22+08:00
 lastmod: 2024-12-24T21:42:22+08:00
 author: Cai Song
@@ -9,10 +9,9 @@ cover: /img/cover.jpg
 # images:
 #   - /img/cover.jpg
 categories:
-  - category1
+  - 运维
 tags:
-  - tag1
-  - tag2
+  - rsyslog
 # nolastmod: true
 draft: false
 ---
@@ -36,10 +35,5 @@ $template MYFORMAT,"%msg:2:$%\n"
  $template DynamicFile,"/var/log/test_logs/%timegenerated%-test.log"
      *.* ?DynamicFile
 
-    使用 timegenerated 生成文件名，使用该模板则在前面加上 ?。
+**使用 timegenerated 生成文件名，使用该模板则在前面加上 ?。**
 
-
-
-
-Tags:
-  rsyslog

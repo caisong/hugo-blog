@@ -1,5 +1,5 @@
 ---
-title: PG数据库、用户相关
+title: PG数据库、用户操作
 date: 2024-11-28T21:41:17+08:00
 lastmod: 2024-11-28T21:41:17+08:00
 author: Cai Song
@@ -9,10 +9,9 @@ cover: /img/cover.jpg
 # images:
 #   - /img/cover.jpg
 categories:
-  - category1
+  - database
 tags:
-  - tag1
-  - tag2
+  - postgresql
 # nolastmod: true
 draft: false
 ---

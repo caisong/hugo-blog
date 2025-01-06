@@ -9,20 +9,16 @@ cover: /img/cover.jpg
 # images:
 #   - /img/cover.jpg
 categories:
-  - category1
+  - bot
 tags:
-  - tag1
-  - tag2
+  - rasa
 # nolastmod: true
 draft: false
 ---
 
-Cut out summary from your post content here.
+chatgpt大火前搞得，现在，哎。。。。。
 
-<!--more-->
-
-The remaining content of your post.
-# rasa 简单介绍及demo实现
+## rasa 简单介绍及demo实现
 
 ps. 本文基于rasa 3.1版本(python 3.8)
 

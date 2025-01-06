@@ -1,5 +1,5 @@
 ---
-title: Rsyslogmmnormalizemodule
+title: Rsyslog mmnormalize module
 date: 2024-12-24T21:41:27+08:00
 lastmod: 2024-12-24T21:41:27+08:00
 author: Cai Song
@@ -9,20 +9,16 @@ cover: /img/cover.jpg
 # images:
 #   - /img/cover.jpg
 categories:
-  - category1
+  - rsyslog
 tags:
-  - tag1
-  - tag2
+  - mmnormalize 
 # nolastmod: true
 draft: false
 ---
 
-Cut out summary from your post content here.
+rsyslog mmnormalize module语法稀奇古怪，相关资料还特别少，看了好几遍才明白。
 
-<!--more-->
-
-The remaining content of your post.
-# rsyslog mmnormalize module
+最终能解析出来了，但是没法没使用，不在默认namespace `$!`下，放弃了。
 
 ## 相关语法
 ### 规则语法
@@ -34,7 +30,7 @@ match description=<string literals><field selectors>
 fileld selectors=%<field name>:<field type>[:<extra data>]%
 ```
 
-### filed type
+### field type
 mmnormalize版本2的语法没有使用正则，内置了一套字段类型，与正则差不多。
 * number:  数字
     %field_name:number% === [0-9]+
@@ -80,4 +76,8 @@ rule=prefixed_name:name=%name:word%
 prefix=
 ```
 
+## 测试
 
+`mmnormalize `有个测试工具，直接用命令就可以测试
+
+ `rsyslogd`也可以开启调试模式，查看debug输出

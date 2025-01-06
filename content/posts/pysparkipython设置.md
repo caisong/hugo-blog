@@ -1,5 +1,5 @@
 ---
-title: Pysparkipython设置
+title: Pyspark ipython 设置
 date: 2024-01-12T21:41:20+08:00
 lastmod: 2024-01-12T21:41:20+08:00
 author: Cai Song
@@ -9,20 +9,14 @@ cover: /img/cover.jpg
 # images:
 #   - /img/cover.jpg
 categories:
-  - category1
+  - python
 tags:
-  - tag1
-  - tag2
+  - spark
+  - ipython
 # nolastmod: true
 draft: false
 ---
 
-Cut out summary from your post content here.
-
-<!--more-->
-
-The remaining content of your post.
-# pyspark ipython设置
 ```shell
 export JAVA_HOME="具体路径"
 export SPARK_HOME="具体路径"

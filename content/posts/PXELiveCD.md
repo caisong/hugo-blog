@@ -9,20 +9,15 @@ cover: /img/cover.jpg
 # images:
 #   - /img/cover.jpg
 categories:
-  - category1
+  - 运维
 tags:
-  - tag1
+  - PXE
   - tag2
 # nolastmod: true
 draft: false
 ---
 
-Cut out summary from your post content here.
-
-<!--more-->
-
-The remaining content of your post.
-# PXE LiveCD
+基于linux live cd 镜像，使用pxe批量安装
 
 ## 主要流程
 ** 个人理解，不一定准确 **

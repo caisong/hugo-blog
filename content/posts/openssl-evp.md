@@ -1,7 +1,19 @@
 ---
-title: openssl evp
-date: 2018-09-27 21:54:43
-tags: openssl, evp, aes
+title: openssl evp加解密统一接口
+date: 2018-09-27T21:54:4+08:00
+lastmod: 2018-09-27T21:54:44+08:00
+author: Cai Song
+# avatar: /img/author.jpg
+# authorlink: https://author.site
+cover: /img/cover.jpg
+# images:
+#   - /img/cover.jpg
+categories:
+  - 编程
+tags:
+  - openssl
+# nolastmod: true
+draft: false
 ---
 
 最近使用了openssl的AES解密函数，遇到些问题。
@@ -83,5 +95,4 @@ int do_crypt(FILE *in, FILE *out, int do_encrypt)
 ## 其他
 1. AES有几种扩展算法，其中ecb和cbc需要填充，即加密后长度可能会不一样，cfb和ofb不需要填充，密文长度与明文长度一样 
 2. 针对**Bad Decrypt**问题，本人实际解密过程中，对16整数倍字节的数据未调用final函数，长度直接返回密文长度。
-
 

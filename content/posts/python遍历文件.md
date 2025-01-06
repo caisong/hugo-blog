@@ -9,19 +9,13 @@ cover: /img/cover.jpg
 # images:
 #   - /img/cover.jpg
 categories:
-  - category1
+  - python2
 tags:
-  - tag1
-  - tag2
+  - python2
 # nolastmod: true
 draft: false
 ---
 
-Cut out summary from your post content here.
-
-<!--more-->
-
-The remaining content of your post.
 python 遍历文件
 ```python
 import os
@@ -36,5 +30,3 @@ for rt, dirs, files in os.walk(root):
         os.rename(os.path.join(rt,f),os.path.join(rt,new))
 ```
 
-Tags:
-  python

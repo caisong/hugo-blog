@@ -1,10 +1,20 @@
 ---
 title: python 发送邮件
-date: 2016-06-02 20:46:58
-tags: 
-  - email
-  - python
-categories: python
+date: 2016-06-02T20:46:58+08:00
+lastmod: 2016-06-02T20:46:58+08:00
+author: Cai Song
+# avatar: /img/author.jpg
+# authorlink: https://author.site
+cover: /img/cover.jpg
+# images:
+#   - /img/cover.jpg
+categories:
+  - python2
+tags:
+  - mail
+  - 工具
+# nolastmod: true
+draft: false
 ---
 
 ## 需求

@@ -9,10 +9,10 @@ cover: /img/cover.jpg
 # images:
 #   - /img/cover.jpg
 categories:
-  - category1
+  - 网络
 tags:
-  - tag1
-  - tag2
+  - nat
+  - ensp
 # nolastmod: true
 draft: false
 ---

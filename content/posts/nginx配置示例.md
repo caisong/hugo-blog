@@ -1,5 +1,5 @@
 ---
-title: Nginx配置示例
+title: nginx双向代理
 date: 2024-09-23T21:41:15+08:00
 lastmod: 2024-09-23T21:41:15+08:00
 author: Cai Song
@@ -9,24 +9,18 @@ cover: /img/cover.jpg
 # images:
 #   - /img/cover.jpg
 categories:
-  - category1
+  - nginx
 tags:
-  - tag1
-  - tag2
+  - nginx
 # nolastmod: true
-draft: false
+draft: false 
 ---
 
-Cut out summary from your post content here.
-
-<!--more-->
-
-The remaining content of your post.
-# nginx配置示例
+使用nginx当双向代理
 
 ```nginx
 server{
-	server_name 15.10.110.10 ssl;
+	server_name 10.10.110.10 ssl;
 	listen 16002;
 	
 	ssl_certificate /path/to/your_certificate.crt;
@@ -39,7 +33,7 @@ server{
 
 	# 转发node --> center
 	location /webchat/openapi/v1 {
-		proxy_pass https://15.10.110.12:16002;
+		proxy_pass https://10.10.110.12:16002;
 		proxy_set_header Host $host;
 		proxy_set_header X-Real-IP $remote_addr;
 		proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -48,7 +42,7 @@ server{
 	
 	# center --> node	
 	location /webChatClient/openapi/v1 {
-		proxy_pass https://15.10.110.20:8123;
+		proxy_pass https://10.10.110.20:8123;
 		proxy_set_header Host $host;
 		proxy_set_header X-Real-IP $remote_addr;
 		proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;

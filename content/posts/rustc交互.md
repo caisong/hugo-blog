@@ -1,5 +1,5 @@
 ---
-title: Rustc交互
+title: Rust c交互
 date: 2023-04-18T21:41:30+08:00
 lastmod: 2023-04-18T21:41:30+08:00
 author: Cai Song
@@ -9,20 +9,14 @@ cover: /img/cover.jpg
 # images:
 #   - /img/cover.jpg
 categories:
-  - category1
+  - 编程
 tags:
-  - tag1
-  - tag2
+  - rust
+  - c
 # nolastmod: true
 draft: false
 ---
 
-Cut out summary from your post content here.
-
-<!--more-->
-
-The remaining content of your post.
-# rust c 交互
 ## rust 调用 c
 
 * 调用普通`c`函数

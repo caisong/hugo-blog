@@ -9,26 +9,25 @@ cover: /img/cover.jpg
 # images:
 #   - /img/cover.jpg
 categories:
-  - category1
+  - nginx
 tags:
-  - tag1
-  - tag2
+  - nginx
+  - module
 # nolastmod: true
 draft: false
 ---
 
-Cut out summary from your post content here.
-
-<!--more-->
-
-The remaining content of your post.
-# nginx 添加module
+1. 直接`nginx -V`查看运行的nginx的编译参数
+2. 下载源码，使用对应的nginx参数编译nginx
+3. 下载module，编译
 
 ```bash
 # 先编译nginx，nginx编译成功后，再重新configure
 末尾添加你需要的编译的module
 --with-http_dav_module --add-dynamic-module=/root/nginx-dav-ext-module-3.0.0
 ```
+
+4. 部署
 
 
 ```conf

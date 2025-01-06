@@ -1,5 +1,5 @@
 ---
-title: Rsyslogrfc5234格式定义
+title: Rsyslog rfc5234 格式
 date: 2024-12-26T21:41:29+08:00
 lastmod: 2024-12-26T21:41:29+08:00
 author: Cai Song
@@ -11,18 +11,13 @@ cover: /img/cover.jpg
 categories:
   - category1
 tags:
-  - tag1
+  - rfc
   - tag2
 # nolastmod: true
 draft: false
 ---
 
-Cut out summary from your post content here.
-
-<!--more-->
-
-The remaining content of your post.
-# rsyslog rfc5234格式定义
+rsyslog rfc5234格式定义
 ```plain
 SYSLOG-MSG      = HEADER SP STRUCTURED-DATA [SP MSG]
 
@@ -79,3 +74,5 @@ SYSLOG-MSG      = HEADER SP STRUCTURED-DATA [SP MSG]
       DIGIT           = %d48 / NONZERO-DIGIT
       NILVALUE        = "-"
 ```
+
+* SD-ELEMENT `[`和`]`与字符间没有空格

@@ -1,5 +1,5 @@
 ---
-title: Opetelemetry
+title: Opetelemetry web页面信息上报
 date: 2024-06-18T21:41:16+08:00
 lastmod: 2024-06-18T21:41:16+08:00
 author: Cai Song
@@ -9,20 +9,15 @@ cover: /img/cover.jpg
 # images:
 #   - /img/cover.jpg
 categories:
-  - category1
+  - 运维
 tags:
-  - tag1
-  - tag2
+  - opetelemetry
 # nolastmod: true
 draft: false
 ---
 
-Cut out summary from your post content here.
-
-<!--more-->
-
-The remaining content of your post.
-# opetelemetry
+opetelemetry目前还没有直接的web js的组件，尝试将nodejs的打包，实现页面的监控
+* 基于nodejs创建信息上报脚本
 
 ```javascript
 // auto.js

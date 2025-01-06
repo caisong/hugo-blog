@@ -1,5 +1,5 @@
 ---
-title: Podman的无守护进程模式实现主要依赖以下几个关键技术和设计思路：
+title: Podman 无守护进程模式
 date: 2024-07-04T21:42:17+08:00
 lastmod: 2024-07-04T21:42:17+08:00
 author: Cai Song
@@ -9,19 +9,15 @@ cover: /img/cover.jpg
 # images:
 #   - /img/cover.jpg
 categories:
-  - category1
+  - 容器
 tags:
-  - tag1
-  - tag2
+  - Podman
 # nolastmod: true
 draft: false
 ---
 
-Cut out summary from your post content here.
+摘自于chatgpt
 
-<!--more-->
-
-The remaining content of your post.
 Podman 的无守护进程模式实现主要依赖以下几个关键技术和设计思路：
 
 1.FIFO 文件与 API: Podman 使用一个 FIFO 文件（命名管道）作为与用户交互的接口。命令行工具和其他程序通过写入到这个 FIFO 文件来发送操作请求给 Podman。Podman 会读取这些请求并执行相应的容器管理操作。这种方式避免了常驻后台的守护进程，每次需要管理容器时，Podman 进程会被启动，并处理完请求后自行退出。

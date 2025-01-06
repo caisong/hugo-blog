@@ -9,19 +9,14 @@ cover: /img/cover.jpg
 # images:
 #   - /img/cover.jpg
 categories:
-  - category1
+  - 运维
 tags:
-  - tag1
-  - tag2
+  - rhel
+  - centos
 # nolastmod: true
 draft: false
 ---
 
-Cut out summary from your post content here.
-
-<!--more-->
-
-The remaining content of your post.
 # repo源制作
 
 制作源最好找一台什么都没装的虚拟机，或者`docker`拉一个原始镜像，不然要制作的软件依赖包可能缺失。

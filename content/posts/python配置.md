@@ -1,5 +1,5 @@
 ---
-title: Python配置
+title: pip配置、命令
 date: 2021-09-03T21:41:21+08:00
 lastmod: 2021-09-03T21:41:21+08:00
 author: Cai Song
@@ -9,20 +9,14 @@ cover: /img/cover.jpg
 # images:
 #   - /img/cover.jpg
 categories:
-  - category1
+  - python
 tags:
-  - tag1
-  - tag2
+  - pip
 # nolastmod: true
 draft: false
 ---
 
-Cut out summary from your post content here.
-
-<!--more-->
-
-The remaining content of your post.
-# python 配置
+## 镜像配置
 
 ```shell
 # windows 路径 C:\Users\username\pip\pip.ini
@@ -32,11 +26,11 @@ The remaining content of your post.
 index-url = https://mirrors.aliyun.com/pypi/simple/
 ```
 
-# pip 命令
+## pip 命令
 pip list --outdated #列出所有过期的库
 pip install --upgrade 库名 #升级库
 
-# 升级过期源
+## 一键升级过期源
 ```python
 import pip
 from subprocess import call
@@ -45,5 +39,3 @@ for dist in pip.get_installed_distributions():
     call("pip install --upgrade " + dist.project_name, shell=True)
 ```
 
-Tags:
-  pip, python

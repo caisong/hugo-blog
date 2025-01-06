@@ -9,19 +9,13 @@ cover: /img/cover.jpg
 # images:
 #   - /img/cover.jpg
 categories:
-  - category1
+  - nginx
 tags:
-  - tag1
+  - 文件监听
   - tag2
 # nolastmod: true
 draft: false
 ---
 
-Cut out summary from your post content here.
-
-<!--more-->
-
-The remaining content of your post.
-# nginx 文件监听
 * 在`http`模块下配置`init_by_lua_block `实现nginx启动时启动任务
 * 使用nginx.swapn

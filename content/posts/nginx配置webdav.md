@@ -9,19 +9,17 @@ cover: /img/cover.jpg
 # images:
 #   - /img/cover.jpg
 categories:
-  - category1
+  - nginx
 tags:
-  - tag1
-  - tag2
+  - webdav
 # nolastmod: true
 draft: false
 ---
 
-Cut out summary from your post content here.
+nginx配置webdav服务， 并验证。
 
-<!--more-->
+`dav_ext_methods`这个依赖于`http_dav_ext ` module，这个并不在`Centos`发行版内，需要额外安装。如何手动编译，参考临沂篇《nginx添加module》
 
-The remaining content of your post.
 ## nginx配置webdav
 
 * nginx配置
@@ -73,5 +71,3 @@ cadaver http://127.0.0.1:10080
 
 **使用curl未尝试成功，使用的cadaver客户端**
 
-Tags:
-  webdav

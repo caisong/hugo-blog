@@ -9,20 +9,16 @@ cover: /img/cover.jpg
 # images:
 #   - /img/cover.jpg
 categories:
-  - category1
+  - qt
 tags:
-  - tag1
-  - tag2
+  - qml
 # nolastmod: true
 draft: false
 ---
 
-Cut out summary from your post content here.
-
-<!--more-->
-
-The remaining content of your post.
 QML 简单记录  
+
+显示风车旋转
 
 
 ```qml
@@ -65,8 +61,6 @@ Window {
 * ubuntu使用quick时，`Unknown module(s) in QT: qml quick`    
   安装开发包`qtdeclarative5-dev`  
   
-
 * 问题 module "QtQuick.Controls" version 2.12 is not installed  
   安装`qml-module-qtquick-controls2` 
-
 

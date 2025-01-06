@@ -1,5 +1,5 @@
 ---
-title: QT操作
+title: QT网络操作
 date: 2024-07-18T21:42:20+08:00
 lastmod: 2024-07-18T21:42:20+08:00
 author: Cai Song
@@ -9,20 +9,15 @@ cover: /img/cover.jpg
 # images:
 #   - /img/cover.jpg
 categories:
-  - category1
+  - QT
 tags:
-  - tag1
-  - tag2
+  - network
+  - qt
 # nolastmod: true
 draft: false
 ---
 
-Cut out summary from your post content here.
-
-<!--more-->
-
-The remaining content of your post.
-QT 操作
+真的好难用
 
 ```cpp
       QString ctx = QString("{\"name\":\"%1\", \"message\":\"%2\"}").arg(name).arg(message->text());

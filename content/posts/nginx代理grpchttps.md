@@ -1,5 +1,5 @@
 ---
-title: Nginx代理grpchttps
+title: Nginx同时代理grpc和https
 date: 2024-08-28T21:42:16+08:00
 lastmod: 2024-08-28T21:42:16+08:00
 author: Cai Song
@@ -9,20 +9,26 @@ cover: /img/cover.jpg
 # images:
 #   - /img/cover.jpg
 categories:
-  - category1
+  - golang
+  - nginx
 tags:
-  - tag1
-  - tag2
+  - grpc
+  - nginx
+  - https
 # nolastmod: true
 draft: false
 ---
 
-Cut out summary from your post content here.
+nginx 同时代理grpc和https  。基于`grpc`创建了服务端和客户端，使用`echo`创建了https服务器，nginx分别代理`grpc`请求和`https`请求。
 
-<!--more-->
+<!-- MarkdownTOC -->
 
-The remaining content of your post.
-nginx 代理grpc https  
+* TLS证书
+* GRPC
+* https
+* nginx代理
+
+
 
 ##  tls证书  
 ```bash
@@ -35,7 +41,7 @@ openssl req -new -x509 -nodes -days 365 -newkey rsa:2048 -keyout key.pem -out ce
 ```plain
 syntax = "proto3";
 
-// 根据自己module name写就行，然后字节拷贝过去
+// 根据自己module name写就行，然后直接拷贝过去
 option go_package = "mygrpc/message/helloworld";
 
 // 官方示例里没注释，不过对go应该也没啥作用
