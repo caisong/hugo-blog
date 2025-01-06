@@ -1,5 +1,5 @@
 ---
-title: Zeal离线
+title: Zeal离线源
 date: 2021-09-03T21:41:42+08:00
 lastmod: 2021-09-03T21:41:42+08:00
 author: Cai Song
@@ -9,21 +9,12 @@ cover: /img/cover.jpg
 # images:
 #   - /img/cover.jpg
 categories:
-  - category1
+  - zeal
 tags:
-  - tag1
-  - tag2
+  - zeal
 # nolastmod: true
 draft: false
 ---
 
-Cut out summary from your post content here.
+zeal是开源的devdoc查看工具，类似于Macos下的`Dash`,且可以使用`Dash`对应的源，github地址 `Kapeli/feeds`
 
-<!--more-->
-
-The remaining content of your post.
-# zeal 离线
-Kapeli/feeds
-
-Tags:
-  zeal

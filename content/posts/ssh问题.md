@@ -1,8 +1,20 @@
 ---
-title: ssh问题-Connection closed by foreign host
-date: 2016-06-30 22:56:04
-tags: ssh
-category: linux
+title: ssh问题记录
+date: 2016-06-30T22:56:04
+lastmod: 2016-06-30T22:56:04
+author: Cai Song
+# avatar: /img/author.jpg
+# authorlink: https://author.site
+cover: /img/cover.jpg
+# images:
+#   - /img/cover.jpg
+categories:
+  - ssh
+tags:
+  - 代理
+  - ssh
+# nolastmod: true
+draft: false
 ---
 
 ## 问题描述
@@ -57,5 +69,4 @@ sshd:all:deny
 描述：连接方式使用NAT；虚拟能在ping通主机，主机无法ping通虚拟机。
 原因：虚拟机自动获取的IP与vmnet8设置的IP不在同一网段。
 解决：设置vmnet8自动获取ip即可。
-
 

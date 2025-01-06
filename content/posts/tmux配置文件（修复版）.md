@@ -9,20 +9,16 @@ cover: /img/cover.jpg
 # images:
 #   - /img/cover.jpg
 categories:
-  - category1
+  - tmux
 tags:
-  - tag1
-  - tag2
+  - tmux
 # nolastmod: true
 draft: false
 ---
 
-Cut out summary from your post content here.
 
-<!--more-->
-
-The remaining content of your post.
 tmux配置文件（修复版）
+
 ```plain
 unbind C-b
 set -g prefix C-a
@@ -94,6 +90,3 @@ set -g status-right "#[fg=cyan]%b %d %R"
 set -g status-interval 60
 set -g status-justify centre
 ```
-
-Tags:
-  tmux

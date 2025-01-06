@@ -1,8 +1,20 @@
 ---
 title: Windows 安装 Text-to-Speech
-date: 2016-12-22 22:39:11
-tags: tts, windows
-category: tts
+date: 2016-12-22T22:39:11+08:00
+lastmod: 2016-12-22T22:39:11+08:00
+author: Cai Song
+# avatar: /img/author.jpg
+# authorlink: https://author.site
+cover: /img/cover.jpg
+# images:
+#   - /img/cover.jpg
+categories:
+  - windows
+tags:
+  - windows
+  - tts
+# nolastmod: true
+draft: false
 ---
 **Win10、Win8摘录自官方文档，Win10 已验证。Win7未尝试！**
 <!-- more -->

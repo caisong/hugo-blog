@@ -1,6 +1,11 @@
 ---
 title: Shell命令行快捷键
-date: 2016-07-28 22:06:41
+date: 2016-07-28T22:06:41+08:00
+lastmod: 2016-07-28T22:06:41+08:00
+author: Cai Song
+cover: /img/cover.jpg
+categories:
+  - shell
 tags:
   - shell
   - shortcut

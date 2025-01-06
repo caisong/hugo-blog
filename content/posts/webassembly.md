@@ -9,10 +9,10 @@ cover: /img/cover.jpg
 # images:
 #   - /img/cover.jpg
 categories:
-  - category1
+  - webassembly
 tags:
-  - tag1
-  - tag2
+  - wasm
+  - rust
 # nolastmod: true
 draft: false
 ---
@@ -22,7 +22,7 @@ Cut out summary from your post content here.
 <!--more-->
 
 The remaining content of your post.
-# webassembly
+## webassembly
 Web Worker 结合 WebAssembly (Wasm) 是一种常见的技术组合，可以利用 WebAssembly 在 Web Worker 中执行高性能的计算密集型任务。下面是一个简单的示例，演示了如何在 Web Worker 中加载和执行 Wasm 模块：
 首先，你需要编写一个用 C/C++ 或其他支持的语言编写的 Wasm 模块，比如下面这个简单的示例 example.wasm：
 ```wasm
@@ -84,6 +84,3 @@ self.onmessage = event => {
 ```
 
 这样，当主线程向 Web Worker 发送消息时，Web Worker 将加载 Wasm 模块并执行其中的函数，并将结果返回给主线程。这种方式可以在后台线程中利用 WebAssembly 执行高性能的计算任务，同时不会阻塞主线程，保持页面的响应性能。
-
-Tags:
-  wasm

@@ -9,20 +9,13 @@ cover: /img/cover.jpg
 # images:
 #   - /img/cover.jpg
 categories:
-  - category1
+  - virtualbox
 tags:
-  - tag1
-  - tag2
+  - 虚拟机
 # nolastmod: true
 draft: false
 ---
 
-Cut out summary from your post content here.
-
-<!--more-->
-
-The remaining content of your post.
-# virtualbox开启虚拟化
 ```bash
 F:\VirtualBox>VBoxManage.exe list vms
 "rhel64" {240f96d8-6535-431d-892e-b70f3dc464e8}

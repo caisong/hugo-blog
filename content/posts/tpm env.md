@@ -42,7 +42,7 @@ tpmd.c:310: Debug: waiting for connections...
   ```shell
   depmod -a 
   ```
-  
+
   2. failed: address alread in use
   ```shell
   rm /var/run/tpm/tpmd_socket:0
@@ -65,4 +65,4 @@ tpm_selftest
 
 ## tpmtoken manual
 use tpm_takeownership
-tpmtoken_init (需要ld  /usr/lib/opencryptoki/stdll/libpkcs11_sw.so)
+tpmtoken_init (需要`ld  /usr/lib/opencryptoki/stdll/libpkcs11_sw.so`)

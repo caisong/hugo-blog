@@ -1,8 +1,19 @@
 ---
 title: vmware 记录
-date: 2016-07-24 21:50:08
-tags: vmware
-category: record
+date: 2016-07-24T21:50:08+08:00
+lastmod: 2016-07-24T21:50:08+08:00
+author: Cai Song
+# avatar: /img/author.jpg
+# authorlink: https://author.site
+cover: /img/cover.jpg
+# images:
+#   - /img/cover.jpg
+categories:
+  - vmware
+tags:
+  - 虚拟机
+# nolastmod: true
+draft: false
 ---
 
 ## 此虚拟机正在使用中，取得该虚拟机的所有权失败
@@ -28,5 +39,3 @@ sudo vim /etc/sysconfig/network-scripts/ifcfg-enoXXX #修改HWADDR字段
 
 谨此记录，日后再补充遇到的其他问题
 
-## ssh问题
-详见鄙人关于ssh问题的blog

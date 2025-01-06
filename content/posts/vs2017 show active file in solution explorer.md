@@ -1,5 +1,5 @@
 ---
-title: Vs2017 Show Active File in Solution Explorer
+title: Vs2017显示当前正在打开的文件
 date: 2019-08-13T20:16:56+08:00
 lastmod: 2019-08-13T20:16:56+08:00
 author: Cai Song
@@ -19,5 +19,5 @@ draft: false
 
 Tools - Options - Projects and Solutions - Track Active Item in Solution Explorer
 
-<!--more-->
+
 

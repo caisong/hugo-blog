@@ -1,11 +1,22 @@
 ---
 title: vptr
-date: 2018-07-24 22:57:44
-tags: c++, vptr
-categories: c++
+date: 2018-07-24T22:57:44+08:00
+lastmod: 2018-07-24T22:57:44+08:00
+author: Cai Song
+# avatar: /img/author.jpg
+# authorlink: https://author.site
+cover: /img/cover.jpg
+# images:
+#   - /img/cover.jpg
+categories:
+  - 编程
+tags:
+  - c++
+# nolastmod: true
+draft: false
 ---
 
-之前无意中看见别人代码，在`struct` 中初始函数中，直接`memset`,如
+在`struct` 中初始函数中，直接`memset`,如
 ```cpp
 struct Content{
     char indexx[64];

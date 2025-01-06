@@ -1,5 +1,5 @@
 ---
-title: Tmux.conf
+title: Tmux配置
 date: 2024-12-20T21:41:37+08:00
 lastmod: 2024-12-20T21:41:37+08:00
 author: Cai Song
@@ -9,20 +9,15 @@ cover: /img/cover.jpg
 # images:
 #   - /img/cover.jpg
 categories:
-  - category1
+  - tmux
 tags:
-  - tag1
+  - tmux
   - tag2
 # nolastmod: true
 draft: false
 ---
 
-Cut out summary from your post content here.
 
-<!--more-->
-
-The remaining content of your post.
-# tmux.conf
 ```config
 # remap prefix from 'C-b' to 'C-a'
 unbind C-b
@@ -92,6 +87,3 @@ setw -g window-status-bell-style 'fg=yellow bg=red bold'
 # messages
 set -g message-style 'fg=yellow bg=red bold'
 ```
-
-Tags:
-  tmux

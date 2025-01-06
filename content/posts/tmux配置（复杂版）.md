@@ -9,20 +9,14 @@ cover: /img/cover.jpg
 # images:
 #   - /img/cover.jpg
 categories:
-  - category1
+  - tmux
 tags:
-  - tag1
-  - tag2
+  - tmux
 # nolastmod: true
 draft: false
 ---
 
-Cut out summary from your post content here.
-
-<!--more-->
-
-The remaining content of your post.
-# tmux 配置（复杂版）
+**复杂版**
 ```config
 # : << 'EOF'
 # https://github.com/gpakosz/.tmux

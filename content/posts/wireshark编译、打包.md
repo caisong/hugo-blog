@@ -9,21 +9,15 @@ cover: /img/cover.jpg
 # images:
 #   - /img/cover.jpg
 categories:
-  - category1
+  - wireshark
 tags:
-  - tag1
-  - tag2
+  - wireshark
 # nolastmod: true
 draft: false
 ---
 
-Cut out summary from your post content here.
+**构建wireshark发布包，必须先生成user guide,并下载以下软件**
 
-<!--more-->
-
-The remaining content of your post.
-# wireshark 编译、打包
-**构建wireshark发布包，必须先生成user guide,且以来以下软件**
 * htmlhelp （微软官网已经下不到了，直接百度找个）
 * nsis 发布exe包用的
 ```bat
@@ -46,6 +40,3 @@ msbuild /m /p:Configuration=RelWithDebInfo nsis_package_prep.vcxproj
 
 msbuild /m /p:Configuration=RelWithDebInfo nsis_package.vcxproj
 ```
-
-Tags:
-  wireshark

@@ -1,5 +1,5 @@
 ---
-title: Saltdockercluster
+title: Salt docker cluster
 date: 2024-07-16T21:42:23+08:00
 lastmod: 2024-07-16T21:42:23+08:00
 author: Cai Song
@@ -9,20 +9,16 @@ cover: /img/cover.jpg
 # images:
 #   - /img/cover.jpg
 categories:
-  - category1
+  - 运维
 tags:
-  - tag1
-  - tag2
+  - saltstack
+  - docker
+  - dockerfile
 # nolastmod: true
 draft: false
 ---
 
-Cut out summary from your post content here.
-
-<!--more-->
-
-The remaining content of your post.
-salt docker cluster
+salt docker cluster dockerfile
 ```yaml
 version: "3"
 services:

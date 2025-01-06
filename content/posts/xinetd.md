@@ -1,10 +1,22 @@
 ---
-title: xinetd 配置
-date: 2017-06-07 21:39:31
-tags: xinetd
+title: xinetd 常用配置
+date: 2017-06-07T21:39:31+08:00
+lastmod: 2017-06-07T21:39:31+08:00
+author: Cai Song
+# avatar: /img/author.jpg
+# authorlink: https://author.site
+cover: /img/cover.jpg
+# images:
+#   - /img/cover.jpg
+categories:
+  - 运维
+tags:
+  - xinetd
+# nolastmod: true
+draft: false
 ---
 
-0. 介绍  
+## 介绍 
 
 > xinetd - the extended Internet services daemon
 > xinetd  performs  the  same  function as inetd: it starts programs that
@@ -15,7 +27,7 @@ all  service  ports  for the services listed in its configuration file.
 When a request comes in, xinetd starts the appropriate server.  Because
 of  the  way it operates, xinetd (as well as inetd) is also referred to
 as a super-server.
->
+<! -- more -->
 > The services listed in xinetd’s configuration  file  can  be  separated
 into two groups.  Services in the first group are called multi-threaded
 and they require the forking of a new server process for each new  con-
@@ -36,7 +48,7 @@ is not limited to services listed in /etc/services.  Therefore, anybody
 
 以下内容转载自 [linuxfromscratch](http://www.linuxfromscratch.org/blfs/view/6.3/server/xinetd.html "xinetd")  
 
-0. xinetd.conf文件    
+1. xinetd.conf文件    
 
 ```shell
 cat > /etc/xinetd.conf << "EOF"
@@ -58,9 +70,9 @@ defaults
 includedir /etc/xinetd.d
 # End /etc/xinetd
 EOF
-```   
+```
 
-0. 常见服务项配置    
+## 常见服务项配置    
 
 ```shell
 install -v -d -m755 /etc/xinetd.d &&
@@ -480,10 +492,10 @@ service irc
 EOF
 ```
 
-3. 使用方式  
+## 使用方式  
 若要激活服务，将配置文件中的`disable = yes`替换为`disable  = no`
 重新启动`xinetd.service`
 
-4. 权限问题
+## 权限问题
   1. `echo rsh >>/etc/securetty`
   2. 注释/etc/pam.d/目录下服务授权配置（待展开）

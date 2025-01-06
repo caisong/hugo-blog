@@ -1,8 +1,20 @@
 ---
-title: set_ip_addr_on_boot
-date: 2017-03-13 22:29:19
-tags: shell, update-rc.d, systemctl
-category: linux
+title: 启动时设置IP
+date: 2017-03-13T22:29:19+08:00
+lastmod: 2017-03-13T22:29:19+08:00
+author: Cai Song
+# avatar: /img/author.jpg
+# authorlink: https://author.site
+cover: /img/cover.jpg
+# images:
+#   - /img/cover.jpg
+categories:
+  - 运维
+tags:
+  - shell
+  - systemctl
+# nolastmod: true
+draft: false
 ---
 
 ## update-rc.d
@@ -46,5 +58,4 @@ WantedBy=multi-user.target
 ```bash
 systemctl enable setipaddr.service
 ```
-
 

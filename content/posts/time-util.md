@@ -1,9 +1,23 @@
 ---
 title: 时间相关函数
-date: 2016-12-19 22:44:11
-tags: time
-category: program
+date: 2016-12-1T22:44:11+08:00
+lastmod: 2016-12-1T22:44:115+08:00
+author: Cai Song
+# avatar: /img/author.jpg
+# authorlink: https://author.site
+cover: /img/cover.jpg
+# images:
+#   - /img/cover.jpg
+categories:
+  - 编程
+tags:
+  - C
+  - linux
+# nolastmod: true
+draft: false
 ---
+
+C 时间转换
 
 ```c
 #incldue <time.h>
@@ -59,5 +73,3 @@ int clock_getres(clockid_t clock_id, struct timespec *tsp); //设置指定时钟
 int clock_settime(clockid_t clodk_id, const struct timespec *tsp);//设置时钟时间
 int gettimeofday(struct timeval *restrict tp, void *restrict tzp);//获取当前时间，与其他相同作用函数相比，精度较高
 ```
-
-![time_util](/images/time_util.jpg)

@@ -1,7 +1,19 @@
 ---
 title: django URL 匹配及参数传递
-date: 2018-10-15 21:35:39
-tags: django
+date: 2018-10-15T21:35:39+08:00
+lastmod: 2024-10-15T21:35:39+08:00
+author: Cai Song
+# avatar: /img/author.jpg
+# authorlink: https://author.site
+cover: /img/cover.jpg
+# images:
+#   - /img/cover.jpg
+categories:
+  - django
+tags:
+  - python
+# nolastmod: true
+draft: false
 ---
 
 ## URL 匹配
@@ -30,5 +42,4 @@ urlpatterns = [
     HttpRequest.body
     The raw HTTP request body as a byte string. This is useful for processing data in different ways than conventional HTML forms: binary images, XML payload etc. For processing conventional form data, use HttpRequest.POST.
     ```
-
 
