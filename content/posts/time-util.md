@@ -1,7 +1,7 @@
 ---
 title: 时间相关函数
-date: 2016-12-1T22:44:11+08:00
-lastmod: 2016-12-1T22:44:115+08:00
+date: 2016-12-19T22:44:11+08:00
+lastmod: 2016-12-19T22:44:11+08:00
 author: Cai Song
 # avatar: /img/author.jpg
 # authorlink: https://author.site
