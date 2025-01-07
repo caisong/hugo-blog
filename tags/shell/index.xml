@@ -133,7 +133,43 @@ struct MyData
 };
 ```
 &lt;/code>&lt;/pre>
-&lt;p>在结构中，data是一个数组名，但该数组没有元素，该数组的真实地址紧随结构体MyData之后，而这个地址就是结构体后面数据的。&lt;em>如果给这个结构体分配的内容大于这个结构体实际大小，后面多余的部分就是这个data的内容。&lt;/em>&lt;/p></description></item><item><title>Tpm Env</title><link>https://caisong.github.io/posts/tpm-env/</link><pubDate>Sun, 21 May 2017 17:44:32 +0800</pubDate><guid>https://caisong.github.io/posts/tpm-env/</guid><description>&lt;p>tpm使用相关命令&lt;/p></description></item><item><title>Shell命令行快捷键</title><link>https://caisong.github.io/posts/shell-2/</link><pubDate>Thu, 28 Jul 2016 22:06:41 +0000</pubDate><guid>https://caisong.github.io/posts/shell-2/</guid><description>&lt;ul>
+&lt;p>在结构中，data是一个数组名，但该数组没有元素，该数组的真实地址紧随结构体MyData之后，而这个地址就是结构体后面数据的。&lt;em>如果给这个结构体分配的内容大于这个结构体实际大小，后面多余的部分就是这个data的内容。&lt;/em>&lt;/p></description></item><item><title>Tpm Env</title><link>https://caisong.github.io/posts/tpm-env/</link><pubDate>Sun, 21 May 2017 17:44:32 +0800</pubDate><guid>https://caisong.github.io/posts/tpm-env/</guid><description>&lt;p>tpm使用相关命令&lt;/p></description></item><item><title>启动时设置IP</title><link>https://caisong.github.io/posts/set-ip-addr-on-boot/</link><pubDate>Mon, 13 Mar 2017 22:29:19 +0800</pubDate><guid>https://caisong.github.io/posts/set-ip-addr-on-boot/</guid><description>&lt;h2 id="update-rcd">update-rc.d&lt;/h2>
+&lt;ul>
+&lt;li>the script (setipaddr.sh)&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#! /bin/sh
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>PATH&lt;span style="color:#f92672">=&lt;/span>/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/bin:$PATH
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ifconfig eth0 192.168.10.1/24
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>update-rc.d setting&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>chmod +x setipaddr.sh
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mv setipaddr.sh /etc/init.d
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>update-rc.d setipaddr.sh defaults
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>run level&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># If defaults is used then update-rc.d will make links to start the service in runlevels 2345 and to stop the service in runlevels 016&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>runlevel &lt;span style="color:#75715e"># get current level&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="systemctl">systemctl&lt;/h2>
+&lt;ul>
+&lt;li>service file (/etc/systemd/system/setipaddr.service)&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">[&lt;/span>Unit&lt;span style="color:#f92672">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Description&lt;span style="color:#f92672">=&lt;/span>set ip on boot
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>After&lt;span style="color:#f92672">=&lt;/span>network.target
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">[&lt;/span>Service&lt;span style="color:#f92672">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Type&lt;span style="color:#f92672">=&lt;/span>oneshot
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ExecStart&lt;span style="color:#f92672">=&lt;/span>/opt/bin/setipaddr.sh
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">[&lt;/span>Install&lt;span style="color:#f92672">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>WantedBy&lt;span style="color:#f92672">=&lt;/span>multi-user.target
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>systemctl setting&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>systemctl enable setipaddr.service
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Shell命令行快捷键</title><link>https://caisong.github.io/posts/shell/</link><pubDate>Thu, 28 Jul 2016 22:06:41 +0800</pubDate><guid>https://caisong.github.io/posts/shell/</guid><description>&lt;ul>
 &lt;li>C-a : 光标回到命令行首（a:ahead)&lt;/li>
 &lt;li>C-e : 光标回到命令行尾（e:end)&lt;/li>
 &lt;li>C-b : 光标后退一个字符（b:backward)&lt;/li>

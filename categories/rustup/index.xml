@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Rustup on Caisong's Blog</title><link>https://caisong.github.io/categories/rustup/</link><description>Recent content in Rustup on Caisong's Blog</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Wed, 09 Oct 2024 21:41:30 +0800</lastBuildDate><atom:link href="https://caisong.github.io/categories/rustup/index.xml" rel="self" type="application/rss+xml"/><item><title>windows romt构建rustup本地镜像</title><link>https://caisong.github.io/posts/rustup%E6%9C%AC%E5%9C%B0%E9%95%9C%E5%83%8F/</link><pubDate>Wed, 09 Oct 2024 21:41:30 +0800</pubDate><guid>https://caisong.github.io/posts/rustup%E6%9C%AC%E5%9C%B0%E9%95%9C%E5%83%8F/</guid><description>&lt;p>基于外部工具&lt;code>romt&lt;/code>实现的,不过最终也没成功。。。。。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cmd" data-lang="cmd">&lt;span style="display:flex;">&lt;span># 下载toolchain
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>e:\romt-0.4.0-x86_64-windows.exe&lt;span style="color:#75715e"> toolchain -v -s stable -t x86_64-pc-windows-gnu --url https://mirror.nju.edu.cn/rustup/dist --no-signature download&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>#下载rustup
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># nju镜像路径不同，ustc镜像一样的
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>e:\romt-0.4.0-x86_64-windows.exe&lt;span style="color:#75715e"> toolchain -v -s stable -t x86_64-pc-windows-gnu --url https://mirror.nju.edu.cn/rustup/rustup --no-signature download&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># rustup缺少校验文件，直接下载后放对应目录
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># create mirror
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># 不使用镜像速度比较慢
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>e:\romt-0.4.0-x86_64-windows.exe&lt;span style="color:#75715e"> crate init --index-url https://mirror.nju.edu.cn/git/crates.io-index.git&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>#同步
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>e:\romt-0.4.0-x86_64-windows.exe&lt;span style="color:#75715e"> crate -v --keep-going --index-url https://mirror.nju.edu.cn/git/crates.io-index.git update &lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>E:\mirror&lt;span style="color:#75715e">&amp;gt;e:\romt-0.4.0-x86_64-windows.exe crate -v --keep-going --index-url https://mirror.nju.edu.cn/git/crates.io-index.git --crates-url https://mirror.nju.edu.cn/git/crates.io-index.git/ --assume-ok --bundle-path=e:\mirror\crates.tar.gz&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 打包&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># rustup缺少256文件，powershell执行&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Get-FileHash -Algorithm SHA256 -Path .\rustup-init.exe|out-file -Encoding ASCII .\rustup-init.exe.sha256
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>romt rustup -v -s stable -t x86_64-pc-windows-gnu --assume-ok pack
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># toolchains缺少asc文件，直接no-signature&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>romt toolchain -v -s stable -t x86_64-pc-windows-gnu --no-signature pack
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>```
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

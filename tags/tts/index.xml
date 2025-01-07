@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tts on Caisong's Blog</title><link>https://caisong.github.io/tags/tts/</link><description>Recent content in Tts on Caisong's Blog</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Thu, 22 Dec 2016 22:39:11 +0800</lastBuildDate><atom:link href="https://caisong.github.io/tags/tts/index.xml" rel="self" type="application/rss+xml"/><item><title>Windows 安装 Text-to-Speech</title><link>https://caisong.github.io/posts/tts/</link><pubDate>Thu, 22 Dec 2016 22:39:11 +0800</pubDate><guid>https://caisong.github.io/posts/tts/</guid><description>&lt;p>&lt;strong>Win10、Win8摘录自官方文档，Win10 已验证。Win7未尝试！&lt;/strong>&lt;/p>
+&lt;!-- raw HTML omitted -->
+&lt;h2 id="install-a-new-text-to-speech-language-in-windows-10">Install a new Text-to-Speech language in Windows 10&lt;/h2>
+&lt;p>On any edition of Windows 10, click &lt;strong>Start&lt;/strong> &amp;gt; &lt;strong>Settings&lt;/strong>, and the do the following:&lt;/p>
+&lt;ol>
+&lt;li>Select the &lt;strong>Start&lt;/strong> button, and then select &lt;strong>Settings&lt;/strong> &amp;gt; &lt;strong>Time &amp;amp; Language&lt;/strong> &amp;gt; &lt;strong>Region &amp;amp; Language&lt;/strong>.&lt;/li>
+&lt;li>Select &lt;strong>Add a language&lt;/strong> and choose the language you want from the list. Only languages listed in the table below will have Text-to-Speech capabilities.&lt;/li>
+&lt;li>After the new language has been installed (this might take a while), select it in the &lt;strong>Region &amp;amp; Language&lt;/strong> list, and then select &lt;strong>Options&lt;/strong>.&lt;/li>
+&lt;li>Under &lt;strong>Language options&lt;/strong> &amp;gt; &lt;strong>Speech&lt;/strong>, select &lt;strong>Download&lt;/strong>.&lt;/li>
+&lt;/ol>
+&lt;h2 id="install-a-new-text-to-speech-language-in-windows-81">Install a new Text-to-Speech language in Windows 8.1&lt;/h2>
+&lt;p>On any edition of Windows 8.1, do the following:&lt;/p></description></item></channel></rss>

@@ -115,4 +115,22 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo -e &lt;span style="color:#ae81ff">\\&lt;/span>t &lt;span style="color:#e6db74">${&lt;/span>lyric2%kitty*&lt;span style="color:#e6db74">}&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo -e &lt;span style="color:#e6db74">&amp;#34;2. 从结尾截取最多匹配&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo -e &lt;span style="color:#ae81ff">\\&lt;/span>t &lt;span style="color:#e6db74">${&lt;/span>lyric2%%kitty*&lt;span style="color:#e6db74">}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>输出&lt;/p></description></item></channel></rss>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>输出&lt;/p></description></item><item><title>Shell命令行快捷键</title><link>https://caisong.github.io/posts/shell/</link><pubDate>Thu, 28 Jul 2016 22:06:41 +0800</pubDate><guid>https://caisong.github.io/posts/shell/</guid><description>&lt;ul>
+&lt;li>C-a : 光标回到命令行首（a:ahead)&lt;/li>
+&lt;li>C-e : 光标回到命令行尾（e:end)&lt;/li>
+&lt;li>C-b : 光标后退一个字符（b:backward)&lt;/li>
+&lt;li>C-f : 光标回到命令行首（f:forward)&lt;/li>
+&lt;li>C-p : 上一个使用的历史命令 (p: previous)&lt;/li>
+&lt;li>C-n : 下一个使用的历史命令 (n: next)&lt;/li>
+&lt;li>C-r : 快速检索历史命令 (r: retrieve)&lt;/li>
+&lt;li>C-h : 删除光标前一个字符&lt;/li>
+&lt;li>C-d : 删除光标后一个字符&lt;/li>
+&lt;li>C-w : 删除光标前一个word&lt;/li>
+&lt;li>C-k : 删除光标后的所有字符&lt;/li>
+&lt;li>C-u : 删除命令行字符&lt;/li>
+&lt;li>C-y : 粘贴 C-u, C-K, C-W删除的文本&lt;/li>
+&lt;li>C-t : 与前一字符交换&lt;/li>
+&lt;li>C-i : Tab&lt;/li>
+&lt;li>C-m : Enter&lt;/li>
+&lt;li>C-o : Enter&lt;/li>
+&lt;/ul></description></item></channel></rss>

@@ -135,7 +135,7 @@
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#960050;background-color:#1e0010">&lt;/span>&lt;span style="color:#66d9ef">RUN&lt;/span> tar xvf pktgen-dpdk-pktgen-24.05.5.tar.gz &lt;span style="color:#f92672">&amp;amp;&amp;amp;&lt;/span> cd pktgen-dpdk-pktgen-24.05.5 &lt;span style="color:#f92672">&amp;amp;&amp;amp;&lt;/span> sed -i &lt;span style="color:#e6db74">&amp;#34;168s/%l&amp;#39;d/%d/&amp;#34;&lt;/span> app/pktgen-port-cfg.c &lt;span style="color:#f92672">&amp;amp;&amp;amp;&lt;/span> meson build &lt;span style="color:#f92672">&amp;amp;&amp;amp;&lt;/span> ninja -C build &lt;span style="color:#f92672">&amp;amp;&amp;amp;&lt;/span> ninja -C build install&lt;span style="color:#960050;background-color:#1e0010">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#960050;background-color:#1e0010">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#960050;background-color:#1e0010">&lt;/span>&lt;span style="color:#66d9ef">CMD&lt;/span> [&lt;span style="color:#e6db74">&amp;#34; /sbin/init&amp;#34;&lt;/span>]&lt;span style="color:#960050;background-color:#1e0010">
-&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>文件监听文件</title><link>https://caisong.github.io/posts/%E6%96%87%E4%BB%B6%E7%9B%91%E5%90%AC%E6%96%87%E4%BB%B6/</link><pubDate>Wed, 10 Jul 2024 21:42:32 +0800</pubDate><guid>https://caisong.github.io/posts/%E6%96%87%E4%BB%B6%E7%9B%91%E5%90%AC%E6%96%87%E4%BB%B6/</guid><description>&lt;p>文件服务器，支持监控文件变化，实现差量同步&lt;/p>
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>使用工厂模式创建db对象</title><link>https://caisong.github.io/posts/1.%E4%BD%BF%E7%94%A8%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%E5%88%9B%E5%BB%BAdb%E5%AF%B9%E8%B1%A1/</link><pubDate>Wed, 31 Jul 2024 21:42:03 +0800</pubDate><guid>https://caisong.github.io/posts/1.%E4%BD%BF%E7%94%A8%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%E5%88%9B%E5%BB%BAdb%E5%AF%B9%E8%B1%A1/</guid><description>&lt;p>Cut out summary from your post content here.&lt;/p></description></item><item><title>文件监听文件</title><link>https://caisong.github.io/posts/%E6%96%87%E4%BB%B6%E7%9B%91%E5%90%AC%E6%96%87%E4%BB%B6/</link><pubDate>Wed, 10 Jul 2024 21:42:32 +0800</pubDate><guid>https://caisong.github.io/posts/%E6%96%87%E4%BB%B6%E7%9B%91%E5%90%AC%E6%96%87%E4%BB%B6/</guid><description>&lt;p>文件服务器，支持监控文件变化，实现差量同步&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">package&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> (
@@ -301,6 +301,209 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#a6e22e">e&lt;/span>.&lt;span style="color:#a6e22e">Logger&lt;/span>.&lt;span style="color:#a6e22e">Fatal&lt;/span>(&lt;span style="color:#a6e22e">e&lt;/span>.&lt;span style="color:#a6e22e">Start&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;:1323&amp;#34;&lt;/span>))
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Rust c交互</title><link>https://caisong.github.io/posts/rustc%E4%BA%A4%E4%BA%92/</link><pubDate>Tue, 18 Apr 2023 21:41:30 +0800</pubDate><guid>https://caisong.github.io/posts/rustc%E4%BA%A4%E4%BA%92/</guid><description>&lt;h2 id="rust-调用-c">rust 调用 c&lt;/h2>
+&lt;ul>
+&lt;li>调用普通&lt;code>c&lt;/code>函数&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">int&lt;/span> &lt;span style="color:#a6e22e">add&lt;/span>(&lt;span style="color:#66d9ef">int&lt;/span> a, &lt;span style="color:#66d9ef">int&lt;/span> b) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> a &lt;span style="color:#f92672">+&lt;/span> b;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-rust" data-lang="rust">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">// main.rs
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">//指定链接到C 库
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#75715e">#[link(name = &lt;/span>&lt;span style="color:#e6db74">&amp;#34;add&amp;#34;&lt;/span>&lt;span style="color:#75715e">)]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">extern&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">fn&lt;/span> &lt;span style="color:#a6e22e">add&lt;/span>(a: &lt;span style="color:#66d9ef">i32&lt;/span>, b: &lt;span style="color:#66d9ef">i32&lt;/span>) -&amp;gt; &lt;span style="color:#66d9ef">i32&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">fn&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">let&lt;/span> result &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">unsafe&lt;/span> { add(&lt;span style="color:#ae81ff">1&lt;/span>, &lt;span style="color:#ae81ff">2&lt;/span>) };
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> println!(&lt;span style="color:#e6db74">&amp;#34;1 + 2 = &lt;/span>&lt;span style="color:#e6db74">{}&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>, result);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 编译C库&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ gcc -c -fPIC add.c -o add.o
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ gcc add.o -shared -o libadd.so
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># rust 链接&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ rustc main.rs -L /path/to/library/folder -l add
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ ./main
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">1&lt;/span> + 2 &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">3&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>调用C结构体&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#include&lt;/span> &lt;span style="color:#75715e">&amp;lt;stdio.h&amp;gt;&lt;/span>&lt;span style="color:#75715e">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">typedef&lt;/span> &lt;span style="color:#66d9ef">struct&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">int&lt;/span> x;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">int&lt;/span> y;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>} Point;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">print_point&lt;/span>(Point&lt;span style="color:#f92672">*&lt;/span> p) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">printf&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;Point: (%d, %d)&lt;/span>&lt;span style="color:#ae81ff">\n&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>, p&lt;span style="color:#f92672">-&amp;gt;&lt;/span>x, p&lt;span style="color:#f92672">-&amp;gt;&lt;/span>y);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-rust" data-lang="rust">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">// main.rs
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#[repr(C)]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">struct&lt;/span> &lt;span style="color:#a6e22e">Point&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> x: &lt;span style="color:#66d9ef">i32&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> y: &lt;span style="color:#66d9ef">i32&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#[link(name = &lt;/span>&lt;span style="color:#e6db74">&amp;#34;mylib&amp;#34;&lt;/span>&lt;span style="color:#75715e">)]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">extern&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">fn&lt;/span> &lt;span style="color:#a6e22e">print_point&lt;/span>(p: &lt;span style="color:#f92672">*&lt;/span>&lt;span style="color:#66d9ef">const&lt;/span> Point);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">fn&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">let&lt;/span> p &lt;span style="color:#f92672">=&lt;/span> Point { x: &lt;span style="color:#ae81ff">10&lt;/span>, y: &lt;span style="color:#ae81ff">20&lt;/span> };
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// 转换 Point 结构体为 C 的结构体指针类型
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">let&lt;/span> c_p &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#f92672">&amp;amp;&lt;/span>p &lt;span style="color:#66d9ef">as&lt;/span> &lt;span style="color:#f92672">*&lt;/span>&lt;span style="color:#66d9ef">const&lt;/span> Point;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// 调用 C 函数
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">unsafe&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print_point(c_p);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>调用C内存分配&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-rust" data-lang="rust">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">// main.rs
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">use&lt;/span> libc::{malloc, free};
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">use&lt;/span> std::ffi::CString;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#[link(name = &lt;/span>&lt;span style="color:#e6db74">&amp;#34;mylib&amp;#34;&lt;/span>&lt;span style="color:#75715e">)]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">extern&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">fn&lt;/span> &lt;span style="color:#a6e22e">process_string&lt;/span>(s: &lt;span style="color:#f92672">*&lt;/span>&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#66d9ef">u8&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">fn&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">let&lt;/span> s &lt;span style="color:#f92672">=&lt;/span> CString::new(&lt;span style="color:#e6db74">&amp;#34;Hello, world!&amp;#34;&lt;/span>).unwrap();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// 计算字符串的长度（包括终止符）
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">let&lt;/span> len &lt;span style="color:#f92672">=&lt;/span> s.as_bytes().len() &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// 在 C 中分配足够的空间来保存字符串
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">let&lt;/span> c_str &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">unsafe&lt;/span> { malloc(len) &lt;span style="color:#66d9ef">as&lt;/span> &lt;span style="color:#f92672">*&lt;/span>&lt;span style="color:#66d9ef">mut&lt;/span> &lt;span style="color:#66d9ef">u8&lt;/span> };
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// 把 Rust 字符串复制到 C 字符串中
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">unsafe&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> std::ptr::copy_nonoverlapping(s.as_ptr(), c_str, len);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// 调用 C 函数并传递指向 C 字符串的指针
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">unsafe&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> process_string(c_str);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// 释放由 C 分配的内存
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">unsafe&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> free(c_str &lt;span style="color:#66d9ef">as&lt;/span> &lt;span style="color:#f92672">*&lt;/span>&lt;span style="color:#66d9ef">mut&lt;/span> libc::c_void);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>调用C自定义内存分配函数&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-rust" data-lang="rust">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">// main.rs
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">use&lt;/span> std::os::raw::c_void;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">use&lt;/span> std::alloc::{Layout, alloc, dealloc};
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">extern&lt;/span> &lt;span style="color:#e6db74">&amp;#34;C&amp;#34;&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">fn&lt;/span> &lt;span style="color:#a6e22e">my_malloc&lt;/span>(size: &lt;span style="color:#66d9ef">usize&lt;/span>) -&amp;gt; &lt;span style="color:#f92672">*&lt;/span>&lt;span style="color:#66d9ef">mut&lt;/span> c_void;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">fn&lt;/span> &lt;span style="color:#a6e22e">my_free&lt;/span>(ptr: &lt;span style="color:#f92672">*&lt;/span>&lt;span style="color:#66d9ef">mut&lt;/span> c_void);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">fn&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">let&lt;/span> size &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">1024&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// 在 Rust 中分配内存
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">let&lt;/span> layout &lt;span style="color:#f92672">=&lt;/span> Layout::from_size_align(size, &lt;span style="color:#ae81ff">1&lt;/span>).unwrap();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">let&lt;/span> ptr &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">unsafe&lt;/span> { my_malloc(size) &lt;span style="color:#66d9ef">as&lt;/span> &lt;span style="color:#f92672">*&lt;/span>&lt;span style="color:#66d9ef">mut&lt;/span> &lt;span style="color:#66d9ef">u8&lt;/span> };
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// 使用 Rust 操作分配的内存
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">for&lt;/span> i &lt;span style="color:#66d9ef">in&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>&lt;span style="color:#f92672">..&lt;/span>size {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">unsafe&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">*&lt;/span>ptr.offset(i &lt;span style="color:#66d9ef">as&lt;/span> &lt;span style="color:#66d9ef">isize&lt;/span>) &lt;span style="color:#f92672">=&lt;/span> i &lt;span style="color:#66d9ef">as&lt;/span> &lt;span style="color:#66d9ef">u8&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// 调用自定义的 C 函数释放内存
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">unsafe&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> my_free(ptr &lt;span style="color:#66d9ef">as&lt;/span> &lt;span style="color:#f92672">*&lt;/span>&lt;span style="color:#66d9ef">mut&lt;/span> c_void);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="c调用rust">C调用rust&lt;/h2>
+&lt;ul>
+&lt;li>&lt;code>rust&lt;/code>代码&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-rust" data-lang="rust">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#[no_mangle]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">pub&lt;/span> &lt;span style="color:#66d9ef">extern&lt;/span> &lt;span style="color:#e6db74">&amp;#34;C&amp;#34;&lt;/span> &lt;span style="color:#66d9ef">fn&lt;/span> &lt;span style="color:#a6e22e">add_numbers&lt;/span>(a:&lt;span style="color:#66d9ef">i32&lt;/span>, b:&lt;span style="color:#66d9ef">i32&lt;/span>) -&amp;gt; &lt;span style="color:#66d9ef">i32&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> a &lt;span style="color:#f92672">+&lt;/span> b
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>C 使用动态库方式调用rust&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>rustc --crate-type&lt;span style="color:#f92672">=&lt;/span>cdylib my_lib.rs
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#include&lt;/span> &lt;span style="color:#75715e">&amp;lt;stdio.h&amp;gt;&lt;/span>&lt;span style="color:#75715e">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#include&lt;/span> &lt;span style="color:#75715e">&amp;lt;stdint.h&amp;gt;&lt;/span>&lt;span style="color:#75715e">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#include&lt;/span> &lt;span style="color:#75715e">&amp;lt;stdlib.h&amp;gt;&lt;/span>&lt;span style="color:#75715e">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#include&lt;/span> &lt;span style="color:#75715e">&amp;lt;dlfcn.h&amp;gt;&lt;/span>&lt;span style="color:#75715e">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">typedef&lt;/span> &lt;span style="color:#a6e22e">void&lt;/span> (&lt;span style="color:#f92672">*&lt;/span>add_fn)(&lt;span style="color:#66d9ef">int32_t&lt;/span>, &lt;span style="color:#66d9ef">int32_t&lt;/span>, &lt;span style="color:#66d9ef">int32_t&lt;/span>&lt;span style="color:#f92672">*&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">int&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">void&lt;/span>&lt;span style="color:#f92672">*&lt;/span> handle &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">dlopen&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;./libmylib.so&amp;#34;&lt;/span>, RTLD_LAZY &lt;span style="color:#f92672">|&lt;/span> RTLD_GLOBAL);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> (&lt;span style="color:#f92672">!&lt;/span>handle) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">printf&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;Failed to open library: %s&lt;/span>&lt;span style="color:#ae81ff">\n&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>, &lt;span style="color:#a6e22e">dlerror&lt;/span>());
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> add_fn add &lt;span style="color:#f92672">=&lt;/span> (add_fn)&lt;span style="color:#a6e22e">dlsym&lt;/span>(handle, &lt;span style="color:#e6db74">&amp;#34;add&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> (&lt;span style="color:#f92672">!&lt;/span>add) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">printf&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;Failed to find symbol: %s&lt;/span>&lt;span style="color:#ae81ff">\n&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>, &lt;span style="color:#a6e22e">dlerror&lt;/span>());
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">dlclose&lt;/span>(handle);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">int32_t&lt;/span> a &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">int32_t&lt;/span> b &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">2&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">int32_t&lt;/span> result;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">int32_t&lt;/span> &lt;span style="color:#f92672">*&lt;/span>result_ptr &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#f92672">&amp;amp;&lt;/span>result;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">add&lt;/span>(a, b, result_ptr);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">printf&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;%d + %d = %d&lt;/span>&lt;span style="color:#ae81ff">\n&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>, a, b, result);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">dlclose&lt;/span>(handle);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>C 使用静态库方式调用rust&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>rustc --crate-type&lt;span style="color:#f92672">=&lt;/span>staticlib my_lib.rs
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#include&lt;/span> &lt;span style="color:#75715e">&amp;lt;stdio.h&amp;gt;&lt;/span>&lt;span style="color:#75715e">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#include&lt;/span> &lt;span style="color:#75715e">&amp;lt;stdint.h&amp;gt;&lt;/span>&lt;span style="color:#75715e">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">extern&lt;/span> &lt;span style="color:#66d9ef">int32_t&lt;/span> &lt;span style="color:#a6e22e">add&lt;/span>(&lt;span style="color:#66d9ef">int32_t&lt;/span>, &lt;span style="color:#66d9ef">int32_t&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">int&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">int32_t&lt;/span> a &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">int32_t&lt;/span> b &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">2&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">int32_t&lt;/span> result &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">add&lt;/span>(a, b);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">printf&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;%d + %d = %d&lt;/span>&lt;span style="color:#ae81ff">\n&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>, a, b, result);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>C 直接调用rust代码&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#include&lt;/span> &lt;span style="color:#75715e">&amp;lt;stdio.h&amp;gt;&lt;/span>&lt;span style="color:#75715e">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#include&lt;/span> &lt;span style="color:#75715e">&amp;lt;stdint.h&amp;gt;&lt;/span>&lt;span style="color:#75715e">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">int32_t&lt;/span> &lt;span style="color:#a6e22e">add&lt;/span>(&lt;span style="color:#66d9ef">int32_t&lt;/span>, &lt;span style="color:#66d9ef">int32_t&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">int&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">int32_t&lt;/span> a &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">int32_t&lt;/span> b &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">2&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">int32_t&lt;/span> result &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">add&lt;/span>(a, b);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">printf&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;%d + %d = %d&lt;/span>&lt;span style="color:#ae81ff">\n&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>, a, b, result);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Makefile通用模板</title><link>https://caisong.github.io/posts/makefile/</link><pubDate>Fri, 23 Sep 2022 21:41:09 +0800</pubDate><guid>https://caisong.github.io/posts/makefile/</guid><description>&lt;p>简单makefile套用模板&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 编译当前文件夹下的所有cpp文件&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>CC&lt;span style="color:#f92672">=&lt;/span>g++ -std&lt;span style="color:#f92672">=&lt;/span>c++11
@@ -365,7 +568,152 @@
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>cmake 配置参数</title><link>https://caisong.github.io/posts/cmake/</link><pubDate>Fri, 03 Sep 2021 21:40:36 +0800</pubDate><guid>https://caisong.github.io/posts/cmake/</guid><description>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>cmake -DCMAKE_INSTALL_PREFIX:PATH&lt;span style="color:#f92672">=&lt;/span> 
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># is equal to&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>./configure --prefix&lt;span style="color:#f92672">=&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>c++运算符优先级</title><link>https://caisong.github.io/posts/c-operator/</link><pubDate>Mon, 23 Jul 2018 21:08:26 +0800</pubDate><guid>https://caisong.github.io/posts/c-operator/</guid><description>&lt;p>&lt;a href="https://zh.cppreference.com/w/cpp/language/operator_precedence" title="c++ operator">运算符优先级&lt;/a>&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>openssl evp加解密统一接口</title><link>https://caisong.github.io/posts/openssl-evp/</link><pubDate>Thu, 27 Sep 2018 21:54:44 +0800</pubDate><guid>https://caisong.github.io/posts/openssl-evp/</guid><description>&lt;p>最近使用了openssl的AES解密函数，遇到些问题。&lt;/p>
+&lt;h2 id="代码示例">代码示例&lt;/h2>
+&lt;p>以下代码结构摘录自&lt;a href="https://linux.die.net/man/3/evp_decryptfinal">man page&lt;/a>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">int&lt;/span> &lt;span style="color:#a6e22e">do_crypt&lt;/span>(FILE &lt;span style="color:#f92672">*&lt;/span>in, FILE &lt;span style="color:#f92672">*&lt;/span>out, &lt;span style="color:#66d9ef">int&lt;/span> do_encrypt)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">/* Allow enough space in output buffer for additional block */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> inbuf[&lt;span style="color:#ae81ff">1024&lt;/span>], outbuf[&lt;span style="color:#ae81ff">1024&lt;/span> &lt;span style="color:#f92672">+&lt;/span> EVP_MAX_BLOCK_LENGTH];
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">int&lt;/span> inlen, outlen;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">/* Bogus key and IV: we&amp;#39;d normally set these from
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * another source.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">unsigned&lt;/span> &lt;span style="color:#66d9ef">char&lt;/span> key[] &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;0123456789&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">unsigned&lt;/span> &lt;span style="color:#66d9ef">char&lt;/span> iv[] &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;12345678&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">/* Don&amp;#39;t set key or IV because we will modify the parameters */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">EVP_CIPHER_CTX_init&lt;/span>(&lt;span style="color:#f92672">&amp;amp;&lt;/span>ctx);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">EVP_CipherInit_ex&lt;/span>(&lt;span style="color:#f92672">&amp;amp;&lt;/span>ctx, &lt;span style="color:#a6e22e">EVP_rc2&lt;/span>(), NULL, NULL, NULL, do_encrypt);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">EVP_CIPHER_CTX_set_key_length&lt;/span>(&lt;span style="color:#f92672">&amp;amp;&lt;/span>ctx, &lt;span style="color:#ae81ff">10&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">/* We finished modifying parameters so now we can set key and IV */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">EVP_CipherInit_ex&lt;/span>(&lt;span style="color:#f92672">&amp;amp;&lt;/span>ctx, NULL, NULL, key, iv, do_encrypt);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span>(;;)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> inlen &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">fread&lt;/span>(inbuf, &lt;span style="color:#ae81ff">1&lt;/span>, &lt;span style="color:#ae81ff">1024&lt;/span>, in);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span>(inlen &lt;span style="color:#f92672">&amp;lt;=&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>) &lt;span style="color:#66d9ef">break&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span>(&lt;span style="color:#f92672">!&lt;/span>&lt;span style="color:#a6e22e">EVP_CipherUpdate&lt;/span>(&lt;span style="color:#f92672">&amp;amp;&lt;/span>ctx, outbuf, &lt;span style="color:#f92672">&amp;amp;&lt;/span>outlen, inbuf, inlen))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">/* Error */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">EVP_CIPHER_CTX_cleanup&lt;/span>(&lt;span style="color:#f92672">&amp;amp;&lt;/span>ctx);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">fwrite&lt;/span>(outbuf, &lt;span style="color:#ae81ff">1&lt;/span>, outlen, out);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span>(&lt;span style="color:#f92672">!&lt;/span>&lt;span style="color:#a6e22e">EVP_CipherFinal_ex&lt;/span>(&lt;span style="color:#f92672">&amp;amp;&lt;/span>ctx, outbuf, &lt;span style="color:#f92672">&amp;amp;&lt;/span>outlen))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">/* Error */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">EVP_CIPHER_CTX_cleanup&lt;/span>(&lt;span style="color:#f92672">&amp;amp;&lt;/span>ctx);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">fwrite&lt;/span>(outbuf, &lt;span style="color:#ae81ff">1&lt;/span>, outlen, out);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">EVP_CIPHER_CTX_cleanup&lt;/span>(&lt;span style="color:#f92672">&amp;amp;&lt;/span>ctx);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="问题记录">问题记录&lt;/h2>
+&lt;p>参考&lt;a href="https://blog.csdn.net/weixiao2015/article/details/79487775">Openssl Evp接口以及EVP_DecryptFinal使用细节&lt;/a>&lt;/p></description></item><item><title>rtp协议</title><link>https://caisong.github.io/posts/rtp/</link><pubDate>Mon, 17 Sep 2018 21:51:27 +0800</pubDate><guid>https://caisong.github.io/posts/rtp/</guid><description>&lt;ul>
+&lt;li>部分内容转载自：&lt;a href="https://blog.csdn.net/leixiaohua1020/article/details/50535230" title="leixiaohua">雷霄骅CSDN博客&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="固定头部格式">固定头部格式&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plain" data-lang="plain">&lt;span style="display:flex;">&lt;span>		1 2 3 4
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		0 1 2 3 4 5 6 7 0 1 2 3 4 5 6 7 0 1 2 3 4 5 6 7 0 1 2 3 4 5 6 7
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		|V=2|P|X| CC |M| PT | sequence number |
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		| timestamp |
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		| synchronization source (SSRC) | 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		| contributing source (CSRC) | 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>V：RTP协议的版本号，占2位，当前协议版本号为2&lt;/li>
+&lt;li>P：填充标志，占1位，如果P=1，则在该报文的尾部填充一个或多个额外的八位组，它们不是有效载荷的一部分。&lt;/li>
+&lt;li>X：扩展标志，占1位，如果X=1，则在RTP报头后跟有一个扩展报头&lt;/li>
+&lt;li>CC：CSRC计数器，占4位，指示CSRC 标识符的个数&lt;/li>
+&lt;li>M: 标记，占1位，不同的有效载荷有不同的含义，对于视频，标记一帧的结束；对于音频，标记会话的开始。&lt;/li>
+&lt;li>PT: 有效荷载类型，占7位，用于说明RTP报文中有效载荷的类型，如GSM音频、JPEG图像等,在流媒体中大部分是用来区分音频流和视频流的，这样便于客户端进行解析。&lt;/li>
+&lt;li>序列号：占16位，用于标识发送者所发送的RTP报文的序列号，每发送一个报文，序列号增1。这个字段当下层的承载协议用UDP的时候，网络状况不好的时候可以用来检查丢包。
+同时出现网络抖动的情况可以用来对数据进行重新排序，序列号的初始值是随机的，同时音频包和视频包的sequence是分别记数的。&lt;/li>
+&lt;li>时戳(Timestamp)：占32位，必须使用90 kHz 时钟频率。时戳反映了该RTP报文的第一个八位组的采样时刻。接收者使用时戳来计算延迟和延迟抖动，并进行同步控制。&lt;/li>
+&lt;li>同步信源(SSRC)标识符：占32位，用于标识同步信源。该标识符是随机选择的，参加同一视频会议的两个同步信源不能有相同的SSRC。&lt;/li>
+&lt;li>特约信源(CSRC)标识符：每个CSRC标识符占32位，可以有0～15个。每个CSRC标识了包含在该RTP报文有效载荷中的所有特约信源。&lt;/li>
+&lt;/ul>
+&lt;h2 id="固定头部解析">固定头部解析&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cpp" data-lang="cpp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">typedef&lt;/span> &lt;span style="color:#66d9ef">struct&lt;/span> &lt;span style="color:#a6e22e">_rtp_fixed_header&lt;/span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#75715e">/* byte 0 */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#66d9ef">unsigned&lt;/span> &lt;span style="color:#66d9ef">char&lt;/span> csrc_len:&lt;span style="color:#ae81ff">4&lt;/span>; &lt;span style="color:#75715e">/* expect 0 */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#66d9ef">unsigned&lt;/span> &lt;span style="color:#66d9ef">char&lt;/span> extension:&lt;span style="color:#ae81ff">1&lt;/span>; &lt;span style="color:#75715e">/* expect 1 */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#66d9ef">unsigned&lt;/span> &lt;span style="color:#66d9ef">char&lt;/span> padding:&lt;span style="color:#ae81ff">1&lt;/span>; &lt;span style="color:#75715e">/* expect 0 */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#66d9ef">unsigned&lt;/span> &lt;span style="color:#66d9ef">char&lt;/span> version:&lt;span style="color:#ae81ff">2&lt;/span>; &lt;span style="color:#75715e">/* expect 2 */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#75715e">/* byte 1 */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#66d9ef">unsigned&lt;/span> &lt;span style="color:#66d9ef">char&lt;/span> payload:&lt;span style="color:#ae81ff">7&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#66d9ef">unsigned&lt;/span> &lt;span style="color:#66d9ef">char&lt;/span> marker:&lt;span style="color:#ae81ff">1&lt;/span>; &lt;span style="color:#75715e">/* expect 1 */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#75715e">/* bytes 2, 3 */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#66d9ef">unsigned&lt;/span> &lt;span style="color:#66d9ef">short&lt;/span> seq_no; 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#75715e">/* bytes 4-7 */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#66d9ef">unsigned&lt;/span> &lt;span style="color:#66d9ef">int&lt;/span> timestamp; 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#75715e">/* bytes 8-11 */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#66d9ef">unsigned&lt;/span> &lt;span style="color:#66d9ef">int&lt;/span> ssrc; &lt;span style="color:#75715e">/* stream number is used here. */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>} RTP_FIXED_HEADER;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="补充">补充&lt;/h3>
+&lt;ul>
+&lt;li>声明后加长度，表明占用的bit, 在协议解析中常用&lt;/li>
+&lt;li>如果出现前面字段比后面字段长的情况，需要注意字节对齐的情况。&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cpp" data-lang="cpp">&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#66d9ef">typedef&lt;/span> &lt;span style="color:#66d9ef">struct&lt;/span> &lt;span style="color:#a6e22e">_some_protocol&lt;/span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#66d9ef">unsigned&lt;/span> &lt;span style="color:#66d9ef">short&lt;/span> field_A;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#66d9ef">unsigned&lt;/span> &lt;span style="color:#66d9ef">char&lt;/span> len;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#66d9ef">unsigned&lt;/span> &lt;span style="color:#66d9ef">short&lt;/span> flag_B;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	}SOME_PROTOCOL ;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>此时&lt;code>sizeof SOME_PROTOOCL&lt;/code>的长度是6，没法直接将字节流转为对应的结构体，需要指定对齐长度&lt;/p></description></item><item><title>vptr</title><link>https://caisong.github.io/posts/vptr/</link><pubDate>Tue, 24 Jul 2018 22:57:44 +0800</pubDate><guid>https://caisong.github.io/posts/vptr/</guid><description>&lt;p>在&lt;code>struct&lt;/code> 中初始函数中，直接&lt;code>memset&lt;/code>,如&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cpp" data-lang="cpp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">struct&lt;/span> &lt;span style="color:#a6e22e">Content&lt;/span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">char&lt;/span> indexx[&lt;span style="color:#ae81ff">64&lt;/span>];
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//....
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">init&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> memset(&lt;span style="color:#66d9ef">this&lt;/span>, &lt;span style="color:#ae81ff">0&lt;/span>, &lt;span style="color:#66d9ef">sizeof&lt;/span>(Content));
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>};
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>最近代码遇到成员变量较多，想采用类似方法，但程序总是崩溃，发生在基类析构函数。&lt;/p>
+&lt;p>打印发现&lt;strong>虚指针空&lt;/strong>，因为基类析构函数一般时虚函数（原因请参见effectiv C++），子类中存在&lt;code>vptr&lt;/code>。&lt;/p>
+&lt;p>摘用侯捷《度探索C++对象模型》中的实例&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cpp" data-lang="cpp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">A&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span>&lt;span style="color:#f92672">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">virtual&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> vfunc1();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">virtual&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">vfunc2&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">func1&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">func2&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">virtual&lt;/span> &lt;span style="color:#f92672">~&lt;/span>A();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">private&lt;/span>&lt;span style="color:#f92672">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">int&lt;/span> m_data1, m_data2;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}; 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">B&lt;/span> &lt;span style="color:#f92672">:&lt;/span> A {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span>&lt;span style="color:#f92672">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">virtual&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> vfunc1();;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">func2&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">virtual&lt;/span> &lt;span style="color:#f92672">~&lt;/span>B();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">private&lt;/span>&lt;span style="color:#f92672">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">int&lt;/span> m_data3;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>};
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">C&lt;/span> &lt;span style="color:#f92672">:&lt;/span> B {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span>&lt;span style="color:#f92672">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">virtual&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> vfunc1();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">func&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">private&lt;/span>&lt;span style="color:#f92672">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">int&lt;/span> m_data1, m_data4;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>};
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://caisong.github.io/images/vtpr.jpg" alt="vprt.jpg" title="内存对象模型">&lt;/p>
+&lt;p>使用本文开头的方法&lt;code>memset&lt;/code>初始化成员时，也同时将&lt;code>vptr&lt;/code>置为空，导致析构时空指针异常崩溃。&lt;/p>
+&lt;p>可以在&lt;code>memset&lt;/code>时偏移一个指针的长度。&lt;/p></description></item><item><title>c++运算符优先级</title><link>https://caisong.github.io/posts/c-operator/</link><pubDate>Mon, 23 Jul 2018 21:08:26 +0800</pubDate><guid>https://caisong.github.io/posts/c-operator/</guid><description>&lt;p>&lt;a href="https://zh.cppreference.com/w/cpp/language/operator_precedence" title="c++ operator">运算符优先级&lt;/a>&lt;/p>
 &lt;table>
  &lt;thead>
  &lt;tr>
@@ -676,4 +1024,57 @@ struct MyData
 &lt;/table>
 &lt;/li>
 &lt;/ol>
-&lt;p>路径按照元素名层层遍历，用&amp;rsquo;.&amp;lsquo;连接。类似数组和链表的情况，使用下标（从0开始）。&lt;strong>此处与C/C++不同，请注意 title ③的路径&lt;/strong>&lt;/p></description></item><item><title>Excel条件变色</title><link>https://caisong.github.io/posts/excel%E6%9D%A1%E4%BB%B6%E5%8F%98%E8%89%B2/</link><pubDate>Thu, 09 Feb 2017 17:28:58 +0800</pubDate><guid>https://caisong.github.io/posts/excel%E6%9D%A1%E4%BB%B6%E5%8F%98%E8%89%B2/</guid><description>&lt;p>Cut out summary from your post content here.&lt;/p></description></item></channel></rss>
+&lt;p>路径按照元素名层层遍历，用&amp;rsquo;.&amp;lsquo;连接。类似数组和链表的情况，使用下标（从0开始）。&lt;strong>此处与C/C++不同，请注意 title ③的路径&lt;/strong>&lt;/p></description></item><item><title>Excel条件变色</title><link>https://caisong.github.io/posts/excel%E6%9D%A1%E4%BB%B6%E5%8F%98%E8%89%B2/</link><pubDate>Thu, 09 Feb 2017 17:28:58 +0800</pubDate><guid>https://caisong.github.io/posts/excel%E6%9D%A1%E4%BB%B6%E5%8F%98%E8%89%B2/</guid><description>&lt;p>Cut out summary from your post content here.&lt;/p></description></item><item><title>时间相关函数</title><link>https://caisong.github.io/posts/time-util/</link><pubDate>Mon, 19 Dec 2016 22:44:11 +0800</pubDate><guid>https://caisong.github.io/posts/time-util/</guid><description>&lt;p>C 时间转换&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#incldue &amp;lt;time.h&amp;gt;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">struct&lt;/span> tm &lt;span style="color:#75715e">//calendar time type
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">int&lt;/span> tm_sec; &lt;span style="color:#75715e">//[0,60](since C99)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">int&lt;/span> tm_min; &lt;span style="color:#75715e">//[0,59]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">int&lt;/span> tm_hour; &lt;span style="color:#75715e">//[0,23]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">int&lt;/span> tm_mday; &lt;span style="color:#75715e">//[1,31]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">int&lt;/span> tm_mon; &lt;span style="color:#75715e">//[0,11]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">int&lt;/span> tm_year; &lt;span style="color:#75715e">//year since 1900
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">int&lt;/span> tm_wday; &lt;span style="color:#75715e">//days since Sunday:[0~6]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">int&lt;/span> tm_wday; &lt;span style="color:#75715e">//day since Jan 1:[0,365]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">int&lt;/span> tm_isdst;&lt;span style="color:#75715e">//夏令时时间，&amp;gt;0:有效	=0：无效	&amp;lt;0: 不可用
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>};
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">time_t&lt;/span>; &lt;span style="color:#75715e">//calendar time since epoch type
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">clock_t&lt;/span>; &lt;span style="color:#75715e">//processor time since era type
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">struct&lt;/span> timespce{ &lt;span style="color:#75715e">//time in seconds and nanoseconds
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">time_t&lt;/span> tv_sec;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">long&lt;/span> tv_nsec;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>};
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">time_t&lt;/span> &lt;span style="color:#a6e22e">time&lt;/span>(&lt;span style="color:#66d9ef">time_t&lt;/span> &lt;span style="color:#f92672">*&lt;/span>calptr); &lt;span style="color:#75715e">//returns the current calendar time of the system as ime since epoch
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">double&lt;/span> &lt;span style="color:#a6e22e">difftime&lt;/span>(&lt;span style="color:#66d9ef">time_t&lt;/span> time_end, &lt;span style="color:#66d9ef">time_t&lt;/span> time_beg); &lt;span style="color:#75715e">//computes the difference between times
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">/*
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">* format conversions
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">*/&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">char&lt;/span>&lt;span style="color:#f92672">*&lt;/span> &lt;span style="color:#a6e22e">asctime&lt;/span>( &lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#66d9ef">struct&lt;/span> tm &lt;span style="color:#f92672">*&lt;/span>time_ptr); &lt;span style="color:#75715e">//converts a tm object to a textual representation
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">char&lt;/span>&lt;span style="color:#f92672">*&lt;/span> &lt;span style="color:#a6e22e">ctime&lt;/span>(&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#66d9ef">time_t&lt;/span> &lt;span style="color:#f92672">*&lt;/span>time); &lt;span style="color:#75715e">//converts a time_t object to a textual representation; as if by calling asctime(localtime(time));
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">struct&lt;/span> tm &lt;span style="color:#f92672">*&lt;/span>&lt;span style="color:#a6e22e">gmtime&lt;/span>(&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#66d9ef">time_t&lt;/span> &lt;span style="color:#f92672">*&lt;/span>time); &lt;span style="color:#75715e">//convert time since epoch calendar time expressedd as UTC
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">struct&lt;/span> tm &lt;span style="color:#f92672">*&lt;/span>&lt;span style="color:#a6e22e">localtime&lt;/span>(&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#66d9ef">time_t&lt;/span> &lt;span style="color:#f92672">*&lt;/span>time); &lt;span style="color:#75715e">//converts time since epoch calendar time expressed as local time 
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">time_t&lt;/span> &lt;span style="color:#a6e22e">mktime&lt;/span>(&lt;span style="color:#66d9ef">struct&lt;/span> tm &lt;span style="color:#f92672">*&lt;/span>time); &lt;span style="color:#75715e">//converts calendar time to time since epoch
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">size_t&lt;/span> &lt;span style="color:#a6e22e">strftime&lt;/span>(&lt;span style="color:#66d9ef">char&lt;/span> &lt;span style="color:#f92672">*&lt;/span>str, &lt;span style="color:#66d9ef">size_t&lt;/span> count, &lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#66d9ef">char&lt;/span> &lt;span style="color:#f92672">*&lt;/span>format, &lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#66d9ef">struct&lt;/span> tm &lt;span style="color:#f92672">*&lt;/span>time); &lt;span style="color:#75715e">//converts a tm object to custom textual representation
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">char&lt;/span> &lt;span style="color:#f92672">*&lt;/span>&lt;span style="color:#a6e22e">strptime&lt;/span>(&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#66d9ef">char&lt;/span> &lt;span style="color:#f92672">*&lt;/span>s, &lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#66d9ef">char&lt;/span> &lt;span style="color:#f92672">*&lt;/span>format, &lt;span style="color:#66d9ef">struct&lt;/span> tm &lt;span style="color:#f92672">*&lt;/span>tm); &lt;span style="color:#75715e">//converse of strftime
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#include&lt;/span> &lt;span style="color:#75715e">&amp;lt;sys/time.h&amp;gt;&lt;/span>&lt;span style="color:#75715e">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#75715e">/*
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">clockid_t :
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">CLOCK_REALTIME: 实时系统时间
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">CLOCK_MONOTONIC: 不带负跳数的实时系统时间
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">CLOCK_PROCESS_CPUTIME_ID: 调用进程CPU时间 
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">CLOCK_THREAD_CPUTIME_ID: 调用线程CPU时间
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">*/&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">int&lt;/span> &lt;span style="color:#a6e22e">clock_gettime&lt;/span>(&lt;span style="color:#66d9ef">clockid_t&lt;/span> clock_id, &lt;span style="color:#66d9ef">struct&lt;/span> timespec &lt;span style="color:#f92672">*&lt;/span>tsp); &lt;span style="color:#75715e">//获取指定时钟的时间
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">int&lt;/span> &lt;span style="color:#a6e22e">clock_getres&lt;/span>(&lt;span style="color:#66d9ef">clockid_t&lt;/span> clock_id, &lt;span style="color:#66d9ef">struct&lt;/span> timespec &lt;span style="color:#f92672">*&lt;/span>tsp); &lt;span style="color:#75715e">//设置指定时钟精度
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">int&lt;/span> &lt;span style="color:#a6e22e">clock_settime&lt;/span>(&lt;span style="color:#66d9ef">clockid_t&lt;/span> clodk_id, &lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#66d9ef">struct&lt;/span> timespec &lt;span style="color:#f92672">*&lt;/span>tsp);&lt;span style="color:#75715e">//设置时钟时间
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">int&lt;/span> &lt;span style="color:#a6e22e">gettimeofday&lt;/span>(&lt;span style="color:#66d9ef">struct&lt;/span> timeval &lt;span style="color:#f92672">*&lt;/span>&lt;span style="color:#66d9ef">restrict&lt;/span> tp, &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#f92672">*&lt;/span>&lt;span style="color:#66d9ef">restrict&lt;/span> tzp);&lt;span style="color:#75715e">//获取当前时间，与其他相同作用函数相比，精度较高
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

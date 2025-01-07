@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Wireshark on Caisong's Blog</title><link>https://caisong.github.io/categories/wireshark/</link><description>Recent content in Wireshark on Caisong's Blog</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Fri, 03 Sep 2021 21:41:40 +0800</lastBuildDate><atom:link href="https://caisong.github.io/categories/wireshark/index.xml" rel="self" type="application/rss+xml"/><item><title>Wireshark编译、打包</title><link>https://caisong.github.io/posts/wireshark%E7%BC%96%E8%AF%91%E6%89%93%E5%8C%85/</link><pubDate>Fri, 03 Sep 2021 21:41:40 +0800</pubDate><guid>https://caisong.github.io/posts/wireshark%E7%BC%96%E8%AF%91%E6%89%93%E5%8C%85/</guid><description>&lt;p>&lt;strong>构建wireshark发布包，必须先生成user guide,并下载以下软件&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>htmlhelp （微软官网已经下不到了，直接百度找个）&lt;/li>
+&lt;li>nsis 发布exe包用的&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bat" data-lang="bat">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">rem wireshark源码路径&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">set&lt;/span> WIRESHARK_BASE_DIR=E:\code
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">rem QT编译库路径&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">set&lt;/span> QT5_BASE_DIR=D:\Qt\5.15.2\msvc2019_64
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">rem 编译目录&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">cd&lt;/span> E:\code\wsbuild64
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cmake -G &lt;span style="color:#e6db74">&amp;#34;Visual Studio 16 2019&amp;#34;&lt;/span> -A x64 ..\wireshark
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">rem wirehsark vs工程文件&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>msbuild /m /p:Configuration=RelWithDebInfo Wireshark.sln
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">rem set PATH=&amp;#34;%PATH%;E:\code\wsbuild64\run\RelwithDebInfo&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">rem wirehark user guide 项目&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>msbuild /p:Configuration=RelWithDebInfo .\docbook\user_guide_chm.vcxproj
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">rem 构建发布包&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>msbuild /m /p:Configuration=RelWithDebInfo nsis_package_prep.vcxproj
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>msbuild /m /p:Configuration=RelWithDebInfo nsis_package.vcxproj
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

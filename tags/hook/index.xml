@@ -60,4 +60,57 @@
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">__attribute__&lt;/span>((constructor)) register_leak_check() {
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> atexit(check_memory_leaks);
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Python hook</title><link>https://caisong.github.io/posts/pythonhook/</link><pubDate>Fri, 05 Jul 2024 21:41:20 +0800</pubDate><guid>https://caisong.github.io/posts/pythonhook/</guid><description>&lt;h2 id="python-hook">python hook&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># -*- coding: utf-8 -*-&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> sys
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> types
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> pathlib &lt;span style="color:#f92672">import&lt;/span> Path
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> importlib.machinery &lt;span style="color:#f92672">import&lt;/span> ModuleSpec
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> importlib.abc &lt;span style="color:#f92672">import&lt;/span> MetaPathFinder, Loader
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># sys.path.insert(0, &amp;#39;module&amp;#39;)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">DynamicLoader&lt;/span>(Loader):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">def&lt;/span> __init__(self, path):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#f92672">.&lt;/span>__path &lt;span style="color:#f92672">=&lt;/span> path
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">create_module&lt;/span>(self, spec):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> module &lt;span style="color:#f92672">=&lt;/span> types&lt;span style="color:#f92672">.&lt;/span>ModuleType(spec&lt;span style="color:#f92672">.&lt;/span>name)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> module
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">exec_module&lt;/span>(self, module):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(self&lt;span style="color:#f92672">.&lt;/span>__path)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> source &lt;span style="color:#f92672">=&lt;/span> self&lt;span style="color:#f92672">.&lt;/span>__path&lt;span style="color:#f92672">.&lt;/span>read_bytes()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> exec(source, module&lt;span style="color:#f92672">.&lt;/span>__dict__)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">DynamicFinder&lt;/span>(MetaPathFinder):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> base_path &lt;span style="color:#f92672">=&lt;/span> Path(&lt;span style="color:#e6db74">&amp;#39;module&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">find_spec&lt;/span>(self, fullname, path, target&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#66d9ef">None&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> fullname &lt;span style="color:#f92672">in&lt;/span> sys&lt;span style="color:#f92672">.&lt;/span>modules: 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> sys&lt;span style="color:#f92672">.&lt;/span>modules[fullname]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> self&lt;span style="color:#f92672">.&lt;/span>base_path&lt;span style="color:#f92672">.&lt;/span>joinpath(&lt;span style="color:#e6db74">f&lt;/span>&lt;span style="color:#e6db74">&amp;#39;&lt;/span>&lt;span style="color:#e6db74">{&lt;/span>fullname&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74">.py&amp;#39;&lt;/span>)&lt;span style="color:#f92672">.&lt;/span>exists():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> abs_path &lt;span style="color:#f92672">=&lt;/span> self&lt;span style="color:#f92672">.&lt;/span>base_path &lt;span style="color:#f92672">/&lt;/span> &lt;span style="color:#e6db74">f&lt;/span>&lt;span style="color:#e6db74">&amp;#39;&lt;/span>&lt;span style="color:#e6db74">{&lt;/span>fullname&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74">.py&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">elif&lt;/span> self&lt;span style="color:#f92672">.&lt;/span>base_path&lt;span style="color:#f92672">.&lt;/span>joinpath(fullname, &lt;span style="color:#e6db74">&amp;#39;__init__.py&amp;#39;&lt;/span>)&lt;span style="color:#f92672">.&lt;/span>exists():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> abs_path &lt;span style="color:#f92672">=&lt;/span> self&lt;span style="color:#f92672">.&lt;/span>base_path &lt;span style="color:#f92672">/&lt;/span> fullname &lt;span style="color:#f92672">/&lt;/span> &lt;span style="color:#e6db74">&amp;#39;__init__.py&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#66d9ef">None&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> ModuleSpec(&lt;span style="color:#e6db74">&amp;#39;msg&amp;#39;&lt;/span>, DynamicLoader(abs_path))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">dynamic_hook&lt;/span>(path):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> DynamicFinder()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sys&lt;span style="color:#f92672">.&lt;/span>meta_path&lt;span style="color:#f92672">.&lt;/span>append(DynamicFinder())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#sys.path_hooks = [dynamic_hook]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sys&lt;span style="color:#f92672">.&lt;/span>path_importer_cache&lt;span style="color:#f92672">.&lt;/span>clear()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">if&lt;/span> __name__ &lt;span style="color:#f92672">==&lt;/span> &lt;span style="color:#e6db74">&amp;#39;__main__&amp;#39;&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">import&lt;/span> msg
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(msg&lt;span style="color:#f92672">.&lt;/span>message(sys&lt;span style="color:#f92672">.&lt;/span>argv[&lt;span style="color:#ae81ff">1&lt;/span>]))
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

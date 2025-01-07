@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Rfc on Caisong's Blog</title><link>https://caisong.github.io/tags/rfc/</link><description>Recent content in Rfc on Caisong's Blog</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Thu, 26 Dec 2024 21:41:29 +0800</lastBuildDate><atom:link href="https://caisong.github.io/tags/rfc/index.xml" rel="self" type="application/rss+xml"/><item><title>Rsyslog rfc5234 格式</title><link>https://caisong.github.io/posts/rsyslogrfc5234%E6%A0%BC%E5%BC%8F%E5%AE%9A%E4%B9%89/</link><pubDate>Thu, 26 Dec 2024 21:41:29 +0800</pubDate><guid>https://caisong.github.io/posts/rsyslogrfc5234%E6%A0%BC%E5%BC%8F%E5%AE%9A%E4%B9%89/</guid><description>&lt;p>rsyslog rfc5234格式定义&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plain" data-lang="plain">&lt;span style="display:flex;">&lt;span>SYSLOG-MSG = HEADER SP STRUCTURED-DATA [SP MSG]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> HEADER = PRI VERSION SP TIMESTAMP SP HOSTNAME
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> SP APP-NAME SP PROCID SP MSGID
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> PRI = &amp;#34;&amp;lt;&amp;#34; PRIVAL &amp;#34;&amp;gt;&amp;#34;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> PRIVAL = 1*3DIGIT ; range 0 .. 191
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> VERSION = NONZERO-DIGIT 0*2DIGIT
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> HOSTNAME = NILVALUE / 1*255PRINTUSASCII
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> APP-NAME = NILVALUE / 1*48PRINTUSASCII
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> PROCID = NILVALUE / 1*128PRINTUSASCII
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> MSGID = NILVALUE / 1*32PRINTUSASCII
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> TIMESTAMP = NILVALUE / FULL-DATE &amp;#34;T&amp;#34; FULL-TIME
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> FULL-DATE = DATE-FULLYEAR &amp;#34;-&amp;#34; DATE-MONTH &amp;#34;-&amp;#34; DATE-MDAY
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> DATE-FULLYEAR = 4DIGIT
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> DATE-MONTH = 2DIGIT ; 01-12
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> DATE-MDAY = 2DIGIT ; 01-28, 01-29, 01-30, 01-31 based on
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ; month/year
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> FULL-TIME = PARTIAL-TIME TIME-OFFSET
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> PARTIAL-TIME = TIME-HOUR &amp;#34;:&amp;#34; TIME-MINUTE &amp;#34;:&amp;#34; TIME-SECOND
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> [TIME-SECFRAC]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> TIME-HOUR = 2DIGIT ; 00-23
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> TIME-MINUTE = 2DIGIT ; 00-59
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> TIME-SECOND = 2DIGIT ; 00-59
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> TIME-SECFRAC = &amp;#34;.&amp;#34; 1*6DIGIT
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> TIME-OFFSET = &amp;#34;Z&amp;#34; / TIME-NUMOFFSET
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> TIME-NUMOFFSET = (&amp;#34;+&amp;#34; / &amp;#34;-&amp;#34;) TIME-HOUR &amp;#34;:&amp;#34; TIME-MINUTE
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> STRUCTURED-DATA = NILVALUE / 1*SD-ELEMENT
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> SD-ELEMENT = &amp;#34;[&amp;#34; SD-ID *(SP SD-PARAM) &amp;#34;]&amp;#34;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> SD-PARAM = PARAM-NAME &amp;#34;=&amp;#34; %d34 PARAM-VALUE %d34
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> SD-ID = SD-NAME
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> PARAM-NAME = SD-NAME
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> PARAM-VALUE = UTF-8-STRING ; characters &amp;#39;&amp;#34;&amp;#39;, &amp;#39;\&amp;#39; and
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ; &amp;#39;]&amp;#39; MUST be escaped.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> SD-NAME = 1*32PRINTUSASCII
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ; except &amp;#39;=&amp;#39;, SP, &amp;#39;]&amp;#39;, %d34 (&amp;#34;)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> MSG = MSG-ANY / MSG-UTF8
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> MSG-ANY = *OCTET ; not starting with BOM
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> MSG-UTF8 = BOM UTF-8-STRING
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> BOM = %xEF.BB.BF
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> UTF-8-STRING = *OCTET ; UTF-8 string as specified
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ; in RFC 3629
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> OCTET = %d00-255
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> SP = %d32
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> PRINTUSASCII = %d33-126
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> NONZERO-DIGIT = %d49-57
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> DIGIT = %d48 / NONZERO-DIGIT
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> NILVALUE = &amp;#34;-&amp;#34;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>SD-ELEMENT &lt;code>[&lt;/code>和&lt;code>]&lt;/code>与字符间没有空格&lt;/li>
+&lt;/ul></description></item><item><title>rsyslog rfc3164</title><link>https://caisong.github.io/posts/rsyslogrfc3164/</link><pubDate>Thu, 26 Dec 2024 21:41:28 +0800</pubDate><guid>https://caisong.github.io/posts/rsyslogrfc3164/</guid><description>&lt;p>自定义消息格式，但是mmnormalize模块解析失败，只能遵循标准，在已有字段中设置我的内容。特地看了下RFC 3164和5234，记录如下。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plaintext" data-lang="plaintext">&lt;span style="display:flex;">&lt;span># RFC 3164
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;PRI&amp;gt;&amp;lt;HEADER&amp;gt; &amp;lt;MSG&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>PRI和HEADER之间无空格
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>PRI = &amp;#34;&amp;lt;&amp;#34;Priority&amp;#34;&amp;gt;&amp;#34;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Priority = (Facility&amp;lt;&amp;lt;3)+Severity
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Facility = 0~23
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Serverity = 0~7
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>HEADER = &amp;lt;TIMESTAMP&amp;gt; &amp;lt;HOSTNAME&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>TIMESTAMP = Mmm dd hh:mm:ss 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Mmm 代表月份，与dd之间有2个空格
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>时间使用24小时制
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>HOSTNAME 就是正常的hostname，不能有空格，或者使用IPv4 IPv6地址。
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>MSG = &amp;lt;TAG&amp;gt;&amp;lt;CONTENT&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>TAG就是程序名，不超过32字节，tag中的非字母符号就代表结束。因此CONTENT开头经常使用“[“、“：”或者空格表示内容的开始。
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

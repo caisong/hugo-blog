@@ -1,25 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Django on Caisong's Blog</title><link>https://caisong.github.io/tags/django/</link><description>Recent content in Django on Caisong's Blog</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Mon, 15 Oct 2018 21:35:39 +0000</lastBuildDate><atom:link href="https://caisong.github.io/tags/django/index.xml" rel="self" type="application/rss+xml"/><item><title>django URL 匹配及参数传递</title><link>https://caisong.github.io/posts/url/</link><pubDate>Mon, 15 Oct 2018 21:35:39 +0000</pubDate><guid>https://caisong.github.io/posts/url/</guid><description>&lt;h2 id="url-匹配">URL 匹配&lt;/h2>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> django.urls &lt;span style="color:#f92672">import&lt;/span> path, re_path, include 
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> . &lt;span style="color:#f92672">import&lt;/span> views
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>urlpatterns &lt;span style="color:#f92672">=&lt;/span> [
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> path(&lt;span style="color:#e6db74">&amp;#39;articles/&amp;lt;int:year&amp;gt;/&amp;lt;int:month&amp;gt;/&amp;lt;slug:slug&amp;gt;/&amp;#39;&lt;/span>, views&lt;span style="color:#f92672">.&lt;/span>article_detail),
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> re_path(&lt;span style="color:#e6db74">r&lt;/span>&lt;span style="color:#e6db74">&amp;#39;^articles/(?P&amp;lt;year&amp;gt;[0-9]&lt;/span>&lt;span style="color:#e6db74">{4}&lt;/span>&lt;span style="color:#e6db74">)/(?P&amp;lt;month&amp;gt;[0-9]&lt;/span>&lt;span style="color:#e6db74">{2}&lt;/span>&lt;span style="color:#e6db74">)/(?P&amp;lt;slug&amp;gt;[\w-]+)/$&amp;#39;&lt;/span>, views&lt;span style="color:#f92672">.&lt;/span>article_detail),
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> path(&lt;span style="color:#e6db74">&amp;#39;contact/&amp;#39;&lt;/span>, include(&lt;span style="color:#e6db74">&amp;#39;contact.urls&amp;#39;&lt;/span>)),
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> path(&lt;span style="color:#e6db74">&amp;#39;blog/&amp;lt;int:year&amp;gt;/&amp;#39;&lt;/span>, views&lt;span style="color:#f92672">.&lt;/span>year_archive, {&lt;span style="color:#e6db74">&amp;#39;foo&amp;#39;&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;bar&amp;#39;&lt;/span>}),
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>]
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="参数传递">参数传递&lt;/h2>
-&lt;ol>
-&lt;li>URL匹配中带参数的，直接在参数中&lt;/li>
-&lt;li>URL中仅匹配头部，其他参数&lt;code>?&lt;/code>之后的，无论客户端发起何种HTTP请求，参数在URL中，都在request.GET.kwargs中获取&lt;/li>
-&lt;li>其他在参数在请求体中的，request.POST或request.body中获取,两者差别
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plain" data-lang="plain">&lt;span style="display:flex;">&lt;span>HttpRequest.body
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>The raw HTTP request body as a byte string. This is useful for processing data in different ways than conventional HTML forms: binary images, XML payload etc. For processing conventional form data, use HttpRequest.POST.
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
-&lt;/ol></description></item><item><title>django部署apache2</title><link>https://caisong.github.io/posts/apache/</link><pubDate>Sun, 01 Apr 2018 20:55:39 +0000</pubDate><guid>https://caisong.github.io/posts/apache/</guid><description>&lt;p>最近学习使用django，尝试部署至apache2。&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Django on Caisong's Blog</title><link>https://caisong.github.io/tags/django/</link><description>Recent content in Django on Caisong's Blog</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Sun, 01 Apr 2018 20:55:39 +0000</lastBuildDate><atom:link href="https://caisong.github.io/tags/django/index.xml" rel="self" type="application/rss+xml"/><item><title>django部署apache2</title><link>https://caisong.github.io/posts/apache/</link><pubDate>Sun, 01 Apr 2018 20:55:39 +0000</pubDate><guid>https://caisong.github.io/posts/apache/</guid><description>&lt;p>最近学习使用django，尝试部署至apache2。&lt;/p>
 &lt;ol>
 &lt;li>required env&lt;/li>
 &lt;/ol>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Mmnormalize on Caisong's Blog</title><link>https://caisong.github.io/tags/mmnormalize/</link><description>Recent content in Mmnormalize on Caisong's Blog</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Tue, 24 Dec 2024 21:41:27 +0800</lastBuildDate><atom:link href="https://caisong.github.io/tags/mmnormalize/index.xml" rel="self" type="application/rss+xml"/><item><title>Rsyslog mmnormalize module</title><link>https://caisong.github.io/posts/rsyslogmmnormalizemodule/</link><pubDate>Tue, 24 Dec 2024 21:41:27 +0800</pubDate><guid>https://caisong.github.io/posts/rsyslogmmnormalizemodule/</guid><description>&lt;p>rsyslog mmnormalize module语法稀奇古怪，相关资料还特别少，看了好几遍才明白。&lt;/p>
+&lt;p>最终能解析出来了，但是没法没使用，不在默认namespace &lt;code>$!&lt;/code>下，放弃了。&lt;/p>
+&lt;h2 id="相关语法">相关语法&lt;/h2>
+&lt;h3 id="规则语法">规则语法&lt;/h3>
+&lt;pre tabindex="0">&lt;code class="language-config" data-lang="config">rule=[&amp;lt;tag1&amp;gt;[,&amp;lt;tag2&amp;gt;...]]:&amp;lt;match description&amp;gt;
+# match descirption 可以出现N次
+match description=&amp;lt;string literals&amp;gt;&amp;lt;field selectors&amp;gt;
+# extra data是根据field type类型决定的
+fileld selectors=%&amp;lt;field name&amp;gt;:&amp;lt;field type&amp;gt;[:&amp;lt;extra data&amp;gt;]%
+&lt;/code>&lt;/pre>&lt;h3 id="field-type">field type&lt;/h3>
+&lt;p>mmnormalize版本2的语法没有使用正则，内置了一套字段类型，与正则差不多。&lt;/p>
+&lt;ul>
+&lt;li>number: 数字
+%field_name:number% === [0-9]+&lt;/li>
+&lt;li>word: 到空格或者行末截止
+%field_name:word% === \S+&lt;/li>
+&lt;li>alpha: up to the next whitespace, punctuation, decimal digit or ctrl
+%field_name:alpha% === \w+&lt;/li>
+&lt;li>char-to: 表示直到某个字符
+%field_name:char-to:,% === [^,]+&lt;/li>
+&lt;li>char-sp: 表示直到某个字符，可以空。
+%field_name:char-sep:,% === [^,]*&lt;/li>
+&lt;li>rest：一直匹配到行结束&lt;/li>
+&lt;li>quoted-string: 匹配双引号中的内容&lt;/li>
+&lt;li>date-iso ： YYYY-MM-DD格式日期&lt;/li>
+&lt;li>time-24hr： HH:MM:SS 24小时制时间&lt;/li>
+&lt;li>time-12hr： HH:MM:SS 12小时制时间&lt;/li>
+&lt;li>ipv4: 点分制ipv4地址&lt;/li>
+&lt;li>date-rfc3164： Oct 29 09:47:08 格式日期&lt;/li>
+&lt;li>date-rfc5424：1985-04-12T19:20:50.52-04:00 格式日期&lt;/li>
+&lt;li>iptables：匹配Name=value，空格分隔的kv对
+%-:iptables% 不使用字段名，匹配内容中的name替代字段名&lt;/li>
+&lt;/ul>
+&lt;h3 id="前置规则">前置规则&lt;/h3>
+&lt;pre tabindex="0">&lt;code class="language-config" data-lang="config"># 设置前缀，可复用
+prefix=&amp;lt;match description&amp;gt;
+# 取消前缀
+prefix=
+&lt;/code>&lt;/pre>&lt;h3 id="引用">引用&lt;/h3>
+&lt;p>mmnormalize匹配的内容都在&lt;code>$!&lt;/code>命名空间内，可通过&lt;code>$!field_name&lt;/code>引用&lt;/p></description></item></channel></rss>

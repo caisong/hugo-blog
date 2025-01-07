@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Openssl on Caisong's Blog</title><link>https://caisong.github.io/tags/openssl/</link><description>Recent content in Openssl on Caisong's Blog</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Thu, 27 Sep 2018 21:54:44 +0800</lastBuildDate><atom:link href="https://caisong.github.io/tags/openssl/index.xml" rel="self" type="application/rss+xml"/><item><title>openssl evp加解密统一接口</title><link>https://caisong.github.io/posts/openssl-evp/</link><pubDate>Thu, 27 Sep 2018 21:54:44 +0800</pubDate><guid>https://caisong.github.io/posts/openssl-evp/</guid><description>&lt;p>最近使用了openssl的AES解密函数，遇到些问题。&lt;/p>
+&lt;h2 id="代码示例">代码示例&lt;/h2>
+&lt;p>以下代码结构摘录自&lt;a href="https://linux.die.net/man/3/evp_decryptfinal">man page&lt;/a>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">int&lt;/span> &lt;span style="color:#a6e22e">do_crypt&lt;/span>(FILE &lt;span style="color:#f92672">*&lt;/span>in, FILE &lt;span style="color:#f92672">*&lt;/span>out, &lt;span style="color:#66d9ef">int&lt;/span> do_encrypt)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">/* Allow enough space in output buffer for additional block */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> inbuf[&lt;span style="color:#ae81ff">1024&lt;/span>], outbuf[&lt;span style="color:#ae81ff">1024&lt;/span> &lt;span style="color:#f92672">+&lt;/span> EVP_MAX_BLOCK_LENGTH];
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">int&lt;/span> inlen, outlen;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">/* Bogus key and IV: we&amp;#39;d normally set these from
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * another source.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">unsigned&lt;/span> &lt;span style="color:#66d9ef">char&lt;/span> key[] &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;0123456789&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">unsigned&lt;/span> &lt;span style="color:#66d9ef">char&lt;/span> iv[] &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;12345678&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">/* Don&amp;#39;t set key or IV because we will modify the parameters */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">EVP_CIPHER_CTX_init&lt;/span>(&lt;span style="color:#f92672">&amp;amp;&lt;/span>ctx);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">EVP_CipherInit_ex&lt;/span>(&lt;span style="color:#f92672">&amp;amp;&lt;/span>ctx, &lt;span style="color:#a6e22e">EVP_rc2&lt;/span>(), NULL, NULL, NULL, do_encrypt);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">EVP_CIPHER_CTX_set_key_length&lt;/span>(&lt;span style="color:#f92672">&amp;amp;&lt;/span>ctx, &lt;span style="color:#ae81ff">10&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">/* We finished modifying parameters so now we can set key and IV */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">EVP_CipherInit_ex&lt;/span>(&lt;span style="color:#f92672">&amp;amp;&lt;/span>ctx, NULL, NULL, key, iv, do_encrypt);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span>(;;)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> inlen &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">fread&lt;/span>(inbuf, &lt;span style="color:#ae81ff">1&lt;/span>, &lt;span style="color:#ae81ff">1024&lt;/span>, in);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span>(inlen &lt;span style="color:#f92672">&amp;lt;=&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>) &lt;span style="color:#66d9ef">break&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span>(&lt;span style="color:#f92672">!&lt;/span>&lt;span style="color:#a6e22e">EVP_CipherUpdate&lt;/span>(&lt;span style="color:#f92672">&amp;amp;&lt;/span>ctx, outbuf, &lt;span style="color:#f92672">&amp;amp;&lt;/span>outlen, inbuf, inlen))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">/* Error */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">EVP_CIPHER_CTX_cleanup&lt;/span>(&lt;span style="color:#f92672">&amp;amp;&lt;/span>ctx);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">fwrite&lt;/span>(outbuf, &lt;span style="color:#ae81ff">1&lt;/span>, outlen, out);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span>(&lt;span style="color:#f92672">!&lt;/span>&lt;span style="color:#a6e22e">EVP_CipherFinal_ex&lt;/span>(&lt;span style="color:#f92672">&amp;amp;&lt;/span>ctx, outbuf, &lt;span style="color:#f92672">&amp;amp;&lt;/span>outlen))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">/* Error */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">EVP_CIPHER_CTX_cleanup&lt;/span>(&lt;span style="color:#f92672">&amp;amp;&lt;/span>ctx);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">fwrite&lt;/span>(outbuf, &lt;span style="color:#ae81ff">1&lt;/span>, outlen, out);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">EVP_CIPHER_CTX_cleanup&lt;/span>(&lt;span style="color:#f92672">&amp;amp;&lt;/span>ctx);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="问题记录">问题记录&lt;/h2>
+&lt;p>参考&lt;a href="https://blog.csdn.net/weixiao2015/article/details/79487775">Openssl Evp接口以及EVP_DecryptFinal使用细节&lt;/a>&lt;/p></description></item></channel></rss>

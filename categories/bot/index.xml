@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Bot on Caisong's Blog</title><link>https://caisong.github.io/categories/bot/</link><description>Recent content in Bot on Caisong's Blog</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Thu, 03 Nov 2022 21:41:24 +0800</lastBuildDate><atom:link href="https://caisong.github.io/categories/bot/index.xml" rel="self" type="application/rss+xml"/><item><title>Rasa简单介绍及demo实现</title><link>https://caisong.github.io/posts/rasa%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D%E5%8F%8Ademo%E5%AE%9E%E7%8E%B0/</link><pubDate>Thu, 03 Nov 2022 21:41:24 +0800</pubDate><guid>https://caisong.github.io/posts/rasa%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D%E5%8F%8Ademo%E5%AE%9E%E7%8E%B0/</guid><description>&lt;p>chatgpt大火前搞得，现在，哎。。。。。&lt;/p>
+&lt;h2 id="rasa-简单介绍及demo实现">rasa 简单介绍及demo实现&lt;/h2>
+&lt;p>ps. 本文基于rasa 3.1版本(python 3.8)&lt;/p>
+&lt;h2 id="rasa简介">Rasa简介&lt;/h2>
+&lt;p>Rasa是开源的机器学习框架，用于构建AI小助手和聊天机器人。支持自然语言处理、聊天会话和外部应用对接等。&lt;/p>
+&lt;p>Rasa有两个主要模块：&lt;/p>
+&lt;ul>
+&lt;li>Rasa NLU 用于对用户消息内容的语义理解（用于聊天机器人中的意图提取和实体提取）&lt;/li>
+&lt;li>Rasa Core 用于对话管理（用于构建AI助手的对话引擎）&lt;/li>
+&lt;/ul>
+&lt;p>RasaX 帮助用户提升和部署由Rasa框架构建的AI小助手和聊天机器人（用于发布机器人的）&lt;/p>
+&lt;h2 id="rasa-core消息处理流程这部分未验证根据demo执行看基本一致">Rasa core消息处理流程（这部分未验证，根据demo执行看，基本一致）&lt;/h2>
+&lt;p>&lt;a href="https://upload-images.jianshu.io/upload_images/3285850-ece175b3a873ff90?imageMogr2/auto-orient/strip">https://upload-images.jianshu.io/upload_images/3285850-ece175b3a873ff90?imageMogr2/auto-orient/strip&lt;/a>|imageView2/2/w/719/format/webp&lt;/p>
+&lt;ol>
+&lt;li>将用户输入的Message传递到Interpreter(Rasa NLU模块)，该模块负责识别Message中的&amp;quot;意图(intent)“和提取所有&amp;quot;实体”(entity)数据；&lt;/li>
+&lt;li>Rasa Core会将Interpreter提取到的意图和识别传给Tracker对象，该对象的主要作用是跟踪会话状态(conversation state)；&lt;/li>
+&lt;li>利用policy记录Tracker对象的当前状态&lt;/li>
+&lt;li>选择执行相应的action&lt;/li>
+&lt;li>action执行，action 记录在Track对象中的？（暂时没明白）&lt;/li>
+&lt;li>将执行action返回的结果输出&lt;/li>
+&lt;/ol>
+&lt;h2 id="rasa-安装">Rasa 安装&lt;/h2>
+&lt;p>按照官方教程安装
+ps. 必须得使用python3.8(3.8以上，机器学习的库有版本冲突)&lt;/p>
+&lt;h2 id="rasa概念自己理解可能与官方文档有出入供参考">Rasa概念(自己理解，可能与官方文档有出入，供参考)&lt;/h2>
+&lt;ul>
+&lt;li>story: 一种训练数据的形式，是用户和BOT之间的对话表示。用户输入表示为intent，BOT响应表示为action&lt;/li>
+&lt;li>intent: 根据用户输入，经过NLU识别后认为用户的意图（目的）&lt;/li>
+&lt;li>action: 针对itent可执行的行为&lt;/li>
+&lt;li>entity: 就是识别出来的关键字&lt;/li>
+&lt;li>slot: 中间变量，结合关键字实现entity存储和逻辑控制&lt;/li>
+&lt;li>synonym: 同义词，entity同一关键字的不同说法&lt;/li>
+&lt;li>response: bot回复的模板&lt;/li>
+&lt;/ul>
+&lt;h2 id="rasa项目结构">Rasa项目结构&lt;/h2>
+&lt;p>执行&lt;code>rasa init&lt;/code>后可得到基础结构&lt;/p>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: left">路径&lt;/th>
+ &lt;th style="text-align: left">文件说明&lt;/th>
+ &lt;th>备注&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: left">actions&lt;/td>
+ &lt;td style="text-align: left">自定义action代码路径&lt;/td>
+ &lt;td>custom action才需要，默认空&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">models&lt;/td>
+ &lt;td style="text-align: left">初始训练的模型数据&lt;/td>
+ &lt;td>执行 &lt;code>rasa train&lt;/code> 产生模型文件&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">tests&lt;/td>
+ &lt;td style="text-align: left">&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">config.yml&lt;/td>
+ &lt;td style="text-align: left">NLU、Core配置文件&lt;/td>
+ &lt;td>pipeline nlu相关，policy core相关&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">domain.yml&lt;/td>
+ &lt;td style="text-align: left">Rasa domain文件&lt;/td>
+ &lt;td>Core配置文件your assistant’s domain&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">endpoints.yml&lt;/td>
+ &lt;td style="text-align: left">对接外部消息服务的endpoint&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">data&lt;/td>
+ &lt;td style="text-align: left">数据&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">data/nlu.yml&lt;/td>
+ &lt;td style="text-align: left">Rasa NLU的训练数据&lt;/td>
+ &lt;td>描述intent如何识别和entity如何提取的训练文件&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">data/stories.yml&lt;/td>
+ &lt;td style="text-align: left">Rasa Stories数据&lt;/td>
+ &lt;td>描述针对不同的intent该采取的action&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">data/rule.yml&lt;/td>
+ &lt;td style="text-align: left">Rasa Rule文件&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">credentials.yml&lt;/td>
+ &lt;td style="text-align: left">details for connecting to other services&lt;/td>
+ &lt;td>&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;p>3.1 都是用yaml格式，且格式与内容跟之前版本都有所差别。官方提供了migrate工具（我没用起来，根据理解重新写的yml文件）&lt;/p></description></item></channel></rss>

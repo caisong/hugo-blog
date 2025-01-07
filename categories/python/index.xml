@@ -1,4 +1,93 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Python on Caisong's Blog</title><link>https://caisong.github.io/categories/python/</link><description>Recent content in Python on Caisong's Blog</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Fri, 03 Jun 2016 20:45:12 +0800</lastBuildDate><atom:link href="https://caisong.github.io/categories/python/index.xml" rel="self" type="application/rss+xml"/><item><title>python发送邮件</title><link>https://caisong.github.io/posts/configparser/</link><pubDate>Fri, 03 Jun 2016 20:45:12 +0800</pubDate><guid>https://caisong.github.io/posts/configparser/</guid><description>&lt;h2 id="简介">简介&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Python on Caisong's Blog</title><link>https://caisong.github.io/categories/python/</link><description>Recent content in Python on Caisong's Blog</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Fri, 05 Jul 2024 21:41:20 +0800</lastBuildDate><atom:link href="https://caisong.github.io/categories/python/index.xml" rel="self" type="application/rss+xml"/><item><title>Python hook</title><link>https://caisong.github.io/posts/pythonhook/</link><pubDate>Fri, 05 Jul 2024 21:41:20 +0800</pubDate><guid>https://caisong.github.io/posts/pythonhook/</guid><description>&lt;h2 id="python-hook">python hook&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># -*- coding: utf-8 -*-&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> sys
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> types
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> pathlib &lt;span style="color:#f92672">import&lt;/span> Path
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> importlib.machinery &lt;span style="color:#f92672">import&lt;/span> ModuleSpec
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> importlib.abc &lt;span style="color:#f92672">import&lt;/span> MetaPathFinder, Loader
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># sys.path.insert(0, &amp;#39;module&amp;#39;)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">DynamicLoader&lt;/span>(Loader):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">def&lt;/span> __init__(self, path):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#f92672">.&lt;/span>__path &lt;span style="color:#f92672">=&lt;/span> path
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">create_module&lt;/span>(self, spec):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> module &lt;span style="color:#f92672">=&lt;/span> types&lt;span style="color:#f92672">.&lt;/span>ModuleType(spec&lt;span style="color:#f92672">.&lt;/span>name)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> module
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">exec_module&lt;/span>(self, module):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(self&lt;span style="color:#f92672">.&lt;/span>__path)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> source &lt;span style="color:#f92672">=&lt;/span> self&lt;span style="color:#f92672">.&lt;/span>__path&lt;span style="color:#f92672">.&lt;/span>read_bytes()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> exec(source, module&lt;span style="color:#f92672">.&lt;/span>__dict__)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">DynamicFinder&lt;/span>(MetaPathFinder):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> base_path &lt;span style="color:#f92672">=&lt;/span> Path(&lt;span style="color:#e6db74">&amp;#39;module&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">find_spec&lt;/span>(self, fullname, path, target&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#66d9ef">None&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> fullname &lt;span style="color:#f92672">in&lt;/span> sys&lt;span style="color:#f92672">.&lt;/span>modules: 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> sys&lt;span style="color:#f92672">.&lt;/span>modules[fullname]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> self&lt;span style="color:#f92672">.&lt;/span>base_path&lt;span style="color:#f92672">.&lt;/span>joinpath(&lt;span style="color:#e6db74">f&lt;/span>&lt;span style="color:#e6db74">&amp;#39;&lt;/span>&lt;span style="color:#e6db74">{&lt;/span>fullname&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74">.py&amp;#39;&lt;/span>)&lt;span style="color:#f92672">.&lt;/span>exists():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> abs_path &lt;span style="color:#f92672">=&lt;/span> self&lt;span style="color:#f92672">.&lt;/span>base_path &lt;span style="color:#f92672">/&lt;/span> &lt;span style="color:#e6db74">f&lt;/span>&lt;span style="color:#e6db74">&amp;#39;&lt;/span>&lt;span style="color:#e6db74">{&lt;/span>fullname&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74">.py&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">elif&lt;/span> self&lt;span style="color:#f92672">.&lt;/span>base_path&lt;span style="color:#f92672">.&lt;/span>joinpath(fullname, &lt;span style="color:#e6db74">&amp;#39;__init__.py&amp;#39;&lt;/span>)&lt;span style="color:#f92672">.&lt;/span>exists():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> abs_path &lt;span style="color:#f92672">=&lt;/span> self&lt;span style="color:#f92672">.&lt;/span>base_path &lt;span style="color:#f92672">/&lt;/span> fullname &lt;span style="color:#f92672">/&lt;/span> &lt;span style="color:#e6db74">&amp;#39;__init__.py&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#66d9ef">None&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> ModuleSpec(&lt;span style="color:#e6db74">&amp;#39;msg&amp;#39;&lt;/span>, DynamicLoader(abs_path))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">dynamic_hook&lt;/span>(path):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> DynamicFinder()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sys&lt;span style="color:#f92672">.&lt;/span>meta_path&lt;span style="color:#f92672">.&lt;/span>append(DynamicFinder())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#sys.path_hooks = [dynamic_hook]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sys&lt;span style="color:#f92672">.&lt;/span>path_importer_cache&lt;span style="color:#f92672">.&lt;/span>clear()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">if&lt;/span> __name__ &lt;span style="color:#f92672">==&lt;/span> &lt;span style="color:#e6db74">&amp;#39;__main__&amp;#39;&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">import&lt;/span> msg
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(msg&lt;span style="color:#f92672">.&lt;/span>message(sys&lt;span style="color:#f92672">.&lt;/span>argv[&lt;span style="color:#ae81ff">1&lt;/span>]))
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Pyspark ipython 设置</title><link>https://caisong.github.io/posts/pysparkipython%E8%AE%BE%E7%BD%AE/</link><pubDate>Fri, 12 Jan 2024 21:41:20 +0800</pubDate><guid>https://caisong.github.io/posts/pysparkipython%E8%AE%BE%E7%BD%AE/</guid><description>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>export JAVA_HOME&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;具体路径&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>export SPARK_HOME&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;具体路径&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>export PYSPARK_DRIVER_PYTHON&lt;span style="color:#f92672">=&lt;/span>ipython3
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>source &lt;span style="color:#e6db74">${&lt;/span>venv&lt;span style="color:#e6db74">}&lt;/span>/bin/active
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>source &lt;span style="color:#e6db74">${&lt;/span>SPARK_HOME&lt;span style="color:#e6db74">}&lt;/span>/bin/pyspark
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Python换行符处理</title><link>https://caisong.github.io/posts/python%E6%8D%A2%E8%A1%8C%E7%AC%A6%E5%A4%84%E7%90%86/</link><pubDate>Fri, 03 Sep 2021 21:41:22 +0800</pubDate><guid>https://caisong.github.io/posts/python%E6%8D%A2%E8%A1%8C%E7%AC%A6%E5%A4%84%E7%90%86/</guid><description>&lt;h1 id="python换行符处理">python换行符处理&lt;/h1>
+&lt;h2 id="python-2pep-278----universal-newline-support">Python 2（PEP 278 &amp;ndash; Universal Newline Support）&lt;/h2>
+&lt;ol>
+&lt;li>如果不是txt文件，建议用wb和rb来读写。通过二进制读写，不会有换行问题。&lt;/li>
+&lt;li>如果需要明文内容，请用rU来读取（&lt;strong>强烈推荐&lt;/strong>），即&lt;strong>U通用换行模式（Universal new line mode）。该模式会把所有的换行符（\r \n \r\n）替换为\n&lt;/strong>。只支持读入，但是也足够了。这是Python 提供给我们的最好的选择，没有之一。&lt;/li>
+&lt;/ol>
+&lt;p>对比r和rU的结果：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>content &lt;span style="color:#f92672">=&lt;/span> file(fn, &lt;span style="color:#e6db74">&amp;#39;r&amp;#39;&lt;/span>)&lt;span style="color:#f92672">.&lt;/span>read()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># test\r\ntest2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 这里的换行会因不同系统而不同 &lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>content &lt;span style="color:#f92672">=&lt;/span> file(fn, &lt;span style="color:#e6db74">&amp;#39;rU&amp;#39;&lt;/span>)&lt;span style="color:#f92672">.&lt;/span>read()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># test\ntest2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 所有的换行都被统一，不分系统&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="python-3open函数-2-built-in-functions">Python 3(Open函数: 2. Built-in Functions)&lt;/h2>
+&lt;p>** 请注意：Python 3不推荐用rU模式！**&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>open(file, mode&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;r&amp;#39;&lt;/span>, buffering&lt;span style="color:#f92672">=-&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>, encoding&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#66d9ef">None&lt;/span>, errors&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#66d9ef">None&lt;/span>, newline&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#66d9ef">None&lt;/span>, closefd&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#66d9ef">True&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>在Python 3，可以通过open函数的&lt;strong>newline&lt;/strong>参数来控制&lt;strong>Universal new line mode&lt;/strong>：读取时候，不指定newline，则默认开启Universal new line mode，所有\n, \r, or \r\n被默认转换为\n ；写入时，不指定newline，则换行符为各系统默认的换行符（\n, \r, or \r\n, ），指定为newline=&amp;rsquo;\n&amp;rsquo;，则都替换为\n（相当于Universal new line mode）；不论读或者写时，newline=&amp;lsquo;&amp;lsquo;都表示不转换。&lt;/p></description></item><item><title>pip配置、命令</title><link>https://caisong.github.io/posts/python%E9%85%8D%E7%BD%AE/</link><pubDate>Fri, 03 Sep 2021 21:41:21 +0800</pubDate><guid>https://caisong.github.io/posts/python%E9%85%8D%E7%BD%AE/</guid><description>&lt;h2 id="镜像配置">镜像配置&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># windows 路径 C:\Users\username\pip\pip.ini&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># linux 路径 ~/.pip/pip.conf &lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">[&lt;/span>global&lt;span style="color:#f92672">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>index-url &lt;span style="color:#f92672">=&lt;/span> https://mirrors.aliyun.com/pypi/simple/
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="pip-命令">pip 命令&lt;/h2>
+&lt;p>pip list &amp;ndash;outdated #列出所有过期的库
+pip install &amp;ndash;upgrade 库名 #升级库&lt;/p>
+&lt;h2 id="一键升级过期源">一键升级过期源&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> pip
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> subprocess &lt;span style="color:#f92672">import&lt;/span> call
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">for&lt;/span> dist &lt;span style="color:#f92672">in&lt;/span> pip&lt;span style="color:#f92672">.&lt;/span>get_installed_distributions():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> call(&lt;span style="color:#e6db74">&amp;#34;pip install --upgrade &amp;#34;&lt;/span> &lt;span style="color:#f92672">+&lt;/span> dist&lt;span style="color:#f92672">.&lt;/span>project_name, shell&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#66d9ef">True&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>python发送邮件</title><link>https://caisong.github.io/posts/configparser/</link><pubDate>Fri, 03 Jun 2016 20:45:12 +0800</pubDate><guid>https://caisong.github.io/posts/configparser/</guid><description>&lt;h2 id="简介">简介&lt;/h2>
 &lt;p>昨天代码一些基本配置全部在代码中，灵活性较差，考虑到通过配置文件的方式来实现。结构比较简单，不想用xml或json，类似配置数据库连接的&lt;code>property&lt;/code>文件就可以了，&lt;code>configparser&lt;/code>比较满足要求。
 python &lt;code>configparser&lt;/code>能够读取&lt;code>*.conf&lt;/code>与&lt;code>*.ini&lt;/code>的配置文件&lt;/p>
 &lt;!-- raw HTML omitted -->
@@ -131,58 +220,4 @@ python &lt;code>configparser&lt;/code>能够读取&lt;code>*.conf&lt;/code>与&l
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="注意事项">注意事项&lt;/h2>
 &lt;ol>
 &lt;li>若密码中包含特殊字符，需要转义&lt;/li>
-&lt;/ol></description></item><item><title>python 发送邮件</title><link>https://caisong.github.io/posts/post/</link><pubDate>Thu, 02 Jun 2016 20:46:58 +0000</pubDate><guid>https://caisong.github.io/posts/post/</guid><description>&lt;h2 id="需求">需求&lt;/h2>
-&lt;p>每天发送工作日报，需要send一堆人，cc一堆人（公司规定，呵呵），还要添加附件。考虑到python能够方便的发送邮箱，就打算写个脚本。&lt;/p>
-&lt;!-- raw HTML omitted -->
-&lt;h2 id="代码">代码&lt;/h2>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># -*- coding: utf-8 -*-&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#!/usr/bin/env python3&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">&amp;#39;&amp;#39;&amp;#39;
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">发送带附件邮件
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">&amp;#39;&amp;#39;&amp;#39;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> email.mime.text &lt;span style="color:#f92672">import&lt;/span> MIMEText
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> email.mime.multipart &lt;span style="color:#f92672">import&lt;/span> MIMEMultipart
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> smtplib
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> datetime &lt;span style="color:#f92672">import&lt;/span> date
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 创建一个带附件的实例&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>msg &lt;span style="color:#f92672">=&lt;/span> MIMEMultipart()
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 接收列表&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>receiverList &lt;span style="color:#f92672">=&lt;/span> [&lt;span style="color:#e6db74">&amp;#39;abc@yeah.net&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;abc@qq.com&amp;#39;&lt;/span>]
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 抄送列表&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ccList &lt;span style="color:#f92672">=&lt;/span> [&lt;span style="color:#e6db74">&amp;#39;abc@yeah.net&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;abc@qq.com&amp;#39;&lt;/span>]
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 邮件头&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>msg[&lt;span style="color:#e6db74">&amp;#39;from&amp;#39;&lt;/span>] &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;song_cai@yeah.net&amp;#39;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>msg[&lt;span style="color:#e6db74">&amp;#39;to&amp;#39;&lt;/span>] &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;, &amp;#39;&lt;/span>&lt;span style="color:#f92672">.&lt;/span>join(receiverList)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>msg[&lt;span style="color:#e6db74">&amp;#39;subject&amp;#39;&lt;/span>] &lt;span style="color:#f92672">=&lt;/span> date&lt;span style="color:#f92672">.&lt;/span>today()&lt;span style="color:#f92672">.&lt;/span>strftime(&lt;span style="color:#e6db74">&amp;#34;%Y-%m-&lt;/span>&lt;span style="color:#e6db74">%d&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>) &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#e6db74">&amp;#39;&amp;#39;&amp;#39;XX工作日报&amp;#39;&amp;#39;&amp;#39;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>msg[&lt;span style="color:#e6db74">&amp;#39;cc&amp;#39;&lt;/span>] &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;, &amp;#39;&lt;/span>&lt;span style="color:#f92672">.&lt;/span>join(ccList)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 正文&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>msg&lt;span style="color:#f92672">.&lt;/span>attach(MIMEText(open(&lt;span style="color:#e6db74">&amp;#39;d:&lt;/span>&lt;span style="color:#ae81ff">\\&lt;/span>&lt;span style="color:#e6db74">mailContext.txt&amp;#39;&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#39;rb&amp;#39;&lt;/span>)&lt;span style="color:#f92672">.&lt;/span>read(), &lt;span style="color:#e6db74">&amp;#39;plain&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;utf-8&amp;#39;&lt;/span>))
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 附件&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>att &lt;span style="color:#f92672">=&lt;/span> MIMEText(open(&lt;span style="color:#e6db74">&amp;#39;d:&lt;/span>&lt;span style="color:#ae81ff">\\&lt;/span>&lt;span style="color:#e6db74">mailContext.txt&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;rb&amp;#39;&lt;/span>)&lt;span style="color:#f92672">.&lt;/span>read(), &lt;span style="color:#e6db74">&amp;#39;base64&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;utf-8&amp;#39;&lt;/span>)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>att[&lt;span style="color:#e6db74">&amp;#34;Content-Type&amp;#34;&lt;/span>] &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;application/octet-stream&amp;#39;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>att[&lt;span style="color:#e6db74">&amp;#34;Content-Disposition&amp;#34;&lt;/span>] &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;attachment; filename=&amp;#34;mailContext.txt&amp;#34;&amp;#39;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>msg&lt;span style="color:#f92672">.&lt;/span>attach(att)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 发送邮件&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">try&lt;/span>:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> server &lt;span style="color:#f92672">=&lt;/span> smtplib&lt;span style="color:#f92672">.&lt;/span>SMTP_SSL(&lt;span style="color:#e6db74">&amp;#39;&amp;#39;&amp;#39;smtp.qq.com&amp;#39;&amp;#39;&amp;#39;&lt;/span>, &lt;span style="color:#ae81ff">465&lt;/span>)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> server&lt;span style="color:#f92672">.&lt;/span>login(&lt;span style="color:#e6db74">&amp;#39;song_cai@yeah.net&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;&amp;#39;&amp;#39;xxxxx&amp;#39;&amp;#39;&amp;#39;&lt;/span>)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> server&lt;span style="color:#f92672">.&lt;/span>sendmail(msg[&lt;span style="color:#e6db74">&amp;#39;from&amp;#39;&lt;/span>], receiverList &lt;span style="color:#f92672">+&lt;/span> ccList, msg&lt;span style="color:#f92672">.&lt;/span>as_string())
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> server&lt;span style="color:#f92672">.&lt;/span>quit()
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">&amp;#39;&amp;#39;&amp;#39;success&amp;#39;&amp;#39;&amp;#39;&lt;/span>)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">except&lt;/span> &lt;span style="color:#a6e22e">Exception&lt;/span> &lt;span style="color:#66d9ef">as&lt;/span> e:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> input(e)
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="注意事项">注意事项&lt;/h2>
-&lt;ul>
-&lt;li>现在大部分邮箱使用SSL方式，所以对应地必须使用&lt;code>SMTP_SSL&lt;/code>,直接指定地址和端口，使用&lt;code>connect&lt;/code>的方式指定存在问题&lt;/li>
-&lt;li>正文要写在附件之前，否则会出现两个附件（即正文部分也成为附件了）&lt;/li>
-&lt;/ul>
-&lt;p>** 懒惰使人进步 **&lt;/p></description></item></channel></rss>
+&lt;/ol></description></item></channel></rss>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Rsh on Caisong's Blog</title><link>https://caisong.github.io/tags/rsh/</link><description>Recent content in Rsh on Caisong's Blog</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Fri, 03 Sep 2021 21:41:26 +0800</lastBuildDate><atom:link href="https://caisong.github.io/tags/rsh/index.xml" rel="self" type="application/rss+xml"/><item><title>Rsh 配置</title><link>https://caisong.github.io/posts/rsh%E9%85%8D%E7%BD%AE/</link><pubDate>Fri, 03 Sep 2021 21:41:26 +0800</pubDate><guid>https://caisong.github.io/posts/rsh%E9%85%8D%E7%BD%AE/</guid><description>&lt;p>基于LTP做测试用的，现在rsh较少使用了，仅记录&lt;/p>
+&lt;ol>
+&lt;li>安装xinetd&lt;/li>
+&lt;li>添加rsh rexec rlogin 至/etc/securetty (root权限问题参考其他文档)&lt;/li>
+&lt;li>配置conf文件，位于/etc/xinetd.d/&lt;/li>
+&lt;li>配置hosts&lt;/li>
+&lt;li>添加“machine_name user_name” &amp;raquo; ~/.rhosts&lt;/li>
+&lt;li>重启服务&lt;/li>
+&lt;/ol></description></item></channel></rss>

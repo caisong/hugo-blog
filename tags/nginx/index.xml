@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Nginx on Caisong's Blog</title><link>https://caisong.github.io/tags/nginx/</link><description>Recent content in Nginx on Caisong's Blog</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Wed, 18 Dec 2024 21:41:13 +0800</lastBuildDate><atom:link href="https://caisong.github.io/tags/nginx/index.xml" rel="self" type="application/rss+xml"/><item><title>Nginx添加module</title><link>https://caisong.github.io/posts/nginx%E6%B7%BB%E5%8A%A0module/</link><pubDate>Wed, 18 Dec 2024 21:41:13 +0800</pubDate><guid>https://caisong.github.io/posts/nginx%E6%B7%BB%E5%8A%A0module/</guid><description>&lt;ol>
+&lt;li>直接&lt;code>nginx -V&lt;/code>查看运行的nginx的编译参数&lt;/li>
+&lt;li>下载源码，使用对应的nginx参数编译nginx&lt;/li>
+&lt;li>下载module，编译&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 先编译nginx，nginx编译成功后，再重新configure&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>末尾添加你需要的编译的module
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>--with-http_dav_module --add-dynamic-module&lt;span style="color:#f92672">=&lt;/span>/root/nginx-dav-ext-module-3.0.0
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="4">
+&lt;li>部署&lt;/li>
+&lt;/ol>
+&lt;pre tabindex="0">&lt;code class="language-conf" data-lang="conf"># 添加module，so 放在 /usr/lib64/nginx/modules
+load_module modules/ngx_http_dynamic_etag_module.so;
+&lt;/code>&lt;/pre></description></item><item><title>nginx双向代理</title><link>https://caisong.github.io/posts/nginx%E9%85%8D%E7%BD%AE%E7%A4%BA%E4%BE%8B/</link><pubDate>Mon, 23 Sep 2024 21:41:15 +0800</pubDate><guid>https://caisong.github.io/posts/nginx%E9%85%8D%E7%BD%AE%E7%A4%BA%E4%BE%8B/</guid><description>&lt;p>使用nginx当双向代理&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-nginx" data-lang="nginx">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">server{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#e6db74">server_name&lt;/span> &lt;span style="color:#ae81ff">10&lt;/span>&lt;span style="color:#e6db74">.10.110.10&lt;/span> &lt;span style="color:#e6db74">ssl&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#66d9ef">listen&lt;/span> &lt;span style="color:#ae81ff">16002&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#66d9ef">ssl_certificate&lt;/span> &lt;span style="color:#e6db74">/path/to/your_certificate.crt&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#66d9ef">ssl_certificate_key&lt;/span> &lt;span style="color:#e6db74">/path/to/your_private.key&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#66d9ef">ssl_protocols&lt;/span> &lt;span style="color:#e6db74">TLSv1.2&lt;/span> &lt;span style="color:#e6db74">TLSv1.3&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">ssl_ciphers&lt;/span> &lt;span style="color:#e6db74">HIGH:!aNULL:!MD5&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#66d9ef">ssl_session_cache&lt;/span> &lt;span style="color:#e6db74">shared:SSL:10m&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#66d9ef">ssl_session_timeout&lt;/span> &lt;span style="color:#ae81ff">10m&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#66d9ef">ssl_prefer_server_ciphers&lt;/span> &lt;span style="color:#66d9ef">on&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#75715e"># 转发node --&amp;gt; center
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>	&lt;span style="color:#66d9ef">location&lt;/span> &lt;span style="color:#e6db74">/webchat/openapi/v1&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#f92672">proxy_pass&lt;/span> &lt;span style="color:#e6db74">https://10.10.110.12:16002&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#f92672">proxy_set_header&lt;/span> &lt;span style="color:#e6db74">Host&lt;/span> $host;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#f92672">proxy_set_header&lt;/span> &lt;span style="color:#e6db74">X-Real-IP&lt;/span> $remote_addr;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#f92672">proxy_set_header&lt;/span> &lt;span style="color:#e6db74">X-Forwarded-For&lt;/span> $proxy_add_x_forwarded_for;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">proxy_set_header&lt;/span> &lt;span style="color:#e6db74">X-Forwarded-Proto&lt;/span> $scheme;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#75715e"># center --&amp;gt; node	
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>	&lt;span style="color:#66d9ef">location&lt;/span> &lt;span style="color:#e6db74">/webChatClient/openapi/v1&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#f92672">proxy_pass&lt;/span> &lt;span style="color:#e6db74">https://10.10.110.20:8123&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#f92672">proxy_set_header&lt;/span> &lt;span style="color:#e6db74">Host&lt;/span> $host;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#f92672">proxy_set_header&lt;/span> &lt;span style="color:#e6db74">X-Real-IP&lt;/span> $remote_addr;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#f92672">proxy_set_header&lt;/span> &lt;span style="color:#e6db74">X-Forwarded-For&lt;/span> $proxy_add_x_forwarded_for;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">proxy_set_header&lt;/span> &lt;span style="color:#e6db74">X-Forwarded-Proto&lt;/span> $scheme;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Nginx同时代理grpc和https</title><link>https://caisong.github.io/posts/nginx%E4%BB%A3%E7%90%86grpchttps/</link><pubDate>Wed, 28 Aug 2024 21:42:16 +0800</pubDate><guid>https://caisong.github.io/posts/nginx%E4%BB%A3%E7%90%86grpchttps/</guid><description>&lt;p>nginx 同时代理grpc和https 。基于&lt;code>grpc&lt;/code>创建了服务端和客户端，使用&lt;code>echo&lt;/code>创建了https服务器，nginx分别代理&lt;code>grpc&lt;/code>请求和&lt;code>https&lt;/code>请求。&lt;/p>
+&lt;!-- raw HTML omitted -->
+&lt;ul>
+&lt;li>TLS证书&lt;/li>
+&lt;li>GRPC&lt;/li>
+&lt;li>https&lt;/li>
+&lt;li>nginx代理&lt;/li>
+&lt;/ul>
+&lt;h2 id="tls证书">tls证书&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>openssl req -new -x509 -nodes -days &lt;span style="color:#ae81ff">365&lt;/span> -newkey rsa:2048 -keyout key.pem -out cert.pem -subj &lt;span style="color:#e6db74">&amp;#34;/CN=10.1.19.100&amp;#34;&lt;/span> -addext &lt;span style="color:#e6db74">&amp;#34;subjectAltName=IP:10.1.19.100&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="grpc">grpc&lt;/h2>
+&lt;h3 id="消息">消息&lt;/h3>
+&lt;ol>
+&lt;li>proto文件&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-plain" data-lang="plain">&lt;span style="display:flex;">&lt;span>syntax = &amp;#34;proto3&amp;#34;;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>// 根据自己module name写就行，然后直接拷贝过去
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>option go_package = &amp;#34;mygrpc/message/helloworld&amp;#34;;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>// 官方示例里没注释，不过对go应该也没啥作用
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>//option java_multiple_files = true;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>//option java_package = &amp;#34;io.grpc.examples.helloworld&amp;#34;;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>//option java_outer_classname = &amp;#34;HelloWorldProto&amp;#34;;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>package helloworld;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>// The greeting service definition.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>service Greeter {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> // Sends a greeting
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> rpc SayHello (HelloRequest) returns (HelloReply) {}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>// The request message containing the user&amp;#39;s name.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>message HelloRequest {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> string name = 1;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>// The response message containing the greetings
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>message HelloReply {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> string message = 1;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="2">
+&lt;li>代码生成&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo apt install rotoc-gen-go protoc-gen-go-grpc
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 生成&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>protoc --go_out&lt;span style="color:#f92672">=&lt;/span>. --go-grpc_out&lt;span style="color:#f92672">=&lt;/span>. ./helloworld.proto 
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="服务端">服务端&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">package&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> (
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#e6db74">&amp;#34;context&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#e6db74">&amp;#34;log&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#e6db74">&amp;#34;net&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;fmt&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;flag&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#a6e22e">pb&lt;/span> &lt;span style="color:#e6db74">&amp;#34;mygrpc/message/helloworld&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#e6db74">&amp;#34;google.golang.org/grpc&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;google.golang.org/grpc/credentials&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#960050;background-color:#1e0010">#&lt;/span>&lt;span style="color:#e6db74">&amp;#34;google.golang.org/grpc/interceptor&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">type&lt;/span> &lt;span style="color:#a6e22e">server&lt;/span> &lt;span style="color:#66d9ef">struct&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#a6e22e">pb&lt;/span>.&lt;span style="color:#a6e22e">UnimplementedGreeterServer&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">func&lt;/span> (&lt;span style="color:#a6e22e">s&lt;/span> &lt;span style="color:#f92672">*&lt;/span>&lt;span style="color:#a6e22e">server&lt;/span>) &lt;span style="color:#a6e22e">SayHello&lt;/span>(&lt;span style="color:#a6e22e">ctx&lt;/span> &lt;span style="color:#a6e22e">context&lt;/span>.&lt;span style="color:#a6e22e">Context&lt;/span>, &lt;span style="color:#a6e22e">req&lt;/span> &lt;span style="color:#f92672">*&lt;/span>&lt;span style="color:#a6e22e">pb&lt;/span>.&lt;span style="color:#a6e22e">HelloRequest&lt;/span>) (&lt;span style="color:#f92672">*&lt;/span>&lt;span style="color:#a6e22e">pb&lt;/span>.&lt;span style="color:#a6e22e">HelloReply&lt;/span>, &lt;span style="color:#66d9ef">error&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#f92672">&amp;amp;&lt;/span>&lt;span style="color:#a6e22e">pb&lt;/span>.&lt;span style="color:#a6e22e">HelloReply&lt;/span>{&lt;span style="color:#a6e22e">Message&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;Hello &amp;#34;&lt;/span> &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#a6e22e">req&lt;/span>.&lt;span style="color:#a6e22e">Name&lt;/span>}, &lt;span style="color:#66d9ef">nil&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">func&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">certFile&lt;/span>&lt;span style="color:#f92672">:=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;/data/code/grpc/cert.pem&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">keyFile&lt;/span>&lt;span style="color:#f92672">:=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;/data/code/grpc/key.pem&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">creds&lt;/span>, &lt;span style="color:#a6e22e">err&lt;/span>&lt;span style="color:#f92672">:=&lt;/span>&lt;span style="color:#a6e22e">credentials&lt;/span>.&lt;span style="color:#a6e22e">NewServerTLSFromFile&lt;/span>(&lt;span style="color:#a6e22e">certFile&lt;/span>, &lt;span style="color:#a6e22e">keyFile&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#a6e22e">err&lt;/span>&lt;span style="color:#f92672">!=&lt;/span>&lt;span style="color:#66d9ef">nil&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">log&lt;/span>.&lt;span style="color:#a6e22e">Fatalf&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;Failed to generated credentials: %v&amp;#34;&lt;/span>, &lt;span style="color:#a6e22e">err&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">grpcServer&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#a6e22e">grpc&lt;/span>.&lt;span style="color:#a6e22e">NewServer&lt;/span>(&lt;span style="color:#a6e22e">grpc&lt;/span>.&lt;span style="color:#a6e22e">Creds&lt;/span>(&lt;span style="color:#a6e22e">creds&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#75715e">// 注册 Greeter 服务
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>	&lt;span style="color:#a6e22e">pb&lt;/span>.&lt;span style="color:#a6e22e">RegisterGreeterServer&lt;/span>(&lt;span style="color:#a6e22e">grpcServer&lt;/span>, &lt;span style="color:#f92672">&amp;amp;&lt;/span>&lt;span style="color:#a6e22e">server&lt;/span>{})
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">var&lt;/span> &lt;span style="color:#a6e22e">port&lt;/span> &lt;span style="color:#66d9ef">int&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">flag&lt;/span>.&lt;span style="color:#a6e22e">IntVar&lt;/span>(&lt;span style="color:#f92672">&amp;amp;&lt;/span>&lt;span style="color:#a6e22e">port&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;port&amp;#34;&lt;/span>, &lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;listten port&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">flag&lt;/span>.&lt;span style="color:#a6e22e">Parse&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#75715e">// 监听端口
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#a6e22e">listener&lt;/span>, &lt;span style="color:#a6e22e">err&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#a6e22e">net&lt;/span>.&lt;span style="color:#a6e22e">Listen&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;tcp&amp;#34;&lt;/span>, &lt;span style="color:#a6e22e">fmt&lt;/span>.&lt;span style="color:#a6e22e">Sprintf&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;:%d&amp;#34;&lt;/span>, &lt;span style="color:#a6e22e">port&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#a6e22e">err&lt;/span> &lt;span style="color:#f92672">!=&lt;/span> &lt;span style="color:#66d9ef">nil&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#a6e22e">log&lt;/span>.&lt;span style="color:#a6e22e">Fatalf&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;Failed to listen on port %d: %v&amp;#34;&lt;/span>, &lt;span style="color:#a6e22e">port&lt;/span>, &lt;span style="color:#a6e22e">err&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#75715e">// 启动 gRPC 服务器
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>	&lt;span style="color:#a6e22e">log&lt;/span>.&lt;span style="color:#a6e22e">Println&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;gRPC server is listening on port&amp;#34;&lt;/span>, &lt;span style="color:#a6e22e">port&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#a6e22e">err&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#a6e22e">grpcServer&lt;/span>.&lt;span style="color:#a6e22e">Serve&lt;/span>(&lt;span style="color:#a6e22e">listener&lt;/span>); &lt;span style="color:#a6e22e">err&lt;/span> &lt;span style="color:#f92672">!=&lt;/span> &lt;span style="color:#66d9ef">nil&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#a6e22e">log&lt;/span>.&lt;span style="color:#a6e22e">Fatalf&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;Failed to serve: %v&amp;#34;&lt;/span>, &lt;span style="color:#a6e22e">err&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="客户端">客户端&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">package&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> (
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;context&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;log&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#e6db74">&amp;#34;google.golang.org/grpc&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;google.golang.org/grpc/credentials&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#a6e22e">pb&lt;/span> &lt;span style="color:#e6db74">&amp;#34;grpcclient/message/helloworld&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">func&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">certFile&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;/data/code/grpc/cert.pem&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">creds&lt;/span>, &lt;span style="color:#a6e22e">err&lt;/span>&lt;span style="color:#f92672">:=&lt;/span>&lt;span style="color:#a6e22e">credentials&lt;/span>.&lt;span style="color:#a6e22e">NewClientTLSFromFile&lt;/span>(&lt;span style="color:#a6e22e">certFile&lt;/span>,&lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#a6e22e">err&lt;/span>&lt;span style="color:#f92672">!=&lt;/span>&lt;span style="color:#66d9ef">nil&lt;/span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">log&lt;/span>.&lt;span style="color:#a6e22e">Fatalf&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;Failed to load credentials %v&amp;#34;&lt;/span>, &lt;span style="color:#a6e22e">err&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">conn&lt;/span>, &lt;span style="color:#a6e22e">err&lt;/span>&lt;span style="color:#f92672">:=&lt;/span>&lt;span style="color:#a6e22e">grpc&lt;/span>.&lt;span style="color:#a6e22e">Dial&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;10.1.19.100:443&amp;#34;&lt;/span>, &lt;span style="color:#a6e22e">grpc&lt;/span>.&lt;span style="color:#a6e22e">WithTransportCredentials&lt;/span>(&lt;span style="color:#a6e22e">creds&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#a6e22e">err&lt;/span>&lt;span style="color:#f92672">!=&lt;/span>&lt;span style="color:#66d9ef">nil&lt;/span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">log&lt;/span>.&lt;span style="color:#a6e22e">Fatalf&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;Faield to connect %v&amp;#34;&lt;/span>, &lt;span style="color:#a6e22e">err&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">defer&lt;/span> &lt;span style="color:#a6e22e">conn&lt;/span>.&lt;span style="color:#a6e22e">Close&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">client&lt;/span>&lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#a6e22e">pb&lt;/span>.&lt;span style="color:#a6e22e">NewGreeterClient&lt;/span>(&lt;span style="color:#a6e22e">conn&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">resp&lt;/span>, &lt;span style="color:#a6e22e">err&lt;/span>&lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#a6e22e">client&lt;/span>.&lt;span style="color:#a6e22e">SayHello&lt;/span>(&lt;span style="color:#a6e22e">context&lt;/span>.&lt;span style="color:#a6e22e">Background&lt;/span>(), &lt;span style="color:#f92672">&amp;amp;&lt;/span>&lt;span style="color:#a6e22e">pb&lt;/span>.&lt;span style="color:#a6e22e">HelloRequest&lt;/span>{&lt;span style="color:#a6e22e">Name&lt;/span>:&lt;span style="color:#e6db74">&amp;#34;grpc&amp;#34;&lt;/span>})
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#a6e22e">err&lt;/span>&lt;span style="color:#f92672">!=&lt;/span>&lt;span style="color:#66d9ef">nil&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">log&lt;/span>.&lt;span style="color:#a6e22e">Fatalf&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;Faield to say hello %v&amp;#34;&lt;/span>, &lt;span style="color:#a6e22e">err&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">log&lt;/span>.&lt;span style="color:#a6e22e">Printf&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;Response %s&amp;#34;&lt;/span>, &lt;span style="color:#a6e22e">resp&lt;/span>.&lt;span style="color:#a6e22e">Message&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="https">https&lt;/h2>
+&lt;h3 id="服务端-1">服务端&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">package&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> (
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;log&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;net/http&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;fmt&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;flag&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;github.com/labstack/echo/v4&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">func&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>(){
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">e&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#a6e22e">echo&lt;/span>.&lt;span style="color:#a6e22e">New&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">var&lt;/span> &lt;span style="color:#a6e22e">port&lt;/span> &lt;span style="color:#66d9ef">int&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">flag&lt;/span>.&lt;span style="color:#a6e22e">IntVar&lt;/span>(&lt;span style="color:#f92672">&amp;amp;&lt;/span>&lt;span style="color:#a6e22e">port&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;port&amp;#34;&lt;/span>, &lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;listen port&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">flag&lt;/span>.&lt;span style="color:#a6e22e">Parse&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">e&lt;/span>.&lt;span style="color:#a6e22e">GET&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;/h/&amp;#34;&lt;/span>, &lt;span style="color:#66d9ef">func&lt;/span>(&lt;span style="color:#a6e22e">c&lt;/span> &lt;span style="color:#a6e22e">echo&lt;/span>.&lt;span style="color:#a6e22e">Context&lt;/span>) &lt;span style="color:#66d9ef">error&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#a6e22e">c&lt;/span>.&lt;span style="color:#a6e22e">String&lt;/span>(&lt;span style="color:#a6e22e">http&lt;/span>.&lt;span style="color:#a6e22e">StatusOK&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;Hello, Https World&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> })
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">err&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#a6e22e">e&lt;/span>.&lt;span style="color:#a6e22e">StartTLS&lt;/span>(&lt;span style="color:#a6e22e">fmt&lt;/span>.&lt;span style="color:#a6e22e">Sprintf&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;:%d&amp;#34;&lt;/span>, &lt;span style="color:#a6e22e">port&lt;/span>), &lt;span style="color:#e6db74">&amp;#34;/data/code/grpc/cert.pem&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;/data/code/grpc/key.pem&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#a6e22e">err&lt;/span>&lt;span style="color:#f92672">!=&lt;/span>&lt;span style="color:#66d9ef">nil&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">log&lt;/span>.&lt;span style="color:#a6e22e">Fatalf&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;failed to start server: %v&amp;#34;&lt;/span>, &lt;span style="color:#a6e22e">err&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="nginx代理">nginx代理&lt;/h2>
+&lt;p>原来想给grpc添加前缀的，但是grpc添加前缀有点麻烦，就给http添加前缀了。&lt;/p></description></item></channel></rss>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Pip on Caisong's Blog</title><link>https://caisong.github.io/tags/pip/</link><description>Recent content in Pip on Caisong's Blog</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Fri, 03 Sep 2021 21:41:21 +0800</lastBuildDate><atom:link href="https://caisong.github.io/tags/pip/index.xml" rel="self" type="application/rss+xml"/><item><title>pip配置、命令</title><link>https://caisong.github.io/posts/python%E9%85%8D%E7%BD%AE/</link><pubDate>Fri, 03 Sep 2021 21:41:21 +0800</pubDate><guid>https://caisong.github.io/posts/python%E9%85%8D%E7%BD%AE/</guid><description>&lt;h2 id="镜像配置">镜像配置&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># windows 路径 C:\Users\username\pip\pip.ini&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># linux 路径 ~/.pip/pip.conf &lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">[&lt;/span>global&lt;span style="color:#f92672">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>index-url &lt;span style="color:#f92672">=&lt;/span> https://mirrors.aliyun.com/pypi/simple/
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="pip-命令">pip 命令&lt;/h2>
+&lt;p>pip list &amp;ndash;outdated #列出所有过期的库
+pip install &amp;ndash;upgrade 库名 #升级库&lt;/p>
+&lt;h2 id="一键升级过期源">一键升级过期源&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> pip
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> subprocess &lt;span style="color:#f92672">import&lt;/span> call
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">for&lt;/span> dist &lt;span style="color:#f92672">in&lt;/span> pip&lt;span style="color:#f92672">.&lt;/span>get_installed_distributions():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> call(&lt;span style="color:#e6db74">&amp;#34;pip install --upgrade &amp;#34;&lt;/span> &lt;span style="color:#f92672">+&lt;/span> dist&lt;span style="color:#f92672">.&lt;/span>project_name, shell&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#66d9ef">True&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Pip install UnicodeDecodeError</title><link>https://caisong.github.io/posts/pipinstallunicodedecodeerror/</link><pubDate>Fri, 03 Sep 2021 21:41:18 +0800</pubDate><guid>https://caisong.github.io/posts/pipinstallunicodedecodeerror/</guid><description>&lt;h2 id="pip-install-unicodedecodeerror">pip install UnicodeDecodeError&lt;/h2>
+&lt;p>解决方法：
+python目录 &lt;code>Python27\Lib\site-packages&lt;/code> 建一个文件&lt;code>sitecustomize.py&lt;/code>
+内容为：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> sys
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sys&lt;span style="color:#f92672">.&lt;/span>setdefaultencoding(&lt;span style="color:#e6db74">&amp;#39;gbk&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

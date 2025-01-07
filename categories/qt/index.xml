@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>QT on Caisong's Blog</title><link>https://caisong.github.io/categories/qt/</link><description>Recent content in QT on Caisong's Blog</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Tue, 23 Jul 2024 21:42:19 +0800</lastBuildDate><atom:link href="https://caisong.github.io/categories/qt/index.xml" rel="self" type="application/rss+xml"/><item><title>QML简单记录</title><link>https://caisong.github.io/posts/qml%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BD%95/</link><pubDate>Tue, 23 Jul 2024 21:42:19 +0800</pubDate><guid>https://caisong.github.io/posts/qml%E7%AE%80%E5%8D%95%E8%AE%B0%E5%BD%95/</guid><description>&lt;p>QML 简单记录&lt;/p>
+&lt;p>显示风车旋转&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-qml" data-lang="qml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">import&lt;/span> &lt;span style="color:#a6e22e">QtQuick&lt;/span> &lt;span style="color:#ae81ff">2.12&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">import&lt;/span> &lt;span style="color:#a6e22e">QtQuick&lt;/span>.&lt;span style="color:#a6e22e">Window&lt;/span> &lt;span style="color:#ae81ff">2.12&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">Window&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">Image&lt;/span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">id:background&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">source:&lt;/span> &lt;span style="color:#e6db74">&amp;#34;qrc:/background.png&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">Image&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">id:wheel&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">anchors.centerIn:&lt;/span> &lt;span style="color:#a6e22e">parent&lt;/span> &lt;span style="color:#75715e">//居中
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">source:&lt;/span> &lt;span style="color:#e6db74">&amp;#34;qrc:/pinwheel.png&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">Behavior&lt;/span> &lt;span style="color:#a6e22e">on&lt;/span> &lt;span style="color:#a6e22e">rotation&lt;/span> { &lt;span style="color:#75715e">// behavior on &amp;lt;prooerty&amp;gt;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#a6e22e">NumberAnimation&lt;/span> { &lt;span style="color:#75715e">// numberanimation 延迟动画
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">duration:&lt;/span> &lt;span style="color:#ae81ff">250&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">MouseArea&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">anchors.fill:&lt;/span> &lt;span style="color:#a6e22e">parent&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">onPressed:&lt;/span> { &lt;span style="color:#75715e">//事件
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#a6e22e">wheel&lt;/span>.&lt;span style="color:#a6e22e">rotation&lt;/span> &lt;span style="color:#f92672">+=&lt;/span> &lt;span style="color:#ae81ff">90&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">visible:&lt;/span> &lt;span style="color:#66d9ef">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">width:&lt;/span> &lt;span style="color:#a6e22e">background&lt;/span>.&lt;span style="color:#a6e22e">width&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">height:&lt;/span> &lt;span style="color:#a6e22e">background&lt;/span>.&lt;span style="color:#a6e22e">height&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">title:&lt;/span> &lt;span style="color:#a6e22e">qsTr&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;Hello World&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>
+&lt;p>ubuntu使用quick时，&lt;code>Unknown module(s) in QT: qml quick&lt;/code> &lt;br>
+安装开发包&lt;code>qtdeclarative5-dev&lt;/code>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>问题 module &amp;ldquo;QtQuick.Controls&amp;rdquo; version 2.12 is not installed&lt;br>
+安装&lt;code>qml-module-qtquick-controls2&lt;/code>&lt;/p></description></item><item><title>QT网络操作</title><link>https://caisong.github.io/posts/qt%E6%93%8D%E4%BD%9C/</link><pubDate>Thu, 18 Jul 2024 21:42:20 +0800</pubDate><guid>https://caisong.github.io/posts/qt%E6%93%8D%E4%BD%9C/</guid><description>&lt;p>真的好难用&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cpp" data-lang="cpp">&lt;span style="display:flex;">&lt;span> QString ctx &lt;span style="color:#f92672">=&lt;/span> QString(&lt;span style="color:#e6db74">&amp;#34;{&lt;/span>&lt;span style="color:#ae81ff">\&amp;#34;&lt;/span>&lt;span style="color:#e6db74">name&lt;/span>&lt;span style="color:#ae81ff">\&amp;#34;&lt;/span>&lt;span style="color:#e6db74">:&lt;/span>&lt;span style="color:#ae81ff">\&amp;#34;&lt;/span>&lt;span style="color:#e6db74">%1&lt;/span>&lt;span style="color:#ae81ff">\&amp;#34;&lt;/span>&lt;span style="color:#e6db74">, &lt;/span>&lt;span style="color:#ae81ff">\&amp;#34;&lt;/span>&lt;span style="color:#e6db74">message&lt;/span>&lt;span style="color:#ae81ff">\&amp;#34;&lt;/span>&lt;span style="color:#e6db74">:&lt;/span>&lt;span style="color:#ae81ff">\&amp;#34;&lt;/span>&lt;span style="color:#e6db74">%2&lt;/span>&lt;span style="color:#ae81ff">\&amp;#34;&lt;/span>&lt;span style="color:#e6db74">}&amp;#34;&lt;/span>).arg(name).arg(message&lt;span style="color:#f92672">-&amp;gt;&lt;/span>text());
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> qDebug() &lt;span style="color:#f92672">&amp;lt;&amp;lt;&lt;/span> ctx &lt;span style="color:#f92672">&amp;lt;&amp;lt;&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>&lt;span style="color:#ae81ff">\n&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> QNetworkRequest request;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> request.setHeader(QNetworkRequest&lt;span style="color:#f92672">::&lt;/span>ContentTypeHeader, &lt;span style="color:#e6db74">&amp;#34;application/json&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> request.setUrl(QUrl(url));
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> manager&lt;span style="color:#f92672">-&amp;gt;&lt;/span>post(request, ctx.toUtf8());
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cpp" data-lang="cpp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">void&lt;/span> Widget&lt;span style="color:#f92672">::&lt;/span>replyFinished(QNetworkReply &lt;span style="color:#f92672">*&lt;/span>reply)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// 处理网络响应的代码
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">if&lt;/span> (reply&lt;span style="color:#f92672">-&amp;gt;&lt;/span>error() &lt;span style="color:#f92672">==&lt;/span> QNetworkReply&lt;span style="color:#f92672">::&lt;/span>NoError) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// 处理成功响应的情况
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">if&lt;/span>(reply&lt;span style="color:#f92672">-&amp;gt;&lt;/span>operation()&lt;span style="color:#f92672">==&lt;/span>QNetworkAccessManager&lt;span style="color:#f92672">::&lt;/span>GetOperation){
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> QByteArray responseData &lt;span style="color:#f92672">=&lt;/span> reply&lt;span style="color:#f92672">-&amp;gt;&lt;/span>readAll();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> txt&lt;span style="color:#f92672">-&amp;gt;&lt;/span>appendPlainText(QString&lt;span style="color:#f92672">::&lt;/span>fromUtf8(responseData));
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">else&lt;/span> &lt;span style="color:#a6e22e">if&lt;/span> (reply&lt;span style="color:#f92672">-&amp;gt;&lt;/span>operation() &lt;span style="color:#f92672">==&lt;/span> QNetworkAccessManager&lt;span style="color:#f92672">::&lt;/span>PostOperation){
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> message&lt;span style="color:#f92672">-&amp;gt;&lt;/span>clear();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> } &lt;span style="color:#66d9ef">else&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// 处理错误情况
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> qDebug() &lt;span style="color:#f92672">&amp;lt;&amp;lt;&lt;/span> &lt;span style="color:#e6db74">&amp;#34;Network request error:&amp;#34;&lt;/span> &lt;span style="color:#f92672">&amp;lt;&amp;lt;&lt;/span> reply&lt;span style="color:#f92672">-&amp;gt;&lt;/span>errorString();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> reply&lt;span style="color:#f92672">-&amp;gt;&lt;/span>deleteLater(); &lt;span style="color:#75715e">// 释放资源
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cpp" data-lang="cpp">&lt;span style="display:flex;">&lt;span> manager &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> QNetworkAccessManager(&lt;span style="color:#66d9ef">this&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> connect(manager, &lt;span style="color:#f92672">&amp;amp;&lt;/span>QNetworkAccessManager&lt;span style="color:#f92672">::&lt;/span>finished, &lt;span style="color:#66d9ef">this&lt;/span>, &lt;span style="color:#f92672">&amp;amp;&lt;/span>Widget&lt;span style="color:#f92672">::&lt;/span>replyFinished);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> connect(message, &lt;span style="color:#f92672">&amp;amp;&lt;/span>QLineEdit&lt;span style="color:#f92672">::&lt;/span>returnPressed, &lt;span style="color:#66d9ef">this&lt;/span>, &lt;span style="color:#f92672">&amp;amp;&lt;/span>Widget&lt;span style="color:#f92672">::&lt;/span>send_message);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> QTimer &lt;span style="color:#f92672">*&lt;/span>timer &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> QTimer(&lt;span style="color:#66d9ef">this&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> connect(timer, &lt;span style="color:#f92672">&amp;amp;&lt;/span>QTimer&lt;span style="color:#f92672">::&lt;/span>timeout, &lt;span style="color:#66d9ef">this&lt;/span>, &lt;span style="color:#f92672">&amp;amp;&lt;/span>Widget&lt;span style="color:#f92672">::&lt;/span>display_message);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> timer&lt;span style="color:#f92672">-&amp;gt;&lt;/span>start(&lt;span style="color:#ae81ff">1000&lt;/span>);
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

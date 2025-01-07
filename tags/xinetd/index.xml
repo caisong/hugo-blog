@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Xinetd on Caisong's Blog</title><link>https://caisong.github.io/tags/xinetd/</link><description>Recent content in Xinetd on Caisong's Blog</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Wed, 07 Jun 2017 21:39:31 +0000</lastBuildDate><atom:link href="https://caisong.github.io/tags/xinetd/index.xml" rel="self" type="application/rss+xml"/><item><title>xinetd 配置</title><link>https://caisong.github.io/posts/xinetd/</link><pubDate>Wed, 07 Jun 2017 21:39:31 +0000</pubDate><guid>https://caisong.github.io/posts/xinetd/</guid><description>&lt;ol start="0">
-&lt;li>介绍&lt;/li>
-&lt;/ol>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Xinetd on Caisong's Blog</title><link>https://caisong.github.io/tags/xinetd/</link><description>Recent content in Xinetd on Caisong's Blog</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Wed, 07 Jun 2017 21:39:31 +0800</lastBuildDate><atom:link href="https://caisong.github.io/tags/xinetd/index.xml" rel="self" type="application/rss+xml"/><item><title>xinetd 常用配置</title><link>https://caisong.github.io/posts/xinetd/</link><pubDate>Wed, 07 Jun 2017 21:39:31 +0800</pubDate><guid>https://caisong.github.io/posts/xinetd/</guid><description>&lt;h2 id="介绍">介绍&lt;/h2>
 
 
 
@@ -13,4 +11,15 @@ arrives, xinetd is the only daemon process started and it listens on
 all service ports for the services listed in its configuration file.
 When a request comes in, xinetd starts the appropriate server. Because
 of the way it operates, xinetd (as well as inetd) is also referred to
-as a super-server.&lt;/p></description></item></channel></rss>
+as a super-server.
+&amp;lt;! &amp;ndash; more &amp;ndash;&amp;gt;
+The services listed in xinetd’s configuration file can be separated
+into two groups. Services in the first group are called multi-threaded
+and they require the forking of a new server process for each new con-
+nection request. The new server then handles that connection. For
+such services, xinetd keeps listening for new requests so that it can
+spawn new servers. On the other hand, the second group includes ser-
+vices for which the service daemon is responsible for handling all new
+connection requests. Such services are called single-threaded and
+xinetd will stop handling new requests for them until the server dies.
+Services in this group are usually datagram-based.&lt;/p></description></item></channel></rss>

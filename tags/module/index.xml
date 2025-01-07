@@ -1,3 +1,16 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Module on Caisong's Blog</title><link>https://caisong.github.io/tags/module/</link><description>Recent content in Module on Caisong's Blog</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Fri, 03 Sep 2021 21:41:10 +0800</lastBuildDate><atom:link href="https://caisong.github.io/tags/module/index.xml" rel="self" type="application/rss+xml"/><item><title>Make modules</title><link>https://caisong.github.io/posts/makemodules/</link><pubDate>Fri, 03 Sep 2021 21:41:10 +0800</pubDate><guid>https://caisong.github.io/posts/makemodules/</guid><description>&lt;p>编译module&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Module on Caisong's Blog</title><link>https://caisong.github.io/tags/module/</link><description>Recent content in Module on Caisong's Blog</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Wed, 18 Dec 2024 21:41:13 +0800</lastBuildDate><atom:link href="https://caisong.github.io/tags/module/index.xml" rel="self" type="application/rss+xml"/><item><title>Nginx添加module</title><link>https://caisong.github.io/posts/nginx%E6%B7%BB%E5%8A%A0module/</link><pubDate>Wed, 18 Dec 2024 21:41:13 +0800</pubDate><guid>https://caisong.github.io/posts/nginx%E6%B7%BB%E5%8A%A0module/</guid><description>&lt;ol>
+&lt;li>直接&lt;code>nginx -V&lt;/code>查看运行的nginx的编译参数&lt;/li>
+&lt;li>下载源码，使用对应的nginx参数编译nginx&lt;/li>
+&lt;li>下载module，编译&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 先编译nginx，nginx编译成功后，再重新configure&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>末尾添加你需要的编译的module
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>--with-http_dav_module --add-dynamic-module&lt;span style="color:#f92672">=&lt;/span>/root/nginx-dav-ext-module-3.0.0
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="4">
+&lt;li>部署&lt;/li>
+&lt;/ol>
+&lt;pre tabindex="0">&lt;code class="language-conf" data-lang="conf"># 添加module，so 放在 /usr/lib64/nginx/modules
+load_module modules/ngx_http_dynamic_etag_module.so;
+&lt;/code>&lt;/pre></description></item><item><title>Make modules</title><link>https://caisong.github.io/posts/makemodules/</link><pubDate>Fri, 03 Sep 2021 21:41:10 +0800</pubDate><guid>https://caisong.github.io/posts/makemodules/</guid><description>&lt;p>编译module&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>make -C &lt;span style="color:#f92672">{&lt;/span>kernel src&lt;span style="color:#f92672">}&lt;/span> -M&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">`&lt;/span>pwd&lt;span style="color:#e6db74">`&lt;/span> modules
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Depmod</title><link>https://caisong.github.io/posts/depmod/</link><pubDate>Wed, 17 May 2017 17:38:47 +0800</pubDate><guid>https://caisong.github.io/posts/depmod/</guid><description>&lt;p>module命令&lt;/p></description></item></channel></rss>
